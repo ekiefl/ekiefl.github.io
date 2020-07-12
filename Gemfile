@@ -10,3 +10,5 @@ gem 'unidecode'
 gem 'rouge'
 gem 'jekyll-redirect-from'
 gem 'jekyll-gist'
+gem "activesupport", ">= 4.1.11"
+
