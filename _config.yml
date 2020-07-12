@@ -1,3 +1,53 @@
-url: "ekiefl.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-title: "WEBSITE" # the name of your site, e.g. ACME Corp.
+# Site wide configuration
+
+title: Evan Kiefl
+locale: en_US
+url: http://ekiefl.github.io
+
+# Jekyll configuration
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+
+highlighter: rouge
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-gist
+
+whitelist:
+  - jekyll-redirect-from
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+# Site owner
+owner:
+  name: Evan Kiefl
+  email: kiefl.evan@gmail.com
+
+author:
+  name   : "Evan Kiefl"
+  avatar : "/images/bio-photo.jpg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ekiefl"
+    - label: "Scholar"
+      icon: "fas fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en&oi=ao"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/evankiefl"
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]

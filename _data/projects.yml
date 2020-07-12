@@ -1,0 +1,5 @@
+- name: "psim"
+  url:  "projects/psim/"
+  thumbnail:  ["/images/psim/thumbnail1.png",]
+  description: >-
+      A blog detailing my journey in creating a pool/billiards simulator called *psim*, that emphasizes realism.

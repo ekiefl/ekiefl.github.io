@@ -1,0 +1,22 @@
+---
+layout: page
+---
+
+<div class="categories-content">
+  <br>
+  <p>{{ content }}</p>
+
+  {% for project in site.data.projects %}
+    <a href="{{ project.url | relative_url }}"><h2 class="special-title">{{ project.name }}</h2></a>
+    <p>{{ project.description | markdownify }}</p>
+
+    <div align="center" style="padding-bottom: 20px;">
+    {% for imgsrc in project.thumbnail %}
+        <a href="{{ imgsrc }}"><img src="{{ imgsrc }}" style="height: 100px;"/></a>
+    {% endfor %}
+    </div>
+
+  {% endfor %}
+  <br>
+</div>
+

@@ -1,0 +1,3 @@
+Authors	Title	Publication	Volume	Number	Pages	Year	doi
+Delmont, Tom O*; Kiefl, Evan*; Kilinc, Ozsel; Esen, Özcan C; Uysal, Ismail; Rappé, Michael S; Giovannoni, Steven; Eren, A Murat; 	Single-amino acid variants reveal evolutionary processes that shape the biogeography of a global SAR11 subclade	eLife	8		e46497	2019	10.7554/eLife.46497
+Kiefl, Evan; Mannini, Matteo; Bernot, Kevin; Yi, Xiaohui; Amato, Alex; Leviant, Tom; Magnani, Agnese; Prokscha, Thomas; Suter, Andreas; Sessoli, Roberta; Salman, Zaher; 	Robust Magnetic Properties of a Sublimable Single-Molecule Magnet ACS Nano	10	6		5663-5669	2016	10.1021/acsnano.6b01817

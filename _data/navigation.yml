@@ -1,0 +1,15 @@
+# Site navigation links
+
+- title: Projects
+  url: /projects/
+  style: "color: #d64231;"
+
+- title: Blog
+  url: /posts/
+  style: "color: #5bab87;"
+
+- title: Publications
+  url: /publications/
+
+- title: About
+  url: /about/
