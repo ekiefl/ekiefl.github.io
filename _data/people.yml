@@ -1,29 +1,6 @@
-- alias: meren
+- alias: evan
   official: True
-  name: A. Murat Eren (Meren)
-  tenure_start: 10/2015
-  role: PI
-  twitter: merenbey
-  github: meren
-  web: http://meren.org
-  avatar: bio-meren.jpg
-  email: a.murat.eren@gmail.com
-  twitter: merenbey
-  github: meren
-  linkedin: meren
-  orcid: 0000-0001-9013-4827
-  phone: +1-773-702-5935
-  fax: +1-773-702-2281
-  skype: a.murat.eren
-  address: Knapp Center for Biomedical Discovery, 900 E. 57th St., MB 9, RM 9118, Chicago, IL 60637 USA
-  bio: "I am a computer scientist with a deep appreciation for the complexity of life. I design algorithms and experiments to better understand microbes and their ecology."
-  affiliations:
-    - title: MBL Fellow
-      inst: Marine Biological Laboratory
-      inst_link: http://www.mbl.edu/research/mbl-fellows/a-murat-eren/
-    - title: Assistant Professor
-      inst: The Department of Medicine at the University of Chicago
-      inst_link: http://medicine.uchicago.edu/
-    - title: Committee on Microbiology
-      inst: The Biomedical Sciences Cluster at the University of Chicago
-      inst_link: https://biomedsciences.uchicago.edu/
+  name: Evan Kiefl
+  twitter: evankiefl
+  github: ekiefl
+  email: kiefl.evan@gmail.com

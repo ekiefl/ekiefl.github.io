@@ -13,8 +13,7 @@ image:
 {% capture images %}{{site.url}}/images/psim/psim-intro{% endcapture %}
 {% include _toc.html %}
 
-## Disclaimer
-
+{:.notice}
 I'm going to talk about pool, physics, math, softare, video game design, 3D modelling, and a bunch
 of things that this project has led me to. But I am not pro pool player, physicist, mathematician,
 software developer, video game designer, Blender guru, or anything. So much of what I say may be
