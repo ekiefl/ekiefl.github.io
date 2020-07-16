@@ -3,7 +3,7 @@ layout: home
 excerpt: "A landing page for Evan Kiefl"
 tags: [Evan Kiefl, bioinformatics, microbial ecology, microbiome, metagenomics, anvi'o, university of chicago, university of victoria, PhD student]
 image:
-  feature: rock_wall.png
+  feature: kochi.png
 include_bio: true
 ---
 
