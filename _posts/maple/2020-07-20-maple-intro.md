@@ -10,7 +10,7 @@ image:
   display: true
 ---
 
-{% capture images %}{{site.url}}/images/psim/psim-intro{% endcapture %}
+{% capture images %}{{site.url}}/images/maple/maple-intro{% endcapture %}
 {% include _toc.html %}
 
 I recently moved in with my girlfriend who has a 6-month old puppy named Maple. She's a sweet girl
@@ -148,7 +148,9 @@ that spanned multiple frames.
 In the above video, the program has just 1 state variable called `in_event`, and its possible values
 are either `True` or `False`. Here is a flowchart of the transitions possible:
 
-### New event start criterion
+[![flow1]({{images}}/state_flow_1.jpg)]({{images}}/state_flow_1.jpg){:.center-img .width-70}
+
+### Event start criterion
 
 Before, transitioning from `in_event == False` to `in_event == True` occurred whenever a frame had a
 mean signal 3 standard deviations above the mean. Let's call this threshold value \$X\$ for
@@ -169,7 +171,7 @@ potential event is deemed not an event. Note that whenever `in_on_transition == 
 frames are stored in a buffer and retroactively added to the event, in the case that it ends up
 *being* an event.
 
-### New event end criterion
+### Event end criterion
 
 Before, an event ended whenever a frame had a mean signal that dipped below 2 standard deviations
 above the mean (\$\mu + 2\sigma\$). Call this threshold \$Y\$ for convenience. My new method uses
@@ -189,4 +191,13 @@ anew. But if no frames exceed $\X\$ during the countdown, the event is deemed to
 
 ### The code
 
-As a flowchart, the co
+This is how the new state logic is visualized as a flow chart:
+
+[![flow1]({{images}}/state_flow_2.jpg)]({{images}}/state_flow_2.jpg){:.center-img .width-70}
+
+More complex, and more robust. The implementation of this new design is captured by a class called
+`Detector` which handles these state variables and updates them each audio frame:
+
+```python
+```
+
