@@ -1,22 +1,23 @@
 ---
 layout: publications
-modified: 2020-07-15
+modified: 2020-08-19
 comments: false
 ---
+
+
+
+{:.notice}
+These publications are a subset of my scientific work that I consider to have contributed significantly towards. For a complete list of publications, check out my [Google Scholar](https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en).
+
 
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
-<div class="category-box">
-<a href="#2019"><span class="category-item">2019</span></a><a href="#2017"><span class="category-item">2017</span></a><a href="#2016"><span class="category-item">2016</span></a>
-</div>
-
 <a name="2019">&nbsp;</a>
 <h1>2019</h1>
 
 <div class="pub">
-<div class='altmetric-embed' data-badge-type='donut' data-doi="10.7554/eLife.46497"></div>
 <div class="__dimensions_badge_embed__" data-doi="10.7554/eLife.46497" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <h3><a href=" https://doi.org/10.7554/eLife.46497" target="_new">Single-amino acid variants reveal evolutionary processes that shape the biogeography of a global SAR11 subclade</a></h3>
     <span class="pub-authors">Delmont TO<sup>☯</sup>, <span class="pub-member-author">Kiefl E<sup>☯</sup></span>, Kilinc O, Esen ÖC, Uysal I, Rappé MS, Giovannoni S, Eren AM</span>
@@ -37,7 +38,6 @@ comments: false
 <h1>2017</h1>
 
 <div class="pub">
-<div class='altmetric-embed' data-badge-type='donut' data-doi="10.1021/acs.jpcc.7b08691"></div>
 <div class="__dimensions_badge_embed__" data-doi="10.1021/acs.jpcc.7b08691" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <h3><a href=" https://doi.org/10.1021/acs.jpcc.7b08691" target="_new">Evaluation of surface-enhanced Raman spectroscopy substrates from single-molecule statistics</a></h3>
     <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Kiefl RF, dos Santos DP, Brolo AG</span>
@@ -57,7 +57,6 @@ comments: false
 <h1>2016</h1>
 
 <div class="pub">
-<div class='altmetric-embed' data-badge-type='donut' data-doi="10.1021/acsnano.6b01817"></div>
 <div class="__dimensions_badge_embed__" data-doi="10.1021/acsnano.6b01817" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <h3><a href=" https://doi.org/10.1021/acsnano.6b01817" target="_new">Robust Magnetic Properties of a Sublimable Single-Molecule Magnet</a></h3>
     <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Mannini M, Bernot K, Yi X, Amato A, Leviant T, Magnani A, Prokscha T, Suter A, Sessoli R, Salman Z</span>
@@ -73,7 +72,6 @@ comments: false
 </div>
 
 <div class="pub">
-<div class='altmetric-embed' data-badge-type='donut' data-doi="10.1016/j.bpj.2016.10.039"></div>
 <div class="__dimensions_badge_embed__" data-doi="10.1016/j.bpj.2016.10.039" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <h3><a href=" https://doi.org/10.1016/j.bpj.2016.10.039" target="_new">Intact telopeptides enhance interactions between collagens</a></h3>
     <span class="pub-authors">Shayegan M, Altindal T, <span class="pub-member-author">Kiefl E</span>, Forde NR</span>

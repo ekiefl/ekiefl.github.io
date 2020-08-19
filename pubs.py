@@ -145,7 +145,6 @@ class Publications:
         A = lambda s: pub_md.append(s)
 
         A('<div class="pub">')
-        A('''<div class='altmetric-embed' data-badge-type='donut' data-doi="%s"></div>''' % pub['doi'])
         A('''<div class="__dimensions_badge_embed__" data-doi="%s" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>''' % pub['doi'])
         if pub['doi']:
             A('    <h3><a href="%s" target="_new">%s</a></h3>' % (' https://doi.org/%s' % (pub['doi']), pub['title']))
@@ -195,11 +194,12 @@ class Publications:
         W('modified: %s' % datetime.today().strftime('%Y-%m-%d'))
         W('comments: false')
         W('---\n')
+        W('\n')
+        W('{:.notice}\nThese publications are a subset of my scientific work that I consider to have contributed significantly towards. For a complete list of publications, '
+          'check out my [Google Scholar](https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en).\n\n')
 
         W('''<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>\n''')
         W('''<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>\n''')
-
-        W('<div class="category-box">\n%s\n</div>\n' % years)
 
         for year in sorted(list(self.pubs_dict.keys()), reverse=True):
             W('<a name="%s">&nbsp;</a>' % year)
