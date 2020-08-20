@@ -1,5 +1,5 @@
 - name: "psim"
   url:  "projects/psim/"
-  thumbnail:  ["/images/psim/thumbnail1.png",]
+  thumbnail:  ["/images/psim/thumbnail3.gif", "/images/psim/thumbnail1.png", "/images/psim/thumbnail2.png",]
   description: >-
-      A blog detailing my journey in creating a pool/billiards simulator called *psim*, that emphasizes realism.
+      A blog detailing my journey in creating a pool/billiards simulator called *psim*, that emphasizes realistic physics.
