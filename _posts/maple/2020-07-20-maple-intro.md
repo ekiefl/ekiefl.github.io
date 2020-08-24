@@ -204,11 +204,13 @@ Here is a demo of the new event detector.
 
 Overall, I am happy with how it works and ready to move on.
 
-### A generic event detector (ready for your use)
+## A generic audio detector
 
 I noticed at this point that nothing I have done so far has anything to do with dogs and barking.
 Being noncommital is a great quality in a codebase because it creates flexibility. So this may be
-useful to anyone with their own applications, I created a well-polished timepoint in the codebase.
+useful to anyone with their own applications, I created a well-polished branch of the repository
+that can be used for generic audio event detection. I reorganized everything into this single file
+so after installing `numpy` and `pyaudio`, you are ready to rumble:
 
 ```python
 #! /usr/bin/env python
@@ -295,6 +297,7 @@ class Monitor(object):
 
     def calibrate_background_noise(self):
         """Establish a background noise
+
         Calculates moving windows of power. If the ratio between standard deviation and mean is less
         than a threshold, signifying a constant level of noise, the mean power is chosen as the
         background. Otherwise, it is tried again. If it fails too many times, the threshold is
@@ -311,7 +314,7 @@ class Monitor(object):
             tries = 0
             while True:
                 for i in range(running_avg_domain):
-                    power_vals.append(utils.calc_power(self.read_chunk()))
+                    power_vals.append(calc_power(self.read_chunk()))
 
                 # Test if threshold met
                 power_vals = np.array(power_vals)
@@ -346,7 +349,14 @@ class Monitor(object):
             dt = self.dt,
         )
 
-        self.wait_for_event()
+        self.wait_for_events()
+
+
+    def wait_for_events(self):
+        while True:
+            self.wait_for_event()
+
+            # Do anything you want here
 
 
     def wait_for_event(self, log=True):
@@ -366,10 +376,11 @@ class Monitor(object):
 
     def stream_power_and_pitch_to_stdout(self, data):
         """Call for every chunk to create a primitive stream plot of power and pitch to stdout
+
         Pitch is indicated with 'o' bars, amplitude is indicated with '-'
         """
 
-        power = utils.calc_power(data)
+        power = calc_power(data)
         bars = "-"*int(1000*power/2**16)
 
         print("%05d %s" % (power, bars))
@@ -385,27 +396,35 @@ class Monitor(object):
 class Detector(object):
     def __init__(self, background_std, background, start_thresh, end_thresh, num_consecutive, seconds, dt, quiet=False):
         """Manages the detection of events
+
         Parameters
         ==========
         background_std : float
             The standard deviation of the background noise.
+
         background : float
             The mean of the background noise.
+
         start_thresh : float
             The number of standard deviations above the background noise that the power must exceed
             for a data point to be considered as the start of an event.
+
         end_thresh : float
             The number of standard deviations above the background noise that the power dip below
             for a data point to be considered as the end of an event.
+
         num_consecutive : int
             The number of frames needed that must consecutively be above the threshold to be
             considered the start of an event.
+
         seconds : float
             The number of seconds that must pass after the `end_thresh` condition is met in order
             for the event to end. If, during this time, the `start_thresh` condition is met, the
             ending of the event will be cancelled.
+
         dt : float
             The inverse sampling frequency, i.e the time captured by each frame.
+
         quiet : bool
             If True, nothing is sent to stdout
         """
@@ -513,7 +532,7 @@ class Detector(object):
         """Takes in data and updates event transition variables if need be"""
 
         # Calculate power of frame
-        power = utils.calc_power(data)
+        power = calc_power(data)
 
         self.update_event_states(power)
 
@@ -532,8 +551,56 @@ if __name__ == '__main__':
     s = Monitor()
     s.setup()
 ```
-([Browse code](https://github.com/ekiefl/maple/tree/cac03c052c399b4eb2365c35892e2156500e4397))
+([Browse code](https://github.com/ekiefl/maple/blob/generic-event-detector/main.py))
 
-The implementation of this new event detector is captured by a class called `Detector` which handles these
-state variables and updates them each audio frame. The logic is housed in this method:
+Using this code is as easy as saving this file to a script and running it. You can process the audio
+any way you want by changing the contents of `wait_for_events`.
 
+## Storing the data
+
+Detecting events is merely one side of the coin. Equally important is storing the data for
+downstream analyses. For this, a simple tab-delimited file would have sufficed if I only wanted to store basic
+knowledge like when the event happened, how long it lasted, and how loud it was. Maybe even for some
+more sophisticated stuff like what frequency ranges it dominated, what class it belonged to, etc.
+But instead, I uncompromisingly wanted to store as much data as possible, so it was important for me to store
+the audio itself. This way I'm guaranteed not to be bottlenecked by an incomplete data storing when
+I inevitably come up with interesting ways to analyze data that would require going back to the raw
+audio. So to me, it made sense to use a database structure. I have familarity with
+[SQLite](https://www.sqlite.org/index.html), so I wrote a bare-bones Python API to interface with
+SQLite that's based off of the `db` module of another repo I contribute to,
+[anvio](https://github.com/merenlab/anvio/blob/master/anvio/db.py). You can check out the API
+[here](https://github.com/ekiefl/maple/blob/e6f5e05ada3f336e090e484e01866e72c19e30bb/maple/data.py#L16).
+
+Here is a video that demos the database features:
+
+- Run master, open up DB to show events
+- Write script in real time to playback the audio
+
+## Trial #1
+
+- With everything in order, its time for the first trial.
+- Some real life pictures of the setup
+- microphone placement and stuff
+- results
+
+## Adding owner responses
+
+### Decision theory
+- keep things pragmatic
+- cooldowns, buildups, etc
+- briefly mention storage with sqlitebrowser screenshot
+
+### Recording audio
+
+- wrote a CLI utility to record owner responses
+- manually adjusted volume
+- here's some sample clips
+
+## Trial #2
+
+- highlight praises and scolds
+
+
+## Month-long data collection underway
+
+- look for next blogpost
