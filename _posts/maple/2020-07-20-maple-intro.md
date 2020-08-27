@@ -6,7 +6,7 @@ excerpt: "Creating an automated program for monitoring dog and responding to a d
 comments: true
 authors: [evan]
 image:
-  feature: psim/psim_banner.png
+  feature: maple/maple_banner.jpg
   display: true
 ---
 
@@ -24,8 +24,8 @@ By the end of this post, the program (which you have full, open-access to) will 
 using **PyAudio**, and make decisions on whether to praise or scold based on the dog barks. At this
 point, responding to the dog means playing a pre-recorded voice of the owner that is either of
 positive or negative sentiment.  The audio, statistics, and time of each bark, as well as statistics
-of owner responses are stored in a **SQLite** database. Finally, the program can generate a very
-primitive interactive plot using **[Plotly](https://plotly.com/python/)**.
+of owner responses are stored in a **SQLite** database. Finally, I'll show some bare-bones
+interactive plots of the results using **[Plotly](https://plotly.com/python/)**.
 
 ## Simple demo
 
@@ -635,18 +635,28 @@ def convert_array_to_blob(array):
 
 
 def convert_blob_to_array(blob, dtype=maple.ARRAY_DTYPE):
-    try:
-        return np.frombuffer(gzip.decompress(blob), dtype=dtype)
-    except:
-        return np.frombuffer(blob, dtype=dtype)
+    return np.frombuffer(gzip.decompress(blob), dtype=dtype)
 ```
 ([Browse code](https://github.com/ekiefl/maple/blob/e6f5e05ada3f336e090e484e01866e72c19e30bb/maple/utils.py#L52))
 
 ## Dog monitoring trial #1
 
 With both event detection and event storage solved, it's time for the first trial: leaving
-Maple in the confines of her cage and monitoring what happens. In anticipation, I've purchased a
-a good microphone for audio capture. Here are some pictures of the setup:
+Maple in the confines of her cage and monitoring what happens. Here she is in the crate just **moments before her worst fear
+is realized**: abandonment (for 30 whole minutes).
+
+[![in_cage]({{images}}/maple_in_cage.jpg)]({{images}}/maple_in_cage.jpg){:.center-img .width-90}
+
+About 10-feet away is a [Fifine K669B USB
+microphone](https://fifinemicrophone.com/blogs/news/k669b-faqs) I bought for the job. After double
+checking everything, I started the application and quietly left the apartment.
+
+[![sad]({{images}}/maple_sad.jpg)]({{images}}/maple_sad.jpg){:.center-img .width-60}
+
+30 minutes later ...
+
+
+
 
 ## Adding owner responses
 
