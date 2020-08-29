@@ -647,16 +647,45 @@ is realized**: abandonment (for 30 whole minutes).
 
 [![in_cage]({{images}}/maple_in_cage.jpg)]({{images}}/maple_in_cage.jpg){:.center-img .width-90}
 
-About 10-feet away is a [Fifine K669B USB
-microphone](https://fifinemicrophone.com/blogs/news/k669b-faqs) I bought for the job. After double
-checking everything, I started the application and quietly left the apartment.
+About 10-feet away lies a [Fifine K669B USB
+microphone](https://fifinemicrophone.com/blogs/news/k669b-faqs) I picked up for this project.
+After double checking everything, I start the application:
 
-[![sad]({{images}}/maple_sad.jpg)]({{images}}/maple_sad.jpg){:.center-img .width-60}
+```bash
+./main.py run
+```
+([Browse code](https://github.com/ekiefl/maple/blob/e6f5e05ada3f336e090e484e01866e72c19e30bb/main.py))
 
-30 minutes later ...
+... and then quietly leave the apartment.
 
+---------------------------------------------
 
+[![sad]({{images}}/maple_sad.jpg)]({{images}}/maple_sad.jpg){:.center-img .width-70}
 
+Before long,
+
+{% include audio_embed.html id="images/maple/maple-intro/whine.wav"%}
+"*Whine*" - Maple
+
+{% include audio_embed.html id="images/maple/maple-intro/howl.wav"%}
+"*Hoowwwwl*" - Maple
+
+{% include audio_embed.html id="images/maple/maple-intro/bark_bark_howwwwl.wav"%}
+"*Bark, bark, howwwwl*" - Maple
+
+Fast forward 30 minutes, I'm back with at the apartment with 39MB of data. At first I just wanted
+to do something simple in matplotlib but before I knew it I was learning the ins and outs of Plotly,
+and honestly, I'm super glad I spent the time. Now, generating a gorgeous interactive plot is as
+easy as:
+
+```bash
+./main.py analyze
+```
+([Browse code](https://github.com/ekiefl/maple/blob/e6f5e05ada3f336e090e484e01866e72c19e30bb/main.py))
+
+and look at this beauty (it's interactive):
+
+{% include iframe_embed.html id="images/maple/maple-intro/histogram_1.html"%}
 
 ## Adding owner responses
 
