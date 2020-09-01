@@ -24,8 +24,8 @@ By the end of this post, the program (which you have full, open-access to) will 
 using **PyAudio**, and make decisions on whether to praise or scold based on the dog barks. At this
 point, responding to the dog means playing a pre-recorded voice of the owner that is either of
 positive or negative sentiment.  The audio, statistics, and time of each bark, as well as statistics
-of owner responses are stored in a **SQLite** database. Finally, I'll show some bare-bones
-interactive plots of the results using **[Plotly](https://plotly.com/python/)**.
+of owner responses are stored in a **SQLite** database. Finally, I'll show some interactive plots of
+the results using **[Plotly](https://plotly.com/python/)**.
 
 ## Simple demo
 
@@ -658,34 +658,53 @@ After double checking everything, I start the application:
 
 ... and then quietly leave the apartment.
 
----------------------------------------------
-
 [![sad]({{images}}/maple_sad.jpg)]({{images}}/maple_sad.jpg){:.center-img .width-70}
 
-Before long,
+---------------------------------------------
 
-{% include audio_embed.html id="images/maple/maple-intro/whine.wav"%}
-"*Whine*" - Maple
 
-{% include audio_embed.html id="images/maple/maple-intro/howl.wav"%}
-"*Hoowwwwl*" - Maple
-
-{% include audio_embed.html id="images/maple/maple-intro/bark_bark_howwwwl.wav"%}
-"*Bark, bark, howwwwl*" - Maple
+### Results
 
 Fast forward 30 minutes, I'm back with at the apartment with 39MB of data. At first I just wanted
-to do something simple in matplotlib but before I knew it I was learning the ins and outs of Plotly,
-and honestly, I'm super glad I spent the time. Now, generating a gorgeous interactive plot is as
-easy as:
-
-```bash
-./main.py analyze
-```
-([Browse code](https://github.com/ekiefl/maple/blob/e6f5e05ada3f336e090e484e01866e72c19e30bb/main.py))
-
-and look at this beauty (it's interactive):
+to do something simple in matplotlib but **before I knew it I was learning the ins and outs of Plotly**,
+and honestly, I'm super glad I spent the time because look at this beauty (it's interactive):
 
 {% include iframe_embed.html id="images/maple/maple-intro/histogram_1.html"%}
+
+{:.warning}
+If you're on mobile that looked like trash, so here's a screenshot.
+
+[![plotly_screenshot]({{images}}/histogram_1_pic.png)]({{images}}/histogram_1_pic.png){:.center-img .width-90}
+
+The top plot shows the strength of the audio signal binned in 1-minute time chunks. And the bottom shows
+each individual event as a vertical line, where the line's length reflects how loud the event was
+(`pressure_sum`). The most striking thing is that **she has outbursts followed by periods of
+silence**. In this trial it seems like she has 3 main outbursts:
+
+[![timeline1]({{images}}/timeline_1.png)]({{images}}/timeline_1.png){:.center-img .width-90}
+
+**Each outburst is composed of whines, howls, and barks**. Most common is her whine:
+
+{:.warning}
+Audio files are shrill--turn your volume down.
+
+{% include audio_embed.html id="images/maple/maple-intro/whine.wav"%}
+"*i not liking this*" - Maple
+
+Then, of course, her coveted howl:
+
+{% include audio_embed.html id="images/maple/maple-intro/howl.wav"%}
+"*they forgot me and i need to call them back*" - Maple
+
+And finally, what is any outburst without her ear-piercing bark:
+
+{% include audio_embed.html id="images/maple/maple-intro/bark_bark_howwwwl.wav"%}
+"*i frantic and need to get out of this cage so I can find them*" - Maple
+
+Uncaptured in this trial, it is known that Maple is capable of yet another form of self-expression,
+in which she gnaws at the bars of her cage while grunting and foaming at the mouth. This is her most
+anxiety-ridden behavior and I was happy to see didn't do it--hopefully it is a sign she's already
+progressed.
 
 ## Adding owner responses
 
