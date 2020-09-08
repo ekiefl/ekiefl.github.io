@@ -13,7 +13,7 @@ image:
 {% capture images %}{{site.url}}/images/maple/maple-intro{% endcapture %}
 {% include _toc.html %}
 
-I recently moved in with my girlfriend who has a 6-month old puppy named Maple. She's a sweet girl
+I recently moved in with my girlfriend (Kourtney) who has a 6-month old puppy named Maple. She's a sweet girl
 (the puppy), however she was born in the COVID era, and that comes with some behavioral challenges.
 The biggest problem is that she's developed an unrealistic assumption that she can be with us 100%
 of the time. And when that unrealistic expectation is challenged by us leaving the apartment, she
@@ -575,7 +575,10 @@ supports basic reading and writing of data, as well as playing back stored audio
 out
 [here](https://github.com/ekiefl/maple/blob/e6f5e05ada3f336e090e484e01866e72c19e30bb/maple/data.py#L16).
 
-Here is a video that demos the database features:
+Here is a demo of the database features:
+
+YOUTUBE
+([Browse code](https://github.com/ekiefl/maple/tree/f1d476eb59011eebd5f38fc29578b3a09d6ef42a))
 
 
 In summary,
@@ -660,14 +663,32 @@ After double checking everything, I start the application:
 
 [![sad]({{images}}/maple_sad.jpg)]({{images}}/maple_sad.jpg){:.center-img .width-70}
 
----------------------------------------------
-
 
 ### Results
 
-Fast forward 30 minutes, I'm back with at the apartment with 39MB of data. At first I just wanted
-to do something simple in matplotlib but **before I knew it I was learning the ins and outs of Plotly**,
-and honestly, I'm super glad I spent the time because look at this beauty (it's interactive):
+Fast forward 30 minutes, I'm back with at the apartment with 39MB of data. At first I just wanted to
+do something simple in matplotlib but **before I knew it I was learning the ins and outs of
+Plotly**, which can be used to make interactive plots. I'm super glad I spent the time because now I
+can view an interactive plot for each session. The plot shows up in your browser after typing
+
+```bash
+./main.py analyze
+```
+
+By default it will pick the last session, but you can pick any session by first listing saved
+sessions:
+
+```bash
+./main.py analyze --list
+```
+
+and then choosing a specific session, like:
+
+```bash
+./main.py analyze --session 2020_08_19_16_45_18
+```
+
+Doing so, yields this:
 
 {% include iframe_embed.html id="images/maple/maple-intro/histogram_1.html"%}
 
@@ -696,34 +717,382 @@ Then, of course, her coveted howl:
 {% include audio_embed.html id="images/maple/maple-intro/howl.wav"%}
 "*they forgot me and i need to call them back*" - Maple
 
-And finally, what is any outburst without her ear-piercing bark:
+And finally, her ear-piercing bark (trademarked):
 
 {% include audio_embed.html id="images/maple/maple-intro/bark_bark_howwwwl.wav"%}
 "*i frantic and need to get out of this cage so I can find them*" - Maple
 
 Uncaptured in this trial, it is known that Maple is capable of yet another form of self-expression,
 in which she gnaws at the bars of her cage while grunting and foaming at the mouth. This is her most
-anxiety-ridden behavior and I was happy to see didn't do it--hopefully it is a sign she's already
-progressed.
+anxiety-ridden behavior and I was happy to see she didn't do it--hopefully it is a sign she's already
+progressed even before data acquisition.
 
 ## Adding owner responses
 
-### Decision theory
-- keep things pragmatic
-- cooldowns, buildups, etc
-- briefly mention storage with sqlitebrowser screenshot
+**Missing from the first trial is any mechanism in which the program can "intervene"**, either by
+praising or scolding based on Maple's behavior. Since Maple, like most other dogs, is very
+treat motivated, I think it would be excellent to create a treat dispenser that gives Maple treats
+when she's quiet. Figuring out the details of that is currently in the works. Until then, I decided
+that it would be interesting to try and **influence her behavior by playing pre-recorded audio** of
+Kourtney and I either praising or scolding her based on the current state of her behavior.
 
-### Recording audio
+This venture was broken up into two parts: (1) creating something that can record the dog owner's
+voice and (2) deciding if and when to intervene.
 
-- wrote a CLI utility to record owner responses
-- manually adjusted volume
-- here's some sample clips
+### Recording voices
+
+At first I thought, "*I'll just record a stream of audio in QuickTime player where I praise and
+scold Maple, chop it up into individual audio clips using Logic Pro X, and then move them into
+a folder that the application expects to find such audio*". But remember when I was talking about
+non-committal code being flexible? I realized **my codebase already does what I
+want**: it records and clips audio events. This specifically happens in a class called `Monitor`.
+The class is big, so I won't paste it here, but one can interact with the class in the following
+way.
+
+```python
+monitor = Monitor()
+event_audio = monitor.wait_for_event()
+```
+
+Calling the `wait_for_event` method of `Monitor` will wait patiently until the start of an event is
+detected. Then it will record the audio until the event ends according to the "event detection
+criteria" discussed already. After the event ends, it returns the audio, which in the above code is
+captured by the variable `event_audio`. So to harness this pre-existing functionality, I simply
+created another class called `RecordOwnerVoice`, which inherits `Monitor`. `RecordOwnerVoice`, you
+guessed it, records the owner's voice, and it does it by asking a series of questions through a very
+simple command line interface (CLI). `Monitor` was written as a generic event detector and contains
+no code or variable names that even suggest it is specifically for dog barks. Therefore it can also
+be used for *human* barks. Thus by inheriting `Monitor`, I didn't have to write a single line of
+code related to recording audio. In fact, almost all the code in `RecordOwnerVoice` pertains to
+management of the CLI menu logic:
+
+```python
+class RecordOwnerVoice(events.Monitor):
+    """Record and store audio clips to yell at your dog"""
+
+    def __init__(self, args=argparse.Namespace(quiet=True)):
+        events.Monitor.__init__(self, args)
+
+        self.menu = {
+            'home': {
+                'msg': 'Press [r] to record a new sound, Press [q] to quit. Response: ',
+                'function': self.menu_handle,
+            },
+            'review': {
+                'msg': 'Recording finished. [l] to listen, [r] to retry, [k] to keep. Press [q] to quit. Response: ',
+                'function': self.review_handle
+            },
+            'name': {
+                'msg': 'Great! type a name for your audio file (just a name, no extension). Response: ',
+                'function': self.name_handle
+            },
+            'sentiment': {
+                'msg': 'Final question. Choose the sentiment: [g] for good, [b] for bad, [w] for warn. Press [q] to quit. Response: ',
+                'function': self.sentiment_handle
+            },
+        }
+
+        self.state = 'home'
+        self.recording = None
+
+        self.recs = OwnerRecordings()
+        print(f"You have {self.recs.num} recordings.")
+
+
+    def run(self):
+        self.setup()
+
+        while True:
+            self.menu[self.state]['function'](input(self.menu[self.state]['msg']))
+            print()
+
+            if self.state == 'done':
+                print('Bye.')
+                break
+
+
+    def menu_handle(self, response):
+        if response == 'r':
+            print('Listening for voice input...')
+            self.recording = self.wait_for_event()
+            self.state = 'review'
+        elif response == 'q':
+            self.state = 'done'
+        else:
+            print('invalid input')
+
+
+    def review_handle(self, response):
+        if response == 'l':
+            print('Played recording...')
+            print(self.recording.dtype)
+            self.recording = audio.denoise(self.recording, self.background_audio)
+            self.recording = audio.bandpass(self.recording, 150, 20000)
+            sd.play(self.recording, blocking=True)
+        elif response == 'r':
+            print('Listening for voice input...')
+            self.recording = self.wait_for_event()
+        elif response == 'k':
+            self.state = 'name'
+        elif response == 'q':
+            self.state = 'done'
+        else:
+            print('invalid input')
+
+
+    def name_handle(self, response):
+        if response == '':
+            print('Try again.')
+        elif ' ' in response:
+            print('No spaces are allowed. Try again.')
+        elif response == 'q':
+            self.state = 'done'
+        else:
+            self.name = response
+            self.state = 'sentiment'
+
+
+    def sentiment_handle(self, response):
+        if response == 'w':
+            sentiment = 'warn'
+        elif response == 'g':
+            sentiment = 'good'
+        elif response == 'b':
+            sentiment = 'bad'
+        elif response == 'q':
+            self.state = 'done'
+        else:
+            print('invalid input')
+            return
+
+        self.recs.write(self.name, self.recording, maple.RATE, sentiment)
+        print('Stored voice input...')
+        print(f"You now have {self.recs.num} recordings.")
+        self.state = 'home'
+```
+
+Here is a demo of it in action:
+
+YOUTUBE
+([Browse code](https://github.com/ekiefl/maple/tree/f1d476eb59011eebd5f38fc29578b3a09d6ef42a))
+
+### Decision logic
+
+Now I've got 30 recordings of Kourtney and I either praising or scolding Maple. Here is an example
+of a praise:
+
+{% include audio_embed.html id="images/maple/maple-intro/good_GIRL_maplee.wav"%}
+
+And here is a scold:
+
+{% include audio_embed.html id="images/maple/maple-intro/ah_ah_no.wav"%}
+
+The next thing to do is figure out when these should be sprinkled in based on Maple's behavior. This
+is an endless hole, and in the interest of keeping things pragmatic, I wanted to develop the most
+simple heuristics possible that got the job done.
+
+#### Praise
+
+First up, when to praise... To get a sense of things, I studied the interactive plots and decided
+upon 4 parameters for praising:
+
+1. **`praise_response_window`** is how big of a time window should be look at when considering to
+   praise. I chose a default of 2 minutes.
+2. **`praise_max_events`** is the maximum number of events that can be within
+   `praise_response_window` in order to consider praising. In other words, too many events equals no
+   praise. I chose a default of 10.
+3. **`praise_max_pressure_sum`** sets a threshold for the loudest that any given event in
+   `praise_response_window` can be in order to consider praising. If any event has a `pressure_sum`
+   (read: loudness) above this value, no praise for you. I chose a default of 0.05, but the
+   magnitude is arbitrary and depends on the microphone, its placement, and its settings. To keep it
+   consistent, I place the microphone in the same place each time and keep all settings consistent.
+4. **`praise_cooldown`** is how much time has passed since the last praise to in order consider
+   praising. I chose a default of 2 minutes. This prevents rapid-fire praising.
+
+Together, these criteria create the following flowchart, which is processed after each event, or
+every 10 seconds (which happens first):
+
+[![flow3]({{images}}/praise_flowchart.jpg)]({{images}}/praise_flowchart.jpg){:.center-img .width-70}
+
+#### Scold
+
+Next, we have scolding. I decided to use these 4 parameters for scolding:
+
+1. **`scold_response_window`** is how big of a time window should be look at when considering to
+   scold. I chose a default of 1 minute.
+2. **`scold_threshold`** sets a threshold for whether or not enough noise has been made within
+   `scold_response_window` to consider scolding. If the sum of `pressure_sum` values for all events
+   within `scold_response_window` exceeds this value, the threshold is passed and scolding is
+   considered. I chose a default of 1.8. For context, in the first trial you can see in the
+   interactive plot above that four 1-minute intervals satisfy this interval.
+3. **`scold_trigger`** defines how loud the triggering event has to be in order to be in order to
+   scold. If the `pressure_sum` of the last event exceeds this value, and the `scold_threshold` is
+   also met, Maple will be scolded. This is to ensure that she is scolded immediately after she
+   makes a loud sound, rather than after a wimper. I chose a default value of 0.15.
+4. **`scold_cooldown`** is how much time has passed since the last scold to in order consider
+   scolding. I chose a default of 3 minutes. This prevents rapid-fire scolding.
+
+Together, these criteria create the following flowchart, which is processed after each event:
+
+[![flow3]({{images}}/praise_flowchart.jpg)]({{images}}/praise_flowchart.jpg){:.center-img .width-70}
+
+#### Implementation
+
+I implemented the decision logic for praising and scolding. If the program decides to respond, a
+clip with the appropriate sentiment is randomly chosen and played. To store these "owner" events, I
+added an additional table to the session databases that includes all of the owner response data:
+
+[![flow3]({{images}}/owner_response_db.png)]({{images}}/owner_response_db.png){:.center-img
+.width-90}
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Save the headache, consolidate your tunables</span>
+
+By this point in the project, I have a lot of tunable variables, and so I wanted to consolidate them
+in one place. To do this, I created a YAML file called `config` that contains all of my tunable
+parameters. It looks like this:
+
+```yaml
+[general]
+# microphone
+microphone = Built-in Microphone
+# Recalibrate after this many minutes has passed
+recalibration_rate = 10000
+# Store events into DB whenever this many dog events occur. No reason to set this lower than 100
+max_buffer_size = 100
+
+[respond]
+# Should there be owner responses? If 0, all other parameters in this section are irrelevant
+should_respond = 1
+# Should the owner praise?
+praise = 1
+# The timeframe when considering if to praise (minutes)
+praise_response_window = 2
+# The max number of events that should be within timeframe to consider praising
+praise_max_events = 10
+# The maximum pressure sum of any individual event in the timeframe to consider praising
+praise_max_pressure_sum = 0.01
+# After praising, wait this many minutes to consider praising again.
+praise_cooldown = 2
+# Should the owner scold?
+scold = 0
+# The timeframe when considering if to scold (minutes)
+scold_response_window = 1.0
+# The sum of pressure sums in timeframe to consider scolding
+scold_threshold = 1.8
+# The pressure sum of the event required to trigger scolding
+scold_trigger = 0.15
+# After scolding, wait this many minutes to consider scolding again.
+scold_cooldown = 3
+
+[calibration]
+# The length of the audio in seconds that is used to calibrate
+calibration_time = 3
+# The standard deviation divided by the mean of the audio signal must be less than this value to be considered calibrated
+calibration_threshold = 0.3
+# After this many failed attemps, the calibration_threshold will be increased by 0.1 and the process is repeated.
+calibration_tries = 4
+
+[detector]
+# Standard deviations above background noise to consider start an event
+event_start_threshold = 4
+# The number of chunks in a row that must exceed event_start_threshold in order to start an event
+num_consecutive = 4
+# Standard deviations above background noise to end an event
+event_end_threshold = 4
+# The number of seconds after a chunk dips below event_end_threshold that must pass for the event to
+# end. If during this period a chunk exceeds event_start_threshold, the event is sustained
+seconds = 0.25
+# If an event lasts longer than this many seconds, everything is recalibrated
+hang_time = 20
+
+[analysis]
+# how many seconds should each bin be
+bin_size = 60
+```
+
+To keep things organized, they are placed under section headings like `[general]`, `[analysis]`,
+etc. To make these parameters readily accessible in my multi-file project, I added the following to
+the module's `__init__.py`:
+
+```python
+import configparser
+import ast
+
+# Load up the configuration file, store as nested dictionary `config`
+config_path = Path(__file__).parent.parent / 'config'
+config_obj = configparser.ConfigParser()
+config_obj.read(config_path)
+config = {}
+for section in config_obj.sections():
+    config[section] = {}
+    for k, v in config_obj[section].items():
+        try:
+            config[section][k] = ast.literal_eval(v)
+        except:
+            config[section][k] = v
+```
+([Browse code](https://github.com/ekiefl/maple/blob/f1d476eb59011eebd5f38fc29578b3a09d6ef42a/maple/__init__.py#L19))
+
+`configparser` is in the built-in library and parses `config`, and `ast` tries its best to interpret
+the parameter values as either strings, integers, or floats. By putting this in the `__init__.py`
+file, whenever `maple` is imported, parameters in `config` are immediately accessible:
+
+```python
+>>> import maple
+>>> maple.config
+{'general': {'microphone': 'Built-in Microphone', 'recalibration_rate': 10000, 'max_buffer_size':
+100}, 'respond': {'should_respond': 1, 'praise': 1, 'praise_response_window': 2,
+'praise_max_events': 10, 'praise_max_pressure_sum': 0.01, 'praise_cooldown': 2, 'scold': 0,
+'scold_response_window': 1.0, 'scold_threshold': 1.8, 'scold_trigger': 0.15, 'scold_cooldown': 3,
+'warn': 0, 'warn_response_window': 0.25, 'warn_cooldown': 1}, 'calibration': {'calibration_time': 3,
+'calibration_threshold': 0.3, 'calibration_tries': 4}, 'detector': {'event_start_threshold': 4,
+'num_consecutive': 4, 'event_end_threshold': 4, 'seconds': 0.25, 'hang_time': 20}, 'analysis':
+{'bin_size': 60}}
+```
+
+Consolidating your variables into an easy-to-access location should not be considered anything but essential.
+</div>
 
 ## Trial #2
 
-- highlight praises and scolds
+With what is hopefully a properly implemented praise/scold framework, I decided it was time for
+trial #2. The intention of this trial is to do as I did previously, except this time **Maple will be
+scolded and/or praised** based on the decision logic outlined above.
 
+Will praising help quiet her down, or will it initiate outbreaks? Will scolding curb an outbreak or
+aggravate her? I was so excited to find out.
 
-## Month-long data collection underway
+I set up the speaker and placed it near her. I made sure the praises were soft and soothing while
+the scold clips were loud and assertive while not being scary loud. When I was happy, I started the
+run and left the apartment.
 
-- look for next blogpost
+[![sad]({{images}}/maple_sad.jpg)]({{images}}/maple_sad.jpg){:.center-img .width-70}
+
+One hour after Maple's least favorite pastime, here are the results:
+
+{% include iframe_embed.html id="images/maple/maple-intro/histogram_2.html"%}
+
+For mobile readers, here is a screenshot:
+
+[![flow3]({{images}}/praise_flowchart.jpg)]({{images}}/praise_flowchart.jpg){:.center-img .width-90}
+
+The plot is just as before, except scolds (red) and praises (green) have been overlaid in the bottom
+plot. Within the first 15 minutes, Maple clearly has two very loud outbursts. To my delight as a
+programmer, Maple was indeed scolded during these two outbursts. But unfortunately, it seems like
+scolding if anything only aggravated her.
+
+From this single session, it is very difficult to say whether or not scolding/praising really makes
+a difference. To really address this question, I need a long-term data analysis that spans over many
+sessions. Regardless of the lack of data, I think this trial proves that the decision logic for
+praising and scolding is not out of whack.
+
+## A longitundinal study is underway
+
+So far, I've developed a considerable framework for data acquisition and I'm very happy with
+the infastructure. Yet at this point there is almost no data to work with, so over the next few
+months, I plan to measure Maple's activity level and see how she progresses over time. Once I feel
+there are enough data, my plan is to analyze how she has (hopefully) improved, and whether
+or not verbal praising and/or scolding is effective. In the meantime I may begin working on crafting a DIY
+treat dispenser. Regardless of what happens next, I'll detail it all in the next blog post of this
+series, which I'll link here.
