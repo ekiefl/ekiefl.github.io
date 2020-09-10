@@ -21,9 +21,9 @@ barks. Loudly. **I wanted to create an application written in Python that monito
 barks**.
 
 By the end of this post, the program (which you have full, open-access to) will detect dog barks
-using **PyAudio**, and make decisions on whether to praise or scold based on the dog barks. At this
-point, responding to the dog means playing a pre-recorded voice of the owner that is either of
-positive or negative sentiment.  The audio, statistics, and time of each bark, as well as statistics
+using **PyAudio** and make decisions on whether to praise or scold the dog based on its behavior. At this
+point, both praising and scolding means playing a pre-recorded voice of the owner that is either of
+positive or negative sentiment. The audio, statistics, and time of each bark, as well as statistics
 of owner responses are stored in a **SQLite** database. Finally, I'll show some interactive plots of
 the results using **[Plotly](https://plotly.com/python/)**.
 
@@ -104,23 +104,21 @@ Here's a demo:
 
 ## Event detection
 
-With a bare-bones script that demos a live stream of primitive audio processing, I then decided to
-focus on detecting events, since in order to rationally respond to your dog, you need to be able to
-detect when it is barking.  Additionally, this will eliminate the need to sift through large audio
-files in any post-processing steps and to avoid storing large audio files that are mostly *not* dogs
-barking (hopefully).
+With a bare-bones script that demos a live output of audio amplitude and/or frequency, it was time
+to get serious: detecting events. I wanted to be able to detect events since in order to rationally
+respond to your dog, you need to be able to detect when it is barking.
 
 **Events are basically anomalies in the background noise**, and so to detect events, we need to
 properly distinguish background from signal. To do this, I wrote a calibration method that runs at
 the start of the program. The premise is to wait until the audio signal reaches an equilibrium, and
-then measures the mean and standard deviation of signal strength. Equilibrium is established by demanding
-that the coefficient of variation (the standard deviation divided by the mean, \$\sigma/\mu\$) is
-less than some threshold value. The background mean and standard deviation that satisfied this
-constrant for equilibrium can then be used to
-distinguish signal from noise.
+then measures the mean (\$ \mu \$) and standard deviation (\$ \sigma \$) of the signal strength.  I
+consider equilibrium to be established by demanding that the coefficient of variation (\$ \sigma/\mu
+\$) is less than some threshold value, since a low coefficient of variation means a stable signal.
+The background mean and standard deviation that satisfied this constrant for equilibrium can then be
+used to distinguish signal from noise.
 
 We can do some back of the envelope calculations to show that if the signal is drawn from a Normal
-distribution, there is a ~16% chance that any given datapoint in the signal will exceed 1 standard
+distribution (a bell-shaped curve), there is a ~16% chance that any given datapoint in the signal will exceed 1 standard
 deviation about the mean (\$\mu + \sigma\$). That probability becomes ~2.5% that it will exceed 2
 standard deviations (\$\mu + 2\sigma\$) and ~0.5% that it exceeds 3 standard deviations (\$\mu +
 3\sigma\$). As a first step, I went ahead and **wrote a detector that detects the start of an event
@@ -141,9 +139,10 @@ from where the snippet or demo was taken.
 As mentioned in the video, there are a lot of false-positives for the ends of events. In other
 words, **many of my spoken sentences were being split up into multiple events**, even when there was
 little or no break in my speaking rhythm. This was happening because the criterion for events ending
-was too simple, and based on a single audio frame (if the mean audio signal of the frame drops below
-\$\mu + 2\sigma\$, the event ends). This is problematic because each frame is only a couple of
-milliseconds. To more accurately depict the start and stop of events, I wanted to create criteria
+was too simple, and based on a single audio frame (reminder: the event ends if the mean audio signal
+of an audio frame drops below \$\mu + 2\sigma\$, where \$ \mu \$ and \$ \sigma \$ are the mean and
+standard deviation of the background noise). This is problematic because each frame is only a couple
+of milliseconds. To more accurately depict the start and stop of events, I wanted to create criteria
 that spanned multiple frames.
 
 In the above video, the program has just 1 state variable called `in_event`, and its possible values
@@ -151,15 +150,18 @@ are either `True` or `False`. Here is a flowchart of the transitions possible:
 
 [![flow1]({{images}}/state_flow_1.jpg)]({{images}}/state_flow_1.jpg){:.center-img .width-70}
 
+Soon we'll see that making a more robust event detector inevitably complicates this simple picture.
+
 ### Event start criterion
 
-In the video, transitioning from `in_event == False` to `in_event == True` occurred whenever a frame had a
-mean signal 3 standard deviations above the mean. Let's call this threshold value \$X\$ for
+In the video, transitioning from `in_event == False` to `in_event == True` occurred whenever a frame
+had a mean signal 3 standard deviations above the mean. Let's call this threshold value \$X\$ for
 convenience. My new criterion is that there must be \$N\$ consecutive frames that are all above
 \$X\$. If \$N\$ consecutive frames all meet this threshold, then the event start is attributed to
-the first frame in this frame sequence. **This effectively guards against false-positives when loud
-but short (~ millisecond) sounds are made**, which trigger an event. The stringency is thus controlled
-by \$N\$: the lower \$N\$ is, the more false-positives in event starts you allow.
+the first frame in this frame sequence. **Requiring consecutive frames to pass the threshold
+effectively guards against false-positives when loud but short (~ millisecond) sounds are made**,
+which trigger an event. The stringency is thus controlled by \$N\$: the lower \$N\$ is, the more
+false-positives in event starts you allow.
 
 Programatically, whenever a frame's mean signal exceeds \$X\$ while `in_event == False`, a second
 state variable `in_on_transition` is set to `True`.  Whenever `in_on_transition == True`, it
@@ -195,6 +197,8 @@ flow chart:
 
 [![flow2]({{images}}/state_flow_2.jpg)]({{images}}/state_flow_2.jpg){:.center-img .width-70}
 
+It's a little more complicated, but there is a pleasant symmetry.
+
 
 ### Results
 
@@ -208,17 +212,16 @@ Overall, I am happy with how it works and ready to move on.
 ## A generic audio detector
 
 I noticed at this point that nothing I have done so far has anything to do with dogs and barking.
-**Being noncommital is a great quality in a codebase because it creates flexibility**. So this may be
-useful to anyone with their own applications, I created a well-polished branch of the repository
-that can be used for generic audio event detection. I reorganized everything into this single file
-so after installing `numpy` and `pyaudio`, you are ready to rumble:
+**Being noncommital is a great quality in a codebase because it creates flexibility**. For the
+purpose of making this useful to anyone with their own applications, I created a well-polished
+branch of the repository that can be used for generic audio event detection. I reorganized
+everything into a single file, so after installing `numpy` and `pyaudio`, you are ready to rumble:
 
 ```python
 #! /usr/bin/env python
 
 import numpy as np
 import pyaudio
-import argparse
 
 CHUNK = 2**11
 RATE = 44100
@@ -614,18 +617,16 @@ event_id|t_start|t_end|t_len|energy|power|pressure_mean|pressure_sum|class|audio
 - `t_start` is the datetime of the event's start.
 - `t_end` is the datetime of the event's end.
 - `t_len` is the duration of the event in seconds.
-- `energy` is the signal energy, i.e. the sum of squared signal \$ \sum_{i}^{n} S_i(t)^2 \$, where \$ S(t) \$ is the audio signal. This value gets bigger the louder event is, or the longer the event lasts.
+- `energy` is the signal energy, *i.e.* the sum of squared signal \$ \sum_{i}^{n} S_i(t)^2 \$, where \$ S(t) \$ is the audio signal. This value increases the louder the event is, or the longer the event lasts.
   Through my experience it does not seem to scale proportionally with human-perceived "loudness".
-  Side note: perceived loudness is something I wanted to have a metric for, but it is extremely
-  difficult to pin down without extremely detailed knowledge of the microphone's physics.
-- `power` is the `energy` divided by the `t_len`. This shouldn't surprise anyone who knows that the time
-  derivative of energy is power.
+  (Side note: I wanted to be able to say how many decibels each event was, but this is extremely
+  difficult to pin down without detailed knowledge of the microphone's physics and circuitry).
+- `power` is the `energy` divided by the `t_len`, *i.e.* power is the time derivative of energy.
 - `pressure_mean` is a quantity I feel scales proportionally better with
   human-perceived loudness. It is defined as \$ \sum_{i}^{n} |S_i(t)|/n \$.
-- test
 - `pressure_sum` is just like `pressure_mean`, except it is not normalized by the length of the event. It is defined as \$ \sum_{i}^{n} \| S_i(t) \| \$.
 - `class` merely symbolizes my aspirations of one day classifying the events. For example as bark,
-  whine, dig, howl, etc. For now, it is blank.
+  "whine", "dig", "howl", etc. For now, it is blank.
 - `audio` is a gzipped binary object of the numpy array that represents the audio. The compression
   and decompression is carried out by these two functions:
 
@@ -667,9 +668,11 @@ After double checking everything, I start the application:
 ### Results
 
 Fast forward 30 minutes, I'm back with at the apartment with 39MB of data. At first I just wanted to
-do something simple in matplotlib but **before I knew it I was learning the ins and outs of
-Plotly**, which can be used to make interactive plots. I'm super glad I spent the time because now I
-can view an interactive plot for each session. The plot shows up in your browser after typing
+visualize on a line where all the events took place with something I'm familiar with, like
+[matplotlib](https://matplotlib.org/) or [seaborn](https://seaborn.pydata.org/), but after a quick
+Google search, **before I knew it I was learning the basics of [Plotly](https://plotly.com/python/)**,
+which can be used to make interactive plots. I'm super glad I spent the time because now I can view
+an interactive plot for each session. The plot shows up in your browser after typing
 
 ```bash
 ./main.py analyze
@@ -697,9 +700,9 @@ If you're on mobile that looked like trash, so here's a screenshot.
 
 [![plotly_screenshot]({{images}}/histogram_1_pic.png)]({{images}}/histogram_1_pic.png){:.center-img .width-90}
 
-The top plot shows the strength of the audio signal binned in 1-minute time chunks. And the bottom shows
+The top plot shows how loud Maple was each minute. And the bottom shows
 each individual event as a vertical line, where the line's length reflects how loud the event was
-(`pressure_sum`). The most striking thing is that **she has outbursts followed by periods of
+(`pressure_sum`). The most striking thing is that **Maple has outbursts followed by periods of
 silence**. In this trial it seems like she has 3 main outbursts:
 
 [![timeline1]({{images}}/timeline_1.png)]({{images}}/timeline_1.png){:.center-img .width-90}
@@ -725,7 +728,7 @@ And finally, her ear-piercing bark (trademarked):
 Uncaptured in this trial, it is known that Maple is capable of yet another form of self-expression,
 in which she gnaws at the bars of her cage while grunting and foaming at the mouth. This is her most
 anxiety-ridden behavior and I was happy to see she didn't do it--hopefully it is a sign she's already
-progressed even before data acquisition.
+progressed even before I had a chance to acquire data.
 
 ## Adding owner responses
 
@@ -760,9 +763,7 @@ criteria" discussed already. After the event ends, it returns the audio, which i
 captured by the variable `event_audio`. So to harness this pre-existing functionality, I simply
 created another class called `RecordOwnerVoice`, which inherits `Monitor`. `RecordOwnerVoice`, you
 guessed it, records the owner's voice, and it does it by asking a series of questions through a very
-simple command line interface (CLI). `Monitor` was written as a generic event detector and contains
-no code or variable names that even suggest it is specifically for dog barks. Therefore it can also
-be used for *human* barks. Thus by inheriting `Monitor`, I didn't have to write a single line of
+simple command line interface (CLI). By inheriting `Monitor`, I didn't have to write a single line of
 code related to recording audio. In fact, almost all the code in `RecordOwnerVoice` pertains to
 management of the CLI menu logic:
 
@@ -896,14 +897,14 @@ simple heuristics possible that got the job done.
 First up, when to praise... To get a sense of things, I studied the interactive plots and decided
 upon 4 parameters for praising:
 
-1. **`praise_response_window`** is how big of a time window should be look at when considering to
+1. **`praise_response_window`** is how big of a time window should be looked at when considering to
    praise. I chose a default of 2 minutes.
 2. **`praise_max_events`** is the maximum number of events that can be within
    `praise_response_window` in order to consider praising. In other words, too many events equals no
    praise. I chose a default of 10.
 3. **`praise_max_pressure_sum`** sets a threshold for the loudest that any given event in
    `praise_response_window` can be in order to consider praising. If any event has a `pressure_sum`
-   (read: loudness) above this value, no praise for you. I chose a default of 0.05, but the
+   (read: loudness) above this value, no praise for you. I chose a default of 0.15, but the
    magnitude is arbitrary and depends on the microphone, its placement, and its settings. To keep it
    consistent, I place the microphone in the same place each time and keep all settings consistent.
 4. **`praise_cooldown`** is how much time has passed since the last praise to in order consider
@@ -918,23 +919,23 @@ every 10 seconds (which happens first):
 
 Next, we have scolding. I decided to use these 4 parameters for scolding:
 
-1. **`scold_response_window`** is how big of a time window should be look at when considering to
+1. **`scold_response_window`** is how big of a time window should be looked at when considering to
    scold. I chose a default of 1 minute.
 2. **`scold_threshold`** sets a threshold for whether or not enough noise has been made within
    `scold_response_window` to consider scolding. If the sum of `pressure_sum` values for all events
    within `scold_response_window` exceeds this value, the threshold is passed and scolding is
-   considered. I chose a default of 1.8. For context, in the first trial you can see in the
-   interactive plot above that four 1-minute intervals satisfy this interval.
+   considered. I chose a default of 1.8. For context, in the first trial you can see this was satisfied
+   4 times.
 3. **`scold_trigger`** defines how loud the triggering event has to be in order to be in order to
    scold. If the `pressure_sum` of the last event exceeds this value, and the `scold_threshold` is
-   also met, Maple will be scolded. This is to ensure that she is scolded immediately after she
-   makes a loud sound, rather than after a wimper. I chose a default value of 0.15.
+   also met, Maple will be scolded. This is to ensure that she is scolded immediately after an
+   especially loud sound, rather than after a wimper. I chose a default value of 0.15.
 4. **`scold_cooldown`** is how much time has passed since the last scold to in order consider
    scolding. I chose a default of 3 minutes. This prevents rapid-fire scolding.
 
 Together, these criteria create the following flowchart, which is processed after each event:
 
-[![flow3]({{images}}/praise_flowchart.jpg)]({{images}}/praise_flowchart.jpg){:.center-img .width-70}
+[![flow3]({{images}}/scold_flowchart.jpg)]({{images}}/scold_flowchart.jpg){:.center-img .width-70}
 
 #### Implementation
 
@@ -1051,7 +1052,7 @@ file, whenever `maple` is imported, parameters in `config` are immediately acces
 {'bin_size': 60}}
 ```
 
-Consolidating your variables into an easy-to-access location should not be considered anything but essential.
+Consolidating your variables into an easy-to-access location is essential.
 </div>
 
 ## Trial #2
@@ -1075,17 +1076,17 @@ One hour after Maple's least favorite pastime, here are the results:
 
 For mobile readers, here is a screenshot:
 
-[![flow3]({{images}}/praise_flowchart.jpg)]({{images}}/praise_flowchart.jpg){:.center-img .width-90}
+[![histo2pic]({{images}}/histogram_2_pic.png)]({{images}}/histogram_2_pic.png){:.center-img .width-90}
 
 The plot is just as before, except scolds (red) and praises (green) have been overlaid in the bottom
 plot. Within the first 15 minutes, Maple clearly has two very loud outbursts. To my delight as a
 programmer, Maple was indeed scolded during these two outbursts. But unfortunately, it seems like
-scolding if anything only aggravated her.
+scolding if anything only aggravated her. I am also happy to see that praises occur during periods
+of silence.
 
-From this single session, it is very difficult to say whether or not scolding/praising really makes
-a difference. To really address this question, I need a long-term data analysis that spans over many
-sessions. Regardless of the lack of data, I think this trial proves that the decision logic for
-praising and scolding is not out of whack.
+Although this data is too anecdotal to say whether or not scolding/praising really makes a
+difference, it at least verifies that the decision logic for praising and scolding makes sense, and
+I'm not totally off base. But to really do some interesting stuff, I'm going to need a lot more data...
 
 ## A longitundinal study is underway
 
@@ -1096,3 +1097,5 @@ there are enough data, my plan is to analyze how she has (hopefully) improved, a
 or not verbal praising and/or scolding is effective. In the meantime I may begin working on crafting a DIY
 treat dispenser. Regardless of what happens next, I'll detail it all in the next blog post of this
 series, which I'll link here.
+
+Bye.
