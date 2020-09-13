@@ -580,9 +580,8 @@ out
 
 Here is a demo of the database features:
 
-YOUTUBE
+{% include youtube_embed.html id="eEKg265SXfs" %}
 ([Browse code](https://github.com/ekiefl/maple/tree/f1d476eb59011eebd5f38fc29578b3a09d6ef42a))
-
 
 In summary,
 
@@ -874,7 +873,7 @@ class RecordOwnerVoice(events.Monitor):
 
 Here is a demo of it in action:
 
-YOUTUBE
+{% include youtube_embed.html id="F-clv3LGKHY" %}
 ([Browse code](https://github.com/ekiefl/maple/tree/f1d476eb59011eebd5f38fc29578b3a09d6ef42a))
 
 ### Decision logic
