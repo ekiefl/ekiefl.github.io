@@ -14,6 +14,9 @@ a computational biologist, but before I wore this hat, I engaged in more physics
 completing my BSc at the University of Victoria. You can find more about my research at my [Google
 Scholar]({{ google_scholar[0].url }}) page.
 
+Below are a couple of things that play a significant role in my skills and interests as a software
+developer.
+
 #### Anvi'o
 
 One major consequence of pursuing my PhD--besides having less money than my friends--has been my
@@ -45,6 +48,3 @@ replacement for typing, since doing it for a long periods of time strains my thr
 become more uncomfortable than wrist pain. As a result, establishing a proper work-life balance and
 managing my RSI is an ongoing effort for me.
 
-I mention these two by-products of my PhD (anvi'o and Talon) because realistically, they have served
-as the cornerstone of my capabilities as a software developer, and have greatly influenced my
-interests in tech.

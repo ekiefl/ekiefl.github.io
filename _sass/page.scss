@@ -1296,15 +1296,28 @@ $button-size: 1.5rem;
    Side panel
    ========================================================================== */
 
+.side-panel-header {
+    img {
+        width: 100%;
+        max-width: 100px;
+        overflow: hidden;
+        display:block;
+        margin:auto;
+    }
+    overflow: hidden;
+}
 .side-panel-element {
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        display: block;
+    }
+    overflow: hidden;
     border-radius: 13px 13px 0px 0px;
     border-top:    1px solid #EEEEEE;
     border-right:  1px solid #EEEEEE; 
     border-left: 1px solid #EEEEEE;
-    background-color: #FFFFFF;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 .side-panel-element-text {
     border-radius: 0px 0px 13px 13px;

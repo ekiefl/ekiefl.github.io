@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Live audio processing: creating a virtual dog-sitter"
-categories: [psim]
+categories: [maple]
 excerpt: "Using python and pyaudio to detect dog barks and intervene with pre-recorded audio."
 comments: true
 authors: [evan]

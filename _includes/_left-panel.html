@@ -1,20 +1,26 @@
-<div class="testinggg">
+<div>
     {% if page.include_bio == true %}
         {% include _author-bio.html %}
 
         <hr>
-
-        <h3 style="text-align: center;">Projects</h3>
-
+    
     {% endif %}
 
-    <div class="side-panel-element">
-        <a href="{{ site.url }}/projects/psim/"><img style="display: block; margin-left: auto; margin-right: auto;" src="{{ site.url }}/images/psim/psim_logo.png" style="border: none;" width="100"></a>
+    <div class="side-panel-header">
+        <img src="/images/quick_links.png">
     </div>
-    <div class="side-panel-element-text">
-        <a href="{{ site.url }}/projects/psim/">
-            psim
-        </a>
-    </div>
+
+    {% for project in site.data.projects %}
+        <p>
+        <div class="side-panel-element">
+            <a href="{{ project.url | relative_url }}"><img src="{{ project.logo }}"></a>
+        </div>
+        <div class="side-panel-element-text">
+            <a href="{{ project.url | relative_url }}">
+                {{ project.name }}
+            </a>
+        </div>
+    {% endfor %}
+
 
 </div>
