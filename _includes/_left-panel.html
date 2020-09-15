@@ -1,14 +1,20 @@
-<div>
-    <!--
-    <p><img src="{{ site.url }}/images/uchicago-mbl.png" style="border: none;" width="150" />
-    <div style="background-color: #EFEFEF; width: 150px; border-radius: 5px;"><p style=" text-align: center; padding: 5px; "><a href="{{ site.url }}/momics">Microbial 'omics</a></div>
-    <p style="width: 150px;text-align: center;"><a href="{{ site.url }}/software/anvio/"><img src="https://raw.githubusercontent.com/merenlab/anvio/master/anvio/data/interactive/images/logo.png" style="border: none;" width="150"></a>
-    <br /><script async defer src="https://slackin-ezbpfhwsmh.now.sh/slackin.js"></script>
-    <p style="width: 150px;text-align: center;"><a href="{{ site.url }}/software/anvi-3dev/"><img src="{{ site.url }}/images/anvi-3dev-logo.png" style="border: none;" width="150"></a>
-    <p><a href="{{ site.url }}/software/oligotyping/"><img src="{{ site.url }}/images/oligotyping-logo.png" style="border: none;" width="150"></a>
-    <p><a href="{{ site.url }}/software/med/"><img src="{{ site.url }}/images/med-logo.png" style="border: none;" width="150"></a>
-    -->
+<div class="testinggg">
     {% if page.include_bio == true %}
         {% include _author-bio.html %}
+
+        <hr>
+
+        <h3 style="text-align: center;">Projects</h3>
+
     {% endif %}
+
+    <div class="side-panel-element">
+        <a href="{{ site.url }}/projects/psim/"><img style="display: block; margin-left: auto; margin-right: auto;" src="{{ site.url }}/images/psim/psim_logo.png" style="border: none;" width="100"></a>
+    </div>
+    <div class="side-panel-element-text">
+        <a href="{{ site.url }}/projects/psim/">
+            psim
+        </a>
+    </div>
+
 </div>

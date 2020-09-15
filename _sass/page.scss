@@ -911,9 +911,9 @@ $button-size: 1.5rem;
     }
     @media #{$small} {
         display: block;
-        @include grid(12,2);
-        @include prefix(12,0.25);
-        @include suffix(12,0.5);
+        @include grid(12,2); // changes width of sidebar
+        @include prefix(12,1); // changes width of sidebar
+        @include suffix(12,2); // changes width of sidebar
         h3,
         p,
         .author-social {
@@ -932,9 +932,9 @@ $button-size: 1.5rem;
         }
     }
     @media #{$large} {
-        @include grid(12,1.5);
-        @include prefix(12,1);
-        @include suffix(12,1);
+        @include grid(12,1.25); // changes width of sidebar
+        @include prefix(12,0.25); // changes width of sidebar
+        @include suffix(12,0.75); // changes width of sidebar
         h3,
         .bio-photo,
         p,
@@ -1291,3 +1291,25 @@ $button-size: 1.5rem;
     margin-right: 6px;
     margin-top: -3px;
 }
+
+/* 
+   Side panel
+   ========================================================================== */
+
+.side-panel-element {
+    border-radius: 13px 13px 0px 0px;
+    border-top:    1px solid #EEEEEE;
+    border-right:  1px solid #EEEEEE; 
+    border-left: 1px solid #EEEEEE;
+    background-color: #FFFFFF;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.side-panel-element-text {
+    border-radius: 0px 0px 13px 13px;
+    border:  1px solid #EEEEEE;
+    text-align: center;
+    background: url('../../images/fractal.jpg') center center scroll;
+}
+
