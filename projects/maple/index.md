@@ -8,5 +8,3 @@ image:
   feature: "maple/maple_banner.jpg"
   display: true
 ---
-
-This text is in projects/maple/index.md
