@@ -333,7 +333,8 @@ class Monitor(object):
 
                 if tries == self.calibration_tries:
                     # Max tries met--doubling calibration threshold
-                    print(f'Calibration threshold not met after {tries} tries. Increasing threshold ({self.calibration_threshold:.2f} --> {1.5*self.calibration_threshold:.2f})')
+                    print(f"Calibration threshold not met after {tries} tries. Increasing threshold "
+                          f"({self.calibration_threshold:.2f} --> {1.5*self.calibration_threshold:.2f})")
                     tries = 0
                     self.calibration_threshold *= 1.5
 
@@ -398,7 +399,8 @@ class Monitor(object):
 
 
 class Detector(object):
-    def __init__(self, background_std, background, start_thresh, end_thresh, num_consecutive, seconds, dt, quiet=False):
+    def __init__(self, background_std, background, start_thresh, end_thresh, num_consecutive,
+                 seconds, dt, quiet=False):
         """Manages the detection of events
 
         Parameters

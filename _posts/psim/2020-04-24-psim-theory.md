@@ -19,7 +19,7 @@ algorithims for evolving a pool shot. Both of these topics are covered in this p
 find very little code, and a lot of equations. If this sounds uninteresting to you, skip ahead to
 the next post. With that said, let's get started.
 
-## What kind physics has been done on billiards?
+## The physics of billiards
 
 The thing about pool is that its pretty old. This is one of the first historical depictions of
 billiards (please God let it be famous for no other reason), which dates back to 1674.
@@ -45,12 +45,12 @@ qualitative effects a pro-player may be expecting to observe manifest directly f
 Depending on how well I do in balancing the degree of these effects will determine how realistic my
 simulation ends up being.
 
-So basically, I'm going to have to get my hands dirty with these equations and discover which one's
-I'm going to end up using. I decided I needed to pick up a reference source, so I bought the
-non-exhaustive but heavily referenced "modern day" treatment of billiards, "_The Physics of Pocket
-Billiards_" by Wayland C. Marlow. In what follows, I am going to lay out **all** of the physics I'm
-going to include in the simulation. If I was a young and sprightly undergrad I would probably
-attempt to derive the equations, but I'm old and withered so I'm just going to talk about them.
+So basically, I'm going to have to get my hands dirty with these equations, so I decided I needed to
+pick up a reference source, so I bought the non-exhaustive but heavily referenced "modern day"
+treatment of billiards, "_The Physics of Pocket Billiards_" by Wayland C. Marlow. In what follows, I
+am going to lay out **all** of the physics I'm going to include in the simulation. If I was a young
+and sprightly undergrad I would probably attempt to derive the equations, but I'm old and withered
+so I'm just going to talk about them.
 
 ## Physics: ball-cloth interactions
 
@@ -72,17 +72,10 @@ indefinitely.
 In this model, a frictional force exists between the cloth and ball that opposes the ball's motion.
 Therefore, the ball dissipates energy over time and eventually come to a halt. Sounds like pool to
 me. However, what's unrealistic about this model is that the ball has **no spin**, which is
-impossible for a ball moving on a cloth with friction.
+impossible for a ball moving on a cloth with friction. To see why, let's look at the force
+contributions that act on the ball:
 
-To demonstrate this, I took a slow-mo shot of an object ball being struck head on with the cue ball.
-Directly after impact, the object ball has a non-zero velocity and no spin. Yet quickly over time,
-the ball transitions from "sliding" across the cloth (no spin) to "rolling" across the cloth (spin):
-
-{% include youtube_embed.html id="8Wng2cUH8as" %}
-
-To see why, let's look at the force contributions that act on the ball:
-
-[![force_body_diagram]({{images}}/force_body_diagram.png)]({{images}}/force_body_diagram.png){:.center-img .width-90}
+[![force_body_diagram]({{images}}/force_body_diagram.jpg)]({{images}}/force_body_diagram.jpg){:.center-img .width-70}
 *Figure 1. Here, \$ \vec{v} \$ is the velocity of the ball, \$ m \$ its mass, and \$ R \$ its radius.
 Additionally, we got good old \$ \vec{g} \$, the gravitational constant, and the normal force \$ \vec{N} \$.*
 
@@ -96,19 +89,65 @@ tug-of-war between the ball wanting to accelerate towards the center of the eart
 stopping it from doing so. This contention results in friction whenever the ball moves along the
 table. The ball and cloth essentially rub each other the wrong way as the ball moves, and so a
 frictional force is exerted on the ball in a direction opposite the ball's motion, that is denoted
-here as \$ F_f \$.
+here as \$ \vec{F}_f \$.
 
-So what makes the ball spin? Well, since \$ F_f \$ is applied at the point of contact (PoC) between
+So what makes the ball spin? Well, since \$ \vec{F}_f \$ is applied at the point of contact (PoC) between
 ball and cloth, this ends up creating a torque on the ball that causes it to rotate. Intuitively,
 the bottom of the ball is slowing down, but the top of the ball isn't, and so it ends up going "head
 over heels".
 
-In a model where spin is ignored, you can imagine that instead of the frictional force being applied
-at the PoC, it's applied at the ball's center. Then, there is no torque on the ball, and therefore
-no spin. Yet there is still a mechanism that slows the balls down, which is obviously essential.
-This kind of model is passable for primitive 2D pool games where spin is an ignored factor.
+To demonstrate this, I took a slow-mo shot of an object ball being struck head on with the cue ball.
 
-### (2) Single point of contact
+{% include youtube_embed.html id="8Wng2cUH8as" %}
+
+Directly after impact, the object ball has a non-zero velocity and no spin. Yet quickly over time,
+the ball transitions from "sliding" across the cloth (no spin) to "rolling" across the cloth (yes
+spin). I hope it's convincing footage. So to wrap things up, in a model where spin is ignored, you
+can imagine that instead of the frictional force being applied at the PoC, it's applied at the
+ball's center. Then, there is no torque on the ball, and therefore no spin. Yet there is still a
+mechanism that slows the balls down, so it checks that box for realism. This is the kind of model
+you can expect from a pool game that offers a primitive "overhead" perspective, since it provides a
+passable playing experience for beginners and is simple to code.
+
+### (3) Ball with arbitrary spin
+
+{:.notice}
+From this point on, I'll refer to a ball with "spin" as a ball with "angular momentum".
+
+In this example, we take on the general case of the ball-cloth interaction. This is the most
+realistic model I came across that can be solved analytically, and has the following assumptions:
+
+1. The ball can be in an arbitrary state (but must be on the table)
+2. There is a single point of contact (PoC) between ball and cloth
+
+By "*the ball can be in an arbitrary state*", what I mean is that it may have an arbitrary momentum
+(\$ \vec{p}=m\vec{v} \$), angular momentum (\$ \vec{\omega} \$), and displacement relative to some
+origin (\$ \vec{r} \$). These 3 vectors fully characterize the state of the ball, and the goal is to
+find equations of motion that can evolve these 3 vectors through time. Essentially, these equations
+are functions that, when given an initial state (\$ \vec{p_0} \$, \$ \vec{\omega_0} \$, \$ \vec{r_0}
+\$), can give you an updated state (\$ \vec{p} \$, \$ \vec{\omega} \$, \$ \vec{r} \$) some
+time \$ t \$ later.
+
+A single point of contact is a fairly accurate assumption, but technically the weight of the
+ball "bunches up" the cloth as it moves to a degree that depends on how loosely the
+cloth is stretched over the slate. Additionally, the cloth itself can be compressed, and cloth fibres and
+other non-idealities can contact the ball at multiple points. And so in
+actuality there does not exist a "point of contact", but rather, an "area of contact".
+
+[![depression]({{images}}/depression.png)]({{images}}/depression.png){:.center-img .width-70}
+*Figure 2. The cloth is a compressible surface, and so in actuality there does not exist a "point of
+contact", but rather, an "area of contact".*
+
+
+
+
+
+
+
+
+
+
+
 
 
 
