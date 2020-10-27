@@ -45,12 +45,14 @@ qualitative effects a pro-player may be expecting to observe manifest directly f
 Depending on how well I do in balancing the degree of these effects will determine how realistic my
 simulation ends up being.
 
-So basically, I'm going to have to get my hands dirty with these equations, so I decided I needed to
-pick up a reference source, so I bought the non-exhaustive but heavily referenced "modern day"
-treatment of billiards, "_The Physics of Pocket Billiards_" by Wayland C. Marlow. In what follows, I
-am going to lay out **all** of the physics I'm going to include in the simulation. If I was a young
-and sprightly undergrad I would probably attempt to derive the equations, but I'm old and withered
-so I'm just going to talk about them.
+So basically, I'm going to have to get my hands dirty with these equations. I decided having a reference
+source was necessary, so I bought the non-exhaustive but heavily referenced "modern day"
+treatment of billiards, "_The Physics of Pocket Billiards_" by Wayland C. Marlow. The physics I will use
+comes in part from this book, and in part from random sources on the internet.
+
+In what follows, I am going to lay out **all** of the physics I'm going to include in the
+simulation. If I was a young and sprightly undergrad I would probably attempt to derive the
+equations, but I'm old and withered so I'm just going to talk about them.
 
 ## Physics: ball-cloth interactions
 
@@ -128,16 +130,33 @@ are functions that, when given an initial state (\$ \vec{p_0} \$, \$ \vec{\omega
 \$), can give you an updated state (\$ \vec{p} \$, \$ \vec{\omega} \$, \$ \vec{r} \$) some
 time \$ t \$ later.
 
-A single point of contact is a fairly accurate assumption, but technically the weight of the
-ball "bunches up" the cloth as it moves to a degree that depends on how loosely the
-cloth is stretched over the slate. Additionally, the cloth itself can be compressed, and cloth fibres and
-other non-idealities can contact the ball at multiple points. And so in
+As for the second assumption, a single point of contact is a fairly accurate assumption, but
+technically the weight of the ball "bunches up" the cloth as it moves to a degree that depends on
+how loosely the cloth is stretched over the slate. Additionally, the cloth itself can be compressed,
+and cloth fibres and other non-idealities can contact the ball at multiple points. And so in
 actuality there does not exist a "point of contact", but rather, an "area of contact".
 
 [![depression]({{images}}/depression.png)]({{images}}/depression.png){:.center-img .width-70}
 *Figure 2. The cloth is a compressible surface, and so in actuality there does not exist a "point of
 contact", but rather, an "area of contact".*
 
+With the assumptions laid out, let's begin. The most important thing to realize is that throughout a
+ball's trajectory, it will always be in any of these 4 different modes: sliding, rolling, spinning,
+or stationary. The physics is different for each of these cases, so we tackle them piecewise from least
+to most complicated.
+
+If the ball is stationary, we're done:
+
+$$ \vec{p}(t) = \vec{p_0} $$
+$$ \vec{\omega}(t) = \vec{\omega_0} $$
+$$ \vec{r}(t) = \vec{r_0} $$
+
+Spinning is a regularly observed ball state in which there is no linear velocity of the
+ball, yet it is spinning. Spinning is only slightly more complicated. By "spinning" I 
+
+If the ball is stationary
+can be in 3 different "modes" of: the ball can be (a) sliding, (b)
+rolling-without-slipping, or (c) stationary. The physics is different for each of these cases.
 
 
 
