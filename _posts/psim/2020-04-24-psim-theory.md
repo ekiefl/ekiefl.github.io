@@ -131,7 +131,7 @@ functions that, when given an initial state ($\vec{p_0}$, $\vec{\omega_0}$, $\ve
 you an updated state ($\vec{p}$, $\vec{\omega}$, $\vec{r}$) some time $t$ later.
 
 As for the second assumption, a single point of contact is a fairly accurate assumption, but
-technically the weight of the ball "bunches up" the cloth as it moves to a degree that depends on
+technically the weight of the ball "bunches up" the cloth as it moves to a degree depending on
 how loosely the cloth is stretched over the slate. Additionally, the cloth itself can be compressed,
 and cloth fibres and other non-idealities can contact the ball at multiple points. And so in
 actuality there does not exist a "point of contact", but rather, an "area of contact".
@@ -150,28 +150,26 @@ to most complicated.
 If the ball is stationary, the ball stays where it is and there is no angular or linear momentum. In
 other words:
 
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Stationary equations of motion</span>
+
 $$ \vec{r}(t) = \vec{r_0} \label{stationary_r}$$
 
 $$ \vec{p}(t) = \vec{0} \label{stationary_p}$$
 
 $$ \vec{\omega}(t) = \vec{0} \label{stationary_o}$$
 
-<div class="extra-info" markdown="1">
-<span class="extra-info-header">These are vector equations</span>
-
-It's important to keep in mind each of Eqs. $\eqref{stationary_r}$, $\eqref{stationary_p}$, and
-$\eqref{stationary_o}$ are vector equations that can be broken down into 3 scalar equations each,
-one for each spatial dimension. For example, $\eqref{stationary_o}$ can be written as
-
-$$ \omega_x(t) = 0 \notag $$
-
-$$ \omega_y(t) = 0 \notag $$
-
-$$ \omega_z(t) = 0 \notag $$
-
-I interchangably use both scalar and vector equations, so make sure you are spotting the difference.
+Valid for $0 \le t < \infty$.
 
 </div>
+
+{:.notice}
+It's important to keep in mind each of Eqs. $\eqref{stationary_r}$,
+$\eqref{stationary_p}$, and $\eqref{stationary_o}$ are vector equations that can be broken down into
+3 scalar equations each, one for each spatial dimension. For example, Eq. $\eqref{stationary_o}$ can
+be written as $\omega_x(t) = 0$, $\omega_y(t) = 0$, and $\omega_z(t) = 0$. I interchangably use both
+scalar and vector equations, so make sure you are spotting the difference.
+
 
 ### - Case 2: Spinning
 
@@ -206,21 +204,24 @@ $$ \omega_y(t) = 0 \notag $$
 $$ \omega_z(t) = \text{ }??? \notag $$
 
 To characterize the $z-$axis angular momentum, we need to introduce some bullshit. I told you that
-in this model, there is a single PoC between ball and cloth.  If such were *truly* the case, there
+in this model, there is a single PoC between ball and cloth. If such were *truly* the case, there
 is nothing to stop the ball from spinning forever (besides air, which we will ignore). This is
-because a ball spinning in place has **zero speed** at the infinitesimally point that is the PoC. In
+because a ball spinning in place has **zero speed** at the infinitesimally small PoC. In
 other words, the relative velocity between the ball and cloth at the PoC is 0, and this means
 there can exist no frictional force. Of course, we know that the ball *does* slow, which
-is proof that there does not exist a "point of contact" but an "area of contact".
+is proof that there does not exist a "point of contact" but rather an "area of contact".
 
 Rather than explicitly define an area of contact, which would greatly complicate the physics, to
 account for this embarassing blunder of the model, we instead introduce a phenomenological friction
 parameter that slows down the $z-$component of the ball's angular momentum over time.  What's a
 phenomenological parameter? It's a parameter that is added to a model *ad hoc*, that explains
 a phenomenon (in this case, the slowing down of a ball's rotation) that does not come from
-assumptions of the model. It's what scrubs do when they want to model an observation but their
-model does not cause the observation. Basically, its cheating (sue me). So after adding a standard
+assumptions of the model. It's what people do when they want to model an observation but their
+model is bad and does not cause the observation. Basically, its cheating (sue me). So after adding a standard
 friction term, we have our equations of motion solved:
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Stationary equations of motion</span>
 
 $$ \vec{r}(t) = \vec{r_0} \label{spinning_r} $$
 
@@ -230,29 +231,29 @@ $$ \omega_x(t) = 0 \label{spinning_ox}$$
 
 $$ \omega_y(t) = 0 \label{spinning_oy}$$
 
-$$
-\omega_z(t) =
-\begin{cases}
-\omega_{z0} - \frac{5\mu_{sp}g}{2R}t, & \text{if } t < \frac{2R\omega_{z0}}{5\mu_{sp}g} \\
-0, & \text{if } t \ge \frac{2R\omega_{z0}}{5\mu_{sp}g}
-\end{cases}
-\label{spinning_oz}
-$$
+$$ \omega_z(t) = \omega_{z0} - \frac{5\mu_{sp}g}{2R}t \label{spinning_oz} $$
+
+Valid for $0 \le t \le \frac{2r\omega_{z0}}{5\mu_{sp}g}$.
+
+</div>
 
 In Eq. $\eqref{spinning_oz}$, $\omega_{z0}$ is angular momentum in the $z-$axis at $t=0$, $\mu_{sp}$
 is the coefficient of spinning friction, $g$ is the gravitational constant, and $R$ is the ball's
 radius. The equation states that as time evolves, there is a linear decay in the ball's angular
-momentum until the ball stops rotating, which happens when $t=\frac{2r\omega_{z0}}{5\mu_{sp}g}$.
+momentum. Collectively, these equations are valid until the ball stops rotating, which happens when
+$\omega_z(t)$ is $0$. This occurs when $t=(2r\omega_{z0})/(5\mu_{sp}g)$.
 
 ### - Case 3: Rolling
 
 There are 2 remaining cases: **rolling** and **sliding**. Think of rolling as driving your car on
 concrete, and sliding as driving on ice. In the former, your tires grip the road such that at the
 point of contact, there is no relative velocity between the tire and the road. On the other hand, on
-ice, there is a lot of slippage between the tire and the ice, and therefore a relative velocity,
-which I'll call $\vec{u}$. In physics, what I call rolling is actually called "rolling without
-slippage" and what I call sliding is actually called "rolling with slippage". Sorry for the
-confusing terminology.
+ice, there is a lot of slippage between the tire and the ice. In physics, what I call rolling is
+actually called "rolling without slippage" and what I call sliding is actually called "rolling with
+slippage". Sorry for the confusing terminology.
+
+To formalize this intuition, we can talk about the relative velocity between the ball and cloth at
+the PoC.
 
 Alright, so let's get on with it. Consider a ball that is rolling:
 
