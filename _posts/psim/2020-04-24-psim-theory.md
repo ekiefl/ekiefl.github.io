@@ -78,22 +78,23 @@ impossible for a ball moving on a cloth with friction. To see why, let's look at
 contributions that act on the ball:
 
 [![force_body_diagram]({{images}}/force_body_diagram.jpg)]({{images}}/force_body_diagram.jpg){:.center-img .width-70}
-*Figure 1. Here, \$ \vec{v} \$ is the velocity of the ball, \$ m \$ its mass, and \$ R \$ its radius.
-Additionally, we got good old \$ \vec{g} \$, the gravitational constant, and the normal force \$ \vec{N} \$.*
+_**Figure 1**. Force contributions acting on a ball that has o spin. Here, $ \vec{v} $ is the
+velocity of the ball, $ m $ its mass, and $ R $ its radius.  Additionally, we got good old $ \vec{g} $,
+the gravitational constant, and the normal force $ \vec{N} $._
 
 In this example, assume that the ball initially has no spin (*e.g.* it is not rolling) but is moving
-in the \$ +x \$-direction with a speed \$ |\vec{v}| \$. In the \$ y \$-axis, there is a
-gravitational force (mass \$ \times \$ gravitational constant \$ = m\vec{g} \$) pulling the ball
+in the $ +x $-direction with a speed $ |\vec{v}| $. In the $ y $-axis, there is a
+gravitational force (mass $ \times $ gravitational constant $ = m\vec{g} $) pulling the ball
 into the table. Since the table is supporting the ball, it exerts an equal and opposite force onto
-the ball. This is called the normal force, \$ \vec{N} \$.  Without it, the ball would fall through
+the ball. This is called the normal force, $ \vec{N} $.  Without it, the ball would fall through
 the table. And so even while the ball remains perfectly still on the table, there is a perpetual
 tug-of-war between the ball wanting to accelerate towards the center of the earth, and the table
 stopping it from doing so. This contention results in friction whenever the ball moves along the
 table. The ball and cloth essentially rub each other the wrong way as the ball moves, and so a
 frictional force is exerted on the ball in a direction opposite the ball's motion, that is denoted
-here as \$ \vec{F}_f \$.
+here as $ \vec{F}_f $.
 
-So what makes the ball spin? Well, since \$ \vec{F}_f \$ is applied at the point of contact (PoC) between
+So what makes the ball spin? Well, since $ \vec{F}_f $ is applied at the point of contact (PoC) between
 ball and cloth, this ends up creating a torque on the ball that causes it to rotate. Intuitively,
 the bottom of the ball is slowing down, but the top of the ball isn't, and so it ends up going "head
 over heels".
@@ -123,12 +124,11 @@ realistic model I came across that can be solved analytically, and has the follo
 2. There is a single point of contact (PoC) between ball and cloth
 
 By "*the ball can be in an arbitrary state*", what I mean is that it may have an arbitrary momentum
-(\$ \vec{p}=m\vec{v} \$), angular momentum (\$ \vec{\omega} \$), and displacement relative to some
-origin (\$ \vec{r} \$). These 3 vectors fully characterize the state of the ball, and the goal is to
-find equations of motion that can evolve these 3 vectors through time. Essentially, these equations
-are functions that, when given an initial state (\$ \vec{p_0} \$, \$ \vec{\omega_0} \$, \$ \vec{r_0}
-\$), can give you an updated state (\$ \vec{p} \$, \$ \vec{\omega} \$, \$ \vec{r} \$) some
-time \$ t \$ later.
+($\vec{p}=m\vec{v}$), angular momentum ($\vec{\omega}$), and displacement relative to some origin
+($\vec{r}$). These 3 vectors fully characterize the state of the ball, and the goal is to find
+equations of motion that can evolve these 3 vectors through time. Essentially, these equations are
+functions that, when given an initial state ($\vec{p_0}$, $\vec{\omega_0}$, $\vec{r_0}$), can give
+you an updated state ($\vec{p}$, $\vec{\omega}$, $\vec{r}$) some time $t$ later.
 
 As for the second assumption, a single point of contact is a fairly accurate assumption, but
 technically the weight of the ball "bunches up" the cloth as it moves to a degree that depends on
@@ -137,26 +137,196 @@ and cloth fibres and other non-idealities can contact the ball at multiple point
 actuality there does not exist a "point of contact", but rather, an "area of contact".
 
 [![depression]({{images}}/depression.png)]({{images}}/depression.png){:.center-img .width-70}
-*Figure 2. The cloth is a compressible surface, and so in actuality there does not exist a "point of
-contact", but rather, an "area of contact".*
+_**Figure 2**. The cloth is a compressible surface, and so in actuality there does not exist a "point of
+contact", but rather, an "area of contact"._
 
 With the assumptions laid out, let's begin. The most important thing to realize is that throughout a
-ball's trajectory, it will always be in any of these 4 different modes: sliding, rolling, spinning,
-or stationary. The physics is different for each of these cases, so we tackle them piecewise from least
+ball's trajectory, it will always be in any of these 4 different modes: **sliding, rolling, spinning,
+or stationary**. The physics is different for each of these cases, so we tackle them piecewise from least
 to most complicated.
 
-If the ball is stationary, we're done:
+### - Case 1: Stationary
 
-$$ \vec{p}(t) = \vec{p_0} $$
-$$ \vec{\omega}(t) = \vec{\omega_0} $$
-$$ \vec{r}(t) = \vec{r_0} $$
+If the ball is stationary, the ball stays where it is and there is no angular or linear momentum. In
+other words:
 
-Spinning is a regularly observed ball state in which there is no linear velocity of the
-ball, yet it is spinning. Spinning is only slightly more complicated. By "spinning" I 
+$$ \vec{r}(t) = \vec{r_0} \label{stationary_r}$$
 
-If the ball is stationary
-can be in 3 different "modes" of: the ball can be (a) sliding, (b)
-rolling-without-slipping, or (c) stationary. The physics is different for each of these cases.
+$$ \vec{p}(t) = \vec{0} \label{stationary_p}$$
+
+$$ \vec{\omega}(t) = \vec{0} \label{stationary_o}$$
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">These are vector equations</span>
+
+It's important to keep in mind each of Eqs. $\eqref{stationary_r}$, $\eqref{stationary_p}$, and
+$\eqref{stationary_o}$ are vector equations that can be broken down into 3 scalar equations each,
+one for each spatial dimension. For example, $\eqref{stationary_o}$ can be written as
+
+$$ \omega_x(t) = 0 \notag $$
+
+$$ \omega_y(t) = 0 \notag $$
+
+$$ \omega_z(t) = 0 \notag $$
+
+I interchangably use both scalar and vector equations, so make sure you are spotting the difference.
+
+</div>
+
+### - Case 2: Spinning
+
+Spinning is a commonly observed ball state in which there is no linear momentum of the
+ball, yet it is spinning like a top:
+
+{% include youtube_embed.html id="A9mweRTxGiw" %}
+
+Like in the stationary state, the ball has no linear momentum:
+
+$$ \vec{p}(t) = \vec{0} \notag $$
+
+Likewise, the ball remains in place:
+
+$$ \vec{r}(t) = \vec{r_0} \notag $$
+
+However, since the ball is rotating, it has an angular momentum. You'll notice that the ball spins
+around the $z-$axis, relative to the coordinate system in Figure 3:
+
+[![spinning_diagram_1]({{images}}/spinning_diagram_1.jpg)]({{images}}/spinning_diagram_1.jpg){:.center-img .width-70}
+_**Figure 3**. A ball spinning in place. In this coordinate system the table is in the $xy-$plane._
+
+This is not by chance--it is a constraint of the state, since if the ball had any components of its
+angular momentum in the $x$ or $y$ directions, it would create a friction with the cloth that would
+translate into a linear momentum. Since "spinning" is characterized by 0 linear momentum
+($\vec{v}=\vec{0}$), angular momentum is strictly in the $z-$axis. In otherwords,
+
+$$ \omega_x(t) = 0 \notag $$
+
+$$ \omega_y(t) = 0 \notag $$
+
+$$ \omega_z(t) = \text{ }??? \notag $$
+
+To characterize the $z-$axis angular momentum, we need to introduce some bullshit. I told you that
+in this model, there is a single PoC between ball and cloth.  If such were *truly* the case, there
+is nothing to stop the ball from spinning forever (besides air, which we will ignore). This is
+because a ball spinning in place has **zero speed** at the infinitesimally point that is the PoC. In
+other words, the relative velocity between the ball and cloth at the PoC is 0, and this means
+there can exist no frictional force. Of course, we know that the ball *does* slow, which
+is proof that there does not exist a "point of contact" but an "area of contact".
+
+Rather than explicitly define an area of contact, which would greatly complicate the physics, to
+account for this embarassing blunder of the model, we instead introduce a phenomenological friction
+parameter that slows down the $z-$component of the ball's angular momentum over time.  What's a
+phenomenological parameter? It's a parameter that is added to a model *ad hoc*, that explains
+a phenomenon (in this case, the slowing down of a ball's rotation) that does not come from
+assumptions of the model. It's what scrubs do when they want to model an observation but their
+model does not cause the observation. Basically, its cheating (sue me). So after adding a standard
+friction term, we have our equations of motion solved:
+
+$$ \vec{r}(t) = \vec{r_0} \label{spinning_r} $$
+
+$$ \vec{p}(t) = \vec{0} \label{spinning_p}$$
+
+$$ \omega_x(t) = 0 \label{spinning_ox}$$
+
+$$ \omega_y(t) = 0 \label{spinning_oy}$$
+
+$$
+\omega_z(t) =
+\begin{cases}
+\omega_{z0} - \frac{5\mu_{sp}g}{2R}t, & \text{if } t < \frac{2R\omega_{z0}}{5\mu_{sp}g} \\
+0, & \text{if } t \ge \frac{2R\omega_{z0}}{5\mu_{sp}g}
+\end{cases}
+\label{spinning_oz}
+$$
+
+In Eq. $\eqref{spinning_oz}$, $\omega_{z0}$ is angular momentum in the $z-$axis at $t=0$, $\mu_{sp}$
+is the coefficient of spinning friction, $g$ is the gravitational constant, and $R$ is the ball's
+radius. The equation states that as time evolves, there is a linear decay in the ball's angular
+momentum until the ball stops rotating, which happens when $t=\frac{2r\omega_{z0}}{5\mu_{sp}g}$.
+
+### - Case 3: Rolling
+
+There are 2 remaining cases: **rolling** and **sliding**. Think of rolling as driving your car on
+concrete, and sliding as driving on ice. In the former, your tires grip the road such that at the
+point of contact, there is no relative velocity between the tire and the road. On the other hand, on
+ice, there is a lot of slippage between the tire and the ice, and therefore a relative velocity,
+which I'll call $\vec{u}$. In physics, what I call rolling is actually called "rolling without
+slippage" and what I call sliding is actually called "rolling with slippage". Sorry for the
+confusing terminology.
+
+Alright, so let's get on with it. Consider a ball that is rolling:
+
+{% include youtube_embed.html id="pnbV9xArbJw" %}
+
+Let's define a coordinate system such that the direction of travel is in the positive $x-$direction:
+
+[![rolling_diagram_1]({{images}}/rolling_diagram_1.jpg)]({{images}}/rolling_diagram_1.jpg){:.center-img .width-70}
+_**Figure 4**. A rolling ball, that moves in the $x-$direction. The left panel shows a bird's eye
+view, and the right panel shows a profile view. In this coordinate system, the
+angular momentum is in the $y-$direction._
+
+Such a ball will move in a straight line until it comes to a rest. As it travels, it will be slowed
+down by a frictional force proportional to its momentum, which implies that it's momentum will decay linearly with time:
+
+$$ \vec{p}(t) = \vec{p_0} - m \mu_r g t \hat{v}_0 \notag$$
+
+Here, $m$ is the ball's mass, $\mu_r$ is the coefficient of rolling friction, $g$ is the
+gravitational constant, and $\hat{v}_0$ is the unit vector that points in the direction of the ball's
+travel (according to this coordinate system, $\hat{v}_0 = \hat{i}$).
+
+Integrating this equation with respect to time yields the displacement as a function of time:
+
+$$ \vec{r}(t) = \vec{r_0} + \vec{p_0}t - \frac{1}{2} m \mu_r g t^2 \hat{v_0} \notag$$
+
+Now for angular momentum. As mentioned, rolling is defined as zero relative velocity between ball
+and cloth at the PoC, _i.e._
+
+$$ \vec{u} = \vec{0} $$
+
+This highly constrains the angular momentum. First off, $\vec{u}=0$ guarantees that there is no
+angular momentum in the direction of travel. Instead, all of the angular momentum in the $xy-$plane is
+constrained to the direction perpendicular to the ball's motion. In the defined coordinate system,
+this is the $+y-$direction, as depicted above in Figure 4. So then,
+
+$$ \omega_x(t) = 0 \notag $$
+
+Demanding $\vec{u}=0$ also constrains the magnitude of $\omega_y(t)$ to a very specific value. In
+order to avoid slippage, every time the ball does a complete rotation about the $y-axis$, it must
+travel exactly one circumference ($2{\pi}R) in the $x-$axis. This establishes a direct relationship
+between angular and linear momentum for any given time:
+
+$$ \omega_y(t) = \frac{|\vec{p}(t)|}{mR} \notag $$
+
+Finally, we must consider angular momentum in the $z-$direction. We have already seen in Case 2--the
+treatment of a ball spinning like a top--that under the assumptions of the model, **rotation about
+the $z-$axis results in zero relative velocity, $\vec{u}$, between ball and cloth at the PoC**.
+Since $z-$axis rotation does not influence relative velocity, $\omega_z$ is a free parameter in the
+rolling state and can take on any value. This has consequences that you may find highly surprising.
+For example, we know that in the rolling state, the ball path is a straight line. Yet the model
+predicts this is true regardless of $\omega_z$.
+
+### - Case 3: Sliding
+
+{% include youtube_embed.html id="G_aaXbdJavc" %}
+
+After the cue ball transfers its linear momentum to the cue ball, it initially spins in place before
+friction with the table converts angular momentum into linear momentum. Throughout this process, the
+cue ball is considered to be "sliding". Over time, the friction will slow down the spin until the
+ball enters a natural spin state.
+
+
+before accelerating Here, I'm striking the cue ball with a lot of top-spin. After the cue ball transfers its linear
+momentum to the 2-ball, for an infinitesimal amount of time the ball is still, afterwards which the 
+
+Immediately after hitting the 2-ball, the
+cue ball has 0 linear momentum after transferring its momentum to the 2-ball, yet maintains its
+angular momentum. Throughout it hits the 2-ball, it initially has
+linear momentum.  's initially. After contacting the 2-ball, the 
+
+{% include youtube_embed.html id="6yuxdnJqn8E" %}
+
+
+
 
 
 
@@ -349,3 +519,37 @@ balls.
 
 The bottomline is this: after reading this paper, I decided this project was going to offer
 continuous event-based simulations or it wasn't going to offer anything.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
