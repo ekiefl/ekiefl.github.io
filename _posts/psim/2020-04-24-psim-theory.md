@@ -20,6 +20,10 @@ find very little code, and algorithms for evolving a pool shit will be covered i
 will contain a lot of equations, and little if any code. If this sounds uninteresting to you, skip ahead to
 the third post in this series by [clicking HERE](FIXME). With that said, let's get started.
 
+{:.notice}
+As I incorporate more and more realistic physics into my simulations, this post will grow
+correspondingly.
+
 ## The physics of billiards
 
 The thing about pool is that its pretty old. This is one of the first historical depictions of
@@ -106,10 +110,12 @@ To demonstrate this, I took a slow-mo shot of an object ball being struck head o
 
 Directly after impact, the object ball has a non-zero velocity and no spin. Yet quickly over time,
 the ball transitions from "sliding" across the cloth (no spin) to "rolling" across the cloth (yes
-spin). I hope it's convincing footage. So to wrap things up, in a model where spin is ignored, you
+spin). I hope it's convincing footage.
+
+Wrapping things up for this model, where spin is ignored, you
 can imagine that instead of the frictional force being applied at the PoC, it's applied at the
-ball's center. Then, there is no torque on the ball, and therefore no spin. Yet there is still a
-mechanism that slows the balls down, so it checks that box for realism. This is the kind of model
+ball's center. Then, there is no torque on the ball, and therefore no spin. This provides a
+mechanisms that slows the balls down, so it checks that box for realism. This is the kind of model
 you can expect from a pool game that offers a primitive "overhead" perspective, since it provides a
 passable playing experience for beginners and is simple to code.
 
@@ -128,11 +134,11 @@ By "*the ball can be in an arbitrary state*", what I mean is that it may have an
 ($\vec{v}$), angular momentum ($\vec{\omega}$), and displacement relative to some origin
 ($\vec{r}$). These 3 vectors fully characterize the state of the ball, and the goal is to find
 equations of motion that can evolve these 3 vectors through time. Essentially, these equations are
-functions that, when given an initial state ($\vec{v_0}$, $\vec{\omega_0}$, $\vec{r_0}$), can give
+functions that, when given an initial state ($\vec{v}_0$, $\vec{\omega}_0$, $\vec{r}_0$), can give
 you an updated state ($\vec{v}$, $\vec{\omega}$, $\vec{r}$) some time $t$ later.
 
 As for the second assumption, a single point of contact is a fairly accurate assumption, but
-technically the weight of the ball "bunches up" the cloth as it moves to a degree depending on
+technically the weight of the ball "bunches up" the cloth as it moves to a degree that depends upon
 how loosely the cloth is stretched over the slate. Additionally, the cloth itself can be compressed,
 and cloth fibres and other non-idealities can contact the ball at multiple points. And so in
 actuality there does not exist a "point of contact", but rather, an "area of contact".
@@ -156,7 +162,7 @@ other words:
 
 Displacement:
 
-$$ \vec{r}(t) = \vec{r_0} \label{stationary_r}$$
+$$ \vec{r}(t) = \vec{r}_0 \label{stationary_r}$$
 
 Velocity:
 
@@ -193,7 +199,7 @@ $$ \vec{v}(t) = \vec{v} \notag $$
 
 Likewise, the ball remains in place:
 
-$$ \vec{r}(t) = \vec{r_0} \notag $$
+$$ \vec{r}(t) = \vec{r}_0 \notag $$
 
 However, since the ball is rotating, it has an angular momentum. You'll notice that the ball spins
 around the $z-$axis, relative to the coordinate system in Figure 3:
@@ -220,8 +226,8 @@ other words, the relative velocity between the ball and cloth at the PoC is 0, a
 there can exist no frictional force. Of course, we know that the ball *does* slow, which
 is proof that there does not exist a "point of contact" but rather an "area of contact".
 
-Rather than explicitly define an area of contact, which would greatly complicate the physics, to
-account for this embarassing blunder of the model, we instead introduce a phenomenological friction
+Rather than explicitly define an area of contact, which would greatly complicate the physics, we account
+for this embarassing blunder of the model by introducing a phenomenological friction
 parameter that slows down the $z-$component of the ball's angular momentum over time.  What's a
 phenomenological parameter? It's a parameter that is added to a model *ad hoc*, that explains
 a phenomenon (in this case, the slowing down of a ball's rotation) that does not come from
@@ -234,7 +240,7 @@ friction term, we have our equations of motion solved:
 
 Displacement:
 
-$$ \vec{r}(t) = \vec{r_0} \label{spinning_r} $$
+$$ \vec{r}(t) = \vec{r}_0 \label{spinning_r} $$
 
 Velocity:
 
@@ -246,27 +252,26 @@ $$ \omega_x(t) = 0 \label{spinning_ox}$$
 
 $$ \omega_y(t) = 0 \label{spinning_oy}$$
 
-$$ \omega_z(t) = \omega_{z0} - \frac{5\mu_{sp}g}{2R}t \label{spinning_oz} $$
+$$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{spinning_oz} $$
 
 Validity:
 
-$0 \le t \le \frac{2R}{5\mu_{sp}g}\omega_{z0}$.
+$0 \le t \le \frac{2R}{5\mu_{sp}g}\omega_{0z}$.
 
 </div>
 
-In Eq. $\eqref{spinning_oz}$, $\omega_{z0}$ is angular momentum in the $z-$axis at $t=0$, $\mu_{sp}$
+In Eq. $\eqref{spinning_oz}$, $\omega_{0z}$ is angular momentum in the $z-$axis at $t=0$, $\mu_{sp}$
 is the coefficient of spinning friction, $g$ is the gravitational constant, and $R$ is the ball's
 radius. The equation states that as time evolves, there is a linear decay in the ball's angular
 momentum. Collectively, these equations are valid until the ball stops rotating, which happens when
-$\omega_z(t)$ is $0$. This occurs when $t=(2R\omega_{z0})/(5\mu_{sp}g)$.
+$\omega_z(t)$ is $0$. This occurs when $t=(2R\omega_{0z})/(5\mu_{sp}g)$.
 
 ### - Case 3: Rolling
 
-Think of rolling as driving your car on concrete, whereas driving on ice would be like sliding. In
+Think of rolling as driving your car on concrete, whereas sliding would be like driving your car on ice. In
 the former, your tires grip the road such that at the point of contact, there is no relative
 velocity between the tire and the road. On the other hand, on ice, there is a lot of "slippage"
-between the tire and the ice, and therefore a relative velocity. If you're moving but you're not
-rolling, you're sliding.
+between the tire and the ice, and therefore a relative velocity.
 
 {:.notice}
 In physics textbooks, what I call rolling is actually called _rolling without slippage_ and what I call
@@ -280,18 +285,18 @@ view, and the right panel shows a profile view. In this coordinate system, the
 angular momentum is in the $y-$direction._
 
 Such a ball will move in a straight line until it comes to a rest. As it travels, it will be slowed
-down by a frictional force proportional to its velocity, which implies that it's velocity will decay
+down by a frictional force proportional to its velocity, which implies that its velocity will decay
 linearly with time:
 
-$$ \vec{v}(t) = \vec{v_0} - \mu_r g t \hat{v_0} \label{rolling_momentum} $$
+$$ \vec{v}(t) = \vec{v}_0 - \mu_r g t \hat{v}_0 \label{rolling_momentum} $$
 
 Here, $m$ is the ball's mass, $\mu_r$ is the coefficient of rolling friction, $g$ is the
-gravitational constant, and $\hat{v_0}$ is the unit vector that points in the direction of the ball's
-travel (according to this coordinate system, $\hat{v_0} = \hat{i}$).
+gravitational constant, and $\hat{v}_0$ is the unit vector that points in the direction of the ball's
+travel (according to this coordinate system, $\hat{v}_0 = \hat{i}$).
 
 Integrating this equation with respect to time yields the displacement as a function of time:
 
-$$ \vec{r}(t) = \vec{r_0} + \vec{v_0}t - \frac{1}{2} \mu_r g t^2 \hat{v_0} \notag$$
+$$ \vec{r}(t) = \vec{r}_0 + \vec{v}_0 t - \frac{1}{2} \mu_r g t^2 \hat{v}_0 \notag$$
 
 ----------------------------
 
@@ -303,13 +308,15 @@ that exists because of the ball's rotation. Their sum defines the relative veloc
 
 $$ \vec{u}(t) = \vec{v}(t) + R \hat{k} \times \vec{\omega}(t) \label{rel_vel}$$
 
-For example, here is a shot that _only_ has linear
+For example, here is a shot where I tried to make sure the cue ball _only_ has linear
 velocity:
 
-{% include youtube_embed.html id="FIXME" %}
+{% include youtube_embed.html id="Z7ghvKcEDIc" %}
 
-Since the ball does not rotate, there is no angular momentum, so Eq. $\eqref{rel_vel}$ reduces
-to
+{:.warning}
+I think we both agree there is some amount of rotation, but let's just ignore it.
+
+Since the ball does not rotate, there is no angular momentum, so Eq.  $\eqref{rel_vel}$ reduces to
 
 $$ \vec{u}(t) = \vec{v}(t) \notag $$
 
@@ -351,7 +358,7 @@ $$ -R\hat{k} \times \vec{\omega}(t) = R \begin{bmatrix} \omega_y(t) \\ -\omega_x
 1. In order for the RHS to point in the $+x-$direction, as it must, $\omega_x(t)$ is necessarily 0.
    So no angular momentum in the direction of motion.
 
-2. Using Eq. $\eqref{roll_condition}$ it follows that $\omega_y(t) = \frac{|\vec{v}(t)|}{R}$. Since
+2. Using Eq. $\eqref{roll_condition}$, it follows that $\omega_y(t) = \frac{|\vec{v}(t)|}{R}$. Since
    $\vec{v}(t)$ is known via Eq. $\eqref{rolling_momentum}$, this equation solves the time
    evolution of $\omega_y(t)$. Note that $\omega_y(t)$ is strictly positive, which intuitively
    refers to the fact that in order to be rolling, the ball must have _top spin_, not _back spin_.
@@ -382,76 +389,108 @@ FIXME). On the other hand, my shot did not have any significant amount of $\omeg
 small amount their was dissipated within perhaps 200ms, yielding an otherwise straight trajectory.
 
 The takeaway is that $\omega_z(t)$ is decoupled from everything else, and evolves according to Eq.
-$\eqref{spinning_oz}$, which we dealt with Case 2. Putting it all together, we have our equations
-for the rolling case:
+$\eqref{spinning_oz}$, which we dealt with Case 2. The only thing left to do is write down the
+equations for a given frame of reference. Let's use a frame of reference that is centered
+about the ball's _initial_ center of mass coordinates. Then,
+
+Displacement:
+
+$$ \vec{r}(t) = (v_0 t - \frac{1}{2} \mu_r g t^2) \, \hat{v}_0 \label{rolling_r_general} $$
+
+Velocity:
+
+$$ \vec{v}(t) = (v_0 - \mu_r g t) \, \hat{v}_0  \label{rolling_v_general} $$
+
+Angular momentum:
+
+$$ \vec{\omega}_{xy}(t) = \hat{k} \times \frac{\vec{v}(t)}{R} \label{rolling_oxy_general} $$
+
+$$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{rolling_oz_general} $$
+
+where $v_0$ is the initial speed of the ball. Since angular momentum has 2 decoupled components,
+$\vec{\omega}(t)$ is represented by 2 equations.  $\vec{\omega} _{xy} (t)$ defines the angular
+momentum projected onto the $xy-$plane, which is parallel with the table. 
+
+The above equations are defined in terms of $\hat{v}_0$, which can point direction in the $xy-$plane.
+If we take a frame of reference in which ball motion is in the $+x-$direction, we can drop the
+vector notation:
 
 <div class="extra-info" markdown="1">
 <span class="extra-info-header">Rolling equations of motion (**ball coordinates**)</span>
 
 Displacement:
 
-$$ \vec{r}(t) = \vec{r_0} + \vec{v_0}t - \frac{1}{2} \mu_r g t^2 \hat{v_0} \label{rolling_r_ball} $$
+$$ r_x(t) = v_0 t - \frac{1}{2} \mu_r g t^2 \label{rolling_rx_ball} $$
+
+$$ r_y(t) = 0 \label{rolling_ry_ball} $$
+
+$$ r_z(t) = 0 \label{rolling_rz_ball} $$
 
 Velocity:
 
-$$ \vec{v}(t) = \vec{v_0} - \mu_r g t \hat{v_0} \label{rolling_p_ball} $$
+$$ v_x(t) = v_0 - \mu_r g t \label{rolling_vx_ball} $$
+
+$$ v_y(t) = 0 \label{rolling_vy_ball} $$
+
+$$ v_z(t) = 0 \label{rolling_vz_ball} $$
 
 Angular momentum:
 
-$$ \vec{\omega_{xy}}(t) = \hat{k} \times \frac{\vec{v}(t)}{R} \label{rolling_parallel_ball} $$
+$$ \omega_x(t) = 0 \label{rolling_ox_ball} $$
 
-$$ \omega_z(t) = \omega_{z0} - \frac{5\mu_{sp}g}{2R}t \label{rolling_perp_ball} $$
+$$ \omega_y(t) = \frac{v_x(t)}{R} \label{rolling_oy_ball} $$
+
+$$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{rolling_oz_ball} $$
 
 Validity:
 
-$0 \le t \le \frac{\lvert \vec{v_0} \rvert}{\mu_r g}$. If $\frac{2R}{5\mu _{sp} g}
-\omega _{z0} < \frac{\lvert \vec{v_0} \rvert}{\mu_r g}$, then $\omega_z(t) = 0$ for $t >
-\frac{2R}{5\mu _{sp} g} \omega _{z0}$.
+$0 \le t \le \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$. If $\frac{2R}{5\mu _{sp} g}
+\omega _{0z} < \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$, then $\omega_z(t) = 0$ for $t >
+\frac{2R}{5\mu _{sp} g} \omega _{0z}$.
+
 </div>
 
-Since angular momentum has 2 decoupled components, $\vec{\omega}(t)$ is represented by 2 equations.
-$\vec{\omega _{xy}}(t)$ defines the angular momentum projected onto the $xy-$plane, which is
-parallel with the table. Due to the arguments laid above, this vector is guaranteed to be orthogonal
-to $\vec{v_0}$, rotated $90\deg$ counter clockwise.
 
-The above equations are defined in terms of $\hat{v_0}$, which makes for a compact
-representation. Yet, this is annoying to deal when you are interested in knowing how the ball
-evolves in relation to the table. Suppose $\hat{v_0}$ relates to the table in the following way:
+The chosen frame of reference makes for a compact representation, yet, this is annoying to deal when
+you are interested in knowing how the ball evolves in relation to the table coordinates. Suppose
+$\hat{v}_0$ relates to the table in the following way:
 
 [![table_coordinates]({{images}}/table_coordinates.jpg)]({{images}}/table_coordinates.jpg){:.center-img .width-30}
 *Figure 5. Coordinate system in which the table is described. $\phi$ relates the ball's unit vector
-of motion, $\hat{v_0}$, to the table coordinates. The origin (0,0) is at the bottom left pocket.*
+of motion, $\hat{v}_0$, to the table coordinates. The origin (0,0) is the bottom left pocket.*
 
-Then $\hat{v_0}$ can be expressed in terms of the table coordinates via the following rotation
+Then $\hat{v}_0$ can be expressed in terms of the table coordinates via the following rotation
 matrix:
 
 $$
 R = \begin{bmatrix}
-    \cos\phi & -\sin\phi \\
-    \sin\phi & \cos\phi
+    \cos\phi & -\sin\phi & 0 \\
+    \sin\phi & \cos\phi & 0 \\
+    0 & 0 & 1
 \end{bmatrix}
 \label{rot_mat}
 $$
 
-We can use Eq. $\eqref{rot_mat}$ to rewrite the rolling equations of motion in the table coordinate
-system:
+We can rotate Eqs. $\eqref{rolling_rx_ball}$-$\eqref{rolling_oz_ball}$ via Eq. $\eqref{rot_mat}$
+and subsequently add an initial displacement vector $\vec{r}_0$ to Eqs. $\eqref{rolling_rx_ball}$-$\eqref{rolling_rz_ball}$ in
+order to rewrite the rolling equations of motion in the table coordinate system:
 
 <div class="extra-info" markdown="1">
 <span class="extra-info-header">Rolling equations of motion (**table coordinates**)</span>
 
 Displacement:
 
-$$ r_x(t) = r_{x0} + v_0 \cos(\phi) t - \frac{1}{2} \mu_r g \cos(\phi) t^2 \label{rolling_rx_table} $$
+$$ r_x(t) = r_{0x} + v_0 \cos(\phi) \, t - \frac{1}{2} \mu_r g \cos(\phi) \, t^2 \label{rolling_rx_table} $$
 
-$$ r_y(t) = r_{y0} + v_0 \sin(\phi) t - \frac{1}{2} \mu_r g \sin(\phi) t^2 \label{rolling_ry_table} $$
+$$ r_y(t) = r_{0y} + v_0 \sin(\phi) \, t - \frac{1}{2} \mu_r g \sin(\phi) \, t^2 \label{rolling_ry_table} $$
 
 $$ r_z(t) = 0 \label{rolling_rz_table} $$
 
 Velocity:
 
-$$ v_x(t) = v_0 \cos(\phi) - \mu_r g \cos(\phi) t \label{rolling_vx_table} $$
+$$ v_x(t) = v_0 \cos(\phi) - \mu_r g \cos(\phi) \, t \label{rolling_vx_table} $$
 
-$$ v_y(t) = v_0 \sin(\phi) - \mu_r g \sin(\phi) t \label{rolling_vy_table} $$
+$$ v_y(t) = v_0 \sin(\phi) - \mu_r g \sin(\phi) \, t \label{rolling_vy_table} $$
 
 $$ v_z(t) = 0 \label{rolling_vz_table} $$
 
@@ -459,15 +498,15 @@ Angular momentum:
 
 $$ \omega_x(t) = - \frac{1}{R} \lvert \vec{v}(t) \rvert \sin(\phi) \label{rolling_ox_table} $$
 
-$$ \omega_x(t) = \frac{1}{R} \lvert \vec{v}(t) \rvert \cos(\phi) \label{rolling_oy_table} $$
+$$ \omega_y(t) = \frac{1}{R} \lvert \vec{v}(t) \rvert \cos(\phi) \label{rolling_oy_table} $$
 
-$$ \omega_z(t) = \omega_{z0} - \frac{5\mu_{sp}g}{2R}t \label{rolling_oz_table} $$
+$$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{rolling_oz_table} $$
 
 Validity:
 
 $0 \le t \le \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$. If $\frac{2R}{5\mu _{sp} g}
-\omega _{z0} < \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$, then $\omega_z(t) = 0$ for $t >
-\frac{2R}{5\mu _{sp} g} \omega _{z0}$.
+\omega _{0z} < \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$, then $\omega_z(t) = 0$ for $t >
+\frac{2R}{5\mu _{sp} g} \omega _{0z}$.
 </div>
 
 ### - Case 4: Sliding
@@ -492,27 +531,187 @@ sliding (assuming the table is perfectly level). If you shoot a draw or stun sho
 sliding. Directly after an object ball is struck by the cue ball, it is in a sliding state until
 friction with the cloth drives it into the rolling state. Starting to get the idea? Good.
 
-Mathematically, the equations of motion are very similar, where $\vec
-$\vec{\omega _{xy}}$ is constrained to a specific angle and magnitude. In comparison, while
-sliding, the entirety of angular momentum, $\omega
+What separates the sliding case from the rolling case is that $\vec{u}(t)$ can point in any
+direction in the $xy-$plane. The most important thing to note about this case is that whichever
+direction $\vec{u}(t)$ points, a frictional force opposes it. This can lead to curved trajectories.
+To see how, consider Figure 7, in which a ball is initially moving in the $+x-$direction, along with angular
+momentum also in the $+x-$direction. This is the kind of spin that a screw has when screwed into
+wood, where the spin of the screw is about the same axis as the axis of motion--a rather unrealistic
+spin to impart on a ball in the game of pool, but useful for the purposes of demonstration:
 
-{% include youtube_embed.html id="G_aaXbdJavc" %}
+[![sliding_diagram]({{images}}/sliding_diagram.jpg)]({{images}}/sliding_diagram.jpg){:.center-img .width-70}
+*Figure 7. A ball moving in the $+x-$direction with angular momentum also in the $+x-$direction. The
+left panel shows a bird's eye view, and the right panel shows a side view of the table and ball, as
+if looking down the barrel of the cue stick. Because $\vec{\omega}(t)$ is parallel to $\vec{v}(t)$,
+the $R \hat{k} \times \vec{\omega}(t)$ component in Eq. $\eqref{rel_vel}$ is orthogonal to
+$\vec{v}(t)$. The below paragraph defines the force terms.*
 
-After the cue ball transfers its linear momentum to the cue ball, it initially spins in place before
-friction with the table converts angular momentum into linear momentum. Throughout this process, the
-cue ball is considered to be "sliding". Over time, the friction will slow down the spin until the
-ball enters a natural spin state.
+I am used to thinking about friction opposing the ball's center of mass motion, and that frictional
+force is still present in the sliding case and is shown in Figure 7 as $\vec{F}_S$ (straight-line
+force).  Yet, the $R \hat{k} \times \vec{\omega}(t)$ contribution to $\vec{u}(t)$ (see Eq.
+\eqref{rel_vel}) also creates a frictional force, $\vec{F}_C$ (curved-line force). The sum of these
+two force terms, $\vec{F} = \vec{F}_C + \vec{F}_S$, yields the net frictional force manifesting from
+the ball-cloth interaction, and is anti-parallel to the relative velocity, $\vec{u}(t)$. (Note that
+because $\vec{\omega}(t)$ was exactly parallel to $\vec{v}(t)$, $\vec{F}_C$ and $\vec{F}_S$ are
+orthogonal, but in general this is not true). Since there exists a force component, $\vec{F}_C$,
+which is orthogonal to the ball's velocity, **this ball will begin curving to the right** (the
+negative $y-$direction)! The ball will continue to curve until $|\vec{u}(t)| \rightarrow 0$, at
+which point the ball enters the rolling state, where it will spend the rest of its days
+transiting a line. The equation governing $|\vec{u}(t)| \rightarrow 0$ is
+
+$$
+\vec{u}(t) = (u_0 - \frac{7}{2} \mu_s g t ) \, \hat{u}_0
+\label{rel_vel_evo}
+$$
+
+where $u_0$ is the magnitude of $\vec{u}(t=0)$ and $\mu_s$ is the sliding coefficient of friction.
+
+To establish the equations of motion for the sliding case, let's again use a frame of reference
+centered about the ball's _initial_ center of mass coordinates. Additionally, we assume the _initial_
+center of mass velocity, $\vec{v}(0)$, points in the $+x-$direction. Then,
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Sliding equations of motion (**ball coordinates**)</span>
+
+Displacement:
+
+$$ \vec{r}(t) = \vec{v}_0 \, t - \frac{1}{2} \mu_s g t^2 \, \hat{u}_0 \label{sliding_r_ball} $$
+
+Velocity:
+
+$$ \vec{v}(t) = \vec{v}_0 - \mu_s g t \, \hat{u}_0  \label{sliding_p_ball} $$
+
+Angular momentum:
+
+$$ \vec{\omega}_{xy}(t) = \vec{\omega}_{0xy} - \frac{5 \mu_s g}{2 R} \, t \, (\hat{k} \times \vec{u}_0) \label{sliding_parallel_ball} $$
+
+$$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{sliding_perp_ball} $$
+
+Validity:
+
+$0 \le t \le \frac{2}{7}\frac{u _0}{\mu _s g}$. If $\frac{2R}{5\mu _{sp} g}
+\omega _{0z} < \frac{2}{7}\frac{u _0}{\mu _s g}$, then $\omega_z(t) = 0$ for $t >
+\frac{2R}{5\mu _{sp} g} \omega _{0z}$.
+</div>
+
+These are essentially the same as the rolling equations, except the acceleration terms in the
+$xy-$plane act in the $\hat{u}_0$ direction instead of the $\hat{v}_0$ direction, and the rolling
+coefficient of friction $\mu_r$ is replaced with the sliding coefficient of friction $\mu_s$.
+
+We can express these in table coordinates by applying the rotation matrix (Eq. $\eqref{rot_mat}$),
+which yields
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Rolling equations of motion (**table coordinates**)</span>
+
+Displacement:
+
+$$ r_x(t) = r_{0x} + v_0 \cos(\phi) \, t - \frac{1}{2} \mu_s g \, ( u_{0x} \cos(\phi) - u_{0y} \sin(\phi) ) \, t^2 \label{sliding_rx_table} $$
+
+$$ r_y(t) = r_{0y} + v_0 \sin(\phi) \, t - \frac{1}{2} \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) ) \, t^2 \label{sliding_ry_table} $$
+
+$$ r_z(t) = 0 \label{sliding_rz_table} $$
+
+Velocity:
+
+$$ v_x(t) = v_0 \cos(\phi) - \mu_s g \, ( u_{0x} \cos(\phi) - u_{0y} \sin(\phi) ) \, t \label{sliding_vx_table} $$
+
+$$ v_y(t) = v_0 \sin(\phi) - \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) ) \, t \label{sliding_vy_table} $$
+
+$$ v_z(t) = 0 \label{sliding_vz_table} $$
+
+Angular momentum:
+
+$$
+\omega_x(t) =
+    \omega_{0x} \cos(\phi) - \omega_{0y} \sin(\phi) +
+    \frac{5 \mu_s g}{2R} (u_{0y} \cos(\phi) + u_{0x} \sin(\phi)) \, t
+\label{sliding_ox_table}
+$$
+
+$$
+\omega_y(t) =
+    \omega_{0x} \sin(\phi) + \omega_{0y} \cos(\phi) +
+    \frac{5 \mu_s g}{2R} (u_{0y} \sin(\phi) - u_{0x} \cos(\phi)) \, t
+\label{sliding_oy_table}
+$$
+
+$$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{sliding_oz_table} $$
+
+Validity:
+
+$0 \le t \le \frac{2}{7}\frac{u _0}{\mu _s g}$. If $\frac{2R}{5\mu _{sp} g}
+\omega _{0z} < \frac{2}{7}\frac{u _0}{\mu _s g}$, then $\omega_z(t) = 0$ for $t >
+\frac{2R}{5\mu _{sp} g} \omega _{0z}$.
+</div>
+
+This concludes the section of ball-cloth interactions, at least for now.
+
+## Physics: ball-cloth interactions
+
+This section is dedicated to the collision physics between two balls. When physically modelling a
+phenomenon, the sky is the limit in terms of how real you want to get. In consideration of the
+ball-ball interaction, a complete classical description would entail treating the balls as
+compressible objects--perhaps even modelling the pressure waves that emanate within each ball during
+a collision. Perhaps this treatment is most necessary during the break shot, and I would be very
+interested to know how the degree of realism of such a treatment compares to the more pragmatic
+approaches I will be taking. Speaking of which, here are the two models I will present:
+
+1. Elastic & instantaneous
+2. FIXME
+
+###  Elastic & instantaneous
+
+In this model, collisions are perfectly elastic, which means no energy dissipates as a result of the
+collision.  This is not true for several reasons. First of all, pool balls make noise when they
+collide, and those sound waves are a form of energy dissipation from the system. Then there is heat
+generated via the collision, another form of energy dissipation. Are there more instances of energy
+dissipation? Those are the ones I can think of anyways.
+
+Another assumption is that the balls interact instantaneously. Like everything, pool balls are
+viscoelastic objects and have some minute degree of compressibility. When objects compress, they
+exhibit a spring-like response, like how this bouncy ball compresses into the ground:
+
+{% include youtube_embed.html id="tTt886y0rWI" %}
+
+As seen in the clip, this creates an interaction between the bouncy ball and the ground that lasts a
+finite period of time. Pool balls are subject to the same phenomenon, to a degree order*s* of
+magnitude less exaggerated. However slight the effect may be, in reality pool balls interact over a
+finite period of time, a time that this model will ignore.
+
+{:.notice}
+Instantaneousness implies no effects of spin- or cut-induced throw, which are effects
+that exhibit substantial influence on shot outcome, and must be accounted for by amateurs and pros
+alike. In the next section I hack my way through a model in which collisions are still instantaneous
+but spin- and cut-induced throw exist.
 
 
-before accelerating Here, I'm striking the cue ball with a lot of top-spin. After the cue ball transfers its linear
-momentum to the 2-ball, for an infinitesimal amount of time the ball is still, afterwards which the 
+###  Elastic & instantaneous, with throw
 
-Immediately after hitting the 2-ball, the
-cue ball has 0 linear momentum after transferring its momentum to the 2-ball, yet maintains its
-angular momentum. Throughout it hits the 2-ball, it initially has
-linear momentum.  's initially. After contacting the 2-ball, the 
+Dr. Dave Billiards throw primer
+-jUL_8aZ2LU
 
-{% include youtube_embed.html id="6yuxdnJqn8E" %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -708,37 +907,3 @@ balls.
 
 The bottomline is this: after reading this paper, I decided this project was going to offer
 continuous event-based simulations or it wasn't going to offer anything.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
