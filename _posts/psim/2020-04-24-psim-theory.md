@@ -59,7 +59,7 @@ In what follows, I am going to lay out **all** of the physics I'm going to inclu
 simulation. If I was a young and sprightly undergrad I would probably attempt to derive the
 equations, but I'm old and withered so I'm just going to provide color commentary.
 
-## Physics: ball-cloth interactions
+## **Section I**: ball-cloth interactions
 
 In this section I review the ball-cloth interaction, aka how pool balls interact with their playing
 surface. It is somewhat obvious that the cloth provides a frictional surface that slows the ball's
@@ -647,7 +647,7 @@ $0 \le t \le \frac{2}{7}\frac{u _0}{\mu _s g}$. If $\frac{2R}{5\mu _{sp} g}
 
 This concludes the section of ball-cloth interactions, at least for now.
 
-## Physics: ball-cloth interactions
+## **Section II**: ball-ball interactions
 
 This section is dedicated to the collision physics between two balls. When physically modelling a
 phenomenon, the sky is the limit in terms of how real you want to get. In consideration of the
@@ -658,12 +658,14 @@ interested to know how the degree of realism of such a treatment compares to the
 approaches I will be taking. Speaking of which, here are the two models I will present:
 
 1. Elastic & instantaneous
-2. FIXME
 
-###  Elastic & instantaneous
+In each of these models, multi-ball collisions are not considered, _i.e._ each interaction is
+pairwise.
+
+###  (1) Elastic & instantaneous, 1 ball stationary
 
 In this model, collisions are perfectly elastic, which means no energy dissipates as a result of the
-collision.  This is not true for several reasons. First of all, pool balls make noise when they
+collision. This is not true for several reasons. First of all, pool balls make noise when they
 collide, and those sound waves are a form of energy dissipation from the system. Then there is heat
 generated via the collision, another form of energy dissipation. Are there more instances of energy
 dissipation? Those are the ones I can think of anyways.
@@ -675,54 +677,149 @@ exhibit a spring-like response, like how this bouncy ball compresses into the gr
 {% include youtube_embed.html id="tTt886y0rWI" %}
 
 As seen in the clip, this creates an interaction between the bouncy ball and the ground that lasts a
-finite period of time. Pool balls are subject to the same phenomenon, to a degree order*s* of
+finite period of time. Pool balls are subject to the same phenomenon, to a degree order**s** of
 magnitude less exaggerated. However slight the effect may be, in reality pool balls interact over a
 finite period of time, a time that this model will ignore.
 
 {:.notice}
-Instantaneousness implies no effects of spin- or cut-induced throw, which are effects
+Instantaneity implies no effects of spin- or cut-induced throw, which are effects
 that exhibit substantial influence on shot outcome, and must be accounted for by amateurs and pros
 alike. In the next section I hack my way through a model in which collisions are still instantaneous
-but spin- and cut-induced throw exist.
+but spin- and cut-induced throw exist. TODO
 
+First I tackle the simple scenario in which a moving ball strikes a stationary ball. Then, I handle
+the general case of 2 moving balls.
 
-###  Elastic & instantaneous, with throw
+#### - Case 1: stationary ball
 
-Dr. Dave Billiards throw primer
--jUL_8aZ2LU
+Assuming the elastic and instantaneous model, consider a moving ball that hits a stationary ball, shown in Figure 8:
 
+[![ball_ball_collision_1]({{images}}/ball_ball_collision_1.jpg)]({{images}}/ball_ball_collision_1.jpg){:.center-img .width-70}
+*Figure 8. Ball A (blue) strikes ball B (red) with an incoming velocity $\vec{v}_0$ in the
+$+x-$direction. The unfilled circle shows where ball A ends up striking ball B. During contact, the
+line connecting the centers of the two balls (the line of centers) forms an angle $\alpha$ with
+$\vec{v}_0$. The outgoing velocity of ball B, $\vec{v}_B$, runs along the line of centers, and the
+outgoing velocity of ball A, $\vec{v}_B$, is perpendicular to $\vec{v}_B$.*
 
+If we imagine that Ball A is the cue ball and ball B is an object ball, this represents a "cut shot"
+of $\alpha$ degrees. We would like to know how to resolve this collision. What do I mean by
+"resolve"? I mean, Given the state of the balls the moment _before_ the collision, what is the state
+of the balls the moment _after_ the collision. Just like in [Section
+I](#section-i-ball-cloth-interactions), the state of a ball is defined by its position, velocity,
+and angular momentum.
 
+Some of these we can bang out right away.
+Suppose the collision happens between $t = \tau$ and $t = \tau + dt$, keeping in mind instantaneity
+of the collision dictates that $dt$ is infinitesimally small. There is thus no amount of time for
+the balls to change position in the moments immediately before and after the collision. Therefore
 
+$$ \vec{r}_A(\tau+dt) = \vec{r}_A(\tau) \notag $$
 
+$$ \vec{r}_B(\tau+dt) = \vec{r}_B(\tau) \notag $$
 
+One down. Since we are not accounting for friction effects, there is no loss or change in angular momentum due
+to the collision:
 
+$$ \vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau) \notag $$
 
+$$ \vec{\omega}_B(\tau+dt) = \vec{\omega}_B(\tau) \notag $$
 
+Two down. This leaves only the velocities of the balls, which certainly do change. To solve the outgoing
+velocities, we're going to need some conservation of momentum and energy. Figure 8 details the scenario above. For
+convenience, the coordinate system is defined so that $\vec{v}_0$ points in the $+x-$direction.
 
+Before getting into equations, what's clear immediately is that we know the outgoing direction of
+Ball B just from geometry: it is parallel to the line that connects the centers of the balls at the
+moment of impact. That's because this line marks the direction of force that Ball A applies to Ball
+B. Now, let's figure out the outgoing direction of Ball B.
 
+According to conservation of linear momentum, the momentum before the collision equals the momentum
+after it:
 
+$$
+m\vec{v}_0 = m\vec{v}_A + m\vec{v}_B
+\notag
+$$
 
+$$
+\vec{v}_0 = \vec{v}_A + \vec{v}_B
+\label{p_1}
+$$
 
+Concurrently, conservation of energy states that the energy before the collision equals the energy after it
 
+$$
+E(\tau) = E(\tau + dt)
+\label{con_energy}
+$$
 
+Since the model ignores angular momentum, we need only account for the kinetic energy resulting from
+linear translation of the balls. Plugging kinetic energy terms into Eq. $\eqref{con_energy}$ yields
 
+$$
+\frac{1}{2} m \lvert \vec{v}_0 \rvert ^2 = \frac{1}{2} m \lvert \vec{v}_A \rvert ^2 + \frac{1}{2} m \lvert \vec{v}_B \rvert ^2
+\notag
+$$
 
+$$
+\lvert \vec{v}_0 \rvert ^2 = \lvert \vec{v}_A \rvert ^2 + \lvert \vec{v}_B \rvert ^2
+\notag
+$$
 
+$$
+\vec{v}_0 \cdot \vec{v}_0 = \lvert \vec{v}_A \rvert ^2 + \lvert \vec{v}_B \rvert ^2
+\label{E_1}
+$$
 
+Plugging Eq. $\eqref{p_1}$ into the LHS of Eq. $\eqref{E_1}$ yields something very interesting:
 
+$$
+(\vec{v}_A + \vec{v}_B) \cdot (\vec{v}_A + \vec{v}_B) = \lvert \vec{v}_A \rvert ^2 + \lvert \vec{v}_B \rvert ^2
+\notag
+$$
 
+$$
+\lvert \vec{v}_A \rvert ^2 + \lvert \vec{v}_B \rvert ^2  +  2 \, \vec{v}_A \cdot \vec{v}_B = \lvert \vec{v}_A \rvert ^2 + \lvert \vec{v}_B \rvert ^2
+\notag
+$$
 
+$$
+\vec{v}_A \cdot \vec{v}_B = 0
+\label{perp}
+$$
 
+The inner product of $\vec{v}_A$ and $\vec{v}_B$ is 0, which means that outgoing velocities of the 2
+balls are $90^{\circ}$ to one another! Since we know the direction of $\vec{v}_B$ (from geometry),
+we know the direction of $\vec{v}_A$ as well. To determine the magnitudes, we superpose the 3
+velocity vectors on top of each other:
 
+[![ball_ball_velocity_vectors]({{images}}/ball_ball_velocity_vectors.jpg)]({{images}}/ball_ball_velocity_vectors.jpg){:.center-img .width-50}
+*Figure 9. Geometrical relationships between $\vec{v}_0$, $\vec{v}_A$, and $\vec{v}_B$.*
 
+This diagram contains 3 critical pieces of information.
 
+1. $\vec{v}_B$ makes an angle, $\alpha$, with the incoming velocity, $\vec{v}_0$. This is known
+   because Ball A imparts an impulse to Ball B in the direction parallel to the line connecting
+   their two centers of mass.
 
+2. The sum of $\vec{v}_A$ and $\vec{v}_B$ is $\vec{v}_0$. This is known from Eq. $\eqref{p_1}$, the
+   conservation of linear momentum.
 
+3. $\vec{v}_A$ is perpendicular to $\vec{v}_B$. This is known from Eq. $\eqref{perp}$, which used
+   both conservation of energy and linear momentum.
 
+Given these facts, we can soh-cah-toa our way to the answer. Expressed in terms of
+$\alpha$ and $v_0$, we get:
 
+$$
+\vec{v}_A(t+\tau) = (v_0 \sin\alpha) \, \hat{v}_A
+\label{vA_simple}
+$$
 
-
+$$
+\vec{v}_B(t+\tau) = (v_0 \cos\alpha) \, \hat{v}_B
+\label{vB_simple}
+$$
 
 
 
