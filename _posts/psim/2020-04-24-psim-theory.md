@@ -813,6 +813,36 @@ $\alpha$ and $v_0$, we get:
 
 $$
 \vec{v}_A(t+\tau) = (v_0 \sin\alpha) \, \hat{v}_A
+\notag
+$$
+
+$$
+\vec{v}_B(t+\tau) = (v_0 \cos\alpha) \, \hat{v}_B
+\notag
+$$
+
+Putting it all together, we have our equations for the elastic and instantaneous ball-ball collision
+in the specific case where one ball is stationary:
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Elastic & instantaneous ball-ball collision (**stationary case**)</span>
+
+Displacement:
+
+$$
+\vec{r}_A(\tau+dt) = \vec{r}_A(\tau)
+\label{rA_simple}
+$$
+
+$$
+\vec{r}_B(\tau+dt) = \vec{r}_B(\tau)
+\label{rB_simple}
+$$
+
+Velocity:
+
+$$
+\vec{v}_A(t+\tau) = (v_0 \sin\alpha) \, \hat{v}_A
 \label{vA_simple}
 $$
 
@@ -821,6 +851,33 @@ $$
 \label{vB_simple}
 $$
 
+Angular momentum:
+
+$$
+\vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau)
+\notag
+$$
+
+$$
+\vec{\omega}_B(\tau+dt) = \vec{\omega}_B(\tau)
+\notag
+$$
+
+</div>
+
+#### - Case 2: both moving
+
+Relaxing the assumption that one ball is stationary may at first seem like a terrible idea--how
+horribly complex that must become. And that intuition is basically correct. Treating both balls as
+moving would be a nightmare. Yet even when both balls are moving, we don't need to _treat_ it that
+way. 
+
+[![ball_ball_collision_2]({{images}}/ball_ball_collision_2.jpg)]({{images}}/ball_ball_collision_2.jpg){:.center-img .width-90}
+*Figure 9. Ball A (blue) strikes ball B (red) with an incoming velocity $\vec{v}_0$ in the
+$+x-$direction. The unfilled circle shows where ball A ends up striking ball B. During contact, the
+line connecting the centers of the two balls (the line of centers) forms an angle $\alpha$ with
+$\vec{v}_0$. The outgoing velocity of ball B, $\vec{v}_B$, runs along the line of centers, and the
+outgoing velocity of ball A, $\vec{v}_B$, is perpendicular to $\vec{v}_B$.*
 
 
 
