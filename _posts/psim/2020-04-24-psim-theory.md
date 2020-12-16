@@ -456,8 +456,8 @@ you are interested in knowing how the ball evolves in relation to the table coor
 $\hat{v}_0$ relates to the table in the following way:
 
 [![table_coordinates]({{images}}/table_coordinates.jpg)]({{images}}/table_coordinates.jpg){:.center-img .width-30}
-*Figure 5. Coordinate system in which the table is described. $\phi$ relates the ball's unit vector
-of motion, $\hat{v}_0$, to the table coordinates. The origin (0,0) is the bottom left pocket.*
+_**Figure 5**. Coordinate system in which the table is described. $\phi$ relates the ball's unit vector
+of motion, $\hat{v}_0$, to the table coordinates. The origin (0,0) is the bottom left pocket._
 
 Then $\hat{v}_0$ can be expressed in terms of the table coordinates via the following rotation
 matrix:
@@ -520,11 +520,11 @@ between the ball and cloth at the point of contact. If you need to know whether 
 zaney flowchart questionnaire:
 
 [![are_you_sliding]({{images}}/are_you_sliding.jpg)]({{images}}/are_you_sliding.jpg){:.center-img .width-50}
-*Figure 6. Determine whether or not you are sliding.  $\lvert \vec{v} \rvert$ is the speed of the
+_**Figure 6**. Determine whether or not you are sliding.  $\lvert \vec{v} \rvert$ is the speed of the
 ball, $\omega_\parallel$ is the angular momentum in the direction of motion, and $\omega_\bot$ is the
 angular momentum that is both orthogonal to the direction of motion and parallel to the table. Note
 that as discussed in Case 3, $\omega_z$ does not influence $\vec{u}(t)$, and therefore has no impact
-on whether or not you are sliding.*
+on whether or not you are sliding._
 
 If there is any curvature whatsoever in the trajectory of a ball, it occurs while the ball is
 sliding (assuming the table is perfectly level). If you shoot a draw or stun shot, the cue ball is
@@ -540,11 +540,11 @@ wood, where the spin of the screw is about the same axis as the axis of motion--
 spin to impart on a ball in the game of pool, but useful for the purposes of demonstration:
 
 [![sliding_diagram]({{images}}/sliding_diagram.jpg)]({{images}}/sliding_diagram.jpg){:.center-img .width-70}
-*Figure 7. A ball moving in the $+x-$direction with angular momentum also in the $+x-$direction. The
+_**Figure 7**. A ball moving in the $+x-$direction with angular momentum also in the $+x-$direction. The
 left panel shows a bird's eye view, and the right panel shows a side view of the table and ball, as
 if looking down the barrel of the cue stick. Because $\vec{\omega}(t)$ is parallel to $\vec{v}(t)$,
 the $R \hat{k} \times \vec{\omega}(t)$ component in Eq. $\eqref{rel_vel}$ is orthogonal to
-$\vec{v}(t)$. The below paragraph defines the force terms.*
+$\vec{v}(t)$. The below paragraph defines the force terms._
 
 I am used to thinking about friction opposing the ball's center of mass motion, and that frictional
 force is still present in the sliding case and is shown in Figure 7 as $\vec{F}_S$ (straight-line
@@ -657,12 +657,13 @@ a collision. Perhaps this treatment is most necessary during the break shot, and
 interested to know how the degree of realism of such a treatment compares to the more pragmatic
 approaches I will be taking. Speaking of which, here are the two models I will present:
 
-1. Elastic & instantaneous
+1. Elastic, instantaneous, frictionless
+1. Elastic, instantaneous (TODO)
 
 In each of these models, multi-ball collisions are not considered, _i.e._ each interaction is
 pairwise.
 
-###  (1) Elastic & instantaneous, 1 ball stationary
+###  (1) Elastic, instantaneous, frictionless
 
 In this model, collisions are perfectly elastic, which means no energy dissipates as a result of the
 collision. This is not true for several reasons. First of all, pool balls make noise when they
@@ -681,25 +682,30 @@ finite period of time. Pool balls are subject to the same phenomenon, to a degre
 magnitude less exaggerated. However slight the effect may be, in reality pool balls interact over a
 finite period of time, a time that this model will ignore.
 
-{:.notice}
-Instantaneity implies no effects of spin- or cut-induced throw, which are effects
-that exhibit substantial influence on shot outcome, and must be accounted for by amateurs and pros
-alike. In the next section I hack my way through a model in which collisions are still instantaneous
-but spin- and cut-induced throw exist. TODO
+The final assumption, is that the ball-ball interaction is frictionless, _i.e._ perfectly slippery.
+This implies that there is no transfer of spin from one ball to another, which is commonly known as
+throw.
 
-First I tackle the simple scenario in which a moving ball strikes a stationary ball. Then, I handle
-the general case of 2 moving balls.
+{:.notice}
+The frictionless assumption is the worst of these assumptions, since friction between balls is what
+causes spin- and cut-induced throw, which are effects that exhibit substantial influence on shot
+outcome, and must be accounted for by amateurs and pros alike. In the next model, I will account for
+friction between balls.
+
+For this model, I first tackle the simple scenario in which a moving ball strikes a stationary ball.
+Then, I handle the general case of 2 moving balls.
 
 #### - Case 1: stationary ball
 
-Assuming the elastic and instantaneous model, consider a moving ball that hits a stationary ball, shown in Figure 8:
+Assuming the elastic, instantaneous, and frictionless model, consider a moving ball that hits a
+stationary ball, shown in Figure 8:
 
 [![ball_ball_collision_1]({{images}}/ball_ball_collision_1.jpg)]({{images}}/ball_ball_collision_1.jpg){:.center-img .width-70}
-*Figure 8. Ball A (blue) strikes ball B (red) with an incoming velocity $\vec{v}_0$ in the
+_**Figure 8**. Ball A (blue) strikes ball B (red) with an incoming velocity $\vec{v}_0$ in the
 $+x-$direction. The unfilled circle shows where ball A ends up striking ball B. During contact, the
 line connecting the centers of the two balls (the line of centers) forms an angle $\alpha$ with
 $\vec{v}_0$. The outgoing velocity of ball B, $\vec{v}_B$, runs along the line of centers, and the
-outgoing velocity of ball A, $\vec{v}_B$, is perpendicular to $\vec{v}_B$.*
+outgoing velocity of ball A, $\vec{v}_B$, is perpendicular to $\vec{v}_B$._
 
 If we imagine that Ball A is the cue ball and ball B is an object ball, this represents a "cut shot"
 of $\alpha$ degrees. We would like to know how to resolve this collision. What do I mean by
@@ -794,7 +800,7 @@ we know the direction of $\vec{v}_A$ as well. To determine the magnitudes, we su
 velocity vectors on top of each other:
 
 [![ball_ball_velocity_vectors]({{images}}/ball_ball_velocity_vectors.jpg)]({{images}}/ball_ball_velocity_vectors.jpg){:.center-img .width-50}
-*Figure 9. Geometrical relationships between $\vec{v}_0$, $\vec{v}_A$, and $\vec{v}_B$.*
+_**Figure 9**. Geometrical relationships between $\vec{v}_0$, $\vec{v}_A$, and $\vec{v}_B$._
 
 This diagram contains 3 critical pieces of information.
 
@@ -821,11 +827,11 @@ $$
 \notag
 $$
 
-Putting it all together, we have our equations for the elastic and instantaneous ball-ball collision
+Putting it all together, we have our equations for the elastic, instantaneous, and frictionless ball-ball collision
 in the specific case where one ball is stationary:
 
 <div class="extra-info" markdown="1">
-<span class="extra-info-header">Elastic & instantaneous ball-ball collision (**stationary case**)</span>
+<span class="extra-info-header">Elastic, instantaneous, frictionless ball-ball collision (**stationary case**)</span>
 
 Displacement:
 
@@ -855,29 +861,139 @@ Angular momentum:
 
 $$
 \vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau)
-\notag
+\label{oA_simple}
 $$
 
 $$
 \vec{\omega}_B(\tau+dt) = \vec{\omega}_B(\tau)
-\notag
+\label{oB_simple}
 $$
 
 </div>
 
 #### - Case 2: both moving
 
-Relaxing the assumption that one ball is stationary may at first seem like a terrible idea--how
-horribly complex that must become. And that intuition is basically correct. Treating both balls as
+Relaxing the assumption that one ball is stationary may at first seem like a terrible idea--the
+introduced complexity must be horrible. And that intuition is basically correct. Treating both balls as
 moving would be a nightmare. Yet even when both balls are moving, we don't need to _treat_ it that
-way. 
+way. Instead, we can change to a frame of reference that moves with one of the balls. In such a frame
+of reference, that ball is stationary. A picture of the situation is shown in Figure 10:
 
 [![ball_ball_collision_2]({{images}}/ball_ball_collision_2.jpg)]({{images}}/ball_ball_collision_2.jpg){:.center-img .width-90}
-*Figure 9. Ball A (blue) strikes ball B (red) with an incoming velocity $\vec{v}_0$ in the
-$+x-$direction. The unfilled circle shows where ball A ends up striking ball B. During contact, the
-line connecting the centers of the two balls (the line of centers) forms an angle $\alpha$ with
-$\vec{v}_0$. The outgoing velocity of ball B, $\vec{v}_B$, runs along the line of centers, and the
-outgoing velocity of ball A, $\vec{v}_B$, is perpendicular to $\vec{v}_B$.*
+_**Figure 10**. In the left panel, Ball A (blue) and Ball B (red) are both moving and due to collide at
+the position of the unfilled circles. If $\vec{v}_B$ is subtracted from the velocities of both
+balls ($-\vec{v}_B$ is shown as the yellow vectors), the frame of reference is changed to one that moves
+with ball B, shown in the right panel. In this scenario, ball B is stationary, and the situation
+reduces to Case 1, and specifically the situation depicted in Figure 8._
+
+Since physics behaves the same as viewed from all inertial reference frames, we are well within our rights
+to make this transformation during the collision. After solving the outgoing state post-collision,
+we can reverse the transformation and voila, we are done. This makes Case 2 trivial, since it can be
+reduced to Case 1. Explicitly, the procedure goes like this:
+
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Elastic, instantaneous, frictionless ball-ball collision (**both moving**)</span>
+
+First, make the following transformation so Ball B is stationary:
+
+$$
+\vec{v}_B'(\tau) = \vec{v}_B(\tau) - \vec{v}_B(\tau) = \vec{0}
+\label{trans_B}
+$$
+
+$$
+\vec{v}_A'(\tau) = \vec{v}_A(\tau) - \vec{v}_B(\tau)
+\label{trans_A}
+$$
+
+The velocities of the collisions are resolved via Eqs. $\eqref{vA_simple}$ and $\eqref{vB_simple}$,
+where Eq. $\eqref{trans_A}$ is substituted as $\vec{v}_0$. This yields post-collision velocity
+vectors $\vec{v}_A'(\tau + dt)$ and $\vec{v}_B'(\tau + dt)$, which can be transformed back to the table
+frame of reference via the inverse transformation (adding back $\vec{v}_B(\tau)$):
+
+$$
+\vec{v}_A(\tau + dt) = \vec{v}_A'(\tau + dt) + \vec{v}_B(\tau)
+\label{inv_trans_A}
+$$
+
+$$
+\vec{v}_B(\tau + dt) = \vec{v}_B'(\tau + dt) + \vec{v}_B(\tau)
+\label{inv_trans_B}
+$$
+
+</div>
+
+## **Section III**: ball-rail interactions
+
+The ball-rail interaction is probably the most difficult to model accurately. There are so many
+factors to consider. The height, shape, friction, and compressibility of the cushion. The incoming
+angle, velocity, and spin of the ball. All of these have significant effects on how the rail
+influences the ball's outgoing state. Let's take a look in slow motion:
+
+{% youtube_embed.html id="yWH-CbV6BwQ" %}
+
+First, you can really see that the rail deforms substantially throughout its interaction with the ball.
+
+[![cushion_depression]({{images}}/cushion_depression.png)]({{images}}/cushion_depression.png){:.center-img .width-70}
+*Pool ball significantly deforming the cushion [Source](https://www.youtube.com/watch?v=yWH-CbV6BwQ).*
+
+The implication is two-fold. This interaction is non-instantaneous, and persists far longer than the
+ball-ball interaction. Second, there is no single point of contact (PoC) between ball and cushion.
+Rather, the interaction is more like a line of contact (LoC).
+
+What's also noticeable is that after the interaction, the ball pops into the air. This happens
+because the apex of the cushion is at a height greater than the ball's radius, and so the outgoing
+velocity of the ball has a component that goes _into_ the table. Consequently, the slate of the
+table applies a normal force to the ball, popping it up into the air.  Importantly, I want to
+distinguish between the ball-slate interaction and the ball-cushion interaction: the ball-cushion
+interaction creates the outgoing velocity of the ball, which under most circumstances has a
+component _into_ the table. An infinitesimally small amount of time later, the ball-slate
+interaction occurs, which curbs the ball's velocity into the table, sometimes even popping the ball
+into the air if it has enough speed. This section deals strictly with the ball-cushion interaction,
+and in the next section I will treat the ball-slate interaction.
+
+Let's dive into the models I could find for the ball-cushion interaction.
+
+### (1) Mathavan _et. al_, 2010
+
+After searching the literature, the most complete treatment I have found is [this work by Mathavan
+_et. al_
+(2010)](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)
+entitled, "_A theoretical analysis of billiard ball dynamics under cushion impacts_". They develop a
+model that must be solved numerically using differential equations, which is relatively complex. To get
+a rough idea of the complexity, check out the force body diagram in Figure 4:
+
+[![mathavan_2010_1]({{images}}/mathavan_2010_1.png)]({{images}}/mathavan_2010_1.png){:.center-img .width-70}
+_Force body diagram in Figure 4 of Mathavan _et. al_, 2010. [source](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)_
+
+Despite the model's complexity, it assumes that the cushion deformation is insignificant, and thus
+that there exists a PoC rather than a LoC. Despite this being a large departure from reality, they
+report really good agreement with experiment.
+
+This is definitely the best model I could find that I would be willing to implement, but at this
+moment in time I don't _really_ want to solve differential equations on-the-fly everytime there is a
+ball-cushion interaction. Perhaps I could solve the differential equations for the entire parameter
+space and then parameterize the solution space somehow, but for now I would like to avoid this model
+altogether and look for something simpler.
+
+### (2) Marlow, 1994
+
+So Marlow has a book called "The Physics of Pocket Billiards" that I use a reference for pool
+physics. In general, its very comprehensive, but in the case of the ball-cushion interaction he
+presents an incomplete and inconsistent treatment. Moving on.
+
+### (3) Han, 2005
+
+I enjoy [this treatment by Han, 2005](https://link.springer.com/article/10.1007/BF02919180), entitled,
+"_Dynamics in carom and three cushion billiards_". It is simple, analytic, and appears to be physically plausible.
+
+
+
+
+
+
+
 
 
 
