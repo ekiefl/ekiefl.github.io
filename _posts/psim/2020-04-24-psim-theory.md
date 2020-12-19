@@ -41,19 +41,21 @@ work would enable the theoretical treatment of the game of billiards**, and as s
 studied for at least 200 years.
 
 As a result of its long history, the theoretical treatment of billiards has been sufficiently solved
-for most scenarios: **(1)** ball-cloth interactions, aka how the balls slide, spin, roll, and lie on the table;
-**(2)** ball-ball interactions aka ball-ball collisions; **(3)** ball-cushion interactions, aka how
-balls bounce off rails. The jury is still out on the finer details of many of these interactions,
-and some treatments are less accurate than others, but each of these individual scenarios have
-analytical solutions that are accurate to "sufficient" degree. What I mean by sufficient is that all
-qualitative effects a pro-player may be expecting to observe manifest directly from the equations.
-Depending on how well I do in balancing the degree of these effects will determine how realistic my
-simulation ends up being.
+for most scenarios: **(1)** ball-cloth interactions, aka how the balls slide, spin, roll, and lie on
+the table; **(2)** ball-ball interactions aka ball-ball collisions; **(3)** ball-cushion
+interactions, aka how balls bounce off rails; **(4)** ball-air interactions, aka how the ball
+behaves when it becomes airborne due to jump shots, etc; **(5)** ball-slate interactions, aka how
+the ball bounces on the table. The jury is still out on the finer details of many of these
+interactions, and some treatments are less accurate than others, but each of these individual
+scenarios have analytical solutions that are accurate to "sufficient" degree. What I mean by
+sufficient is that all qualitative effects a pro-player may be expecting to observe manifest
+directly from the equations. Depending on how well I do in balancing the degree of these effects
+will determine how realistic my simulation ends up being.
 
-So basically, I'm going to have to get my hands dirty with these equations. I decided having a reference
-source was necessary, so I bought the non-exhaustive but heavily referenced "modern day"
-treatment of billiards, "_The Physics of Pocket Billiards_" by Wayland C. Marlow. The physics I will use
-comes in part from this book, and in part from random sources on the internet.
+So basically, I'm going to have to get my hands dirty with these equations. I decided having a
+reference source was necessary, so I bought the non-exhaustive but heavily referenced "modern day"
+treatment of billiards, "_The Physics of Pocket Billiards_" by Wayland C. Marlow. The physics I will
+use comes in part from this book, and in part from random sources on the internet.
 
 In what follows, I am going to lay out **all** of the physics I'm going to include in the
 simulation. If I was a young and sprightly undergrad I would probably attempt to derive the
@@ -226,14 +228,14 @@ other words, the relative velocity between the ball and cloth at the PoC is 0, a
 there can exist no frictional force. Of course, we know that the ball *does* slow, which
 is proof that there does not exist a "point of contact" but rather an "area of contact".
 
-Rather than explicitly define an area of contact, which would greatly complicate the physics, we account
-for this embarassing blunder of the model by introducing a phenomenological friction
+Rather than explicitly define an area of contact, which would greatly complicate the physics, we
+account for this embarassing blunder of the model by introducing a phenomenological friction
 parameter that slows down the $z-$component of the ball's angular momentum over time.  What's a
-phenomenological parameter? It's a parameter that is added to a model *ad hoc*, that explains
-a phenomenon (in this case, the slowing down of a ball's rotation) that does not come from
-assumptions of the model. It's what people do when they want to model an observation but their
-model is bad and does not cause the observation. Basically, its cheating (sue me). So after adding a standard
-friction term, we have our equations of motion solved:
+phenomenological parameter? It's a parameter that is added to a model *ad hoc*, that explains a
+phenomenon (in this case, the slowing down of a ball's rotation) that does not come from assumptions
+of the model. It's what people do when they want to model an observation but their model is bad and
+does not cause the observation. Basically, its cheating, which my girlfriend knows I love to do. So
+after adding a standard friction term, we have our equations of motion solved:
 
 <div class="extra-info" markdown="1">
 <span class="extra-info-header">Spinning equations of motion</span>
@@ -268,10 +270,12 @@ $\omega_z(t)$ is $0$. This occurs when $t=(2R\omega_{0z})/(5\mu_{sp}g)$.
 
 ### - Case 3: Rolling
 
-Think of rolling as driving your car on concrete, whereas sliding would be like driving your car on ice. In
-the former, your tires grip the road such that at the point of contact, there is no relative
-velocity between the tire and the road. On the other hand, on ice, there is a lot of "slippage"
-between the tire and the ice, and therefore a relative velocity.
+Think of rolling as driving your car on concrete, whereas sliding would be like driving your car on
+ice. In the former, your tires grip the road such that at the point of contact, there is no relative
+velocity between the tire and the road; each time the tire does one rotation, your car translates
+the circumference of your tire. On the other hand, on ice, there is a lot of "slippage" between the
+tire and the ice, and therefore a relative velocity; each time your tire does one rotation, your car
+moves far less than one circumference of your tire.
 
 {:.notice}
 In physics textbooks, what I call rolling is actually called _rolling without slippage_ and what I call
@@ -348,7 +352,7 @@ equilibrium state.
 
 Now that we have a mathematical condition for rolling, _i.e._ Eq. $\eqref{roll_condition}$, there is a lot
 we can learn about the angular momentum. According to our coordinate system in Figure 4, the RHS of
-Eq. $\eqref{roll_condition}$ is strictly in the $+x-$directiion. That means the LHS must also be
+Eq. $\eqref{roll_condition}$ is strictly in the $+x-$direction. That means the LHS must also be
 strictly in the $+x-$direction. Expanding the cross product on the LHS yields:
 
 $$ -R\hat{k} \times \vec{\omega}(t) = R \begin{bmatrix} \omega_y(t) \\ -\omega_x(t) \\ 0 \end{bmatrix} \notag $$
@@ -386,7 +390,7 @@ is that these players are elevating their cue, which causes $\omega_x$ to be non
 momentum _in the direction_ of motion). This "barrel-roll" rotation is what causes curved
 trajectories, otherwise known as swerve or masse. (For more info on the cue-cueball interaction, see
 FIXME). On the other hand, my shot did not have any significant amount of $\omega_x$, so whatever
-small amount their was dissipated within perhaps 200ms, yielding an otherwise straight trajectory.
+small amount existed quickly dissipated within fractions of a section, yielding an otherwise straight trajectory.
 
 The takeaway is that $\omega_z(t)$ is decoupled from everything else, and evolves according to Eq.
 $\eqref{spinning_oz}$, which we dealt with Case 2. The only thing left to do is write down the
@@ -450,10 +454,10 @@ $0 \le t \le \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$. If $\frac{2R}{5\mu _{sp} 
 
 </div>
 
-
-The chosen frame of reference makes for a compact representation, yet, this is annoying to deal when
-you are interested in knowing how the ball evolves in relation to the table coordinates. Suppose
-$\hat{v}_0$ relates to the table in the following way:
+The chosen frame of reference (centered at ball's initial coordinates, x-axis in direction of
+motion) is convenient, but annoying to deal when you are interested in knowing how the ball evolves
+**in relation to the table coordinates**. Suppose $\hat{v}_0$ relates to the table in the following
+way:
 
 [![table_coordinates]({{images}}/table_coordinates.jpg)]({{images}}/table_coordinates.jpg){:.center-img .width-30}
 _**Figure 5**. Coordinate system in which the table is described. $\phi$ relates the ball's unit vector
@@ -521,7 +525,7 @@ zaney flowchart questionnaire:
 
 [![are_you_sliding]({{images}}/are_you_sliding.jpg)]({{images}}/are_you_sliding.jpg){:.center-img .width-50}
 _**Figure 6**. Determine whether or not you are sliding.  $\lvert \vec{v} \rvert$ is the speed of the
-ball, $\omega_\parallel$ is the angular momentum in the direction of motion, and $\omega_\bot$ is the
+ball, $\omega _{\parallel}$ is the angular momentum in the direction of motion, and $\omega _{\bot}$ is the
 angular momentum that is both orthogonal to the direction of motion and parallel to the table. Note
 that as discussed in Case 3, $\omega_z$ does not influence $\vec{u}(t)$, and therefore has no impact
 on whether or not you are sliding._
@@ -682,7 +686,7 @@ finite period of time. Pool balls are subject to the same phenomenon, to a degre
 magnitude less exaggerated. However slight the effect may be, in reality pool balls interact over a
 finite period of time, a time that this model will ignore.
 
-The final assumption, is that the ball-ball interaction is frictionless, _i.e._ perfectly slippery.
+The final assumption is that the ball-ball interaction is frictionless, _i.e._ perfectly slippery.
 This implies that there is no transfer of spin from one ball to another, which is commonly known as
 throw.
 
@@ -759,7 +763,7 @@ E(\tau) = E(\tau + dt)
 \label{con_energy}
 $$
 
-Since the model ignores angular momentum, we need only account for the kinetic energy resulting from
+Since the model ignores angular momentum transfer, we need only account for the kinetic energy resulting from
 linear translation of the balls. Plugging kinetic energy terms into Eq. $\eqref{con_energy}$ yields
 
 $$
@@ -931,29 +935,38 @@ factors to consider. The height, shape, friction, and compressibility of the cus
 angle, velocity, and spin of the ball. All of these have significant effects on how the rail
 influences the ball's outgoing state. Let's take a look in slow motion:
 
-{% youtube_embed.html id="yWH-CbV6BwQ" %}
+{% include youtube_embed.html id="yWH-CbV6BwQ" %}
 
 First, you can really see that the rail deforms substantially throughout its interaction with the ball.
 
 [![cushion_depression]({{images}}/cushion_depression.png)]({{images}}/cushion_depression.png){:.center-img .width-70}
 *Pool ball significantly deforming the cushion [Source](https://www.youtube.com/watch?v=yWH-CbV6BwQ).*
 
-The implication is two-fold. This interaction is non-instantaneous, and persists far longer than the
-ball-ball interaction. Second, there is no single point of contact (PoC) between ball and cushion.
-Rather, the interaction is more like a line of contact (LoC).
+The implication is two-fold. First, the interaction is non-instantaneous. In fact, it persists far
+longer than the ball-ball interaction. Yet finite-time interactions open up a can of worms for
+multi-body dynamics, since a second ball may join the party and collide with the first ball whilst
+it is interacting with the cushion. For this reason, along with the inherent complexity of the
+soft-body physics, modelling the interaction as non-instantaneous is likely unfeasible. Second,
+there is no single point of contact (PoC) between ball and cushion. Rather, the interaction occurs
+over a line of contact (LoC), each infinitesimal segment of which contributes to the applied force.
+These complexities are why the ball-cushion interaction is the least accurately modelled aspect of
+pool physics simulations.
 
-What's also noticeable is that after the interaction, the ball pops into the air. This happens
+Did you notice that the ball pops into the air post-collision? This happens
 because the apex of the cushion is at a height greater than the ball's radius, and so the outgoing
 velocity of the ball has a component that goes _into_ the table. Consequently, the slate of the
 table applies a normal force to the ball, popping it up into the air.  Importantly, I want to
 distinguish between the ball-slate interaction and the ball-cushion interaction: the ball-cushion
 interaction creates the outgoing velocity of the ball, which under most circumstances has a
 component _into_ the table. An infinitesimally small amount of time later, the ball-slate
-interaction occurs, which curbs the ball's velocity into the table, sometimes even popping the ball
-into the air if it has enough speed. This section deals strictly with the ball-cushion interaction,
-and in the next section I will treat the ball-slate interaction.
+interaction occurs, which prevents translation into the table's surface, and in some cases pops
+the ball into the air if its speed is great enough. This section deals strictly with the
+ball-cushion interaction, and in the next section I will treat the ball-slate interaction.
 
-Let's dive into the models I could find for the ball-cushion interaction.
+Given the complexity of the ball-cushion interaction, I'm unable to talk extensively through the equations,
+as I have for the ball-cloth and ball-ball interactions. Instead, I will just discuss the models I considered,
+and present the equations, with perhaps a sprinkle of the intuition behind them. So far, I have considered 3
+models: Mathavan _et. al_, 2010; Marlow, 1994; Han, 2005. Let's take a look.
 
 ### (1) Mathavan _et. al_, 2010
 
@@ -962,14 +975,16 @@ _et. al_
 (2010)](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)
 entitled, "_A theoretical analysis of billiard ball dynamics under cushion impacts_". They develop a
 model that must be solved numerically using differential equations, which is relatively complex. To get
-a rough idea of the complexity, check out the force body diagram in Figure 4:
+a rough idea of how involved this model is, check out the force body diagram in Figure 4:
 
-[![mathavan_2010_1]({{images}}/mathavan_2010_1.png)]({{images}}/mathavan_2010_1.png){:.center-img .width-70}
-_Force body diagram in Figure 4 of Mathavan _et. al_, 2010. [source](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)_
+[![mathavan_2010_1]({{images}}/mathavan_2010_1.png)]({{images}}/mathavan_2010_1.png){:.center-img .width-50}
 
-Despite the model's complexity, it assumes that the cushion deformation is insignificant, and thus
-that there exists a PoC rather than a LoC. Despite this being a large departure from reality, they
-report really good agreement with experiment.
+_Force body diagram from Mathavan *et. al*, 2010. [source](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)_
+
+This is the kind of thing that takes a long time to wrap your ahead around the meaning of the
+variables. Despite the model's complexity, it is still very simple in comparison to reality because
+it assumes the cushion deformation is insignificant, and thus the interaction instantaneous. Despite
+this being a large departure from reality, they report really good agreement with experiment.
 
 This is definitely the best model I could find that I would be willing to implement, but at this
 moment in time I don't _really_ want to solve differential equations on-the-fly everytime there is a
@@ -979,14 +994,62 @@ altogether and look for something simpler.
 
 ### (2) Marlow, 1994
 
-So Marlow has a book called "The Physics of Pocket Billiards" that I use a reference for pool
+So Marlow has a book called "The Physics of Pocket Billiards" that I use as a reference for pool
 physics. In general, its very comprehensive, but in the case of the ball-cushion interaction he
 presents an incomplete and inconsistent treatment. Moving on.
 
 ### (3) Han, 2005
 
-I enjoy [this treatment by Han, 2005](https://link.springer.com/article/10.1007/BF02919180), entitled,
-"_Dynamics in carom and three cushion billiards_". It is simple, analytic, and appears to be physically plausible.
+I enjoy [this treatment by Han, 2005](https://link.springer.com/article/10.1007/BF02919180),
+entitled, "_Dynamics in carom and three cushion billiards_". It assumes instantaneity and negligible
+cushion deformation. It is simple, analytic, and appears to be physically plausible. That said, it
+is less realistic than Mathavan _et. al_, 2010.
+
+Alright, so let's go over the model. Han chooses the following frame of reference:
+
+[![han_1]({{images}}/han_1.jpg)]({{images}}/han_1.jpg){:.center-img .width-50}
+
+_**Figure 11**. A ball colliding with a rall viewed from above. The frame of reference is defined so
+that the rail is perpendicular to the $x-$axis, and the $+x=$direction points away from the playing
+surface. The incoming velocity makes an angle $\phi$ with the $x-$axis._
+
+At the instant of contact, $t=\tau$, the ball has a state $(\vec{r}(\tau), \vec{v}(\tau),
+\vec{\omega}(\tau))$, and immediately afterwards it has the state $(\vec{r}(\tau + dt), \vec{v}(\tau
++ dt), \vec{\omega}(\tau + dt))$.  Since Han assumes instantaneity, $dt$ is an infinitesimal amount
+of time. Since there is no funny business going on with cushion deformation, we know that the
+position at $\tau$ will equal the position at $\tau + dt$:
+
+$$
+\vec{r}(\tau + dt) = \vec{r}(\tau)
+\notag
+$$
+
+Resolving the velocity and angular momentum requires some geometry of the ball-cushion interface.
+
+[![han_0]({{images}}/han_0.jpg)]({{images}}/han_0.jpg){:.center-img .width-70}
+
+_**Figure 12**. A ball colliding with a rall viewed from the side. It is the same scenario as in
+Figure 11. $R+\epsilon$ defines the height of the cushion, where contact is made with the ball.
+$\theta$ is determined uniquely by $\epsilon$, and defines the direction of the impulse the cushion
+imparts on the ball._
+
+One of the most important determinants in this model, and in reality, is the height of the rail.
+This will determine the direction that the cushion applies force to the ball. Have
+you ever played on a table with rails that are too short? The tendency is that any hard shots pop
+into the air. <describe intution, then epsilon theta relationship>. Then hit them with the
+equations.
+
+After surveying the equations for consistency, I found 2 mistakes, that I outline in [this
+worksheet]({{images}}/ball_cushion_inhwan_han.pdf). After accounting for them, the Han model yields
+the following time evolution for the ball-cushion interaction:
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header"> ball-cushion interaction (**Han 2005 model**)</span>
+
+
+</div>
+
+
 
 
 
