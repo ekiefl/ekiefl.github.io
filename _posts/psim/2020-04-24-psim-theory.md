@@ -13,21 +13,21 @@ image:
 {% capture images %}{{site.url}}/images/psim/psim-theory{% endcapture %}
 {% include _toc.html %}
 
-Alright, this post is the first of many in my journey to make a realistic simulator. Before jumping
-into code, we have to trudge through the theory of both **(a)** the physics of pool, and **(b)** the
-algorithims for evolving a pool shot. The physics of pool is what is covered in this post, where you'll
-find very little code, and algorithms for evolving a pool shit will be covered in the second post. Both of these
-will contain a lot of equations, and little if any code. If this sounds uninteresting to you, skip ahead to
-the third post in this series by [clicking HERE](FIXME). With that said, let's get started.
+Alright, this post is the first of many in my journey to make a realistic pool/billiards simulator.
+Before jumping into code, I have to trudge through the theory of both **(a)** the physics of pool,
+and **(b)** the algorithms for evolving a pool shot. The physics of pool is what is covered in this
+post, and algorithms for evolving a pool shot will be covered in the second post. Both of these will
+contain a lot of equations, and little if any code. If this sounds uninteresting to you, skip ahead
+to the third post in this series by [clicking HERE](FIXME). With that said, let's get started.
 
 {:.notice}
-As I incorporate more and more realistic physics into my simulations, this post will grow
-correspondingly.
+This post is intended to be a reference for myself and others. So as I learn more and incorporate
+more and more realistic physics into my simulations, this post will grow correspondingly.
 
 ## The physics of billiards
 
-The thing about pool is that its pretty old. This is one of the first historical depictions of
-billiards (please God let it be famous for no other reason), which dates back to 1674.
+The thing about pool is that it's pretty old. This is one of the first historical depictions of
+billiards, which dates back to 1674.
 
 [![charles_cotton]({{images}}/1674.png)]({{images}}/1674.png){:.center-img .width-70}
 *Two blokes shootin' the shit over a game of billiards. [Source](https://commons.wikimedia.org/w/index.php?curid=6903484).*
@@ -42,24 +42,23 @@ studied for at least 200 years.
 
 As a result of its long history, the theoretical treatment of billiards has been sufficiently solved
 for most scenarios: **(1)** ball-cloth interactions, aka how the balls slide, spin, roll, and lie on
-the table; **(2)** ball-ball interactions aka ball-ball collisions; **(3)** ball-cushion
-interactions, aka how balls bounce off rails; **(4)** ball-air interactions, aka how the ball
-behaves when it becomes airborne due to jump shots, etc; **(5)** ball-slate interactions, aka how
-the ball bounces on the table. The jury is still out on the finer details of many of these
+the table; **(2)** ball-ball interactions aka how balls collide with one another; **(3)**
+ball-cushion interactions, aka how balls bounce off rails; **(4)** ball-air interactions, aka how
+the ball behaves when it becomes airborne due to jump shots, etc.; and **(5)** ball-slate
+interactions, aka how the ball bounces on the table. I'm pretty sure this covers every phenomenon
+that happens on (and off) the table. The jury is still out on the finer details of these
 interactions, and some treatments are less accurate than others, but each of these individual
 scenarios have analytical solutions that are accurate to "sufficient" degree. What I mean by
 sufficient is that all qualitative effects a pro-player may be expecting to observe manifest
-directly from the equations. Depending on how well I do in balancing the degree of these effects
-will determine how realistic my simulation ends up being.
+directly from the equations.
 
-So basically, I'm going to have to get my hands dirty with these equations. I decided having a
+So if I'm to build a pool simulator, I'm going to have to get my hands dirty with these equations. I decided having a
 reference source was necessary, so I bought the non-exhaustive but heavily referenced "modern day"
 treatment of billiards, "_The Physics of Pocket Billiards_" by Wayland C. Marlow. The physics I will
 use comes in part from this book, and in part from random sources on the internet.
 
 In what follows, I am going to lay out **all** of the physics I'm going to include in the
-simulation. If I was a young and sprightly undergrad I would probably attempt to derive the
-equations, but I'm old and withered so I'm just going to provide color commentary.
+simulation.
 
 ## **Section I**: ball-cloth interactions
 
@@ -124,7 +123,7 @@ passable playing experience for beginners and is simple to code.
 ### (3) Ball with arbitrary spin
 
 {:.notice}
-From this point on, I'll refer to a ball with "spin" as a ball with "angular momentum".
+From this point on, I'll refer to a ball with "spin" as a ball with "angular velocity".
 
 In this example, we take on the general case of the ball-cloth interaction. This is the most
 realistic model I came across that can be solved analytically, and has the following assumptions:
@@ -133,7 +132,7 @@ realistic model I came across that can be solved analytically, and has the follo
 2. There is a single point of contact (PoC) between ball and cloth
 
 By "*the ball can be in an arbitrary state*", what I mean is that it may have an arbitrary velocity
-($\vec{v}$), angular momentum ($\vec{\omega}$), and displacement relative to some origin
+($\vec{v}$), angular velocity ($\vec{\omega}$), and displacement relative to some origin
 ($\vec{r}$). These 3 vectors fully characterize the state of the ball, and the goal is to find
 equations of motion that can evolve these 3 vectors through time. Essentially, these equations are
 functions that, when given an initial state ($\vec{v}_0$, $\vec{\omega}_0$, $\vec{r}_0$), can give
@@ -142,7 +141,7 @@ you an updated state ($\vec{v}$, $\vec{\omega}$, $\vec{r}$) some time $t$ later.
 As for the second assumption, a single point of contact is a fairly accurate assumption, but
 technically the weight of the ball "bunches up" the cloth as it moves to a degree that depends upon
 how loosely the cloth is stretched over the slate. Additionally, the cloth itself can be compressed,
-and cloth fibres and other non-idealities can contact the ball at multiple points. And so in
+and cloth fibers and other non-idealities can contact the ball at multiple points. And so in
 actuality there does not exist a "point of contact", but rather, an "area of contact".
 
 [![depression]({{images}}/depression.png)]({{images}}/depression.png){:.center-img .width-70}
@@ -170,7 +169,7 @@ Velocity:
 
 $$ \vec{v}(t) = \vec{0} \label{stationary_p}$$
 
-Angular momentum:
+Angular velocity:
 
 $$ \vec{\omega}(t) = \vec{0} \label{stationary_o}$$
 
@@ -184,7 +183,7 @@ $0 \le t < \infty$.
 It's important to keep in mind each of Eqs. $\eqref{stationary_r}$,
 $\eqref{stationary_p}$, and $\eqref{stationary_o}$ are vector equations that can be broken down into
 3 scalar equations each, one for each spatial dimension. For example, Eq. $\eqref{stationary_o}$ can
-be written as $\omega_x(t) = 0$, $\omega_y(t) = 0$, and $\omega_z(t) = 0$. I interchangably use both
+be written as $\omega_x(t) = 0$, $\omega_y(t) = 0$, and $\omega_z(t) = 0$. I interchangeably use both
 scalar and vector equations, so make sure you are spotting the difference.
 
 
@@ -203,16 +202,16 @@ Likewise, the ball remains in place:
 
 $$ \vec{r}(t) = \vec{r}_0 \notag $$
 
-However, since the ball is rotating, it has an angular momentum. You'll notice that the ball spins
+However, since the ball is rotating, it has an angular velocity. You'll notice that the ball spins
 around the $z-$axis, relative to the coordinate system in Figure 3:
 
 [![spinning_diagram_1]({{images}}/spinning_diagram_1.jpg)]({{images}}/spinning_diagram_1.jpg){:.center-img .width-70}
 _**Figure 3**. A ball spinning in place. In this coordinate system the table is in the $xy-$plane._
 
 This is not by chance--it is a constraint of the state, since if the ball had any components of its
-angular momentum in the $x$ or $y$ directions, it would create a friction with the cloth that would
-translate into a linear momentum. Since "spinning" is characterized by 0 linear momentum
-($\vec{v}=\vec{0}$), angular momentum is strictly in the $z-$axis. In otherwords,
+angular velocity in the $x$ or $y$ directions, it would create a friction with the cloth that would
+translate into a linear velocity. Since "spinning" is characterized by 0 linear velocity
+($\vec{v}=\vec{0}$), angular velocity is strictly in the $z-$axis. In other words,
 
 $$ \omega_x(t) = 0 \notag $$
 
@@ -220,7 +219,7 @@ $$ \omega_y(t) = 0 \notag $$
 
 $$ \omega_z(t) = \text{ }??? \notag $$
 
-To characterize the $z-$axis angular momentum, we need to introduce some bullshit. I told you that
+To characterize the $z-$axis angular velocity, we need to introduce some bullshit. I told you that
 in this model, there is a single PoC between ball and cloth. If such were *truly* the case, there
 is nothing to stop the ball from spinning forever (besides air, which we will ignore). This is
 because a ball spinning in place has **zero speed** at the infinitesimally small PoC. In
@@ -229,8 +228,8 @@ there can exist no frictional force. Of course, we know that the ball *does* slo
 is proof that there does not exist a "point of contact" but rather an "area of contact".
 
 Rather than explicitly define an area of contact, which would greatly complicate the physics, we
-account for this embarassing blunder of the model by introducing a phenomenological friction
-parameter that slows down the $z-$component of the ball's angular momentum over time.  What's a
+account for this embarrassing blunder of the model by introducing a phenomenological friction
+parameter that slows down the $z-$component of the ball's angular velocity over time.  What's a
 phenomenological parameter? It's a parameter that is added to a model *ad hoc*, that explains a
 phenomenon (in this case, the slowing down of a ball's rotation) that does not come from assumptions
 of the model. It's what people do when they want to model an observation but their model is bad and
@@ -248,7 +247,7 @@ Velocity:
 
 $$ \vec{v}(t) = \vec{0} \label{spinning_p}$$
 
-Angular momentum:
+Angular velocity:
 
 $$ \omega_x(t) = 0 \label{spinning_ox}$$
 
@@ -262,10 +261,10 @@ $0 \le t \le \frac{2R}{5\mu_{sp}g}\omega_{0z}$.
 
 </div>
 
-In Eq. $\eqref{spinning_oz}$, $\omega_{0z}$ is angular momentum in the $z-$axis at $t=0$, $\mu_{sp}$
+In Eq. $\eqref{spinning_oz}$, $\omega_{0z}$ is angular velocity in the $z-$axis at $t=0$, $\mu_{sp}$
 is the coefficient of spinning friction, $g$ is the gravitational constant, and $R$ is the ball's
 radius. The equation states that as time evolves, there is a linear decay in the ball's angular
-momentum. Collectively, these equations are valid until the ball stops rotating, which happens when
+velocity. Collectively, these equations are valid until the ball stops rotating, which happens when
 $\omega_z(t)$ is $0$. This occurs when $t=(2R\omega_{0z})/(5\mu_{sp}g)$.
 
 ### - Case 3: Rolling
@@ -286,13 +285,13 @@ Alright, so let's get on with it. Consider a ball that is _rolling_ in the posit
 [![rolling_diagram_1]({{images}}/rolling_diagram_1.jpg)]({{images}}/rolling_diagram_1.jpg){:.center-img .width-70}
 _**Figure 4**. A rolling ball, that moves in the $x-$direction. The left panel shows a bird's eye
 view, and the right panel shows a profile view. In this coordinate system, the
-angular momentum is in the $y-$direction._
+angular velocity is in the $y-$direction._
 
 Such a ball will move in a straight line until it comes to a rest. As it travels, it will be slowed
 down by a frictional force proportional to its velocity, which implies that its velocity will decay
 linearly with time:
 
-$$ \vec{v}(t) = \vec{v}_0 - \mu_r g t \hat{v}_0 \label{rolling_momentum} $$
+$$ \vec{v}(t) = \vec{v}_0 - \mu_r g t \hat{v}_0 \label{rolling_velocity} $$
 
 Here, $m$ is the ball's mass, $\mu_r$ is the coefficient of rolling friction, $g$ is the
 gravitational constant, and $\hat{v}_0$ is the unit vector that points in the direction of the ball's
@@ -304,7 +303,7 @@ $$ \vec{r}(t) = \vec{r}_0 + \vec{v}_0 t - \frac{1}{2} \mu_r g t^2 \hat{v}_0 \not
 
 ----------------------------
 
-Now for angular momentum. To discuss this, we need to formalize the concept of rolling, which is
+Now for angular velocity. To discuss this, we need to formalize the concept of rolling, which is
 formally defined as the state in which the **relative velocity**, $\vec{u}(t)$, between the ball and
 cloth at the PoC is $\vec{0}$. $\vec{u}$(t) has two contributions: (1) the linear velocity of
 the ball, _i.e._ the velocity of the center of mass, and (2) the velocity between ball and cloth
@@ -320,7 +319,7 @@ velocity:
 {:.warning}
 I think we both agree there is some amount of rotation, but let's just ignore it.
 
-Since the ball does not rotate, there is no angular momentum, so Eq.  $\eqref{rel_vel}$ reduces to
+Since the ball does not rotate, there is no angular velocity, so Eq.  $\eqref{rel_vel}$ reduces to
 
 $$ \vec{u}(t) = \vec{v}(t) \notag $$
 
@@ -343,7 +342,7 @@ sliding, not rolling. To be rolling ($\vec{u}(t) = \vec{0}$), these contribution
 $$ -R \hat{k} \times \vec{\omega}(t) = \vec{v}(t) \label{roll_condition} $$
 
 This refers to the condition in which every time the ball does a complete rotation about the
-$y-axis$ (according to the axes defined in Figure 4), the ball must travel exactly one circumference
+$y-$axis (according to the axes defined in Figure 4), the ball must travel exactly one circumference
 ($2 \pi R$ in the $x-$axis). Unless this exact condition is met, a moving ball is _sliding_, not
 _rolling_. For how particular this condition seems, it is interesting that in the game of pool,
 balls are most often rolling. The reason is that any sliding ball experiences friction that reduces
@@ -351,7 +350,7 @@ the magnitude of $\vec{u}(t)$ until it is rolling. In that sense, rolling is som
 equilibrium state.
 
 Now that we have a mathematical condition for rolling, _i.e._ Eq. $\eqref{roll_condition}$, there is a lot
-we can learn about the angular momentum. According to our coordinate system in Figure 4, the RHS of
+we can learn about the angular velocity. According to our coordinate system in Figure 4, the RHS of
 Eq. $\eqref{roll_condition}$ is strictly in the $+x-$direction. That means the LHS must also be
 strictly in the $+x-$direction. Expanding the cross product on the LHS yields:
 
@@ -360,10 +359,10 @@ $$ -R\hat{k} \times \vec{\omega}(t) = R \begin{bmatrix} \omega_y(t) \\ -\omega_x
 3 really important things result from this equation:
 
 1. In order for the RHS to point in the $+x-$direction, as it must, $\omega_x(t)$ is necessarily 0.
-   So no angular momentum in the direction of motion.
+   So no angular velocity in the direction of motion.
 
 2. Using Eq. $\eqref{roll_condition}$, it follows that $\omega_y(t) = \frac{|\vec{v}(t)|}{R}$. Since
-   $\vec{v}(t)$ is known via Eq. $\eqref{rolling_momentum}$, this equation solves the time
+   $\vec{v}(t)$ is known via Eq. $\eqref{rolling_velocity}$, this equation solves the time
    evolution of $\omega_y(t)$. Note that $\omega_y(t)$ is strictly positive, which intuitively
    refers to the fact that in order to be rolling, the ball must have _top spin_, not _back spin_.
 
@@ -387,7 +386,7 @@ side spin:
 
 So what's the difference between those shots, and the one I manufactured? The fundamental difference
 is that these players are elevating their cue, which causes $\omega_x$ to be non-zero (angular
-momentum _in the direction_ of motion). This "barrel-roll" rotation is what causes curved
+velocity _in the direction_ of motion). This "barrel-roll" rotation is what causes curved
 trajectories, otherwise known as swerve or masse. (For more info on the cue-cueball interaction, see
 FIXME). On the other hand, my shot did not have any significant amount of $\omega_x$, so whatever
 small amount existed quickly dissipated within fractions of a section, yielding an otherwise straight trajectory.
@@ -405,15 +404,15 @@ Velocity:
 
 $$ \vec{v}(t) = (v_0 - \mu_r g t) \, \hat{v}_0  \label{rolling_v_general} $$
 
-Angular momentum:
+Angular velocity:
 
 $$ \vec{\omega}_{xy}(t) = \hat{k} \times \frac{\vec{v}(t)}{R} \label{rolling_oxy_general} $$
 
 $$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \label{rolling_oz_general} $$
 
-where $v_0$ is the initial speed of the ball. Since angular momentum has 2 decoupled components,
+where $v_0$ is the initial speed of the ball. Since angular velocity has 2 decoupled components,
 $\vec{\omega}(t)$ is represented by 2 equations.  $\vec{\omega} _{xy} (t)$ defines the angular
-momentum projected onto the $xy-$plane, which is parallel with the table. 
+velocity projected onto the $xy-$plane, which is parallel with the table. 
 
 The above equations are defined in terms of $\hat{v}_0$, which can point direction in the $xy-$plane.
 If we take a frame of reference in which ball motion is in the $+x-$direction, we can drop the
@@ -438,7 +437,7 @@ $$ v_y(t) = 0 \label{rolling_vy_ball} $$
 
 $$ v_z(t) = 0 \label{rolling_vz_ball} $$
 
-Angular momentum:
+Angular velocity:
 
 $$ \omega_x(t) = 0 \label{rolling_ox_ball} $$
 
@@ -498,7 +497,7 @@ $$ v_y(t) = v_0 \sin(\phi) - \mu_r g \sin(\phi) \, t \label{rolling_vy_table} $$
 
 $$ v_z(t) = 0 \label{rolling_vz_table} $$
 
-Angular momentum:
+Angular velocity:
 
 $$ \omega_x(t) = - \frac{1}{R} \lvert \vec{v}(t) \rvert \sin(\phi) \label{rolling_ox_table} $$
 
@@ -525,8 +524,8 @@ zaney flowchart questionnaire:
 
 [![are_you_sliding]({{images}}/are_you_sliding.jpg)]({{images}}/are_you_sliding.jpg){:.center-img .width-50}
 _**Figure 6**. Determine whether or not you are sliding.  $\lvert \vec{v} \rvert$ is the speed of the
-ball, $\omega _{\parallel}$ is the angular momentum in the direction of motion, and $\omega _{\bot}$ is the
-angular momentum that is both orthogonal to the direction of motion and parallel to the table. Note
+ball, $\omega _{\parallel}$ is the angular velocity in the direction of motion, and $\omega _{\bot}$ is the
+angular velocity that is both orthogonal to the direction of motion and parallel to the table. Note
 that as discussed in Case 3, $\omega_z$ does not influence $\vec{u}(t)$, and therefore has no impact
 on whether or not you are sliding._
 
@@ -539,12 +538,12 @@ What separates the sliding case from the rolling case is that $\vec{u}(t)$ can p
 direction in the $xy-$plane. The most important thing to note about this case is that whichever
 direction $\vec{u}(t)$ points, a frictional force opposes it. This can lead to curved trajectories.
 To see how, consider Figure 7, in which a ball is initially moving in the $+x-$direction, along with angular
-momentum also in the $+x-$direction. This is the kind of spin that a screw has when screwed into
+velocity also in the $+x-$direction. This is the kind of spin that a screw has when screwed into
 wood, where the spin of the screw is about the same axis as the axis of motion--a rather unrealistic
 spin to impart on a ball in the game of pool, but useful for the purposes of demonstration:
 
 [![sliding_diagram]({{images}}/sliding_diagram.jpg)]({{images}}/sliding_diagram.jpg){:.center-img .width-70}
-_**Figure 7**. A ball moving in the $+x-$direction with angular momentum also in the $+x-$direction. The
+_**Figure 7**. A ball moving in the $+x-$direction with angular velocity also in the $+x-$direction. The
 left panel shows a bird's eye view, and the right panel shows a side view of the table and ball, as
 if looking down the barrel of the cue stick. Because $\vec{\omega}(t)$ is parallel to $\vec{v}(t)$,
 the $R \hat{k} \times \vec{\omega}(t)$ component in Eq. $\eqref{rel_vel}$ is orthogonal to
@@ -585,7 +584,7 @@ Velocity:
 
 $$ \vec{v}(t) = \vec{v}_0 - \mu_s g t \, \hat{u}_0  \label{sliding_p_ball} $$
 
-Angular momentum:
+Angular velocity:
 
 $$ \vec{\omega}_{xy}(t) = \vec{\omega}_{0xy} - \frac{5 \mu_s g}{2 R} \, t \, (\hat{k} \times \vec{u}_0) \label{sliding_parallel_ball} $$
 
@@ -624,7 +623,7 @@ $$ v_y(t) = v_0 \sin(\phi) - \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) 
 
 $$ v_z(t) = 0 \label{sliding_vz_table} $$
 
-Angular momentum:
+Angular velocity:
 
 $$
 \omega_x(t) =
@@ -716,7 +715,7 @@ of $\alpha$ degrees. We would like to know how to resolve this collision. What d
 "resolve"? I mean, Given the state of the balls the moment _before_ the collision, what is the state
 of the balls the moment _after_ the collision. Just like in [Section
 I](#section-i-ball-cloth-interactions), the state of a ball is defined by its position, velocity,
-and angular momentum.
+and angular velocity.
 
 Some of these we can bang out right away.
 Suppose the collision happens between $t = \tau$ and $t = \tau + dt$, keeping in mind instantaneity
@@ -727,7 +726,7 @@ $$ \vec{r}_A(\tau+dt) = \vec{r}_A(\tau) \notag $$
 
 $$ \vec{r}_B(\tau+dt) = \vec{r}_B(\tau) \notag $$
 
-One down. Since we are not accounting for friction effects, there is no loss or change in angular momentum due
+One down. Since we are not accounting for friction effects, there is no loss or change in angular velocity due
 to the collision:
 
 $$ \vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau) \notag $$
@@ -861,7 +860,7 @@ $$
 \label{vB_simple}
 $$
 
-Angular momentum:
+Angular velocity:
 
 $$
 \vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau)
@@ -963,10 +962,11 @@ interaction occurs, which prevents translation into the table's surface, and in 
 the ball into the air if its speed is great enough. This section deals strictly with the
 ball-cushion interaction, and in the next section I will treat the ball-slate interaction.
 
-Given the complexity of the ball-cushion interaction, I'm unable to talk extensively through the equations,
-as I have for the ball-cloth and ball-ball interactions. Instead, I will just discuss the models I considered,
-and present the equations, with perhaps a sprinkle of the intuition behind them. So far, I have considered 3
-models: Mathavan _et. al_, 2010; Marlow, 1994; Han, 2005. Let's take a look.
+Given the complexity of the ball-cushion interaction, I'm don't understand it well enough to talk
+extensively through the equations, like I've tried to do in the other sections. Instead, I will just
+discuss the models I considered, and present the equations, with perhaps a sprinkle of the intuition
+behind them. So far, I have considered 3 models: Mathavan _et. al_, 2010; Marlow, 1994; Han, 2005.
+Let's take a look.
 
 ### (1) Mathavan _et. al_, 2010
 
@@ -979,7 +979,7 @@ a rough idea of how involved this model is, check out the force body diagram in 
 
 [![mathavan_2010_1]({{images}}/mathavan_2010_1.png)]({{images}}/mathavan_2010_1.png){:.center-img .width-50}
 
-_Force body diagram from Mathavan *et. al*, 2010. [source](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)_
+_Force body diagram from Mathavan et. al, 2010. [source](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)_
 
 This is the kind of thing that takes a long time to wrap your ahead around the meaning of the
 variables. Despite the model's complexity, it is still very simple in comparison to reality because
@@ -987,7 +987,7 @@ it assumes the cushion deformation is insignificant, and thus the interaction in
 this being a large departure from reality, they report really good agreement with experiment.
 
 This is definitely the best model I could find that I would be willing to implement, but at this
-moment in time I don't _really_ want to solve differential equations on-the-fly everytime there is a
+moment in time I don't _really_ want to solve differential equations on-the-fly every time there is a
 ball-cushion interaction. Perhaps I could solve the differential equations for the entire parameter
 space and then parameterize the solution space somehow, but for now I would like to avoid this model
 altogether and look for something simpler.
@@ -1009,22 +1009,22 @@ Alright, so let's go over the model. Han chooses the following frame of referenc
 
 [![han_1]({{images}}/han_1.jpg)]({{images}}/han_1.jpg){:.center-img .width-50}
 
-_**Figure 11**. A ball colliding with a rall viewed from above. The frame of reference is defined so
+_**Figure 11**. A ball colliding with a rail viewed from above. The frame of reference is defined so
 that the rail is perpendicular to the $x-$axis, and the $+x=$direction points away from the playing
 surface. The incoming velocity makes an angle $\phi$ with the $x-$axis._
 
-At the instant of contact, $t=\tau$, the ball has a state $(\vec{r}(\tau), \vec{v}(\tau),
-\vec{\omega}(\tau))$, and immediately afterwards it has the state $(\vec{r}(\tau + dt), \vec{v}(\tau
-+ dt), \vec{\omega}(\tau + dt))$.  Since Han assumes instantaneity, $dt$ is an infinitesimal amount
-of time. Since there is no funny business going on with cushion deformation, we know that the
-position at $\tau$ will equal the position at $\tau + dt$:
+At the instant of contact, $t=\tau$, the ball has a state $(\vec{r}(\tau), \, \vec{v}(\tau), \,
+\vec{\omega}(\tau))$, and immediately afterwards it has the state $(\vec{r}(\tau + dt), \, \vec{v}(\tau + dt), \, \vec{ \omega}(\tau + dt))$.
+Since Han assumes instantaneity, $dt$ is an infinitesimal amount of time. Since there is no funny
+business going on with cushion deformation, we know that the position at $\tau$ will equal the
+position at $\tau + dt$:
 
 $$
 \vec{r}(\tau + dt) = \vec{r}(\tau)
 \notag
 $$
 
-Resolving the velocity and angular momentum requires some geometry of the ball-cushion interface.
+Resolving the velocity and angular velocity requires some geometry of the ball-cushion interface.
 
 [![han_0]({{images}}/han_0.jpg)]({{images}}/han_0.jpg){:.center-img .width-70}
 
@@ -1034,209 +1034,138 @@ $\theta$ is determined uniquely by $\epsilon$, and defines the direction of the 
 imparts on the ball._
 
 One of the most important determinants in this model, and in reality, is the height of the rail.
-This will determine the direction that the cushion applies force to the ball. Have
-you ever played on a table with rails that are too short? The tendency is that any hard shots pop
-into the air. <describe intution, then epsilon theta relationship>. Then hit them with the
-equations.
+This will determine the direction that the cushion applies force to the ball. The higher the
+cushion, the more the cushion redirects the ball _into_ the table. Also, the higher the cushion,
+the more $y-$axis torque will be applied to the ball. The cushion is specified by $\epsilon$, the
+height above center ball, and uniquely determines $\theta$, the angle that the line between the PoC
+and the center of the ball makes with the $x-$axis:
 
+$$
+\theta = \arcsin(\epsilon/R)
+\label{eps_theta}
+$$
+
+You may wonder, why not have $\epsilon = 0$? Then $\theta=0$ and the ball won't be redirected into
+the table. This is idealistic thinking for 2 reasons. In practice, it is not uncommon for balls to
+leave the table when struck hard. If an airborne ball hit a rail with $\epsilon = 0$, it would go
+flying, so $\epsilon > 0$ protects against that. Yet even if a ball remained firmly planted to the
+table, consider a rolling ball striking the cushion perpendicularly. It's spin is in the
+$+y-$direction of Figures 11 and 12. When in contact with the rail, the rolling spin tries to push
+the cushion down, and in an equal and opposite manner the cushion pushes the ball **up**, sending the ball
+airborne. If you've ever played on a table with rails that pops the balls up, its probably because
+$\epsilon$ is too low. For these reasons, in practice $\epsilon$ is typically $0.1 R$ to $0.2 R$.
+This isn't a perfect solution to the airborne problem however, because as we saw in the slow mo
+video, redirecting the ball into the table can also cause balls to become airborne via the
+ball-slate interaction. That said, redirection into the slate is preferable to redirection into the
+air, since the slate's low coefficient of restitution dampens most of the energy.
+
+Using rigid body dynamics, Han solves the outgoing ball state for the scenario
+depicted in Figures 11 and 12.
+
+{:.warning}
 After surveying the equations for consistency, I found 2 mistakes, that I outline in [this
-worksheet]({{images}}/ball_cushion_inhwan_han.pdf). After accounting for them, the Han model yields
-the following time evolution for the ball-cushion interaction:
+worksheet]({{images}}/ball_cushion_inhwan_han.pdf). The equations below have these mistakes
+**accounted for**.
 
 <div class="extra-info" markdown="1">
 <span class="extra-info-header"> ball-cushion interaction (**Han 2005 model**)</span>
 
+Let all of these quantities be:
+
+$$
+s_x = v_x(\tau) \sin\theta - v_y(\tau) \cos\theta + R \omega_y(\tau)
+\label{han_sx}
+$$
+
+$$
+s_y = -v_y(\tau) - R \omega_z(\tau) \cos\theta + R \omega_x(\tau) \sin\theta
+\label{han_sy}
+$$
+
+$$
+c = v_x(\tau) \cos\theta
+\label{han_c}
+$$
+
+$$
+I = \frac{2}{5} m R^2
+\label{han_I}
+$$
+
+$$
+P_{zE} = m c \, (1 + e)
+\label{han_pze}
+$$
+
+$$
+P_{zS} = \frac{2m}{7} \sqrt{s_x^2 + s_y^2}
+\label{han_pzs}
+$$
+
+Displacement:
+
+$$
+\vec{r}(\tau + dt) = \vec{r}(\tau)
+$$
+
+Velocity (if $P_{zS} \le P_{zE}$):
+
+$$
+v_x(\tau + dt) = -\frac{2}{7}s_x \sin\theta - (1+e) \, c \cos\theta
+\label{han_vx_1}
+$$
+
+$$
+v_y(\tau + dt) = \frac{2}{7}s_y
+\label{han_vy_1}
+$$
+
+$$
+v_z(\tau + dt) = \frac{2}{7}s_x \cos\theta - (1+e) \, c \sin\theta
+\label{han_vz_1}
+$$
+
+Velocity (if $P_{zS} > P_{zE}$):
+
+$$
+v_x(\tau + dt) = -c \, (1+e) (\mu \cos\phi \sin\theta + \cos\theta)
+\label{han_vx_2}
+$$
+
+$$
+v_y(\tau + dt) = c \, (1+e) \, \mu \sin\phi
+\label{han_vy_2}
+$$
+
+$$
+v_z(\tau + dt) = c \, (1+e) (\mu \cos\phi \cos\theta - \sin\theta)
+\label{han_vz_2}
+$$
+
+Angular velocity:
+
+$$
+\omega_x(\tau + dt) = - \frac{m R}{I} v_x(\tau + dt) \sin\theta
+\label{han_ox}
+$$
+
+$$
+\omega_x(\tau + dt) = \frac{m R}{I} (v_x(\tau + dt) \sin\theta - v_z(\tau+dt) \cos\theta)
+\label{han_oy}
+$$
+
+$$
+\omega_z(\tau + dt) = \frac{m R}{I} v_y(\tau + dt) \cos\theta
+\label{han_oz}
+$$
 
 </div>
 
+## Conclusion
 
+That's everything--at least for now. My knowledge will (hopefully) increase over time, and
+when it does, it will be added to this post.
 
+Next time I will be discussing the various algorithms for simulating a pool shot, and the approach I
+intend to take for my own simulation.
 
-
-
-
-
-
-
-
-
-
-
-
-## How do state of the art pool simulators work?
-
-The shining greats in terms of physics realism are without a doubt ShootersPool Billiards
-Simulation and Virtual Pool 4. Look at the pure beauty of this ShootersPool demo:
-
-[![ShootersPool](http://img.youtube.com/vi/sDW0ENZzClk/0.jpg)](https://www.youtube.com/watch?v=sDW0ENZzClk "ShootersPool")
-
-Both from a graphics and physics perspective, this appears very real. The only physical inaccuracy I
-can spot is as balls are entering the pockets they seem to undergo a pre-baked animation rather than
-interacting genuinely with the pocket. Here is the trailer for Virtual Pool 4:
-
-[![Virtual Pool 4](http://img.youtube.com/vi/mAxACAt6m8g/0.jpg)](https://www.youtube.com/watch?v=mAxACAt6m8g "Virtual Pool 4")
-
-Less impressive graphics and no slo-mo shots to scrutinize in careful detail, but having played the
-game myself, I can attest to the quality of the physics.
-
-So how do these pool simulators actually work? I have no idea, and that is understandably by design.
-I wasn't able to gain any insight into how much money these companies are making from pool games but
-let me know if you have any estimates. Regardless, both of these projects have been monetized and
-have reason to keep their algorithms to themselves.
-
-So the bottom line is that I have no idea what's going on under the hood in these games, but by
-doing some research I think all pool simulators are going to fall under these two umbrellas:
-discrete time integration, or continuous event-based integration. So let's talk about these.
-
-## Pool simulator research
-
-I never had any intention of developing this from scratch. To that end, I started researching
-academical papers on pool simulation, which are surprisingly numerous. Usually, the research is
-motivated by developing a realistic/fast physics engine as a necessary precursor to creating a robot
-that can play pool:
-
-[![Pool Robot](http://img.youtube.com/vi/4ArBw9kEMMw/0.jpg)](https://www.youtube.com/watch?v=4ArBw9kEMMw "Pool Robot")
-
-Another application is to study game theory and make a billiards AI. In any case, during my literature
-review I stumbled upon the work of Leckie and Greenspan entitled [An Event-Based Pool Physics
-Simulator](https://link.springer.com/chapter/10.1007/11922155_19). A free pre-print of this
-publication is available
-[here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.89.4627&rep=rep1&type=pdf). This is
-a pretty groundbreaking paper, because they develop a method to solve the trajectories of pool balls
-that avoid discrete time integration, the most common way to evolve many-body systems through time.
-To contextualize their algorithm, I should first talk about what they avoid doing: time integration.
-
-### Discrete Time Integration
-
-Simply put, discrete time integration works by advancing the state forward in small time steps,
-let's say an amount $dt$. At each timepoint $t$, the forces governing the motions are calculated,
-and then all of the bodies' states (positions, velocities, etc.) are advanced to $t + dt$, under the
-assumption that the forces are constant over that duration. It is critical that these time steps are
-small enough, otherwise the evolution will be physically inaccurate. To see why, consider the example of
-one ball hitting another:
-
-Let's say the goal is to determine the collision time as accurately as possible. So Ball A on the
-bottom is moving with a constant velocity towards Ball B. At each timestep, it is checked whether
-the collision has occurred, which is done checking if the balls intersect. In the first panel a
-large timestep is chosen, and we can see that the collision is detected well after the balls first
-intersect. By choosing a smaller timestep like in the second panel we see a more accurate
-determination of the time of collision.
-
-So the smaller the time step, the more accurate this assumption is. But this comes at the cost of
-subdividing your simulation time into smaller and smaller timesteps, each which come with increased
-cost of computation. This can become brutal when dealing with pool simulations. Ball speeds commonly
-reach $10$ m/s, and a reasonable requirement for realism is that 2 balls should never intersect more
-than $1/100$th of a ball radius ($0.3$ mm). The required timestep for this level of realism is then
-$30$ microseconds. If the time from the cue strike to the last ball rolling is 10 seconds, that is
-$30,000$ time steps in total for one shot. If the level of realism is $1/1000$th a ball radius, that
-is $300,000$ time steps. Yikes.
-
-The problem with this is all of the wasted computation... I don't need $30$ microsecond time steps
-when all of the balls are far apart and barley moving. It is only really in select scenarios, such a
-pool break, that realism demands such miniscule time steps. So a smart numerical integration
-scheme would be to cut down on the number of time steps by making them
-[adaptive](https://en.wikipedia.org/wiki/Adaptive_step_size) depending on the state of the system.
-There are an infinite number of ways you could develop heuristics for an adaptive time stepper, that
-may be based on the distances between balls (if they are far apart, increase the time step), or
-based on velocities (if they are moving fast, decrease the time step). I'm not even going to go
-there because the possibilities are endless, although I am convinced that if Virtual Pool 4 or
-ShootersPool are using discrete time integration, they are using adaptive time stepping.
-
-### Continuous Event-based Simulation
-
-Even with adaptive time stepping, there is going to be wasted computation. So ideally, you'd want to
-avoid it altogether. In the example of the colliding balls, what if we could predict when the
-collision happens by using knowledge of their positions and velocities? After all, it looks plainly
-obvious that they are going to collide, so why waste our time advancing with so many time steps?
-Let's add some variables to the picture and solve for $t$!
-
-FIXME
-
-$R$ is the ball radii, $v$ is the speed of the ball, and $d$ is the distance they are from collision
-the collision state. If we assume that the Ball A moves with constant velocity, the time until
-collision is quiter simply $\tau = d/v$.
-
-This has some serious advantages over time integration. First, it is computationally much more
-efficient. It was just one instance of arithmetic: $d/v$. Second, it is not subject to
-discretization error. In the discrete time integration method above, the collision is detected
-_after_ it happened since the collision is detected by seeing if the balls are intersecting. But if
-they are intersecting, they already collided! This is what I'm calling discretization error. In
-contrast, there is no error in $d/v$, save for floating point error.
-
-This is actually a huge deal from the perspective of simulation, but it requires mathematical
-formulas for the positions of the bodies as a function of time, and in most multi-body systems, this
-is too much to ask. For example, the system of 3 planets exhibiting gravitational forces on one
-another has no analytical mathematical formula for the positions as a function of time. Look at how
-complex the solution becomes:
-
-FIXME (embed and hyperlink goes to wiki)
-
-<img src="media/3_body_problem.gif" width="450" />
-By Dnttllthmmnm - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=59538221
-
-#### The algorithm is essentially this
-
-In the above case, discrete numerical integration is a necessity. So is a necessity for pool physics
-too? Well, unlike the 3-body gravitational problem which exhibit forces on each other even at a
-distance, balls only interact with each other during extremely brief collisions (OK fine, pool balls
-also exhibit gravitational forces on each other at a distance, but you're just being pedantic).
-Other than during these brief moments, the trajectories of the balls have closed-form equations that
-describe their positions, velocities, and spins. So this doesn't solve the problem entirely, but I
-can at least accurately simulate the evolution of a pool shot from $t=0$ up to the first collision
-without any time integration because I have analytical forms of the trajectories as a function of
-time! Then I could apply some well-trodden physics to resolve the
-collision, and then evolve the state of all balls until the _next_ collision. Essentially, if you
-can solve when a collision happens, you can evolve all balls up to that point in time, solve the
-collision's physics by updating the states of the ball(s) involved in the collision, and then
-advance time to the next collision. Rinse and repeat.
-
-That's pretty good news, but it is still unknown how to calculate when the first collision occurs.
-The solution employed by Leckie and Greenspan is to calculate all possible collision times and take
-the one that occurs in the minimal amount of time. When I say all, I mean all.  Since the
-trajectories of each ball are known as a function of time (they are quadratic with respect to time
-because of the deceleration from the cloth), the collision time between each pair of balls can be
-calculated from a fourth order polynomial with respect to time. The roots of this polynomial are the
-time needed for the balls to collide. As we know, most balls will not collide--a typical shot will
-have maybe 1 or 5 collisions.  The absence of a collision manifests mathematically as negative or
-imaginary values to the roots of the fourth order polynomial. So if you have $15$ balls, that means
-you have $105$ collision pairs to check, and most of these will not collide (yielding negative or
-imaginary values). Yet a subset of these ball-pairs _will_ yield positive real values.  If a
-ball-pair yields a non-negative real value, it means that if no other balls or cushions were to "get
-in the way" of the collision, the balls would collide in a finite amount
-of time. By picking the
-one with a smallest postive and real-valued solution to the quartic polynomial, we ensure by
-definition that this is the first collision that occurs.
-
-With this time value in hand, we advance the trajectories of _all_ balls up to that point in time,
-at which point a collision is occuring, i.e. 2 balls or a ball and a rail are touching. Then, we
-apply well-trodden physics that explains the outgoing states of the balls as a result of the
-collision (which we assume is instantaneous). After updating the states of the involved balls, we
-rinse and repeat: We find the next event, advance the states of all balls up to that time by using
-the analytical expressions we have, resolve the physics of the collision, and so on and so forth.
-
-Here is my sketch of the algorithm:
-
-FIXME
-
-## Continuous Event-based simulation is da way man
-
-After doing my resarch, I realized I have _got_ to do a continuous event-based approach. Leckie and
-Greenspan give a very rough complexity analysis as to why this is far superior to discrete numerical
-integration. For discrete numerical integration, the number of operations is on the order of 
-
-$N (61 n - n^2) / 2$
-
-where $n$ is the number of balls, and $N$ is the number of time steps. OK well writing this down
-now, I see this is clearly quite a garbage expression because the number of operations grows
-negative with large values of $n$. But the important part is this: time complexity scales linearly
-with the number of time steps, i.e. accuracy. But assuming it works for small values of $n$, simulating 3 balls
-for 1 second using a very coarse time step of 1 millisecond yields $87,000$ required computations.
-In contrast, their derived time complexity expression for their continuous event-based approach is
-
-$(645 n - 19 n^2) / 2$
-
-Which yields only 882 operations. More critically, the complexity depends _only_ on the number of
-balls.
-
-The bottomline is this: after reading this paper, I decided this project was going to offer
-continuous event-based simulations or it wasn't going to offer anything.
