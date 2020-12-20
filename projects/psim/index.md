@@ -19,7 +19,7 @@ This is the homepage for my project *psim*, which focuses on creating a realisti
 simulator. Keep reading for an intro into the topic or scroll down to the bottom to see the blog
 posts of this series.
 
-### I tried once before
+### History
 
 Seven years ago (2013) I was an in undergraduate math class called "_Non-linear Dynamical Systems
 and Chaos_" taught by Dr. Anthony Quas at the Univerity of Victoria. The final project was to model

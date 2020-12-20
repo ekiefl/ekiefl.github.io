@@ -139,6 +139,7 @@ figcaption {
    Notices
    ========================================================================== */
 
+.width-30 {width: 30%;}
 .width-40 {width: 40%;}
 .width-50 {width: 50%;}
 .width-60 {width: 60%;}
@@ -285,20 +286,23 @@ li {
         white-space: nowrap;
         padding: 0 2px;
         padding-bottom: 1px;
-        background-color: #efefef;
-        border: 1px solid #969696;
-        color: #bf2727;
-        @include rounded(3px);
+        background-color: #fdfdfd;
+        font-weight: bold;
+        border: 1px solid #cccccc;
+        color: #19639b;
+        @include rounded(2px);
     }
 }
 pre {
     @include font-rem(12);
     line-height: 1.5;
     overflow-x: auto;
+    overflow-y: scroll;
+    max-height: 750px;
     background-color: #efefef;
     border: 1px solid #969696;
     margin-bottom: 40px;
     padding: 10px;
-    border-left: 5px solid #dc5252;
+    border-left: 5px solid #19639b;
     border-radius: 5px;
 }

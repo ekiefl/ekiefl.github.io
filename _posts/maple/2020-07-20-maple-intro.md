@@ -111,17 +111,17 @@ respond to your dog, you need to be able to detect when it is barking.
 **Events are basically anomalies in the background noise**, and so to detect events, we need to
 properly distinguish background from signal. To do this, I wrote a calibration method that runs at
 the start of the program. The premise is to wait until the audio signal reaches an equilibrium, and
-then measures the mean (\$ \mu \$) and standard deviation (\$ \sigma \$) of the signal strength.  I
-consider equilibrium to be established by demanding that the coefficient of variation (\$ \sigma/\mu
-\$) is less than some threshold value, since a low coefficient of variation means a stable signal.
+then measures the mean ($ \mu $) and standard deviation ($ \sigma $) of the signal strength.  I
+consider equilibrium to be established by demanding that the coefficient of variation ($ \sigma/\mu
+$) is less than some threshold value, since a low coefficient of variation means a stable signal.
 The background mean and standard deviation that satisfied this constrant for equilibrium can then be
 used to distinguish signal from noise.
 
 We can do some back of the envelope calculations to show that if the signal is drawn from a Normal
 distribution (a bell-shaped curve), there is a ~16% chance that any given datapoint in the signal will exceed 1 standard
-deviation about the mean (\$\mu + \sigma\$). That probability becomes ~2.5% that it will exceed 2
-standard deviations (\$\mu + 2\sigma\$) and ~0.5% that it exceeds 3 standard deviations (\$\mu +
-3\sigma\$). As a first step, I went ahead and **wrote a detector that detects the start of an event
+deviation about the mean ($\mu + \sigma$). That probability becomes ~2.5% that it will exceed 2
+standard deviations ($\mu + 2\sigma$) and ~0.5% that it exceeds 3 standard deviations ($\mu +
+3\sigma$). As a first step, I went ahead and **wrote a detector that detects the start of an event
 whenever the signal exceeds 3 standard deviations, and the end of the event whenever it dips below 2
 standard deviations**. Here is a demo showing the efficacy of this approach:
 
@@ -140,7 +140,7 @@ As mentioned in the video, there are a lot of false-positives for the ends of ev
 words, **many of my spoken sentences were being split up into multiple events**, even when there was
 little or no break in my speaking rhythm. This was happening because the criterion for events ending
 was too simple, and based on a single audio frame (reminder: the event ends if the mean audio signal
-of an audio frame drops below \$\mu + 2\sigma\$, where \$ \mu \$ and \$ \sigma \$ are the mean and
+of an audio frame drops below $\mu + 2\sigma$, where $ \mu $ and $ \sigma $ are the mean and
 standard deviation of the background noise). This is problematic because each frame is only a couple
 of milliseconds. To more accurately depict the start and stop of events, I wanted to create criteria
 that spanned multiple frames.
@@ -155,21 +155,21 @@ Soon we'll see that making a more robust event detector inevitably complicates t
 ### Event start criterion
 
 In the video, transitioning from `in_event == False` to `in_event == True` occurred whenever a frame
-had a mean signal 3 standard deviations above the mean. Let's call this threshold value \$X\$ for
-convenience. My new criterion is that there must be \$N\$ consecutive frames that are all above
-\$X\$. If \$N\$ consecutive frames all meet this threshold, then the event start is attributed to
+had a mean signal 3 standard deviations above the mean. Let's call this threshold value $X$ for
+convenience. My new criterion is that there must be $N$ consecutive frames that are all above
+$X$. If $N$ consecutive frames all meet this threshold, then the event start is attributed to
 the first frame in this frame sequence. **Requiring consecutive frames to pass the threshold
 effectively guards against false-positives when loud but short (~ millisecond) sounds are made**,
-which trigger an event. The stringency is thus controlled by \$N\$: the lower \$N\$ is, the more
+which trigger an event. The stringency is thus controlled by $N$: the lower $N$ is, the more
 false-positives in event starts you allow.
 
-Programatically, whenever a frame's mean signal exceeds \$X\$ while `in_event == False`, a second
+Programatically, whenever a frame's mean signal exceeds $X$ while `in_event == False`, a second
 state variable `in_on_transition` is set to `True`.  Whenever `in_on_transition == True`, it
 basically means, "*Ok, we're not for sure in an event, but things are starting to get loud, and if
 we stay in this state for long enough, we'll for sure know we are in an event*". If
-`in_on_transition == True` for \$N\$ consecutive frames, then the program is convinced it is
+`in_on_transition == True` for $N$ consecutive frames, then the program is convinced it is
 actually an event, so `in_event` is set to `True` and `in_on_transition` is returned to `False`. On
-the other hand, if any frame fails to exceed \$X\$, `in_on_transition` is set to `False` and the
+the other hand, if any frame fails to exceed $X$, `in_on_transition` is set to `False` and the
 potential event is deemed not an event. To avoid clipping the start of the event because the
 detector is busy making its mind up, whenever `in_on_transition == True`, the audio
 frames are stored in a buffer and retroactively added to the event.
@@ -177,19 +177,19 @@ frames are stored in a buffer and retroactively added to the event.
 ### Event end criterion
 
 Before, an event ended whenever a frame had a mean signal that dipped below 2 standard deviations
-above the mean (\$\mu + 2\sigma\$). Call this threshold \$Y\$ for convenience. My new method uses
-the same criterion, but rather than ending the event when this occurs, a countdown of \$T\$ seconds
-starts. If \$T\$ reaches 0, the event ends.  But it is possible to "save" the event, if any frame
-during the countdown has a mean signal exceeding \$X\$ (the event start threshold). In this case,
-the event will continue until the next time the mean signal dips below \$Y\$.  **The countdown
+above the mean ($\mu + 2\sigma$). Call this threshold $Y$ for convenience. My new method uses
+the same criterion, but rather than ending the event when this occurs, a countdown of $T$ seconds
+starts. If $T$ reaches 0, the event ends.  But it is possible to "save" the event, if any frame
+during the countdown has a mean signal exceeding $X$ (the event start threshold). In this case,
+the event will continue until the next time the mean signal dips below $Y$.  **The countdown
 safeguards against against false-positives that end events because there was a momentary lapse in
-sound amplitude**. The stringency is thus controlled by \$T\$: the lower \$T\$ is, the more
+sound amplitude**. The stringency is thus controlled by $T$: the lower $T$ is, the more
 false-positives in event ends you allow.
 
-Programatically, whenever a frame's mean signal dips below \$Y\$ while `in_event == True`, a second
+Programatically, whenever a frame's mean signal dips below $Y$ while `in_event == True`, a second
 state variable `in_off_transition` is set to `True`. This starts a countdown. If any frame during
-the countdown exceeds \$X\$, `in_off_transition` is set to `False`, and the event is given life
-anew. But if no frames exceed \$X\$ during the countdown, the event is deemed to have finished, so
+the countdown exceeds $X$, `in_off_transition` is set to `False`, and the event is given life
+anew. But if no frames exceed $X$ during the countdown, the event is deemed to have finished, so
 `in_event` is set to `False` and `in_off_transition` is returned to `False`.
 
 With the implementation of these new criteria, here is the updated state logic visualized as a
@@ -333,7 +333,8 @@ class Monitor(object):
 
                 if tries == self.calibration_tries:
                     # Max tries met--doubling calibration threshold
-                    print(f'Calibration threshold not met after {tries} tries. Increasing threshold ({self.calibration_threshold:.2f} --> {1.5*self.calibration_threshold:.2f})')
+                    print(f"Calibration threshold not met after {tries} tries. Increasing threshold "
+                          f"({self.calibration_threshold:.2f} --> {1.5*self.calibration_threshold:.2f})")
                     tries = 0
                     self.calibration_threshold *= 1.5
 
@@ -398,7 +399,8 @@ class Monitor(object):
 
 
 class Detector(object):
-    def __init__(self, background_std, background, start_thresh, end_thresh, num_consecutive, seconds, dt, quiet=False):
+    def __init__(self, background_std, background, start_thresh, end_thresh, num_consecutive,
+                 seconds, dt, quiet=False):
         """Manages the detection of events
 
         Parameters
@@ -589,7 +591,7 @@ In summary,
 2. Each database has a `self` table and an `events` table
 2. The `self` table that contains administrative info like when the session
 started, which microphone was used, and all free parameters like the event threshold parameters
-\$X\$, \$Y\$, etc.
+$X$, $Y$, etc.
 3. Each row of the `events` table contains all of the info pertaining to an invidual event.
 
 Here is an example `events` table:
@@ -616,14 +618,14 @@ event_id|t_start|t_end|t_len|energy|power|pressure_mean|pressure_sum|class|audio
 - `t_start` is the datetime of the event's start.
 - `t_end` is the datetime of the event's end.
 - `t_len` is the duration of the event in seconds.
-- `energy` is the signal energy, *i.e.* the sum of squared signal \$ \sum_{i}^{n} S_i(t)^2 \$, where \$ S(t) \$ is the audio signal. This value increases the louder the event is, or the longer the event lasts.
+- `energy` is the signal energy, *i.e.* the sum of squared signal $ \sum_{i}^{n} S_i(t)^2 $, where $ S(t) $ is the audio signal. This value increases the louder the event is, or the longer the event lasts.
   Through my experience it does not seem to scale proportionally with human-perceived "loudness".
   (Side note: I wanted to be able to say how many decibels each event was, but this is extremely
   difficult to pin down without detailed knowledge of the microphone's physics and circuitry).
 - `power` is the `energy` divided by the `t_len`, *i.e.* power is the time derivative of energy.
 - `pressure_mean` is a quantity I feel scales proportionally better with
-  human-perceived loudness. It is defined as \$ \sum_{i}^{n} |S_i(t)|/n \$.
-- `pressure_sum` is just like `pressure_mean`, except it is not normalized by the length of the event. It is defined as \$ \sum_{i}^{n} \| S_i(t) \| \$.
+  human-perceived loudness. It is defined as $ \sum_{i}^{n} |S_i(t)|/n $.
+- `pressure_sum` is just like `pressure_mean`, except it is not normalized by the length of the event. It is defined as $ \sum_{i}^{n} \| S_i(t) \| $.
 - `class` merely symbolizes my aspirations of one day classifying the events. For example as bark,
   "whine", "dig", "howl", etc. For now, it is blank.
 - `audio` is a gzipped binary object of the numpy array that represents the audio. The compression
