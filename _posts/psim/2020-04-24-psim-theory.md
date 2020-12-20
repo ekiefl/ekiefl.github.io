@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Creating a billiards simulator: Theory"
+title: "Creating a billiards simulator I: Physics theory"
 categories: [psim]
-excerpt: "A dive into the physics and algorithmic theory behind pool simulation"
+excerpt: "A dive into the physics theory behind pool simulation"
 comments: true
 authors: [evan]
 image:
