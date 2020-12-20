@@ -361,7 +361,7 @@ $$ -R\hat{k} \times \vec{\omega}(t) = R \begin{bmatrix} \omega_y(t) \\ -\omega_x
 1. In order for the RHS to point in the $+x-$direction, as it must, $\omega_x(t)$ is necessarily 0.
    So no angular velocity in the direction of motion.
 
-2. Using Eq. $\eqref{roll_condition}$, it follows that $\omega_y(t) = \frac{|\vec{v}(t)|}{R}$. Since
+2. Using Eq. $\eqref{roll_condition}$, it follows that $\omega_y(t) = |\vec{v}(t)|/R$. Since
    $\vec{v}(t)$ is known via Eq. $\eqref{rolling_velocity}$, this equation solves the time
    evolution of $\omega_y(t)$. Note that $\omega_y(t)$ is strictly positive, which intuitively
    refers to the fact that in order to be rolling, the ball must have _top spin_, not _back spin_.
