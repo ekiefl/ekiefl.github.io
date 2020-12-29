@@ -1,0 +1,57 @@
+{
+  "graph": [],
+  "nodes": [
+    {
+      "id": 0,
+      "size": 3,
+      "name": "stationary",
+      "type": "STATE_1"
+    },
+    {
+      "id": 1,
+      "size": 3,
+      "name": "spinning",
+      "type": "STATE_3"
+    },
+    {
+      "id": 2,
+      "size": 3,
+      "name": "rolling",
+      "type": "STATE"
+    },
+    {
+      "id": 3,
+      "size": 3,
+      "name": "sliding",
+      "type": "STATE"
+    },
+    {
+      "id": 4,
+      "size": 3,
+      "name": "airborne",
+      "type": "STATE"
+    },
+    {
+      "id": 5,
+      "size": 3,
+      "name": "ball-ball collision",
+      "type": "TRANSITION"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 5
+    },
+    {
+      "source": 1,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 4
+    }
+  ],
+  "directed": true,
+  "multigraph": true
+}

@@ -50,6 +50,34 @@ research. Then the COVID-19 pandemic struck and I realized I needed something ot
 keep me stimulated during quarantine. That's when I decided to undertake the project of making a
 physically accurate pool simulator.
 
+### What's currently out there?
+
+Before starting, I wanted to scope out what's currently on the market. The two most
+realistic 3D pool simulators are [Virtual Pool 4](http://vponline.celeris.com/), and [ShootersPool
+Billards Simulation](https://www.shooterspool.net/). I haven't played ShootersPool, but according to
+[this thread](https://steamcommunity.com/app/336150/discussions/0/1520386297698310602/), it seems to
+be favored by most gamers for its graphics and increased realism. To get acquainted, I checked out
+some of the demo videos. And boy, are they beautiful.
+
+{% include youtube_embed.html id="sDW0ENZzClk" %}
+
+Both from a graphics and physics perspective, this appears very real. The only physical inaccuracy I
+can spot is as balls are entering the pockets they seem to undergo a pre-baked animation rather than
+interacting genuinely with the pocket. Interestingly, this game started as a university project by a
+software developer / pool player. Goals.
+
+For comparison, let's look at Virtual Pool 4.
+
+{% include youtube_embed.html id="mAxACAt6m8g" %}
+
+The graphics are definitely less impressive and the frame rate seems lower, and there's no slow-mo
+to scrutinize in careful detail. Nevertheless, I have played this game before and it is very
+realistic--certainly an impressive feat.
+
+These are both commerical projects, and I was unable to find any open source projects worth mentioning.
+My hope is to create something open source that other pool enthusiasts can use for their own
+project.
+
 ### Goals
 
 Making a pool simulator is a pretty vague statement that can be ambiguously interpreted. To keep
@@ -57,7 +85,7 @@ things more concrete, here are the primary goals of this project:
 
 1. **Create a physics engine that simulates the trajectories of pool balls that a layman finds indistinguishable from reality.**
 2. **Visualize pool shots using 3D graphics.**
-3. **Make a game that let's the user play 9-ball.**
+3. **Make an game that let's the user play 9-ball.**
 4. **Create an AI capable of playing the game.**
 
 There is a saying that if one "_cannot see the forest for the trees_", they lack the perspective
@@ -67,3 +95,4 @@ that **starting a large project is like being able to see the forest, but unable
 is composed of**. Your vision is the forest: a product of the entire thing. For me, it is the goals
 I have laid out above. But I can't yet see the trees that create this vision. This blog post series
 lays out my journey in trying to achieve these goals.
+

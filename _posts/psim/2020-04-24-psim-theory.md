@@ -13,6 +13,7 @@ image:
 {% capture images %}{{site.url}}/images/psim/psim-theory{% endcapture %}
 {% include _toc.html %}
 
+
 Alright, this post is the first of many in my journey to make a realistic pool/billiards simulator.
 Before jumping into code, I have to trudge through the theory of both **(a)** the physics of pool,
 and **(b)** the algorithms for evolving a pool shot. The physics of pool is what is covered in this
@@ -125,7 +126,7 @@ passable playing experience for beginners and is simple to code.
 {:.notice}
 From this point on, I'll refer to a ball with "spin" as a ball with "angular velocity".
 
-In this example, we take on the general case of the ball-cloth interaction. This is the most
+In this example, I take on the general case of the ball-cloth interaction. This is the most
 realistic model I came across that can be solved analytically, and has the following assumptions:
 
 1. The ball can be in an arbitrary state (but must be on the table)
@@ -149,9 +150,10 @@ _**Figure 2**. The cloth is a compressible surface, and so in actuality there do
 contact", but rather, an "area of contact"._
 
 With the assumptions laid out, let's begin. The most important thing to realize is that throughout a
-ball's trajectory, it will always be in any of these 4 different modes: **sliding, rolling, spinning,
-or stationary**. The physics is different for each of these cases, so we tackle them piecewise from least
+ball's trajectory, it will always be in any of these 4 different **modes**: **sliding, rolling, spinning,
+or stationary**. The physics is different for each of these cases, so I tackle them piecewise from least
 to most complicated.
+
 
 ### - Case 1: Stationary
 
@@ -219,12 +221,12 @@ $$ \omega_y(t) = 0 \notag $$
 
 $$ \omega_z(t) = \text{ }??? \notag $$
 
-To characterize the $z-$axis angular velocity, we need to introduce some bullshit. I told you that
+To characterize the $z-$axis angular velocity, I introduce some bullshit. I told you that
 in this model, there is a single PoC between ball and cloth. If such were *truly* the case, there
-is nothing to stop the ball from spinning forever (besides air, which we will ignore). This is
+is nothing to stop the ball from spinning forever (besides air, which I will ignore). This is
 because a ball spinning in place has **zero speed** at the infinitesimally small PoC. In
 other words, the relative velocity between the ball and cloth at the PoC is 0, and this means
-there can exist no frictional force. Of course, we know that the ball *does* slow, which
+there can exist no frictional force. Of course, everyone knows that the ball *does* slow, which
 is proof that there does not exist a "point of contact" but rather an "area of contact".
 
 Rather than explicitly define an area of contact, which would greatly complicate the physics, we
@@ -293,9 +295,9 @@ linearly with time:
 
 $$ \vec{v}(t) = \vec{v}_0 - \mu_r g t \hat{v}_0 \label{rolling_velocity} $$
 
-Here, $m$ is the ball's mass, $\mu_r$ is the coefficient of rolling friction, $g$ is the
-gravitational constant, and $\hat{v}_0$ is the unit vector that points in the direction of the ball's
-travel (according to this coordinate system, $\hat{v}_0 = \hat{i}$).
+Here, $\mu_r$ is the coefficient of rolling friction, $g$ is the gravitational constant, and
+$\hat{v}_0$ is the unit vector that points in the direction of the ball's travel (according to this
+coordinate system, $\hat{v}_0 = \hat{i}$).
 
 Integrating this equation with respect to time yields the displacement as a function of time:
 
@@ -303,7 +305,7 @@ $$ \vec{r}(t) = \vec{r}_0 + \vec{v}_0 t - \frac{1}{2} \mu_r g t^2 \hat{v}_0 \not
 
 ----------------------------
 
-Now for angular velocity. To discuss this, we need to formalize the concept of rolling, which is
+Now for angular velocity. To discuss this, I should formalize the concept of rolling, which is
 formally defined as the state in which the **relative velocity**, $\vec{u}(t)$, between the ball and
 cloth at the PoC is $\vec{0}$. $\vec{u}$(t) has two contributions: (1) the linear velocity of
 the ball, _i.e._ the velocity of the center of mass, and (2) the velocity between ball and cloth
@@ -317,14 +319,13 @@ velocity:
 {% include youtube_embed.html id="Z7ghvKcEDIc" %}
 
 {:.warning}
-I think we both agree there is some amount of rotation, but let's just ignore it.
+I think we all agree there is some amount of rotation, but let's just ignore it.
 
 Since the ball does not rotate, there is no angular velocity, so Eq.  $\eqref{rel_vel}$ reduces to
 
 $$ \vec{u}(t) = \vec{v}(t) \notag $$
 
-Similarly, here is a shot that _only_ has velocity between ball and cloth that exists because of the
-ball's rotation.
+Similarly, here is a shot that _only_ has a velocity between ball and cloth only due to the ball's rotation.
 
 {% include youtube_embed.html id="G_aaXbdJavc" %}
 
@@ -349,7 +350,7 @@ balls are most often rolling. The reason is that any sliding ball experiences fr
 the magnitude of $\vec{u}(t)$ until it is rolling. In that sense, rolling is somewhat of an
 equilibrium state.
 
-Now that we have a mathematical condition for rolling, _i.e._ Eq. $\eqref{roll_condition}$, there is a lot
+Now that there is a mathematical condition for rolling, _i.e._ Eq. $\eqref{roll_condition}$, there is a lot
 we can learn about the angular velocity. According to our coordinate system in Figure 4, the RHS of
 Eq. $\eqref{roll_condition}$ is strictly in the $+x-$direction. That means the LHS must also be
 strictly in the $+x-$direction. Expanding the cross product on the LHS yields:
@@ -392,7 +393,7 @@ FIXME). On the other hand, my shot did not have any significant amount of $\omeg
 small amount existed quickly dissipated within fractions of a section, yielding an otherwise straight trajectory.
 
 The takeaway is that $\omega_z(t)$ is decoupled from everything else, and evolves according to Eq.
-$\eqref{spinning_oz}$, which we dealt with Case 2. The only thing left to do is write down the
+$\eqref{spinning_oz}$, which was dealt with in Case 2. The only thing left to do is write down the
 equations for a given frame of reference. Let's use a frame of reference that is centered
 about the ball's _initial_ center of mass coordinates. Then,
 
@@ -415,7 +416,7 @@ $\vec{\omega}(t)$ is represented by 2 equations.  $\vec{\omega} _{xy} (t)$ defin
 velocity projected onto the $xy-$plane, which is parallel with the table. 
 
 The above equations are defined in terms of $\hat{v}_0$, which can point direction in the $xy-$plane.
-If we take a frame of reference in which ball motion is in the $+x-$direction, we can drop the
+If I take a frame of reference in which ball motion is in the $+x-$direction, I can drop the
 vector notation:
 
 <div class="extra-info" markdown="1">
@@ -570,7 +571,7 @@ $$
 where $u_0$ is the magnitude of $\vec{u}(t=0)$ and $\mu_s$ is the sliding coefficient of friction.
 
 To establish the equations of motion for the sliding case, let's again use a frame of reference
-centered about the ball's _initial_ center of mass coordinates. Additionally, we assume the _initial_
+centered about the ball's _initial_ center of mass coordinates. Additionally, I assume the _initial_
 center of mass velocity, $\vec{v}(0)$, points in the $+x-$direction. Then,
 
 <div class="extra-info" markdown="1">
@@ -717,7 +718,7 @@ of the balls the moment _after_ the collision. Just like in [Section
 I](#section-i-ball-cloth-interactions), the state of a ball is defined by its position, velocity,
 and angular velocity.
 
-Some of these we can bang out right away.
+Some of these I can bang out right away.
 Suppose the collision happens between $t = \tau$ and $t = \tau + dt$, keeping in mind instantaneity
 of the collision dictates that $dt$ is infinitesimally small. There is thus no amount of time for
 the balls to change position in the moments immediately before and after the collision. Therefore
@@ -726,7 +727,7 @@ $$ \vec{r}_A(\tau+dt) = \vec{r}_A(\tau) \notag $$
 
 $$ \vec{r}_B(\tau+dt) = \vec{r}_B(\tau) \notag $$
 
-One down. Since we are not accounting for friction effects, there is no loss or change in angular velocity due
+One down. Since I'm not accounting for friction effects, there is no loss or change in angular velocity due
 to the collision:
 
 $$ \vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau) \notag $$
@@ -734,7 +735,7 @@ $$ \vec{\omega}_A(\tau+dt) = \vec{\omega}_A(\tau) \notag $$
 $$ \vec{\omega}_B(\tau+dt) = \vec{\omega}_B(\tau) \notag $$
 
 Two down. This leaves only the velocities of the balls, which certainly do change. To solve the outgoing
-velocities, we're going to need some conservation of momentum and energy. Figure 8 details the scenario above. For
+velocities, I'm going to need some conservation of momentum and energy. Figure 8 details the scenario above. For
 convenience, the coordinate system is defined so that $\vec{v}_0$ points in the $+x-$direction.
 
 Before getting into equations, what's clear immediately is that we know the outgoing direction of
@@ -798,8 +799,8 @@ $$
 $$
 
 The inner product of $\vec{v}_A$ and $\vec{v}_B$ is 0, which means that outgoing velocities of the 2
-balls are $90^{\circ}$ to one another! Since we know the direction of $\vec{v}_B$ (from geometry),
-we know the direction of $\vec{v}_A$ as well. To determine the magnitudes, we superpose the 3
+balls are $90^{\circ}$ to one another! Since the direction of $\vec{v}_B$ is known from geometry,
+the direction of $\vec{v}_A$ is known as well. To determine the magnitudes, I superpose the 3
 velocity vectors on top of each other:
 
 [![ball_ball_velocity_vectors]({{images}}/ball_ball_velocity_vectors.jpg)]({{images}}/ball_ball_velocity_vectors.jpg){:.center-img .width-50}
@@ -817,8 +818,8 @@ This diagram contains 3 critical pieces of information.
 3. $\vec{v}_A$ is perpendicular to $\vec{v}_B$. This is known from Eq. $\eqref{perp}$, which used
    both conservation of energy and linear momentum.
 
-Given these facts, we can soh-cah-toa our way to the answer. Expressed in terms of
-$\alpha$ and $v_0$, we get:
+Given these facts, I can soh-cah-toa my way to the answer. Expressed in terms of
+$\alpha$ and $v_0$, I get:
 
 $$
 \vec{v}_A(t+\tau) = (v_0 \sin\alpha) \, \hat{v}_A
@@ -878,8 +879,8 @@ $$
 
 Relaxing the assumption that one ball is stationary may at first seem like a terrible idea--the
 introduced complexity must be horrible. And that intuition is basically correct. Treating both balls as
-moving would be a nightmare. Yet even when both balls are moving, we don't need to _treat_ it that
-way. Instead, we can change to a frame of reference that moves with one of the balls. In such a frame
+moving would be a nightmare. Yet even when both balls are moving, I don't need to _treat_ it that
+way. Instead, I can change to a frame of reference that moves with one of the balls. In such a frame
 of reference, that ball is stationary. A picture of the situation is shown in Figure 10:
 
 [![ball_ball_collision_2]({{images}}/ball_ball_collision_2.jpg)]({{images}}/ball_ball_collision_2.jpg){:.center-img .width-90}
@@ -889,9 +890,13 @@ balls ($-\vec{v}_B$ is shown as the yellow vectors), the frame of reference is c
 with ball B, shown in the right panel. In this scenario, ball B is stationary, and the situation
 reduces to Case 1, and specifically the situation depicted in Figure 8._
 
-Since physics behaves the same as viewed from all inertial reference frames, we are well within our rights
+{:.warning}
+In Figure 10 panel II, the balls should contact with the same orientation as shown in panel I (about
+$50^{\circ}$ to the $x-$axis), rather than as pictured.
+
+Since physics behaves the same as viewed from all inertial reference frames, I am well within my rights
 to make this transformation during the collision. After solving the outgoing state post-collision,
-we can reverse the transformation and voila, we are done. This makes Case 2 trivial, since it can be
+I can reverse the transformation and voila, I'm done. This makes Case 2 trivial, since it can be
 reduced to Case 1. Explicitly, the procedure goes like this:
 
 
@@ -927,9 +932,9 @@ $$
 
 </div>
 
-## **Section III**: ball-rail interactions
+## **Section III**: ball-cushion interactions
 
-The ball-rail interaction is probably the most difficult to model accurately. There are so many
+The ball-cushion interaction is probably the most difficult to model accurately. There are so many
 factors to consider. The height, shape, friction, and compressibility of the cushion. The incoming
 angle, velocity, and spin of the ball. All of these have significant effects on how the rail
 influences the ball's outgoing state. Let's take a look in slow motion:
@@ -977,7 +982,7 @@ entitled, "_A theoretical analysis of billiard ball dynamics under cushion impac
 model that must be solved numerically using differential equations, which is relatively complex. To get
 a rough idea of how involved this model is, check out the force body diagram in Figure 4:
 
-[![mathavan_2010_1]({{images}}/mathavan_2010_1.png)]({{images}}/mathavan_2010_1.png){:.center-img .width-50}
+[![mathavan_2010_1]({{images}}/mathavan_2010_1.png)]({{images}}/mathavan_2010_1.png){:.center-img .width-90}
 
 _Force body diagram from Mathavan et. al, 2010. [source](https://www.researchgate.net/publication/245388279_A_theoretical_analysis_of_billiard_ball_dynamics_under_cushion_impacts)_
 
@@ -1007,7 +1012,7 @@ is less realistic than Mathavan _et. al_, 2010.
 
 Alright, so let's go over the model. Han chooses the following frame of reference:
 
-[![han_1]({{images}}/han_1.jpg)]({{images}}/han_1.jpg){:.center-img .width-50}
+[![han_1]({{images}}/han_1.jpg)]({{images}}/han_1.jpg){:.center-img .width-70}
 
 _**Figure 11**. A ball colliding with a rail viewed from above. The frame of reference is defined so
 that the rail is perpendicular to the $x-$axis, and the $+x=$direction points away from the playing
@@ -1160,6 +1165,16 @@ $$
 $$
 
 </div>
+
+## **Section IV**: ball-air interactions
+
+FIXME
+
+
+## **Section V**: ball-slate interactions
+
+FIXME
+
 
 ## Conclusion
 
