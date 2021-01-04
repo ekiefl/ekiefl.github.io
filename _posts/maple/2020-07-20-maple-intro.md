@@ -114,7 +114,7 @@ the start of the program. The premise is to wait until the audio signal reaches 
 then measures the mean ($ \mu $) and standard deviation ($ \sigma $) of the signal strength.  I
 consider equilibrium to be established by demanding that the coefficient of variation ($ \sigma/\mu
 $) is less than some threshold value, since a low coefficient of variation means a stable signal.
-The background mean and standard deviation that satisfied this constrant for equilibrium can then be
+The background mean and standard deviation that satisfied this constraint for equilibrium can then be
 used to distinguish signal from noise.
 
 We can do some back of the envelope calculations to show that if the signal is drawn from a Normal
@@ -163,7 +163,7 @@ effectively guards against false-positives when loud but short (~ millisecond) s
 which trigger an event. The stringency is thus controlled by $N$: the lower $N$ is, the more
 false-positives in event starts you allow.
 
-Programatically, whenever a frame's mean signal exceeds $X$ while `in_event == False`, a second
+Programmatically, whenever a frame's mean signal exceeds $X$ while `in_event == False`, a second
 state variable `in_on_transition` is set to `True`.  Whenever `in_on_transition == True`, it
 basically means, "*Ok, we're not for sure in an event, but things are starting to get loud, and if
 we stay in this state for long enough, we'll for sure know we are in an event*". If
@@ -186,7 +186,7 @@ safeguards against against false-positives that end events because there was a m
 sound amplitude**. The stringency is thus controlled by $T$: the lower $T$ is, the more
 false-positives in event ends you allow.
 
-Programatically, whenever a frame's mean signal dips below $Y$ while `in_event == True`, a second
+Programmatically, whenever a frame's mean signal dips below $Y$ while `in_event == True`, a second
 state variable `in_off_transition` is set to `True`. This starts a countdown. If any frame during
 the countdown exceeds $X$, `in_off_transition` is set to `False`, and the event is given life
 anew. But if no frames exceed $X$ during the countdown, the event is deemed to have finished, so
@@ -212,7 +212,7 @@ Overall, I am happy with how it works and ready to move on.
 ## A generic audio detector
 
 I noticed at this point that nothing I have done so far has anything to do with dogs and barking.
-**Being noncommital is a great quality in a codebase because it creates flexibility**. For the
+**Being noncommittal is a great quality in a codebase because it creates flexibility**. For the
 purpose of making this useful to anyone with their own applications, I created a well-polished
 branch of the repository that can be used for generic audio event detection. I reorganized
 everything into a single file, so after installing `numpy` and `pyaudio`, you are ready to rumble:
@@ -573,7 +573,7 @@ class it belonged to, etc.  But instead, I uncompromisingly wanted to retain as 
 as possible, so it was important for me to store the audio itself. This way I'm guaranteed not to be
 bottlenecked by an incomplete data storage when I inevitably come up with interesting ways to
 analyze data that would require going back to the raw audio. So to me, it made sense to store
-everything in a database. I have familarity with [SQLite](https://www.sqlite.org/index.html), so I
+everything in a database. I have familiarity with [SQLite](https://www.sqlite.org/index.html), so I
 wrote a bare-bones Python class to interface with SQLite that's based off of the `db` module of
 another repo I contribute to, [anvio](https://github.com/merenlab/anvio/blob/master/anvio/db.py). It
 supports basic reading and writing of data, as well as playing back stored audio. You can check it
@@ -592,7 +592,7 @@ In summary,
 2. The `self` table that contains administrative info like when the session
 started, which microphone was used, and all free parameters like the event threshold parameters
 $X$, $Y$, etc.
-3. Each row of the `events` table contains all of the info pertaining to an invidual event.
+3. Each row of the `events` table contains all of the info pertaining to an individual event.
 
 Here is an example `events` table:
 
@@ -1089,10 +1089,10 @@ Although this data is too anecdotal to say whether or not scolding/praising real
 difference, it at least verifies that the decision logic for praising and scolding makes sense, and
 I'm not totally off base. But to really do some interesting stuff, I'm going to need a lot more data...
 
-## A longitundinal study is underway
+## A longitudinal study is underway
 
 So far, I've developed a considerable framework for data acquisition and I'm very happy with
-the infastructure. Yet at this point there is almost no data to work with, so over the next few
+the infrastructure. Yet at this point there is almost no data to work with, so over the next few
 months, I plan to measure Maple's activity level and see how she progresses over time. Once I feel
 there are enough data, my plan is to analyze how she has (hopefully) improved, and whether
 or not verbal praising and/or scolding is effective. In the meantime I may begin working on crafting a DIY
