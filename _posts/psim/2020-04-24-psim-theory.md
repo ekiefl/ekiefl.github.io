@@ -390,7 +390,7 @@ is that these players are elevating their cue, which causes $\omega_x$ to be non
 velocity _in the direction_ of motion). This "barrel-roll" rotation is what causes curved
 trajectories, otherwise known as swerve or masse. (For more info on the cue-cueball interaction, see
 FIXME). On the other hand, my shot did not have any significant amount of $\omega_x$, so whatever
-small amount existed quickly dissipated within fractions of a section, yielding an otherwise straight trajectory.
+small amount existed quickly dissipated within fractions of a second, yielding an otherwise straight trajectory.
 
 The takeaway is that $\omega_z(t)$ is decoupled from everything else, and evolves according to Eq.
 $\eqref{spinning_oz}$, which was dealt with in Case 2. The only thing left to do is write down the
@@ -606,21 +606,21 @@ We can express these in table coordinates by applying the rotation matrix (Eq. $
 which yields
 
 <div class="extra-info" markdown="1">
-<span class="extra-info-header">Rolling equations of motion (**table coordinates**)</span>
+<span class="extra-info-header">Sliding equations of motion (**table coordinates**)</span>
 
 Displacement:
 
-$$ r_x(t) = r_{0x} + v_0 \cos(\phi) \, t - \frac{1}{2} \mu_s g \, ( u_{0x} \cos(\phi) - u_{0y} \sin(\phi) ) \, t^2 \label{sliding_rx_table} $$
+$$ r_x(t) = r_{0x} + v_0 \cos(\phi) \, t \\ - \frac{1}{2} \mu_s g \, ( u_{0x} \cos(\phi) - u_{0y} \sin(\phi) ) \, t^2 \label{sliding_rx_table} $$
 
-$$ r_y(t) = r_{0y} + v_0 \sin(\phi) \, t - \frac{1}{2} \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) ) \, t^2 \label{sliding_ry_table} $$
+$$ r_y(t) = r_{0y} + v_0 \sin(\phi) \, t \\ - \frac{1}{2} \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) ) \, t^2 \label{sliding_ry_table} $$
 
 $$ r_z(t) = 0 \label{sliding_rz_table} $$
 
 Velocity:
 
-$$ v_x(t) = v_0 \cos(\phi) - \mu_s g \, ( u_{0x} \cos(\phi) - u_{0y} \sin(\phi) ) \, t \label{sliding_vx_table} $$
+$$ v_x(t) = v_0 \cos(\phi) \\ - \mu_s g \, ( u_{0x} \cos(\phi) - u_{0y} \sin(\phi) ) \, t \label{sliding_vx_table} $$
 
-$$ v_y(t) = v_0 \sin(\phi) - \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) ) \, t \label{sliding_vy_table} $$
+$$ v_y(t) = v_0 \sin(\phi) \\ - \mu_s g \, ( u_{0x} \sin(\phi) + u_{0y} \cos(\phi) ) \, t \label{sliding_vy_table} $$
 
 $$ v_z(t) = 0 \label{sliding_vz_table} $$
 
@@ -628,14 +628,14 @@ Angular velocity:
 
 $$
 \omega_x(t) =
-    \omega_{0x} \cos(\phi) - \omega_{0y} \sin(\phi) +
+    \omega_{0x} \cos(\phi) - \omega_{0y} \sin(\phi) \\ +
     \frac{5 \mu_s g}{2R} (u_{0y} \cos(\phi) + u_{0x} \sin(\phi)) \, t
 \label{sliding_ox_table}
 $$
 
 $$
 \omega_y(t) =
-    \omega_{0x} \sin(\phi) + \omega_{0y} \cos(\phi) +
+    \omega_{0x} \sin(\phi) + \omega_{0y} \cos(\phi) \\ +
     \frac{5 \mu_s g}{2R} (u_{0y} \sin(\phi) - u_{0x} \cos(\phi)) \, t
 \label{sliding_oy_table}
 $$

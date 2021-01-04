@@ -1,0 +1,55 @@
+{
+  "graph": [],
+  "nodes": [
+    {
+      "id": 0,
+      "size": 3,
+      "name": "spinning",
+      "type": "STATE"
+    },
+    {
+      "id": 1,
+      "size": 3,
+      "name": "rolling",
+      "type": "STATE"
+    },
+    {
+      "id": 2,
+      "size": 3,
+      "name": "stationary",
+      "type": "STATE"
+    },
+    {
+      "id": 3,
+      "size": 3,
+      "name": "spinning-rolling transition",
+      "type": "EVENT"
+    },
+    {
+      "id": 4,
+      "size": 3,
+      "name": "rolling-stationary transition",
+      "type": "EVENT"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 2
+    }
+  ],
+  "directed": true,
+  "multigraph": true
+}

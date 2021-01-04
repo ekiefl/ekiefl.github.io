@@ -1,0 +1,35 @@
+{
+  "graph": [],
+  "nodes": [
+    {
+      "id": 0,
+      "size": 3,
+      "name": "X",
+      "type": "STATE"
+    },
+    {
+      "id": 1,
+      "size": 3,
+      "name": "Y",
+      "type": "STATE"
+    },
+    {
+      "id": 2,
+      "size": 3,
+      "name": "X-Y transition",
+      "type": "EVENT"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 1
+    }
+  ],
+  "directed": true,
+  "multigraph": true
+}

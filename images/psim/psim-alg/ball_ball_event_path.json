@@ -4,38 +4,44 @@
     {
       "id": 0,
       "size": 3,
-      "name": "stationary",
-      "type": "STATE_1"
+      "name": "airborne",
+      "type": "STATE_cue"
     },
     {
       "id": 1,
       "size": 3,
-      "name": "spinning",
-      "type": "STATE_3"
+      "name": "airborne",
+      "type": "STATE_cue"
     },
     {
       "id": 2,
       "size": 3,
-      "name": "rolling",
-      "type": "STATE"
+      "name": "stationary",
+      "type": "STATE_3"
     },
     {
       "id": 3,
       "size": 3,
       "name": "sliding",
-      "type": "STATE"
+      "type": "STATE_3"
     },
     {
       "id": 4,
       "size": 3,
       "name": "airborne",
-      "type": "STATE"
+      "type": "STATE_3"
     },
     {
       "id": 5,
       "size": 3,
-      "name": "ball-ball collision",
-      "type": "TRANSITION"
+      "name": "ball-ball collision (t=0.230)",
+      "type": "EVENT"
+    },
+    {
+      "id": 6,
+      "size": 3,
+      "name": "ball-slate collision (t=0.230)",
+      "type": "EVENT"
     }
   ],
   "links": [
@@ -44,11 +50,23 @@
       "target": 5
     },
     {
-      "source": 1,
+      "source": 2,
       "target": 5
     },
     {
       "source": 5,
+      "target": 1
+    },
+    {
+      "source": 5,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 6
+    },
+    {
+      "source": 6,
       "target": 4
     }
   ],
