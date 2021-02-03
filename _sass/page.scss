@@ -838,7 +838,9 @@ $button-size: 1.5rem;
     img {
         width: 100%;
         height: auto;
-    border-bottom: 1px solid #dedede;
+        max-height: 300px;
+        object-fit: cover;
+        border-bottom: 1px solid #dedede;
         -ms-interpolation-mode: bicubic;
     }
     .headline-wrap {
