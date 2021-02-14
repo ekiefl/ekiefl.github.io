@@ -34,12 +34,14 @@
 <script src="{{ site.url }}/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
 
 <!-- MathJAX stuff -->
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
   MathJax.Hub.Config({
     jax: ["input/TeX","output/HTML-CSS"],
     extensions: ["tex2jax.js"],
+    "fast-preview": {disabled: true},
     tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(', '\\)'] ]
+      inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+      preview: "none"
     },
     TeX: { equationNumbers: { autoNumber: "all" } }
   });
