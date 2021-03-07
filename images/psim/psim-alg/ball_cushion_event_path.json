@@ -1,0 +1,55 @@
+{
+  "graph": [],
+  "nodes": [
+    {
+      "id": 0,
+      "size": 3,
+      "name": "rolling",
+      "type": "STATE_14"
+    },
+    {
+      "id": 1,
+      "size": 3,
+      "name": "sliding",
+      "type": "STATE_14"
+    },
+    {
+      "id": 2,
+      "size": 3,
+      "name": "airborne",
+      "type": "STATE_14"
+    },
+    {
+      "id": 3,
+      "size": 3,
+      "name": "ball-cushion collision (t=0.125)",
+      "type": "EVENT"
+    },
+    {
+      "id": 4,
+      "size": 3,
+      "name": "ball-slate collision (t=0.125)",
+      "type": "EVENT"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 1
+    },
+    {
+      "source": 1,
+      "target": 4
+    },
+    {
+      "source": 4,
+      "target": 2
+    }
+  ],
+  "directed": true,
+  "multigraph": true
+}

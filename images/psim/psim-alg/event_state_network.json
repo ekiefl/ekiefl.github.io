@@ -1,0 +1,217 @@
+{
+  "graph": [],
+  "nodes": [
+    {
+      "id": 0,
+      "size": 5,
+      "name": "stationary",
+      "type": "STATE"
+    },
+    {
+      "id": 1,
+      "size": 5,
+      "name": "spinning",
+      "type": "STATE"
+    },
+    {
+      "id": 2,
+      "size": 5,
+      "name": "rolling",
+      "type": "STATE"
+    },
+    {
+      "id": 3,
+      "size": 5,
+      "name": "sliding",
+      "type": "STATE"
+    },
+    {
+      "id": 4,
+      "size": 5,
+      "name": "airborne",
+      "type": "STATE"
+    },
+    {
+      "id": 5,
+      "size": 3,
+      "name": "ball-ball collision",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 6,
+      "size": 3,
+      "name": "ball-cushion collision",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 7,
+      "size": 3,
+      "name": "ball-slate collision",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 8,
+      "size": 3,
+      "name": "spinning-stationary transition",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 9,
+      "size": 3,
+      "name": "rolling-stationary transition",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 10,
+      "size": 3,
+      "name": "rolling-spinning transition",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 11,
+      "size": 3,
+      "name": "sliding-stationary transition",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 12,
+      "size": 3,
+      "name": "sliding-spinning transition",
+      "type": "TRANSITION"
+    },
+    {
+      "id": 13,
+      "size": 3,
+      "name": "sliding-rolling transition",
+      "type": "TRANSITION"
+    }
+  ],
+  "links": [
+    {
+      "source": 3,
+      "target": 13
+    },
+    {
+      "source": 13,
+      "target": 2
+    },
+    {
+      "source": 3,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 1
+    },
+    {
+      "source": 3,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 0
+    },
+    {
+      "source": 2,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 1
+    },
+    {
+      "source": 2,
+      "target": 9
+    },
+    {
+      "source": 9,
+      "target": 0
+    },
+    {
+      "source": 1,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 0
+    },
+    {
+      "source": 3,
+      "target": 7
+    },
+    {
+      "source": 4,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 0
+    },
+    {
+      "source": 7,
+      "target": 1
+    },
+    {
+      "source": 7,
+      "target": 2
+    },
+    {
+      "source": 7,
+      "target": 3
+    },
+    {
+      "source": 7,
+      "target": 4
+    },
+    {
+      "source": 2,
+      "target": 6
+    },
+    {
+      "source": 3,
+      "target": 6
+    },
+    {
+      "source": 4,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 3
+    },
+    {
+      "source": 6,
+      "target": 4
+    },
+    {
+      "source": 0,
+      "target": 5
+    },
+    {
+      "source": 1,
+      "target": 5
+    },
+    {
+      "source": 2,
+      "target": 5
+    },
+    {
+      "source": 3,
+      "target": 5
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 3
+    },
+    {
+      "source": 5,
+      "target": 4
+    }
+  ],
+  "directed": true,
+  "multigraph": true
+}

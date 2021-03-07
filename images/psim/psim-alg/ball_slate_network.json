@@ -1,0 +1,43 @@
+{
+  "graph": [],
+  "nodes": [
+    {
+      "id": 0,
+      "size": 3,
+      "name": "sliding",
+      "type": "STATE"
+    },
+    {
+      "id": 1,
+      "size": 3,
+      "name": "airborne",
+      "type": "STATE"
+    },
+    {
+      "id": 2,
+      "size": 3,
+      "name": "ball-slate collision",
+      "type": "EVENT"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 1,
+      "target": 2
+    },
+    {
+      "source": 2,
+      "target": 1
+    },
+    {
+      "source": 2,
+      "target": 0
+    }
+  ],
+  "directed": true,
+  "multigraph": true
+}
