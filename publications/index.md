@@ -1,6 +1,6 @@
 ---
 layout: publications
-modified: 2020-08-19
+modified: 2021-03-15
 comments: false
 ---
 
@@ -13,6 +13,25 @@ These publications are a subset of my scientific work that I consider to have co
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+<a name="2020">&nbsp;</a>
+<h1>2020</h1>
+
+<div class="pub">
+<div class="__dimensions_badge_embed__" data-doi="10.1038/s41564-020-00834-3" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
+    <h3><a href=" https://doi.org/10.1038/s41564-020-00834-3" target="_new">Community-led, integrated, reproducible multi-omics with anvi'o</a></h3>
+    <span class="pub-authors">Eren AM, <span class="pub-member-author">Kiefl E</span>, Shaiber A, Veseli I, Miller SE, Schechter MS, Fink I, Pan JN, Yousef M, Fogarty EC, Trigodet F, Watson AR, Esen ÖC, Moore RM, Clayssen Q, Lee MD, Kivenson V, Graham ED, Merrill BD, Karkman A, Blankenberg D, Eppley JM, Sjödin A, Scott JJ, Vázquez-Campos X, McKay LJ, McDaniel EA, Stevens SLR, Anderson RE, Fuessel J, Fernandez-Guerra A, Maignien L, Delmont TO, Willis AD</span>
+    <div class="pub-info">
+    <div class="pub-featured-image">
+    <a href="../images/pubs/anvio-integrated-omics.png"><img src="../images/pubs/anvio-integrated-omics.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
+    </div>
+    <div class="pub-highlights">
+    <span style="display: inline-block; padding-bottom: 5px;">- A summary of the progress of <a href="https://merenlab.org/software/anvio/" target="_blank">anvi'o</a> during the past five years.</span>
+    </div>
+    </div>
+    <span class="pub-journal"><b>Nature Microbiology</b>, 6(1):3:6.</span>
+</div>
+
 
 <a name="2019">&nbsp;</a>
 <h1>2019</h1>
