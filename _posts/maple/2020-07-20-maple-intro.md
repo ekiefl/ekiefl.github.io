@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Live audio processing: creating a virtual dog-sitter"
+title: "Creating a virtual dog-sitter I [live audio processing]"
 categories: [maple]
 excerpt: "Using python and pyaudio to detect dog barks and intervene with pre-recorded audio."
 comments: true
@@ -21,7 +21,8 @@ barks. Loudly. **I wanted to create an application written in Python that monito
 barks**.
 
 By the end of this post, the program (which you have full, open-access to) will detect dog barks
-using **PyAudio** and make decisions on whether to praise or scold the dog based on its behavior. At this
+using **PyAudio** and make decisions on whether to praise or scold the dog based on its behavior. This is
+all done **in real time**. At this
 point, both praising and scolding means playing a pre-recorded voice of the owner that is either of
 positive or negative sentiment. The audio, statistics, and time of each bark, as well as statistics
 of owner responses are stored in a **SQLite** database. Finally, I'll show some interactive plots of
@@ -29,7 +30,7 @@ the results using **[Plotly](https://plotly.com/python/)**.
 
 ## Simple demo
 
-It's always good to start simple so I just searched, "*python live audio processing*" and found
+It's always good to start simple so I just searched for **python live audio processing** and found
 this blog post by [Scott W Harden](https://swharden.com/wp/2016-07-19-realtime-audio-visualization-in-python/).
 In it, he posts a simple script that monitors in real-time the amplitude of the audio signal. I
 turned it into a class structure:
