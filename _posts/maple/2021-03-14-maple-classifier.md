@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Creating a virtual dog-sitter II [making an audio classifier]"
+title: "Virtual dog-sitter II: creating an audio classifier"
 categories: [maple]
 excerpt: "Classifying dog barks to buff automated owner reponses"
 comments: true
