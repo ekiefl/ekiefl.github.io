@@ -49,11 +49,9 @@ And finally, creating a classifier would greatly improve the ability to understa
 
 <blockquote>
 Don't make anything more complicated than it needs to be.
-
-<div class="blockquote-author">Random forest classifier</div>
 </blockquote>
 
-In my opinion, this quote should be attributed to the [random forest classifier](https://en.wikipedia.org/wiki/Random_forest). There is really no point starting with any other algorithm. If the classifier is bad, I'll move on to something more complicated.
+In my opinion, this quote should be attributed to the [random forest algorithm](https://en.wikipedia.org/wiki/Random_forest). There is really no point starting with any other classifying algorithm. If the classifier is bad, I'll try something more complicated.
 
 Moving on.
 

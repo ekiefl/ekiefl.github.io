@@ -52,9 +52,9 @@
             <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <small>({{ post.date | date: "%a, %b %d, %Y" }})</small></h2>
           {% endif %}
           <p>{{ post.excerpt | strip_html | truncate: 160 }}
-          {% for category in site.data.categories %}
-            {% if category.name == post.categories[0] %}
-                <span class="lbl" style="background-color: {{category.color}}">{{ category.name }}</span>
+          {% for project in site.data.projects %}
+            {% if project.name == post.categories[0] %}
+                <span class="lbl" style="background-color: {{project.color}}">{{ project.name }}</span>
             {% endif %}
           {% endfor %}
       </article>

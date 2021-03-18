@@ -1,6 +1,7 @@
 - name: "maple"
   url:  "projects/maple/"
   logo:  "/images/maple/maple_logo.png"
+  color: "#AE2529"
   thumbnail:  ["/images/maple/maple_logo.png", "/images/maple/maple-intro/histogram_2_pic.png"]
   description: >-
      Creating a program that monitors and responds to a barky little dog named *maple*.
@@ -8,6 +9,7 @@
 - name: "psim"
   url:  "projects/psim/"
   logo:  "/images/psim/psim_logo.png"
+  color: "#6D5C81"
   thumbnail:  ["/images/psim/psim_logo.png", "/images/psim/thumbnail3.gif", "/images/psim/thumbnail1.png", "/images/psim/thumbnail2.png",]
   description: >-
       My journey in creating a pool/billiards simulator called *psim*, that emphasizes realistic physics.
