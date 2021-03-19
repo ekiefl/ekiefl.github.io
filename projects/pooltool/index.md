@@ -2,22 +2,20 @@
 layout: project-main
 title: "Realistic pool simulator"
 redirect_from:
-excerpt: "psim project page"
-project: psim
+excerpt: "pooltool project page"
+project: pooltool
 image:
-  feature: "psim/psim_banner.png"
+  feature: "pooltool/pooltool_banner.png"
   display: true
   credit: 'https://www.youtube.com/watch?v=6nlLJnruYVA'
 ---
 
-{% capture images %}{{site.url}}/images/psim/psim-intro{% endcapture %}
+{% capture images %}{{site.url}}/images/pooltool/pooltool-intro{% endcapture %}
 {% include _toc.html %}
 
-## Homepage of **psim**
+## Homepage of **pooltool**
 
-This is the homepage for my project *psim*, which focuses on creating a realistic billiards/pool
-simulator. Keep reading for an intro into the topic or scroll down to the bottom to see the blog
-posts of this series.
+*pooltool* is a sandbox billiards game that emphasizes realistic physics. You can play any form of billiards, experiment with different physics settings, or you use the API to investigate billiards-related research questions. Keep reading for an intro into the topic or **scroll down for posts of this blog series**.
 
 ### Backstory
 
@@ -57,7 +55,7 @@ research. Then the COVID-19 pandemic struck and I realized I needed something ot
 keep me stimulated during quarantine. That's when I decided to undertake the project of making a
 physically accurate pool simulator.
 
-### An amazing pool simulator already exists
+### What's out there?
 
 Before starting, I wanted to scope out what's currently on the market. Apparently, the most
 realistic 3D pool simulator is [ShootersPool
@@ -73,18 +71,19 @@ software developer / pool player. Goals.
 
 Unfortunately, ShootersPool is a commerical project with closed source code.
 
-### This is an open source project
+### Open source
 
 ShootersPool is a cool game, but I want to make more than a game. I want to make a **pool physics sandbox game** for exploring
 and experimenting with billiards physics. I want to give that control to the user so they can create unique table
-layouts with 10,000 balls on a spherical table with moon gravity. Because why not? And **the only way to give full control is to make it open source**.
+layouts with 10,000 balls on a spherical table with moon gravity. Because why not? And the only way to give **full** control is to make it open source.
+
 I'm not the first person to make an open source pool physics simulator. In fact there's countless (see [here](https://github.com/topics/billiards?o=asc&s=forks) for example), and they vary in quality. The vast majority are half-baked course projects, but there are a couple that stood out to me (non-exhaustive list here):
 
-[https://jzitelli.github.io/poolvr/](poolvr) is a very cool open source project for playing pool in VR. I couldn't take full advantage of the controls without a VR headset, but this [youtube playlist](https://www.youtube.com/watch?v=_zrm2e6uJDc&list=PLfO_NjmfXp1yuMxgKFfVMQyQRgpsEINGK&index=1) has me convinced there is some sophisticated physics for modelling ball-ball and ball-cushion interactions, however the implementation seems buggy at times.  This was recently reimplemented as a [python project](https://github.com/jzitelli/poolvr.py) with a new physics engine, so maybe it's better now.
+[poolvr](https://jzitelli.github.io/poolvr/) is a very cool open source project for playing pool in VR. I couldn't take full advantage of the controls without a VR headset, but this [youtube playlist](https://www.youtube.com/watch?v=_zrm2e6uJDc&list=PLfO_NjmfXp1yuMxgKFfVMQyQRgpsEINGK&index=1) has me convinced there is some sophisticated physics for modelling ball-ball and ball-cushion interactions, however the implementation seems buggy at times.  This was recently reimplemented as a [python project](https://github.com/jzitelli/poolvr.py) with a new physics engine, so maybe it's better now.
 
 [python-billiards](https://github.com/markus-ebke/python-billiards) is a 2D billiards engine written in Python that
 allows one to programmatically define a table and balls, and will evolve evolve the system that emerges. I like this project because
-it achieves one of the goals of psim, which is to have a fully functioning API by which other people can create their
+it achieves one of the goals of pooltool, which is to have a fully functioning API by which other people can create their
 own scenes, however ridiculous.
 
 The amazingly titled [billiards-python-project](https://github.com/FlinnPond/billiards-python-project) deserves mention because it introduced me to

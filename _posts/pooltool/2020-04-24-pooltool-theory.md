@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Billiards simulator I: physics theory"
-categories: [psim]
+categories: [pooltool]
 excerpt: "A dive into the physics theory behind pool simulation"
 comments: true
 authors: [evan]
 image:
-  feature: psim/psim_banner.png
+  feature: pooltool/pooltool_banner.png
   display: true
 ---
 
-{% capture images %}{{site.url}}/images/psim/psim-theory{% endcapture %}
+{% capture images %}{{site.url}}/images/pooltool/pooltool-theory{% endcapture %}
 {% include _toc.html %}
 
 
@@ -18,7 +18,7 @@ This post is the first of many in my journey to make a realistic pool/billiards 
 
 Before jumping into code, I have to trudge through the theory of both (a) the physics of pool,
 and (b) the algorithms for evolving a pool shot. **The physics of pool is what is covered in this
-post**, and algorithms for evolving a pool shot covered in the [second post]({{ site.url }}/2020/04/24/psim-theory/). Both of these will
+post**, and algorithms for evolving a pool shot covered in the [second post]({{ site.url }}/2020/04/24/pooltool-theory/). Both of these will
 contain a lot of equations, and little if any code. If this sounds uninteresting to you, skip ahead
 to [the third post](FIXME) in this series. With that said, let's get started.
 

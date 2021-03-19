@@ -31,8 +31,24 @@
           {% if post.categories contains page.project %}
                 {% if post.title %}
                     <article>
-                        <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <small>({{ post.date | date: "%a, %b %d, %Y" }})</small></h2>
-                        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+                        {% assign author = None %}
+                        {% assign p = post.authors[0] %}
+                        {% for e in site.data.people %}
+                          {% if e.alias == p %}
+                              {% assign author = e %}
+                          {% endif %}
+                        {% endfor %}
+                        {% if author %}
+                          <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <small>({{ post.date | date: "%a, %b %d, %Y" }}, by <span style="color: gray;">{{ author.alias }}</span>)</small></h2>
+                        {% else %}
+                          <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a> <small>({{ post.date | date: "%a, %b %d, %Y" }})</small></h2>
+                        {% endif %}
+                        <p>{{ post.excerpt | strip_html | truncate: 160 }}
+                        {% for project in site.data.projects %}
+                          {% if project.name == post.categories[0] %}
+                              <span class="lbl" style="background-color: {{project.color}}">{{ project.name }}</span>
+                          {% endif %}
+                        {% endfor %}
                     </article>
                 {% endif %}
           {% endif %}

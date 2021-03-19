@@ -1,22 +1,22 @@
 ---
 layout: post
 title: "Billiards simulator II: algorithm theory"
-categories: [psim]
+categories: [pooltool]
 excerpt: "A dive into the algorithmic theory behind pool simulation"
 comments: true
 katex: true
 authors: [evan]
 image:
-  feature: psim/psim_banner.png
+  feature: pooltool/pooltool_banner.png
   display: true
 ---
 
-{% capture images %}{{site.url}}/images/psim/psim-alg{% endcapture %}
+{% capture images %}{{site.url}}/images/pooltool/pooltool-alg{% endcapture %}
 {% include _toc.html %}
 
 ## What is a pool simulator?
 
-In the [last post]({{ site.url }}/2020/04/24/psim-theory/) I discussed the physics for all the different phenomena in pool and
+In the [last post]({{ site.url }}/2020/04/24/pooltool-theory/) I discussed the physics for all the different phenomena in pool and
 outlined equations of motion for each scenario. Yet there is still a critical missing piece: **how and
 when should these equations be applied?** For instance, I have equations to resolve the collision
 between two balls, but how do I know which two balls collided and when?
@@ -32,7 +32,7 @@ evolution, and (2) continuous event-based evolution.
 
 ## What is the system state?
 
-In the [last post]({{ site.url }}/2020/04/24/psim-theory/) I defined the ball state by 3 vectors:
+In the [last post]({{ site.url }}/2020/04/24/pooltool-theory/) I defined the ball state by 3 vectors:
 the ball's displacement $\vec{r}(t)$, velocity $\vec{v}(t)$, and angular velocity $\vec{\omega}(t)$.
 Together, these three vectors fully characterize the state of a ball at any given time $t$. The system
 state for a given time $t$ is just the collection of individual ball states at that time.
@@ -157,13 +157,13 @@ Simulator](https://link.springer.com/chapter/10.1007/11922155_19). If you would 
 straight from the horse's mouth, a free pre-print of this publication is available
 [here](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.89.4627&rep=rep1&type=pdf).
 
-In the [last post]({{ site.url }}/2020/04/24/psim-theory/) I presented a bunch of analytical
+In the [last post]({{ site.url }}/2020/04/24/pooltool-theory/) I presented a bunch of analytical
 equations of motion for ball trajectories, depending on whether the ball is [stationary]({{ site.url
-}}/2020/04/24/psim-theory/#--case-1-stationary), [spinning]({{ site.url
-}}/2020/04/24/psim-theory/#--case-2-spinning), [rolling]({{ site.url
-}}/2020/04/24/psim-theory/#--case-3-rolling), [sliding]({{ site.url
-}}/2020/04/24/psim-theory/#--case-4-sliding), or [airborne]({{ site.url
-}}/2020/04/24/psim-theory/#section-iv-ball-air-interactions).
+}}/2020/04/24/pooltool-theory/#--case-1-stationary), [spinning]({{ site.url
+}}/2020/04/24/pooltool-theory/#--case-2-spinning), [rolling]({{ site.url
+}}/2020/04/24/pooltool-theory/#--case-3-rolling), [sliding]({{ site.url
+}}/2020/04/24/pooltool-theory/#--case-4-sliding), or [airborne]({{ site.url
+}}/2020/04/24/pooltool-theory/#section-iv-ball-air-interactions).
 
 These equations are perfect, because we can use them to evolve the ball states to any arbitrary
 time. The only (vital) problem is that **events** such as the collision in Figure 1 disrupt their
@@ -172,9 +172,9 @@ validity, since they are developed assuming the ball acts in isolation.
 For example, a ball
 rolling with a very high velocity may be destined to travel 50m in an isolated environment, yet
 collides with a cushion after just a few meters. Thus, the ball can safely be evolved via [the
-rolling equations of motion]({{ site.url }}/2020/04/24/psim-theory/#--case-3-rolling) **up until the
+rolling equations of motion]({{ site.url }}/2020/04/24/pooltool-theory/#--case-3-rolling) **up until the
 moment of collision**, at which point the event must be resolved via [the ball-cushion interaction
-equations]({{ site.url }}/2020/04/24/psim-theory/#section-iii-ball-cushion-interactions). After the
+equations]({{ site.url }}/2020/04/24/pooltool-theory/#section-iii-ball-cushion-interactions). After the
 collision is resolved, the ball can be safely evolved up until the next event.
 
 ### (1) Algorithm description
@@ -211,12 +211,12 @@ but **no further**.
 
 Then, the states of any balls involved in **the event must be resolved**. Some examples: If the event is
 two balls colliding, their states are resolved via [the ball-ball interaction equations]({{
-site.url }}/2020/04/24/psim-theory/#section-ii-ball-ball-interactions). If the event is a ball
+site.url }}/2020/04/24/pooltool-theory/#section-ii-ball-ball-interactions). If the event is a ball
 contacting a cushion, its state is resolved via [the ball-cushion interaction equations]({{ site.url
-}}/2020/04/24/psim-theory/#section-iii-ball-cushion-interactions). If the event is a ball transitioning
+}}/2020/04/24/pooltool-theory/#section-iii-ball-cushion-interactions). If the event is a ball transitioning
 from sliding to rolling, its state is resolved by updating its equations of motions from
-[sliding]({{ site.url }}/2020/04/24/psim-theory/#--case-4-sliding) to [rolling]({{ site.url
-}}/2020/04/24/psim-theory/#--case-3-rolling).
+[sliding]({{ site.url }}/2020/04/24/pooltool-theory/#--case-4-sliding) to [rolling]({{ site.url
+}}/2020/04/24/pooltool-theory/#--case-3-rolling).
 
 Once the states of the balls involved in the event have been solved, every ball now has equations of
 motion that will be valid until the next event occurs. Thus, the process repeats itself.
@@ -244,7 +244,7 @@ which are collisions, 4 of which are transitions. I discuss each below.
 Unlike every other event, the ball-ball collision involves 2 balls, one of which must be in a
 translating motion state: rolling, sliding, or airborne. The other ball may be in any motion state:
 stationary, spinning, rolling, sliding or airborne. The collision is governed by [the ball-ball
-interaction equations]({{ site.url }}/2020/04/24/psim-theory/#section-ii-ball-ball-interactions).
+interaction equations]({{ site.url }}/2020/04/24/pooltool-theory/#section-ii-ball-ball-interactions).
 
 {% assign network_path = images | append: '/ball_ball_network.json' %}
 {% include _network.html path=network_path id="ball_ball_network" height=325 %}
@@ -275,7 +275,7 @@ _Figure 3. Network representation of events and ball motion states for the ball-
 The ball-cushion collision involves just one ball, which must be in a translating motion state:
 rolling, sliding, or airborne. The output state is either sliding or airborne. The collision is
 governed by [the ball-cushion interaction equations]({{ site.url
-}}/2020/04/24/psim-theory/#section-iii-ball-cushion-interactions).
+}}/2020/04/24/pooltool-theory/#section-iii-ball-cushion-interactions).
 
 {% assign network_path = images | append: '/ball_cushion_network.json' %}
 {% include _network.html path=network_path id="ball_cushion_network" height=325 %}
@@ -302,7 +302,7 @@ video_
 
 The ball-slate collision occurs when a ball contacts the table with a velocity component _into_ the
 table ($-z-$direction). The collision is governed by [the ball-slate interaction equations]({{
-site.url }}/2020/04/24/psim-theory/#section-iv-ball-slate-interactions).
+site.url }}/2020/04/24/pooltool-theory/#section-iv-ball-slate-interactions).
 
 Stationary, spinning, and
 rolling balls necessarily have 0 speed along the $z-$axis, so the only available input motion
@@ -479,7 +479,7 @@ Transition times are the easiest to calculate, so I'll start with them.
 
 The spinning-stationary transition is defined by the moment at which a spinning ball reaches 0
 angular velocity in the $z-$direction. From the [spinning equations of motion]({{ site.url
-}}/2020/04/24/psim-theory/#--case-2-spinning), the angular velocity as a function of time is given
+}}/2020/04/24/pooltool-theory/#--case-2-spinning), the angular velocity as a function of time is given
 by
 
 $$ \omega_z(t) = \omega_{0z} - \frac{5\mu_{sp}g}{2R}t \notag $$
@@ -505,7 +505,7 @@ potential next event.
 
 On to the next. Both the rolling-stationary events _and_ the rolling-spinning events are defined by the moment at
 which a ball's center of mass velocity reaches 0. From the [rolling equations of motion]({{ site.url
-}}/2020/04/24/psim-theory/#--case-3-rolling), the velocity of a rolling ball as a function of time
+}}/2020/04/24/pooltool-theory/#--case-3-rolling), the velocity of a rolling ball as a function of time
 is given by
 
 $$
@@ -538,7 +538,7 @@ potential next event.
 
 Finally, we got the sliding-rolling transition, which is defined by the moment at which the relative velocity $\vec{u}$ becomes
 $\vec{0}$. From the [sliding equations of motion]({{ site.url
-}}/2020/04/24/psim-theory/#--case-4-sliding), the relative velocity as a function of time is given
+}}/2020/04/24/pooltool-theory/#--case-4-sliding), the relative velocity as a function of time is given
 by
 
 $$
@@ -675,8 +675,8 @@ c_z^{(i)} = 0
 $$
 
 which was determined by looking at the [the rolling equations of motion]({{ site.url
-}}/2020/04/24/psim-theory/#--case-3-rolling). As another example, looking at
-[the stationary equations of motion]({{ site.url }}/2020/04/24/psim-theory/#--case-1-stationary)
+}}/2020/04/24/pooltool-theory/#--case-3-rolling). As another example, looking at
+[the stationary equations of motion]({{ site.url }}/2020/04/24/pooltool-theory/#--case-1-stationary)
 reveals that a stationary ball has the following coefficients in Eq. $\eqref{quad_r}$:
 
 $$
@@ -1125,7 +1125,7 @@ In comparison to the ball-cushion collision, this is a breeze.
 The ball-slate collision occurs either when a sliding ball has a $-z-$velocity component, or an airborne ball hits the slate. The first case is somewhat pendantic, because if it has a $-z-$velocity component, the time until the ball-slate collision is by definition 0. So the real calculation is **determining when an airborne ball hits the slate**.
 
 An airborne ball hits the slate when $r_z = R$, where $R$ is the ball's radius. According to the [airborne equations of motion]({{ site.url
-}}/2020/04/24/psim-theory/#section-iv-ball-air-interactions), $r_z(t)$ is given by
+}}/2020/04/24/pooltool-theory/#section-iv-ball-air-interactions), $r_z(t)$ is given by
 
 $$
 r_z(t) = r_{0z} + v_{0z} t - \frac{1}{2} g t^2
@@ -1321,6 +1321,6 @@ Summing these numbers up yields an upper bound for the number of potential event
 
 ## Closing remarks
 
-When I first read the Leckie and Greenspan's paper, understanding it required hours of reading with pencil and paper in hand. It's not really their fault--it was a well written paper. The problem is that it was written in an academic format, which favors correctness and succinctness over understandability. I hope that this post along with [the other]({{ site.url }}/2020/04/24/psim-theory/) serve as a more approachable and more fleshed out perspective on pool simulation theory.
+When I first read the Leckie and Greenspan's paper, understanding it required hours of reading with pencil and paper in hand. It's not really their fault--it was a well written paper. The problem is that it was written in an academic format, which favors correctness and succinctness over understandability. I hope that this post along with [the other]({{ site.url }}/2020/04/24/pooltool-theory/) serve as a more approachable and more fleshed out perspective on pool simulation theory.
 
 This marks the **last theory post** in this blog series, and I gotta say, I am really thankful to be done writing about pool simulation theory. These posts are brutal to write due to their technical nature, so I'm glad that the next posts will be centered around actual implementation of a pool simulator, which will include a lot more code and visualization.
