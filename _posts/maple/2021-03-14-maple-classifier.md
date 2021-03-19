@@ -100,12 +100,12 @@ session.disconnect()
 
 </div>
 
-For anyone who doesn't work with audio files, the data is simple. Audio signal is just a 1D array, where the value of each point is proportional to the amplitude of the sound. As you move through the array, you're moving through time at a specified sampling rate. In my recordings I chose a standard sampling rate of 44100 Hz.
+For anyone who doesn't work with audio files, the data is simple. Audio signal is just a 1D array, where the value of each point is proportional to the pressure/strength of the sound. As you move through the array, you're moving through time at a specified sampling rate. In my recordings I chose a standard sampling rate of 44100 Hz.
 
 {:.notice}
 Why 44100 Hz? The human ear can perceive sound waves up to around 20,000 Hz. But resolving a sinusoidal wave requires sampling frequency that is [at least double](https://en.wikipedia.org/wiki/Nyquist_rate) the wave's frequency. Hence we have 44100 Hz.
 
-### The data should be chunked
+### Data chunking
 
 The first problem I identified is that each audio event (sample) has a unique length (dimension), yet most classifiers demand that **every sample must have the same dimension**.
 
@@ -180,8 +180,8 @@ Clearly, time and frequency are giving complementary information that the classi
 ```python
 from maple.data import SessionAnalysis
 session = SessionAnalysis(path='data/sessions/2021_02_13_19_19_33/events.db')
-session.plot_audio_event_spectrogram(160)
-session.plot_audio_event_spectrogram(689)
+session.plot_audio_event_spectrogram(160, log=True)
+session.plot_audio_event_spectrogram(689, log=True)
 ```
 
 [![door_scratch_spectrogram]({{images}}/door_scratch_spectrogram.png)]({{images}}/door_scratch_spectrogram.png){:.center-img .width-90}
@@ -190,11 +190,94 @@ session.plot_audio_event_spectrogram(689)
 [![whine_spectrogram]({{images}}/whine_spectrogram.png)]({{images}}/whine_spectrogram.png){:.center-img .width-90}
 {% include audio_embed.html id="images/maple/maple-classifier/whine.wav"%}
 
-TODO
+{:.notice}
+Note that I log-transformed the signal with `log=True` so that we can better see how it distributes.
 
-- explain log
-- talk about flattening
-- summarize
-    - flattened 0.25s spectrograms
+This new view simultaneously illustrates distinguishing features in both time- and frequency-space, and the results are verying promising. Look at how different the spectrograms look! And they are very informative. In the whine event, you can really see Maple's pitch starts high and ends low, which perfectly matches the perceived audio.
+
+Keep in mind that I've shown the spectrograms for the **entire** audio event. But the plan is to slice each audio event into 0.25 second samples, and then calculate spectrograms. This ensures each sample has the same number of features (length).
+
+A spectrogram is a 2D matrix of data, but a classifier expects samples that are 1D. I solve this by flattening each spectrogram by joining all the rows of data into one long 1D array. For example, here is what the **first chunk** of the whine event ultimately looks like to the classifier:
+
+```python
+import matplotlib.pyplot as plt
+from maple.data import SessionAnalysis
+from maple.audio import get_spectrogram
+
+session = SessionAnalysis(path='data/sessions/2021_02_13_19_19_33/events.db')
+subevent_audio = session.get_subevent_audio(event_id=689, subevent_id=0, subevent_time=0.25)
+_, _, S = get_spectrogram(subevent_audio, log=False, flatten=True)
+
+plt.plot(S, c='#165BAA')
+plt.ylabel('Signal amplitude [16 bit]')
+plt.xlabel('Flattened axis')
+plt.show()
+```
+
+[![whine_flattened]({{images}}/whine_flattened.png)]({{images}}/whine_flattened.png){:.center-img .width-90}
+
+
+### Transformation summary
+
+A brief summary is in order.
+
+- Audio clips are segmented into 0.25 second chunks and will classified chunk-by-chunk
+- Each chunk is transformed into spectograms to accentuate the most important qualities of sound: amplitude with respect to time, and amplitude with respect to pitch.
+- The spectograms are flattened into 1D arrays for the purpose of the classifier
+
+
+## Labeling data
+
+The random forest algorithm requires training data. I considered two options for obtaining training data:
+
+1. Use a database of labelled dog audio, assumming such a dataset exists freely on the internet somewhere.
+2. Manually label a subset of the audio events I have recorded over the last several months.
+
+Ultimately, I decided on option 2, but a comparison is worthwhile. First of all, with option 1 I would not need to manually label, which is a large investment of time. Second, such a broad database would presumably have data recorded under a multitude of audio settings, which is good and bad. It's good because it makes the classifier more suitable for productionalization for when different mic settings, room acoustics, and dogs would in theory be used. But it also is bad because accuracy will suffer in comparison to a dataset trained specifically on Maple and Dexter with consistent mic settings and acoustic environments. This is a huge bonus for manually labelling the training data. The manually labelled approach also reduces constraints because I can create whichever labels I want.
+
+### Picking labels
+
+Before going through the process of manually labelling data, I needed to decide on the set of labels to use. After reviewing the audio, Kourtney and I decided on these 6 labels.
+
+#### (1) Whine
+
+At this point, you're familiar with the whine. This is primarily a Maple special, although Dexter is also well-versed in the art.
+
+{% include audio_embed.html id="images/maple/maple-classifier/whine.wav"%}
+
+#### (2) Howl
+
+The howl is a distinct escalation of the whine, exhibited exclusively by Maple.
+
+{% include audio_embed.html id="images/maple/maple-classifier/howl.wav"%}
+
+#### (3) Bark
+
+The bark space is dominated by Dexter. It's characterized by its high pitch, and being miserable to listen to.
+
+{:.warning}
+You should turn your volume down.
+
+{% include audio_embed.html id="images/maple/maple-classifier/bark.wav"%}
+
+#### (4) Play
+
+Maple and Dexter often play together. It may surprise you that it sounds like this:
+
+{% include audio_embed.html id="images/maple/maple-classifier/play.wav"%}
+
+Usually playing means tug of war with a toy, biting each other's ears, or chasing each other.
+
+#### (5) Door scratch
+
+This one you've already heard. I haven't collected any direct evidence for who is responsible for ruining my door, but I suspect it is Maple.
+
+{% include audio_embed.html id="images/maple/maple-classifier/door_scratch.wav"%}
+
+#### (6) None
+
+This class is a catch-all for events that are not made by the dogs, or don't fit into the other classes. For example, here is me greeting Dexter after returning home:
+
+{% include audio_embed.html id="images/maple/maple-classifier/door_scratch.wav"%}
 
 
