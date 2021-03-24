@@ -695,12 +695,8 @@ and then choosing a specific session, like:
 
 Doing so, yields this:
 
-{% include iframe_embed.html id="images/maple/maple-intro/histogram_1.html"%}
-
-{:.warning}
-If you're on mobile that looked like trash, so here's a screenshot.
-
-[![plotly_screenshot]({{images}}/histogram_1_pic.png)]({{images}}/histogram_1_pic.png){:.center-img .width-90}
+[![histogram_1]({{images}}/histogram_1_pic.png)]({{images}}/histogram_1.html){:.center-img .width-100}
+\[[**<span style="color: red">Click for interactive plot</span>**]({{images}}/histogram_1.html)\]
 
 The top plot shows how loud Maple was each minute. And the bottom shows
 each individual event as a vertical line, where the line's length reflects how loud the event was
@@ -1074,11 +1070,8 @@ run and left the apartment.
 
 One hour after Maple's least favorite pastime, here are the results:
 
-{% include iframe_embed.html id="images/maple/maple-intro/histogram_2.html"%}
-
-For mobile readers, here is a screenshot:
-
-[![histo2pic]({{images}}/histogram_2_pic.png)]({{images}}/histogram_2_pic.png){:.center-img .width-90}
+[![histogram_2]({{images}}/histogram_2_pic.png)]({{images}}/histogram_2.html){:.center-img .width-100}
+\[[**<span style="color: red">Click for interactive plot</span>**]({{images}}/histogram_2.html)\]
 
 The plot is just as before, except scolds (red) and praises (green) have been overlaid in the bottom
 plot. Within the first 15 minutes, Maple clearly has two very loud outbursts. To my delight as a

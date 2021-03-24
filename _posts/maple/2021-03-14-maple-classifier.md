@@ -13,17 +13,20 @@ image:
 {% capture images %}{{site.url}}/images/maple/maple-classifier{% endcapture %}
 {% include _toc.html %}
 
+## Overview
+
+This post walks through the step-by-step process of creating an audio classifier that can track the behavior of my girlfriend's dogs while we are gone.
+
+[![new_viz]({{images}}/new_viz.png){:.no-border}]({{images}}/new_viz.html){:.center-img .width-100}
+\[[**Click for interactive plot**]({{images}}/old_viz.html)\]
 
 ## Where I left off
 
-In the [first post]({{ site.url }}/2020/07/20/maple-intro/) of this series, I made a virtual dog-sitter that detects audio events, responds to them, and stores them in a database that can be visualized to make plots like this:
+In the [first post]({{ site.url }}/2020/07/20/maple-intro/) of this series, I made a virtual dog-sitter that detects audio events, responds to them, and stores them in a database that can be interactively visualized.
 
-FIXME
-
-Using the dog-sitter ([github here](https://github.com/ekiefl/maple)), I can track the behavior of my girlfriend's dog (Maple) when we leave her alone in the apartment.
+Using this dog-sitter ([github here](https://github.com/ekiefl/maple)), I've been tracking the behavior of my girlfriend's dog (Maple) when we leave her alone in the apartment.
 
 I ended that post saying I would report back after acquiring a lot more data and there are a few **logistical updates** on that front.
-
 First, it is no longer just Maple we are tracking. We decided that Kourtney's other dog, **Dexter** (pictured above), should also be in the room. Originally we separated them based on anecdotal evidence that they barked more when together than when separated. As the data in this post will tell us, keeping them together is a **very good idea**.
 
 Second, we don't lock Maple in the crate anymore. This way she can interact with Dexter and maybe even play with Dexter. Instead, they are both now confined to our bedroom.
@@ -43,6 +46,7 @@ For example, whining could trigger a console response. Playing could trigger an 
 So that's one thing an audio classifier would enable: **nuanced response**.
 
 Another thing it would enable is **protection against non-dog audio**. The dog-sitter may detect undesirable noise from nondescript sources, like a nearby lawnmower, a person talking in the alley, a dump truck beeping. If I train a good classifier, I could filter out non-dog audio from ever entering my databases. This would filter bad data out of downstream analyses, and prevent any mishaps like scolding a dog because of a lawnmower.
+
 And finally, creating a classifier would greatly improve the ability to understand what happens when I leave. After returning home, I would be able to immediately assess in a highly-resolved manner how well the dogs behaved while I was gone.
 
 ## Deciding on a classifier algorithm
@@ -74,7 +78,7 @@ The second is a whine:
 [\[click for raw text data\]]({{ site.url }}/images/maple/maple-classifier/whine.txt)
 
 <div class="extra-info" markdown="1">
-<span class="extra-info-header">USING THE MAPLE API</span>
+<span class="extra-info-header">Using the maple API</span>
 
 I found these events using an interactive plot generated with
 
@@ -105,9 +109,22 @@ For anyone who doesn't work with audio files, the data is simple. Audio signal i
 {:.notice}
 Why 44100 Hz? The human ear can perceive sound waves up to around 20,000 Hz. But resolving a sinusoidal wave requires sampling frequency that is [at least double](https://en.wikipedia.org/wiki/Nyquist_rate) the wave's frequency. Hence we have 44100 Hz.
 
+### Denoising
+
+There are some sources of noise that I have to contend with. Sometimes I leave a (non-rotating) fan on in the room that the mic picks up. Second, there exists some inherent hiss from the microphone. Since both of these noise sources are static (non-dynamic), applying some simple spectral gating can significantly reduce noise. I did exactly this using the python module [noisereduce](https://pypi.org/project/noisereduce/).
+
+Here's a demonstration of how effective the denoising is. First is raw, second is denoised.
+
+{% include audio_embed.html id="images/maple/maple-classifier/noise.wav"%}
+
+{% include audio_embed.html id="images/maple/maple-classifier/denoise.wav"%}
+
+This denoising procedure requires a sample of the background audio, so when at the start of a session recording, a 2-second audio clip of the background noise is recorded during calibration. Event audio is then denoised upon detection using this background audio sample. This means the audio for training and classification has already been denoised.
+
+
 ### Data chunking
 
-The first problem I identified is that each audio event (sample) has a unique length (dimension), yet most classifiers demand that **every sample must have the same dimension**.
+Each audio event (sample) has a unique length (dimension), yet most classifiers demand that **every sample must have the same dimension**.
 
 To deal with this, I decided each audio event would be split into **equal sized chunks** and the classifier would classify chunk-by-chunk.
 
@@ -128,7 +145,7 @@ plt.show()
 It seems most event times are less than 2.5 seconds, and we most frequently see events between 0.3s and 0.5s. To make sure events are composed of at least one chunk, **I opted to use a chunk size of 0.25s**. Alternatively I could have picked a larger chunksize and zero-padded shorter events such that they contained at least one chunk.
 
 <div class="extra-info" markdown="1">
-<span class="extra-info-header">THE MINIMUM EVENT LENGTH TIME</span>
+<span class="extra-info-header">The minimum event length time</span>
 
 If you're wondering why there are no events lower than 0.33s, it has to do with the event detection heuristics. If I used different values, by editing the `config` file, the minimum event length would have been different. Here are the settings I used for this session (and all sessions):
 
@@ -221,6 +238,7 @@ plt.show()
 
 A brief summary is in order.
 
+- Audio clips are denoised with spectral gating to remove static noise
 - Audio clips are segmented into 0.25 second chunks and will be classified chunk-by-chunk
 - Each chunk is transformed into a spectrogram to accentuate the most important qualities of sound: amplitude with respect to time, and amplitude with respect to pitch.
 - The spectograms are flattened into 1D arrays for the sake of the classifier
@@ -294,9 +312,9 @@ Manual labelling is so laborious that I wanted to streamline the process as best
 ./main.py label --label-data label_data.txt --session-paths training_session_paths
 ```
 
-Here's a demo:
+Here's a demo.
 
-FIXME
+{% include youtube_embed.html id="u83qi84bUSM" %}
 
 With the labeler in hand, my initial goal was to label 10,000 audio chunks. But of the 50,621 audio chunks at my disposable, Kourtney and I were able to withstand labelling just **2,745 audio chunks** before giving up. Hopefully it's enough.
 
@@ -663,7 +681,7 @@ df = df[cols]
 df.to_csv('hyperparameter_tuning_results.txt', sep='\t', index=False)
 ```
 
-The output of this script is a dataframe. First, I looked at the model performances and noticed there appears to be 3 apparent regimes of model quality. Roughly speaking, I see regimes defined by the **rank ranges 1-20, 21-600, and 601-640** that I've colored below.
+The output of this script is a dataframe. First, I looked at the model performances and noticed there appears to be 3 apparent regimes of model quality, that I've colored below.
 
 ```python
 In [1]: plt.plot(df['rank_test_score'], df['mean_test_score']); plt.xlabel('Rank'); plt.ylabel('Accuracy'); plt.show()
@@ -717,7 +735,7 @@ def fit_data(self):
             'criterion': ['gini', 'entropy'],
             'max_depth': [20, None],
         },
-        cv = 5,
+        cv = 10,
         verbose = 2,
         n_jobs = -1,
     )
@@ -869,11 +887,11 @@ print(model.xval_score_)
 >>> 0.8610715866691964
 ```
 
-### Classifying entire sessions
+## Classifying
 
-The last section was focused on building the model. In this section I will **use** the model to retrospectively classify all of the audio events I've recorded over the last months.
+Training the model is one thing. Using it is another. In this section I will use the model to classify and visualize past audio events from the last several months.
 
-To classify audio events I wrote this little class:
+The workhorse for all classification in `maple` is this simple class ([source code](https://github.com/ekiefl/maple/blob/b87d3d7e2c75a1b95c844ef043fb617de83e7d8d/maple/classifier.py#L596)):
 
 ```python
 class Classifier(object):
@@ -883,6 +901,9 @@ class Classifier(object):
             raise Exception(f'{path} does not exist')
 
         self.model = joblib.load(path)
+
+        if self.model.scale:
+            self.scaler = joblib.load(path.parent / 'scaler.dat')
 
 
     def predict(self, event_audio, as_label=False):
@@ -895,30 +916,251 @@ class Classifier(object):
         data = np.zeros((num_chunks, self.model.n_features_))
         for i in range(num_chunks):
             audio_chunk = event_audio[i * self.model.subevent_len: (i + 1) * self.model.subevent_len]
-            data[i, :] = audio.get_spectrogram(audio_chunk, fs=self.model.sample_rate, log=self.model.log, flatten=True)[2]
+            data[i, :] = self.transform(audio_chunk)
 
         chunk_predictions = self.model.predict(data)
 
         # most common
         prediction = np.bincount(chunk_predictions).argmax()
         return labels[prediction] if as_label else prediction
+
+
+    def transform(self, audio_chunk):
+        if self.model.trans == 'spectrogram':
+            data = audio.get_spectrogram(audio_chunk, fs=self.model.sample_rate, flatten=True)[2]
+        elif self.model.trans == 'fourier':
+            data = audio.get_fourier(audio_chunk, fs=self.model.sample_rate)[0]
+        elif self.model.trans == 'none':
+            data = np.copy(audio_chunk)
+        else:
+            raise Exception(f"Transformation '{selfmodel.trans}' not implemented for Classifier")
+
+        if self.model.log:
+            data = np.log2(data)
+
+        if self.model.scale:
+            data = self.scaler.transform(data.reshape(1, -1)).flatten()
+
+        if self.model.norm:
+            data = (data - data.mean()) / data.std()
+
+        if np.isnan(data).all():
+            # In diabolical cases an audio chunk may have all zeros, which result in nan's that break
+            # the predict method.
+            data = np.zeros(len(data))
+
+        return data
 ```
 
-Very simply, `Classifier` is initialized by providing the path to a model.
+`Classifier` is initialized by providing the path to a model. Because `Train` stored all of the transformation metadata as attributes of the model object (such as whether it was trained on spectrograms, fourier spectra, or raw audio `trans`; whether it was log-transformed `log`; whether it was feature scaled `scale`; whether the samples were normalized `norm`), upon loading the model, `Classifier` **knows exactly how it must transform incoming target data**.
 
+This means predicting the class of an audio event is as simple as passing audio data to `Classifier.predict`. When this happens, it slices the audio into chunks, calculates the appropriate transformation, and then classifies each chunk. The overall prediction for the entire event is chosen as the **most frequently observed chunk classification**. So if 3 chunks are predicted to be `bark` and 1 is predicted to be a `whine`, the prediction for the event is `bark`.
+
+To classify events from past sessions, I extended the command line utility to include a `classify` mode which makes use of `Classifier`. It accepts a model directory as input, and optionally a list of session dbs to run the classifier on. It goes through each event of each session db, classifies the event, and stores the results in the `class` column of the `events` table. I ran it on all the session DBs with
+
+```bash
+./main.py classify --model-dir model
 ```
-c = Classifier('model/model.dat')
+
+This command provides convenient means to classify or re-classify events with a single command, which is super convenient if one day I train a superior classifier and want to apply it to past datasets.
+
+### Verdict: pretty accurate
+
+From the training validation I know the accuracy is around 86%, but I wanted to see the classifier in action.
+
+So I loaded up a session database
+
+```bash
+./main.py analyze -s 2021_02_13_19_19_33
 ```
 
-This classifier object can then classify any arbitrary-length audio event. It does so by breaking it up into chunks and classifying chunk-by-chunk. The most frequent predicted class is chosen 
+and used [`SessionAnalysis.play_many`](https://github.com/ekiefl/maple/blob/f54d85b588ff0e89192819460f77fef5ac0ae64f/maple/data.py#L294) to start comparing the predictions to the audio. Here is a spattering of what I found that included a diverse range of classes.
+
+{% include youtube_embed.html id="NRtRwQp-sr0" %}
+
+It's clearly working prety well.
+
+### Real-time classification
+
+Now I have a way to classify events from past sessions. But moving forward, I would like to **classify events as they occur** so that the dog-sitter can make real-time decisions on whether to respond to the dog that are based on the class predictions. With the `Classifier` class in place, this is all I had to change.
+
+[![realtime_diff]({{images}}/realtime_diff.png){:.no-border}](https://github.com/ekiefl/maple/commit/e6ec84b59c5b9837901ffab54a4cd7bedc59e9c5){:.center-img .width-100}
+
+Upon this change, all future audio events will be classified on-the-fly.
+
+#### --- Speed
+
+One concern about on-the-fly classification is speed. If classification is too slow, I may have to make some sacrifices. For example, tree traversal would be much faster if I decrease the number of trees in the random forest from 200 down to something more light-weight--say 30.
+
+To measure the classification speed, I borrowed a timing class I had written for [anvi'o](https://merenlab.org/software/anvio/) a few years back and put it in `maple.utils`.
+
+```python
+class TimeCode(object):
+    """Time a block of code.
+
+    This context manager times blocks of code.
+
+    Examples
+    ========
+    >>> import time
+    >>> import maple.utils as utils
+    >>> # EXAMPLE 1
+    >>> with utils.TimeCode() as t:
+    >>>     time.sleep(5)
+    ✓ Code finished successfully after 05s
+
+    >>> # EXAMPLE 2
+    >>> with terminal.TimeCode() as t:
+    >>>     time.sleep(5)
+    >>>     print(asdf) # undefined variable
+    ✖ Code encountered error after 05s
+
+    >>> # EXAMPLE 3
+    >>> with terminal.TimeCode(quiet=True) as t:
+    >>>     time.sleep(5)
+    >>> print(t.time)
+    0:00:05.000477
+    """
+
+    def __init__(self, quiet=False):
+        self.s_msg = '✓ Code finished after'
+        self.f_msg = '✖ Code encountered error after'
+        self.quiet = quiet
 
 
+    def __enter__(self):
+        self.timer = Timer()
+        return self
 
 
+    def __exit__(self, exception_type, exception_value, traceback):
+        self.time = self.timer.timedelta_to_checkpoint(self.timer.timestamp())
+        return_code = 0 if exception_type is None else 1
 
+        if not self.quiet:
+            if return_code == 0:
+                print(f"{self.s_msg} {self.time}")
+            else:
+                print(f"{self.f_msg} {self.time}")
+```
 
+Then, I wrote a script that loads up the audio events of an example session database, and measures the time it takes to classify each event for the classifier. Since I suspected that the number of trees would have a major influence on speed, I went ahead and did these measurements for a spattering of models generated with different tree counts.
 
+```python
+#! /usr/bin/env python
+import argparse
 
+from maple.data import SessionAnalysis
+from maple.utils import TimeCode
+from maple.classifier import Train, Classifier
 
+tree_nums = [10, 20, 40, 80, 160, 320, 640]
+timing_df = {n: [] for n in tree_nums}
 
+train = Train(argparse.Namespace(label_data = 'label_data.txt'))
+train.prep_data()
 
+session = SessionAnalysis(path='data/sessions/2021_02_13_19_19_33/events.db')
+
+for n in tree_nums:
+    # Train a model
+    train.model_dir = f"model_n_{n}"
+    train.setup_dir()
+    train.fit_data(param_grid={'n_estimators': [n]}, cv=2)
+    train.save()
+
+    # Load the model
+    classifier = Classifier(path=f"model_n_{n}/model.dat")
+
+    for _, event in session.dog.iterrows():
+        event_audio = event['audio']
+
+        with TimeCode(quiet=True) as t:
+            classifier.predict(event_audio)
+
+        timing_df[n].append(t.time)
+
+train.disconnect_dbs()
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+timing_df = pd.DataFrame(timing_df).melt(var_name='num trees', value_name='time [s]')
+timing_df['time [s]'] = timing_df['time [s]'].dt.total_seconds()
+timing_df.\
+    groupby('num trees').\
+    describe().\
+    droplevel(0, axis=1).\
+    assign(stderr = lambda x: x['std'] /x['count']**(1/2)).\
+    plot(kind="bar", y="mean", yerr="stderr")
+
+plt.title('Time-to-classify dependence on tree number')
+plt.xlabel('Number of trees [n]')
+plt.ylabel('Time [s]')
+plt.tight_layout()
+plt.show()
+```
+
+[![classify_speed]({{images}}/classify_speed.png)]({{images}}/classify_speed.png){:.center-img .width-100}
+
+For a model with 200 trees, the cost of classifying during runtime is about **25ms** of downtime following each event. Because my application isn't multi-threaded, this time bites into time that should be dedicated to listening for the next event. Fortunately for me, 25ms is barely anything for my applications. On the otherhand, a tree count of 640 yields a 60ms downtime, which is starting to become problematic.
+
+Based on these results, I am very happy to keep my model at a tree count of 200.
+
+## Visualizing
+
+One utility of creating an audio classifier is being able to distill the entirety of a session into an intuitive visualization that illustrates how the dogs behaved. [Last time]({{ site.url }}/2020/07/20/maple-intro/) I created an interactive interface that can be opened for any session with the command line.
+
+```bash
+./main.py analyze --session 2021_02_13_19_19_33
+```
+
+Before, it looked like this.
+
+[![old_viz]({{images}}/old_viz.png){:.no-border}]({{images}}/old_viz.html){:.center-img .width-100}
+\[[**Click for interactive plot**]({{images}}/old_viz.html)\]
+
+Pretty cool. It shows every event and how loud the dogs were over time. But further decomposing the events into their classes would really paint a much more illustrative picture of what's going on.
+
+I decided that a good way to visualize the data would be to bin the events into minute timeframes and show the proportion of events belonging to each class in a stacked line chart. Ultimately, I decided on the following visual aesthetic:
+
+[![new_viz]({{images}}/new_viz.png){:.no-border}]({{images}}/new_viz.html){:.center-img .width-100}
+\[[**Click for interactive plot**]({{images}}/new_viz.html)\]
+
+{:.notice}
+I create these plots with [plotly](https://plotly.com/) and the source code can be found [here](https://github.com/ekiefl/maple/blob/7fd913f3948962b1bbade0e2d8dc36200ba332d2/maple/routines.py#L224).
+
+With this visualization you can see at a glance how the dog's behaved. For example, destroying my door seemed to be a passionate side project for Maple, where her progress is apparently driven by repeated bursts of inspiration.
+
+## Updating reponse logic
+
+Door scratching is the most undesirable behavior exhibited by the dogs. But in the above session, it went under the radar because it's not very loud. This is the fundamental problem with the old decision-logic. Yet with real-time classification, now I can buff the decision logic with a more sentiment-based understanding of the events.
+
+The possibilities for buffing the response logic are now endless. I could create different pools of owner responses like `praise`, `scold`, `warn`, `console`, `encourage`, etc. But in the interest of me graduating in a timely manner, I decided to keep things pragmatic: I am going to stick to just `praise` and `scold`, but I am going to update the decision logic that will take note of the event classes.
+
+### Praise
+
+[![praise_flowchart]({{ site.url }}/images/maple/maple-intro/praise_flowchart.jpg)]({{ site.url }}/images/maple/maple-intro/praise_flowchart.jpg){:.center-img .width-70}
+
+The old logic (above) took note of how many events were in the considered praise window, and enforced (1) that the total number of events should be below some threshold and (2) that none of the events should pass a certain pressure threshold.
+This is pretty sound logic, but it fails under circumstances when the dogs produce _good_ noise. Currently, the only good noise is `play`, which isn't always the quietest. To accomodate for the fact that noise is not always bad, the new logic is now the same, except all `play` events in the praise window are removed prior to the flowchart. This way, the dogs can play and still be praised.
+
+### Scold
+
+[![scold_flowchart]({{ site.url }}/images/maple/maple-intro/scold_flowchart.jpg)]({{ site.url }}/images/maple/maple-intro/scold_flowchart.jpg){:.center-img .width-70}
+
+The old logic (above) took note of the total level of noise, whether the most recent event was particularly loud, and if both of these values passed their respective thresholds, it was a scold. Again, this is an oversimplification because noise is not always bad.
+
+After re-analyzing sessions, I came to the following new workflow.
+
+[![scold_workflow_1]({{images}}/scold_workflow_1.jpg)]({{images}}/scold_workflow_1.jpg){:.center-img .width-70}
+
+Instead of measuring the total amount of sound pressure, I now count the number of barks. This is first thing that must be triggered to consider a scold. If the number of barks in the scold window is met, then I further demand that that the last $n$ events were _all_ barks. This is just giving them the benefit of the doubt. And then, as a final gift of generosity, I demand that the last event passes some noise threshold. If all these conditions are met, the dog-sitter scolds.
+
+So that's the workflow for barking. I also wanted to handle door scratching since it is so destructive, so there is another flowchart for scratching.
+
+[![scold_workflow_2]({{images}}/scold_workflow_2.jpg)]({{images}}/scold_workflow_2.jpg){:.center-img .width-70}
+
+More simply, the dog-sitter fires off a scold if a certain number of door scratching events are found within the scold window.
+
+### Trial run

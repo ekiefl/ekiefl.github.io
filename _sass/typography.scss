@@ -57,11 +57,12 @@ h6 {
 
 #articlecontent a {
     color: #444499;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 #table-of-contents a {
     color: white;
+    text-decoration: none;
 }
 
 #articlecontent p {
@@ -70,9 +71,25 @@ h6 {
 
 
 #articlecontent img {
-    border: 10px solid #EEE;
+    border: 7px solid #EEE;
+    border-radius: 7px;
+}
+
+#articlecontent img:hover {
+    border: 7px solid rgba(201, 217, 230, 1);
+    border-radius: 7px;
+}
+
+#articlecontent img.no-border {
+    border: 7px solid rgba(201, 217, 230, 0.0);
     border-radius: 10px;
 }
+
+#articlecontent img.no-border:hover {
+    border: 7px solid rgba(201, 217, 230, 1);
+    border-radius: 7px;
+}
+
 
 /* 
    Links
@@ -146,6 +163,7 @@ figcaption {
 .width-70 {width: 70%;}
 .width-80 {width: 80%;}
 .width-90 {width: 90%;}
+.width-100 {width: 100%;}
 
 .notice {
     margin-top: 1.5em;
