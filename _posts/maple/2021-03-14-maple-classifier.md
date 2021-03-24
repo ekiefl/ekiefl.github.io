@@ -2,7 +2,7 @@
 layout: post
 title: "Virtual dog-sitter II: creating an audio classifier"
 categories: [maple]
-excerpt: "Classifying dog barks to buff automated owner reponses"
+excerpt: "Classifying dog barks with a random forest classifier"
 comments: true
 authors: [evan]
 image:
@@ -15,7 +15,7 @@ image:
 
 ## Overview
 
-This post walks through the step-by-step process of creating an audio classifier that can track the behavior of my girlfriend's dogs while we are gone.
+This post details the step-by-step process of creating an audio classifier that tracks and responds to the behavior of my girlfriend's dogs while we are gone. The resulting data is distilled into an interactive interface such as the one shown here.
 
 [![new_viz]({{images}}/new_viz.png){:.no-border}]({{images}}/new_viz.html){:.center-img .width-100}
 \[[**Click for interactive plot**]({{images}}/old_viz.html)\]
@@ -27,9 +27,10 @@ In the [first post]({{ site.url }}/2020/07/20/maple-intro/) of this series, I ma
 Using this dog-sitter ([github here](https://github.com/ekiefl/maple)), I've been tracking the behavior of my girlfriend's dog (Maple) when we leave her alone in the apartment.
 
 I ended that post saying I would report back after acquiring a lot more data and there are a few **logistical updates** on that front.
+
 First, it is no longer just Maple we are tracking. We decided that Kourtney's other dog, **Dexter** (pictured above), should also be in the room. Originally we separated them based on anecdotal evidence that they barked more when together than when separated. As the data in this post will tell us, keeping them together is a **very good idea**.
 
-Second, we don't lock Maple in the crate anymore. This way she can interact with Dexter and maybe even play with Dexter. Instead, they are both now confined to our bedroom.
+Second, we don't lock Maple in the crate anymore. This way she can interact and play with Dexter, and pick up new hobbies like destroying our bedroom door (more on that later).
 
 Finally, there were some complications, which means **I don't have as much data as I wanted**. Highlights include: I accidentally deleted about a month of data, the volume knob on my microphone changed and went unnoticed for a month, and my calibration system for event detection kept event rates inconsistent across sessions. All of this is sorted out now.
 
@@ -39,7 +40,7 @@ So there isn't enough data to do a comprehensive analysis on the dogs' improveme
 
 While I wait another couple months for the data to pour in, I decided that being able to classify audio events could greatly increase the accuracy and capabilities of the dog-sitter.
 
-In the last post I developed [complicated flowcharts]({{ site.url }}/2020/07/20/maple-intro/#praise) to determine when the dog-sitter should intervene with pre-recorded audio that either praises or scolds the dog. The logic relied on the assumption that **loud is bad and quiet is good**. Yet if I could classify each audio event, I could step away from this one dimensional paradigm and begin developing more nuanced respones that understand the sentiment of the audio.
+In the last post I [developed flowcharts]({{ site.url }}/2020/07/20/maple-intro/#praise) to determine when the dog-sitter should intervene with pre-recorded audio that either praises or scolds the dog. The logic relied on the assumption that **loud is bad and quiet is good**. Yet if I could classify each audio event, I could step away from this one dimensional paradigm and begin developing more nuanced responses that understand the sentiment of the audio.
 
 For example, whining could trigger a console response. Playing could trigger an encouragement response. Implementing this with the old paradigm would be impossible, because whining and playing produce similar levels of noise.
 
@@ -61,7 +62,7 @@ Moving on.
 
 ## Data transformation
 
-Unfortunately, I can't just throw the audio data into a random forest and be done with it. The data needs to be wrangled and transformed in a suitable format that's consistent across samples and pronounces distinguishable features.
+Unfortunately, I can't just throw the audio data into a random forest and be done with it. The data needs to be wrangled and transformed into a suitable format that's consistent across samples and pronounces distinguishable features.
 
 Moving forward, I'll use these two events as examples.
 
@@ -86,7 +87,7 @@ I found these events using an interactive plot generated with
 ./main.py analyze --session 2021_02_13_19_19_33
 ```
 
-Once I found these two events, I plotted and exported the audio/text files using maple's API:
+Once I found these two events, I plotted and exported the audio/text files using the [`SessionAnalysis`](https://github.com/ekiefl/maple/blob/2be825f868942493c2d695c7c7a30de6e2d21300/maple/data.py#L197) class in the `maple.data` module:
 
 ```python
 from maple.data import SessionAnalysis
@@ -119,12 +120,12 @@ Here's a demonstration of how effective the denoising is. First is raw, second i
 
 {% include audio_embed.html id="images/maple/maple-classifier/denoise.wav"%}
 
-This denoising procedure requires a sample of the background audio, so when at the start of a session recording, a 2-second audio clip of the background noise is recorded during calibration. Event audio is then denoised upon detection using this background audio sample. This means the audio for training and classification has already been denoised.
+This denoising procedure requires a sample of the background audio, so at the start of a session recording, a 2-second audio clip of the background noise is recorded during calibration. Event audio is then denoised upon detection using this background audio sample. This means the audio used for training and classification has already been denoised.
 
 
 ### Data chunking
 
-Each audio event (sample) has a unique length (dimension), yet most classifiers demand that **every sample must have the same dimension**.
+Each audio event (sample) has a unique length (number of features), yet most classifiers demand that **every sample must have the same number of features**.
 
 To deal with this, I decided each audio event would be split into **equal sized chunks** and the classifier would classify chunk-by-chunk.
 
@@ -142,12 +143,12 @@ plt.show()
 
 [![event_lengths]({{images}}/event_lengths.png)]({{images}}/event_lengths.png){:.center-img .width-90}
 
-It seems most event times are less than 2.5 seconds, and we most frequently see events between 0.3s and 0.5s. To make sure events are composed of at least one chunk, **I opted to use a chunk size of 0.25s**. Alternatively I could have picked a larger chunksize and zero-padded shorter events such that they contained at least one chunk.
+It seems most event times are less than 2.5 seconds, and events are most frequently seen between 0.3s and 0.5s. To make sure events are composed of at least one chunk, **I opted to use a chunk size of 0.25s**. Alternatively I could have picked a larger chunk size and zero-padded shorter events such that they contained at least one chunk.
 
 <div class="extra-info" markdown="1">
 <span class="extra-info-header">The minimum event length time</span>
 
-If you're wondering why there are no events lower than 0.33s, it has to do with the event detection heuristics. If I used different values, by editing the `config` file, the minimum event length would have been different. Here are the settings I used for this session (and all sessions):
+If you're wondering why there are no events lower than 0.33s, it has to do with the event detection heuristics. If I used different values, by editing the [`config`](https://github.com/ekiefl/maple/blob/master/config) file, the minimum event length would have been different. Here are the settings I used for this session (and all sessions):
 
 ```
 [detector]
@@ -173,7 +174,7 @@ I want to represent the data so that distinguishable features are accentuated fo
 
 [![door_scratch]({{images}}/door_scratch.png)]({{images}}/door_scratch.png){:.center-img .width-90}
 
-Above is the 1D audio signal for the door scratching event. This plot basically illustrates how **energy is spread along the axis of time**. And there is clearly distingushing information in this view. For example, we can see that my door is being destroyed in discrete pulses that are roughly equally spaced through time.
+Above is the 1D audio signal for the door scratching event. This plot basically illustrates how **energy is spread along the axis of time**. And there is clearly distinguishing information in this view. For example, we can see that my door is being destroyed in discrete pulses that are roughly equally spaced through time.
 
 But frequency-space also holds critical information. We can visualize how **energy is spread across the axis of frequency** by calculating a Fourier transform of both events:
 
@@ -208,13 +209,13 @@ session.plot_audio_event_spectrogram(689, log=True)
 {% include audio_embed.html id="images/maple/maple-classifier/whine.wav"%}
 
 {:.notice}
-Note that I log-transformed the signal with `log=True` so that we can better see how it distributes.
+Note that I log-transformed the signal with `log=True` so that low values are visualizable.
 
-This new view simultaneously illustrates distinguishing features in both time- and frequency-space, and the results are verying promising. Look at how different the spectrograms look! And they are very informative. In the whine event, you can really see Maple's pitch starts high and ends low, which perfectly matches the perceived audio.
+This new view simultaneously illustrates distinguishing features in both time- and frequency-space, and the results are very promising. Look at how different the spectrograms look! And they are very informative. In the whine event, you can really see Maple's pitch starts high and ends low, which perfectly matches the perceived audio.
 
-Keep in mind that I've shown the spectrograms for the **entire** audio event. But the plan is to slice each audio event into 0.25 second samples, and then calculate spectrograms. This ensures each sample has the same number of features (length).
+Keep in mind that I've shown the spectrograms for the **entire** audio event. But the plan is to slice each audio event into 0.25 second samples, and then calculate spectrograms for each. This ensures each sample has the same number of features (length).
 
-A spectrogram is a 2D matrix of data, but a classifier expects samples that are 1D. I solve this by flattening each spectrogram by joining all the rows of data into one long 1D array. For example, here is what the **first chunk** of the whine event ultimately looks like to the classifier:
+As seen, a spectrogram is a 2D matrix of data, but a classifier expects samples that are 1D. I solve this by flattening each spectrogram by joining all the rows of data into one long 1D array. For example, here is what the **first chunk** of the whine event ultimately looks like to the classifier:
 
 ```python
 import matplotlib.pyplot as plt
@@ -233,6 +234,7 @@ plt.show()
 
 [![whine_flattened]({{images}}/whine_flattened.png)]({{images}}/whine_flattened.png){:.center-img .width-90}
 
+This may not look as informative as the 2D heatmaps shown above, but it contains exactly the same information.
 
 ### Transformation summary
 
@@ -241,17 +243,21 @@ A brief summary is in order.
 - Audio clips are denoised with spectral gating to remove static noise
 - Audio clips are segmented into 0.25 second chunks and will be classified chunk-by-chunk
 - Each chunk is transformed into a spectrogram to accentuate the most important qualities of sound: amplitude with respect to time, and amplitude with respect to pitch.
-- The spectograms are flattened into 1D arrays for the sake of the classifier
+- The spectrograms are flattened into 1D arrays for the sake of the classifier
 
 
 ## Labeling data
 
 The random forest algorithm requires training data. I considered two options for obtaining training data:
 
-1. Use a database of labelled dog audio, assumming such a dataset exists freely on the internet somewhere.
+1. Use a database of labelled dog audio, assuming such a dataset exists freely on the internet somewhere.
 2. Manually label a subset of the audio events I have recorded over the last several months.
 
-Ultimately, I decided on option 2, but a comparison is worthwhile. First of all, with option 1 I would not need to manually label, which is a large investment of time. Second, such a broad database would presumably have data recorded under a multitude of audio settings, which is good and bad. It's good because it makes the classifier more suitable for productionalization for when different mic settings, room acoustics, and dogs would in theory be used. But it also is bad because accuracy will suffer in comparison to a dataset trained specifically on Maple and Dexter with consistent mic settings and acoustic environments. This is a huge bonus for manually labelling the training data. The manually labelled approach also reduces constraints because I can create whichever labels I want.
+Ultimately, I decided on option 2, but option 1 is not without merits.
+
+First of all, option 1 doesn't require manual labeling, which is a huge investment of time. Second, such a broad database would presumably have data recorded under a multitude of audio settings and for a multitude of dogs, which is good and bad. It's good because it makes the classifier more suitable for productionalization for when different mic settings, room acoustics, and dogs would in theory be used. But it also is bad because accuracy will suffer in comparison to a dataset trained specifically on Maple and Dexter with consistent mic settings and acoustic environments.
+
+Ultimately this is what swayed me to option 2. Additionally, manually labelled data reduces constraints because I can create whichever labels I want. For example, a pre-labeled database would be unlikely to have a `scratch_door` label, and if it did, it would be unlikely to sound like my particular door.
 
 ### Picking labels
 
@@ -300,13 +306,13 @@ This class is a catch-all for events that are not made by the dogs, or don't fit
 
 The more audio events I can label with this class, the more protection I will have against false-positives.
 
-### Labeling
-
 With a set of labels, it's time to label a boat-load of data.
 
-Manual labelling is so laborious that I wanted to streamline the process as best I could. Basically, I needed something that would subsample events from a collection of session databases, play them to me, splice them into chunks, and then store the label I attribute into a table. This is all handled by the class `LabelAudio` in the `maple.classifier` module ([source code](https://github.com/ekiefl/maple/blob/b4733d66bb9ce8bf7da0636c22cca734b84a1de4/maple/classifier.py#L29)).
+### Labeling
 
-`main.py` is set up to use the class with the following command:
+Manual labelling is so laborious that I wanted to streamline the process as best I could. Basically, I needed something that would subsample events from a collection of session databases, play them to me, splice them into chunks, and then store the label I attribute into a table. This is all handled by the class [`LabelAudio`](https://github.com/ekiefl/maple/blob/b4733d66bb9ce8bf7da0636c22cca734b84a1de4/maple/classifier.py#L29) in the `maple.classifier` module.
+
+I extended the command line utility to use the class with the following command:
 
 ```bash
 ./main.py label --label-data label_data.txt --session-paths training_session_paths
@@ -324,7 +330,7 @@ The next step was to actually create and validate a random forest with this labe
 
 ### Class description
 
-Basically, I needed to load in the label data, transform the audio into spectrograms, split the data into training and validation sets, build the classifier using the training set, validate the classifier with the validation set, and save the model for further use. To do this, I wrote a class called `Train` which lives in the `maple.classifier` module. You can peruse it [here](https://github.com/ekiefl/maple/blob/7fd913f3948962b1bbade0e2d8dc36200ba332d2/maple/classifier.py#L248) at your leisure if you want the full story. Here I'll summarize some things.
+Basically, I needed to load in the label data, transform the audio into spectrograms, split the data into training and validation sets, build the classifier using the training set, validate the classifier with the validation set, and save the model for further use. To do this, I wrote a class called `Train` which lives in the `maple.classifier` module. You can peruse it [here](https://github.com/ekiefl/maple/blob/2be825f868942493c2d695c7c7a30de6e2d21300/maple/classifier.py#L247) at your leisure if you want the full story. Here I'll summarize some things.
 
 This class starts in the `__init__` method by loading in the label data as a dataframe.
 
@@ -365,7 +371,7 @@ Notice that the actual audio data isn't in here, it's merely referenced by `sess
 | 9,45,88,155,88,-47,-78,-37,0,-52,-1...   |
 | 6,9,4,-20,-31,-34,-30,-27,-25,-18,-...   |
 
-However this is pretty messy and a waste of space. Why duplicate the audio when it's already stored in the session databases? Furthermore, I've written an API that makes accessing the data easy, so why not use it?. To associate these labels to their underlying audio data, I created a dictionary of `SessionAnalysis` instances, one for each session:
+However this is pretty messy and a waste of space. Why duplicate the audio when it's already stored in the session databases? Furthermore, I've written an API that makes accessing the data easy, so why not use it?. To associate these labels to their underlying audio data, I created a dictionary of [`SessionAnalysis`](https://github.com/ekiefl/maple/blob/2be825f868942493c2d695c7c7a30de6e2d21300/maple/data.py#L197) instances, one for each session:
 
 ```python
 ...
@@ -405,7 +411,7 @@ self.get_subevent_audio('2021_03_05_20_10_07', 430, 0)
 ````
 
 {:.notice}
-Ultimately, this data is obtained by an SQL query using the `sqlite3` python API.
+By the way, if you go down the rabbit hole, this audio data is ultimately obtained by an SQL query using the [`sqlite3`](https://docs.python.org/3/library/sqlite3.html) python API.
 
 Preparing the data is done with `self.prep_data`.
 
@@ -452,7 +458,7 @@ def prep_data(self, transformation='spectrogram'):
         self.X = np.log2(self.X)
 ```
 
-This method sets the attributes `self.X` and `self.y`. Each row of `self.X` is the data for each audio chunk, and each element of `self.y` is a numerical label corresponding to each of the 6 classes. `transformation` will define the contents of each row. If `transformation='spectrogram'`, each row is the flattened spectrogram of an audio chunk. If `transformation='fourier'`, each row is the fourier ampltitude spectrum of an audio chunk. And finally, if `transformation='none'`, each row is the raw audio signal. This functionality is really exciting because I can directly compare performance depending on which transformation is used.
+This method sets the attributes `self.X` and `self.y`. Each row of `self.X` is the data for each audio chunk, and each element of `self.y` is a numerical label corresponding to each of the 6 classes. `transformation` will define the contents of each row. If `transformation='spectrogram'`, each row is the flattened spectrogram of an audio chunk. If `transformation='fourier'`, each row is the Fourier amplitude spectrum of an audio chunk. And finally, if `transformation='none'`, each row is the raw audio signal. I find the ability to train using any of these transformations very exciting because I can directly compare performance depending on which transformation is used.
 
 With `self.X` and `self.y` defined, the model can be trained. This is done with `self.fit_data` which is a `sklearn.ensemble.RandomForestClassifier` wrapper.
 
@@ -508,7 +514,7 @@ import joblib
 model = joblib.load(path)
 ```
 
-As a matter of convenience, I also stored some useful parameters under which the `self.model` was built. For example, the sampling rate of the audio, the size of each data chunk, and whether or not the data was log-transformed.
+As a matter of convenience, I also store training and data parameters as attributes of `self.model`. For example, the sampling rate of the audio, the size of each data chunk, and the transformation type are all stored directly in `self.model` which makes this information available when the model is loaded at a later date.
 
 The totality of the model-building procedure is glued together with `self.run`.
 
@@ -534,16 +540,16 @@ def run(self):
 This is the fun part. How good is the model? I wanted to address this question from several standpoints.
 
 1. **Hyperparameter tuning**: What are the optimal parameters for the model fit?
-2. **Data transformation comparisons**: Does the spectogram data outperform the raw audio signal? How about the Fourier signal?
+2. **Data transformation comparisons**: Does the spectrogram data outperform the raw audio signal? How about the Fourier signal?
 3. **Quantity of training data**: Would labeling more data significantly increase accuracy or have I reached the point of diminishing returns?
 
-But first, let's just get a rough idea of how good the model is using out-of-the-box parameters, aka `sklearn`'s defaults.
+But first, let's just get a rough idea of how good the model is using out-of-the-box parameters, aka `sklearn`'s defaults. I extended the command line to include a `train` mode, so I can train the data like so.
 
 ```bash
 ./main.py train --label-data label_data.txt --model-dir model
 ```
 
-This created a model file under `model/model.dat`. Loading up the model and printing out the cross validation score yields
+This created a model file under `model/model.dat`. Loading up the model and printing out the out-of-bag validation score yields
 
 ```python
 import joblib
@@ -558,13 +564,13 @@ print(model.oob_score_)
 
 The default model parameters did a pretty good job, but let's see if tuning the hyperparameters can improve performance.
 
-The plan is to do a hyperparameter scan to see what kind of model performance improvements can be achieved. However, before doing that there is one parameter of especial interest, since it greatly affects the speed of training: the number of trees.
+The plan is to do a hyperparameter grid search to see what kind of model performance improvements can be achieved. However, before doing that there is one parameter of especial interest, since it greatly affects the speed of training: the number of trees.
 
-Random forest classifiers create a forest of decision trees, and for achieving the highest accuracy, **more trees is better**. Let's call the number of trees $n$. Increasing $n$ will statistically speaking increase model accuracy, however there is a law of diminishing returns and this comes at the cost of speed.
+Random forest classifiers create a forest of decision trees, and for achieving the highest accuracy, **more trees is better**. Let's call the number of trees $n$. Increasing $n$ will statistically speaking increase model accuracy, however there is a law of diminishing returns and this comes at the cost of fit speed.
 
-Choosing $n=10,000$ would be a bad idea for the hyperparameter scanning, since it would take minutes to generate each model. So to increase my search space, I want to pick the lowest number of trees possible so that model generation is fast, yet the results are **good enough** to make reliable decisions from. Then, the plan is to hold the number of trees constant and vary all of the other hyperparameters.
+Choosing $n=10,000$ would be a bad idea for the hyperparameter grid search, since it would take minutes to generate each model. So to increase my search space, I wanted to pick the lowest number of trees possible so that model generation is fast, yet the results are **good enough** to make reliable decisions from. Then, the plan is to hold the number of trees constant for the grid search and vary all of the other hyperparameters.
 
-So how many trees should I pick? I wrote a quick script that prepares the data using the `Train` class and then runs a hyperparameter scan on $n$. For each $n$ value I used a 3-fold cross validation scheme to reduce the effect of overfitting to any particular data subset. Then, the script plots the mean and standard error of the validation scores at each $n$ along with the mean time that it took to fit each model.
+So how many trees should I pick? I wrote a quick script that prepares the data using the `Train` class and then generates models for varying $n$. For each $n$ value I used a 3-fold cross validation to reduce the effect of overfitting to any particular data subset. Then, I plotted the mean and standard error of the cross-validation scores at each $n$ along with the mean time that it took to fit each model.
 
 ```python
 #! /usr/bin/env python
@@ -629,9 +635,9 @@ Running the script produces a plot that illustrates the increase in accuracy (sh
 
 So as expected, the more trees the better, but there is definitely a point of diminishing returns past around 20 trees. And this comes at substantial time cost, where in blue we can see the model fit time increases exponentially as a function of $n$.
 
-Overall, these data are showing me it wouldn't be a bad idea to use $n=30$ for the hyperparameter scan.
+Overall, these data are showing me it wouldn't be a bad idea to use $n=30$ for the hyperparameter grid search.
 
-To do the scan, I took a look at the sklearn.RandomForestClassifier [docs](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) as well as [this blog](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74) and ultimately decided on the following parameter grid:
+To do the grid search, I took a look at the sklearn.RandomForestClassifier [docs](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) as well as [this blog](https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74) and ultimately decided on the following parameter grid:
 
 ```python
 param_grid = {
@@ -643,7 +649,7 @@ param_grid = {
 }
 ```
 
-That's 640 different parameter settings, and with a 5-fold cross-validation scheme per parameter set, I needed to generate 3200 different models. That's why picking the smallest $n$ possible is so important. This is accomplished in the following script which took about an hour to run.
+That's 640 different parameter combinations, and with a 5-fold cross-validation per parameter set, I needed to generate 3200 different models. That's why picking the smallest $n$ possible is so important. I ran the grid search with the following script, which took about an hour to run (I estimate it would have taken 3 hours for $n=200$ and 9 hours for $n=500$).
 
 ```python
 #! /usr/bin/env python
@@ -681,7 +687,7 @@ df = df[cols]
 df.to_csv('hyperparameter_tuning_results.txt', sep='\t', index=False)
 ```
 
-The output of this script is a dataframe. First, I looked at the model performances and noticed there appears to be 3 apparent regimes of model quality, that I've colored below.
+The output of this script is a dataframe. First, I looked at the model performances by ordering them according to their rank, and noticed there appears to be 3 apparent regimes of model quality, that I've colored below.
 
 ```python
 In [1]: plt.plot(df['rank_test_score'], df['mean_test_score']); plt.xlabel('Rank'); plt.ylabel('Accuracy'); plt.show()
@@ -696,21 +702,43 @@ In [2]: df.loc[df['rank_test_score'] < 20, 'regime'] = 'top'
 In [3]: df.loc[(df['rank_test_score'] >= 20) & (df['rank_test_score'] < 600), 'regime'] = 'middle'
 In [4]: df.loc[df['rank_test_score'] >= 600, 'regime'] = 'bottom'
 In [5]: counts = df.groupby('regime')[['param_max_features', 'param_max_depth', 'param_min_samples_leaf', 'param_min_samples_split']].describe()
-In [6]: counts.iloc[:, counts.columns.get_level_values(1).isin(['count', 'freq', 'top'])]
-Out[6]:
-       param_max_features            param_max_depth          param_min_samples_leaf          param_min_samples_split
-                    count   top freq           count top freq                  count top freq                   count top freq
-regime
-bottom                 41  log2   25              41   5   32                     41   8   15                      41  20   12
-middle                579  log2  295             547  30   32                    579   4  147                     579  20  147
-top                    20  sqrt   20              20  40    3                     20   2    8                      20   5    8
+In [6]: counts = counts.iloc[:, counts.columns.get_level_values(1).isin(['count', 'freq', 'top'])]
+In [7]: most_common = counts.iloc[:, counts.columns.get_level_values(1) == 'top'].droplevel(1, axis=1).transpose()
+In [8]: most_common
+Out[8]:
+                        bottom middle   top
+param_max_features        log2   log2  sqrt
+param_max_depth              5     30    40
+param_min_samples_leaf       8      4     2
+param_min_samples_split     20     20     5
 ```
 
-Surprisingly, this is completely interpretable. First of all, **every model in the top regime** has `max_features` equal to `sqrt`, indicating that this is a very important distinguishing hyperparameter.
+Surprisingly, this partitioning according to rank is 100% interpretable.
 
-Moving onto `max_depth`, we see a clear decrease in `max_depth` as the ranking goes down. In fact, around 75% of models in the bottom regime have a `max_depth` of 5. Similarly for `min_samples_leaf` and `min_samples_split`, we see that the middle and bottom regimes consistently have high values, and the top regime has low values.
+Take a look at `max_features`.
 
-I think the point is that the top-performing models do not want to be constrained in the number of leaves in the decision tree, as indicated by the trends seen in `max_depth`, `min_samples_leaf`, and `min_samples_split`. This makes intuitive sense, but it's nice to see it in the data.
+```python
+In [9]: most_common.loc['param_max_features']
+Out[9]:
+bottom    log2
+middle    log2
+top       sqrt
+Name: param_max_features, dtype: object
+```
+
+The most commonly seen `max_features` in the top regime is `sqrt`, whereas the most common in the middle and bottom regimes both have `max_features` equal to `log2`. In fact, the best ranking model with `max_features` equal to `log2` ranks 101st. This indicates that **`sqrt` is strongly favored** for the spectrogram transformation, and that `max_features` is a very important distinguishing hyperparameter.
+
+Moving on to the other 3 parameters, here I've plotted the most common value seen for each regime.
+
+```python
+In [10]: most_common.iloc[1:].plot.bar(rot=10); plt.tight_layout(); plt.ylabel('value'); plt.show()
+```
+
+[![hyperparameters]({{images}}/hyperparameters.png)]({{images}}/hyperparameters.png){:.center-img .width-90}
+
+On the far left is `max_depth`, where we see a clear increase in `max_depth` as the models get better and better. In fact, around 75% of models in the bottom regime have a `max_depth` of 5. Similarly for `min_samples_leaf` and `min_samples_split`, we see that the middle and bottom regimes consistently have high values, and the top regime has low values.
+
+The consistent theme in the trends of `max_depth`, `min_samples_leaf`, and `min_samples_split` is that top-performing models do not want to be constrained in the number of leaves in the decision tree. This makes intuitive sense, but it's nice to see it in the data.
 
 Based on these findings, I've decided to update `Train.fit_data` to perform a small parameter scan with 10-fold cross validation. The new method looks like this:
 
@@ -733,7 +761,6 @@ def fit_data(self):
             'n_estimators': [200],
             'max_features': ['sqrt', 'log2'],
             'criterion': ['gini', 'entropy'],
-            'max_depth': [20, None],
         },
         cv = 10,
         verbose = 2,
@@ -747,7 +774,7 @@ def fit_data(self):
 
 #### --- Data transformation comparisons
 
-In the [data transformation](#data-transformation) section, I kept harping about how spectrograms would outperform time series audio (time-space) and fourier spectra (frequency-space) because they resolve both time and frequency components simultaneously. **Let's see if that's actually true**.
+In the [data transformation](#data-transformation) section, I kept harping about how spectrograms would outperform time series audio (time-space) and Fourier spectra (frequency-space) because they resolve both time and frequency components simultaneously. **Let's see if that's actually true**.
 
 Thanks to how general `Train.prep_data` is, this is really easy to test. To do so, I wrote this little script that calculates models with varying transformations.
 
@@ -786,9 +813,9 @@ results = pd.DataFrame({
 print(results.to_markdown())
 ```
 
-I was also curious whether or not log-transforming the data could increase accuracy, so I included that in the script too.
+I was also curious whether or not log-transforming the data could increase accuracy, so that's in the script too.
 
-The output of this script is a table summarizing the prediction quality for various types of transformations of the audio data:
+The output is a table summarizing the prediction quality for various types of transformations on the audio data:
 
 |    | transformation   | log   |    score |
 |---:|:-----------------|:------|---------:|
@@ -798,7 +825,7 @@ The output of this script is a table summarizing the prediction quality for vari
 |  3 | fourier          | True  | 0.826958 |
 |  4 | none             | False | 0.632423 |
 
-It's great to verify what I've been advertising: the spectogram outperforms the time- and frequency-space transformations. It's interesting to see how poor the classifier performs when trained on the time series audio signal. As a final observation, log-transforming the data seems to have little effect on performance.
+It's great to verify what I've been advertising: the spectrogram outperforms the time- and frequency-space transformations. It's interesting to see how poor the classifier performs when trained on the time series audio signal. As a final observation, log-transforming the data seems to have little effect on performance.
 
 #### --- Quantity of training data
 
@@ -808,7 +835,7 @@ A bigger training dataset is definitely better, but there comes a point where th
 
 [![stay_or_go]({{images}}/stay_or_go.jpg)]({{images}}/stay_or_go.jpg){:.center-img .width-90}
 
-To get an idea of where I may lie on this curve, I trained a series of models with a subset of my 2,745 label data and visualized the results. At each fraction of the full data, I'm doing a 5-fold cross validation for 5 trials, where the training data is resampled for each trial.
+To get an idea of where I am on the learning curve, I trained a series of models with a subset of my 2,745 label data and visualized the results. At each fraction of the full data, I'm doing a 5-fold cross validation for 5 trials, where the training data is resampled for each trial.
 
 ```python
 #! /usr/bin/env python
@@ -866,7 +893,7 @@ To start labeling more data, I ran the command
 The results did not change significantly. Certainly not enough to have justified 75 minutes. It seems like the increase in accuracy was about 0.5-1.0%, bringing the total accuracy just above 85%.
 
 {:.notice}
-These plots were generated using 30 trees to cut down on run-time.
+These plots were generated using 30 trees to cut down on run-time, so the final model with 200 trees will produce a slightly higher score.
 
 #### --- Final model accuracy
 
@@ -952,7 +979,7 @@ class Classifier(object):
         return data
 ```
 
-`Classifier` is initialized by providing the path to a model. Because `Train` stored all of the transformation metadata as attributes of the model object (such as whether it was trained on spectrograms, fourier spectra, or raw audio `trans`; whether it was log-transformed `log`; whether it was feature scaled `scale`; whether the samples were normalized `norm`), upon loading the model, `Classifier` **knows exactly how it must transform incoming target data**.
+`Classifier` is initialized by providing the path to a model. Because `Train` stored all of the transformation metadata as attributes of the model object (such as whether it was trained on spectrograms, Fourier spectra, or raw audio `trans`; whether it was log-transformed `log`; whether it was feature scaled `scale`; whether the samples were normalized `norm`), upon loading the model, `Classifier` **knows exactly how it must transform incoming target data**.
 
 This means predicting the class of an audio event is as simple as passing audio data to `Classifier.predict`. When this happens, it slices the audio into chunks, calculates the appropriate transformation, and then classifies each chunk. The overall prediction for the entire event is chosen as the **most frequently observed chunk classification**. So if 3 chunks are predicted to be `bark` and 1 is predicted to be a `whine`, the prediction for the event is `bark`.
 
@@ -968,7 +995,7 @@ This command provides convenient means to classify or re-classify events with a 
 
 From the training validation I know the accuracy is around 86%, but I wanted to see the classifier in action.
 
-So I loaded up a session database
+So I loaded up a session database, which now houses fresh labels for each event
 
 ```bash
 ./main.py analyze -s 2021_02_13_19_19_33
@@ -978,7 +1005,7 @@ and used [`SessionAnalysis.play_many`](https://github.com/ekiefl/maple/blob/f54d
 
 {% include youtube_embed.html id="NRtRwQp-sr0" %}
 
-It's clearly working prety well.
+It's clearly working pretty well.
 
 ### Real-time classification
 
@@ -1103,13 +1130,13 @@ plt.show()
 
 [![classify_speed]({{images}}/classify_speed.png)]({{images}}/classify_speed.png){:.center-img .width-100}
 
-For a model with 200 trees, the cost of classifying during runtime is about **25ms** of downtime following each event. Because my application isn't multi-threaded, this time bites into time that should be dedicated to listening for the next event. Fortunately for me, 25ms is barely anything for my applications. On the otherhand, a tree count of 640 yields a 60ms downtime, which is starting to become problematic.
+For a model with 200 trees, the cost of classifying during runtime is about **25ms** of downtime following each event. Because my application isn't multi-threaded, this time eats into time that should be dedicated to listening for the next event. Fortunately for me, 25ms is barely anything for my application. On the other hand, a tree count of 640 yields a 60ms downtime, which is starting to become problematic.
 
 Based on these results, I am very happy to keep my model at a tree count of 200.
 
 ## Visualizing
 
-One utility of creating an audio classifier is being able to distill the entirety of a session into an intuitive visualization that illustrates how the dogs behaved. [Last time]({{ site.url }}/2020/07/20/maple-intro/) I created an interactive interface that can be opened for any session with the command line.
+One utility of creating an audio classifier is being able to distill the entirety of a session into an intuitive visualization that illustrates how the dogs behaved. [Last time]({{ site.url }}/2020/07/20/maple-intro/) I created an interactive interface that can be opened for any session from the command line.
 
 ```bash
 ./main.py analyze --session 2021_02_13_19_19_33
@@ -1120,7 +1147,7 @@ Before, it looked like this.
 [![old_viz]({{images}}/old_viz.png){:.no-border}]({{images}}/old_viz.html){:.center-img .width-100}
 \[[**Click for interactive plot**]({{images}}/old_viz.html)\]
 
-Pretty cool. It shows every event and how loud the dogs were over time. But further decomposing the events into their classes would really paint a much more illustrative picture of what's going on.
+Pretty cool. It shows every event and how loud the dogs were over time. It also shows owner responses, where green is praise and red is scold. But further decomposing the events into their classes would really paint a much more illustrative picture of what's going on.
 
 I decided that a good way to visualize the data would be to bin the events into minute timeframes and show the proportion of events belonging to each class in a stacked line chart. Ultimately, I decided on the following visual aesthetic:
 
@@ -1132,7 +1159,7 @@ I create these plots with [plotly](https://plotly.com/) and the source code can 
 
 With this visualization you can see at a glance how the dog's behaved. For example, destroying my door seemed to be a passionate side project for Maple, where her progress is apparently driven by repeated bursts of inspiration.
 
-## Updating reponse logic
+## Updating response logic
 
 Door scratching is the most undesirable behavior exhibited by the dogs. But in the above session, it went under the radar because it's not very loud. This is the fundamental problem with the old decision-logic. Yet with real-time classification, now I can buff the decision logic with a more sentiment-based understanding of the events.
 
@@ -1143,13 +1170,14 @@ The possibilities for buffing the response logic are now endless. I could create
 [![praise_flowchart]({{ site.url }}/images/maple/maple-intro/praise_flowchart.jpg)]({{ site.url }}/images/maple/maple-intro/praise_flowchart.jpg){:.center-img .width-70}
 
 The old logic (above) took note of how many events were in the considered praise window, and enforced (1) that the total number of events should be below some threshold and (2) that none of the events should pass a certain pressure threshold.
-This is pretty sound logic, but it fails under circumstances when the dogs produce _good_ noise. Currently, the only good noise is `play`, which isn't always the quietest. To accomodate for the fact that noise is not always bad, the new logic is now the same, except all `play` events in the praise window are removed prior to the flowchart. This way, the dogs can play and still be praised.
+
+This is pretty _sound_ logic, but it fails under circumstances when the dogs produce noise that isn't inherently bad. Currently, `play` is the only class that would fall under this category. To accommodate for the fact that noise is not always bad, the new logic is now the same, except all `play` events in the praise window are removed prior to the logic shown in the above flowchart. This way, the dogs can play and still be praised.
 
 ### Scold
 
 [![scold_flowchart]({{ site.url }}/images/maple/maple-intro/scold_flowchart.jpg)]({{ site.url }}/images/maple/maple-intro/scold_flowchart.jpg){:.center-img .width-70}
 
-The old logic (above) took note of the total level of noise, whether the most recent event was particularly loud, and if both of these values passed their respective thresholds, it was a scold. Again, this is an oversimplification because noise is not always bad.
+The old logic (above) took note of the total level of noise, whether the most recent event was particularly loud, and if both of these values pass their respective thresholds, the dog-sitter scolds. Again, this is an oversimplification because noise is not always bad.
 
 After re-analyzing sessions, I came to the following new workflow.
 
@@ -1162,5 +1190,7 @@ So that's the workflow for barking. I also wanted to handle door scratching sinc
 [![scold_workflow_2]({{images}}/scold_workflow_2.jpg)]({{images}}/scold_workflow_2.jpg){:.center-img .width-70}
 
 More simply, the dog-sitter fires off a scold if a certain number of door scratching events are found within the scold window.
+
+Today we're going downtown to do some shopping so these poor doggies are going to be alone for around 5 hours. Let's see how the new decision logic performs...
 
 ### Trial run
