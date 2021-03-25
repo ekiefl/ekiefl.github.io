@@ -1191,6 +1191,45 @@ So that's the workflow for barking. I also wanted to handle door scratching sinc
 
 More simply, the dog-sitter fires off a scold if a certain number of door scratching events are found within the scold window.
 
-Today we're going downtown to do some shopping so these poor doggies are going to be alone for around 5 hours. Let's see how the new decision logic performs...
+Today we're leaving the house, and these poor doggies are going to be left alone for about 5 hours. A perfect opportunity to test the new decision logic.
 
 ### Trial run
+
+I nervously set up the system, locked the dogs in the bedroom, and quietly shut the door.
+
+And 5 hours later the results are in. This is a big milestone: **first session that implemented real-time audio classification and sentiment-based decision logic**.
+
+[![trial_session]({{images}}/trial_session.png){:.no-border}]({{images}}/trial_session.html){:.center-img .width-100}
+\[[**Click for interactive plot**]({{images}}/new_viz.html)\]
+
+Considering it was the longest we had left them alone in months, they behaved _so_ well. I'm proud of them. And to be honest, I'm proud of the virtual dog-sitter too, because I think it acted quite rationally.
+
+So I see some door scratching. Were any of the 4 scold responses triggered by door scratching? Here is a zoom-in of the second scold that was properly triggered in response to a series of door scratching events.
+
+[![zoom_2]({{images}}/zoom_2.png)]({{images}}/zoom_2.png){:.center-img .width-100}
+
+Great! And as cherry on top, the scold seems to have deterred the behavior, at least for a brief minute.
+
+As another example, here is a zoom-in of the first 10 minutes that we were gone, where things got crazy.
+
+[![zoom_10]({{images}}/zoom_10.png)]({{images}}/zoom_10.png){:.center-img .width-100}
+
+Upon being alone, they are initially struck with worry. Worry that they can't see their mommy, worry that they heard the front door close, worry that they are no longer in control. This manifests in their vocalizations as whining, and I think it corresponds to them fearing the worst, but trying to keep it together because they want to be good dogs.
+
+Yet as their reality sets in, worry and disbelief turn to panic and desperation. This spiral in mindset is clearly seen as the sound landscape transitions from whining-dominant to barking-dominant. Now unhinged, they continue barking until the dog-sitter decides that enough is enough and **scolds them**. This seems to snap the dogs back to reality, as evidenced by the abrupt halt in barking.
+
+So the new decision logic for scolding is triggering at the right time, and appears to have a real influence on their behavior.
+
+While the last example shows some very interesting data from a technical standpoint, this is a rather depressing illustration of [separation anxiety](https://www.aspca.org/pet-care/dog-care/common-dog-behavior-issues/separation-anxiety), something very common in dogs that's driven by an unhealthy emotional dependence on their owners.
+
+Separation anxiety is essentially the fear of being alone. Currently the dog-sitter addresses separation anxiety by creating the illusion that they are _not_ actually alone. Instead, auditory responses of Kourtney and I give a convincing facade that big brother is watching. This let's them hear our voices and promotes the concept that the same behavorial rules apply even when we are not physically present.
+
+So currently separation anxiety is being addressed mostly in an illusory manner. Yet moving forward, I would like the dog-sitter to countercondition the fear associated with being alone, with a newfound excitement of being alone. Currently, all they get for being good is an auditory praise, but what if I created something that dispenses treats instead? A surplus of treats (contingent on good behavior) is certainly a silver lining for being left alone, and would help countercondition a lot of the separation anxiety. If I take this project further, this is the direction I will head.
+
+## Conclusion
+
+In summary, this work builds upon the maple software by implementing a random forest classifier that can identify common sounds produced by Maple and Dexter (whine, bark, etc). By classifying events in real time, I was able to develop more robust decisions on how the dog-sitter should respond to the dogs.
+
+All of this new functionality has been implemented in the [code base](https://github.com/ekiefl/maple), and the totality of changes made can be viewed in this [git compare](https://github.com/ekiefl/maple/compare/a0689457ee304d41ffff2ae79f9669e824a4c9f7...341da041459c8222c238866403973c71b22b31eb).
+
+See you next time.
