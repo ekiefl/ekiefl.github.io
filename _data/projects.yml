@@ -2,7 +2,7 @@
   url:  "projects/maple/"
   logo:  "/images/maple/maple_logo.png"
   color: "#AE2529"
-  thumbnail:  ["/images/maple/maple_logo.png", "/images/maple/maple-intro/histogram_2_pic.png"]
+  thumbnail:  ["/images/maple/maple_logo.png", "/images/maple/maple_logo_old.png", "/images/maple/maple-intro/histogram_2_pic.png"]
   description: >-
      Creating a program that monitors and responds to a barky little dog named *maple*.
 
