@@ -2,9 +2,9 @@
   url:  "projects/maple/"
   logo:  "/images/maple/maple_logo.png"
   color: "#AE2529"
-  thumbnail:  ["/images/maple/maple_logo.png", "/images/maple/maple_logo_old.png", "/images/maple/maple-intro/histogram_2_pic.png"]
+  thumbnail:  ["/images/maple/maple_logo.png", "/images/maple/maple_logo_old.png", "/images/maple/maple-classifier/new_viz.png"]
   description: >-
-     Creating a program that monitors and responds to a barky little dog named *maple*.
+     A virtual-dog sitter software for monitoring, tracking, and responding to a barky little dog named *maple*.
 
 - name: "pooltool"
   url:  "projects/pooltool/"
@@ -12,4 +12,4 @@
   color: "#6D5C81"
   thumbnail:  ["/images/pooltool/pooltool_logo.png", "/images/pooltool/thumbnail3.gif", "/images/pooltool/thumbnail1.png", "/images/pooltool/thumbnail2.png",]
   description: >-
-      My journey in creating a pool/billiards simulator called *pooltool*, that emphasizes realistic physics.
+      My journey in creating *pooltool*, a sandbox billiards/pool game that emphasizes realistic physics.
