@@ -15,7 +15,7 @@ image:
 
 ## Homepage of **pooltool**
 
-*pooltool* is a sandbox billiards game that emphasizes realistic physics. You can play any form of billiards, experiment with different physics settings, or you use the API to investigate billiards-related research questions. Keep reading for an intro into the topic or **scroll down for posts of this blog series**.
+*pooltool* is an [open source](https://github.com/ekiefl/pooltool) sandbox billiards game that emphasizes realistic physics. You can play any form of billiards, experiment with different physics settings, or you use the API to investigate billiards-related research questions. Keep reading for an intro into the topic or **scroll down for posts of this blog series**.
 
 ### Backstory
 
