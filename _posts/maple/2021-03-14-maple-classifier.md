@@ -60,7 +60,7 @@ In my opinion, this quote should be attributed to the [random forest algorithm](
 
 Moving on.
 
-## Data transformation
+## **Section I**: Data transformation
 
 Unfortunately, I can't just throw the audio data into a random forest and be done with it. The data needs to be wrangled and transformed into a suitable format that's consistent across samples and pronounces distinguishable features.
 
@@ -246,7 +246,7 @@ A brief summary is in order.
 - The spectrograms are flattened into 1D arrays for the sake of the classifier
 
 
-## Labeling data
+## **Section II**: Labeling
 
 The random forest algorithm requires training data. I considered two options for obtaining training data:
 
@@ -324,7 +324,7 @@ Here's a demo.
 
 With the labeler in hand, my initial goal was to label 10,000 audio chunks. But of the 50,621 audio chunks at my disposable, Kourtney and I were able to withstand labelling just **2,745 audio chunks** before giving up. Hopefully it's enough.
 
-## Training the classifier
+## **Section III**: Training
 
 The next step was to actually create and validate a random forest with this labelled data.
 
@@ -914,7 +914,7 @@ print(model.xval_score_)
 >>> 0.8610715866691964
 ```
 
-## Classifying
+## **Section IV**: Classifying
 
 Training the model is one thing. Using it is another. In this section I will use the model to classify and visualize past audio events from the last several months.
 
@@ -1134,7 +1134,7 @@ For a model with 200 trees, the cost of classifying during runtime is about **25
 
 Based on these results, I am very happy to keep my model at a tree count of 200.
 
-## Visualizing
+## **Section V**: Visualizing
 
 One utility of creating an audio classifier is being able to distill the entirety of a session into an intuitive visualization that illustrates how the dogs behaved. [Last time]({{ site.url }}/2020/07/20/maple-intro/) I created an interactive interface that can be opened for any session from the command line.
 
