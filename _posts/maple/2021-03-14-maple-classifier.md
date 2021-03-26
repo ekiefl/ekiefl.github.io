@@ -18,7 +18,7 @@ image:
 This post details the step-by-step process of creating an audio classifier that tracks and responds to the behavior of my girlfriend's dogs while we are gone. The resulting data is distilled into an interactive interface such as the one shown here.
 
 [![new_viz]({{images}}/new_viz.png){:.no-border}]({{images}}/new_viz.html){:.center-img .width-100}
-\[[**Click for interactive plot**]({{images}}/old_viz.html)\]
+\[[**Click for interactive plot**]({{images}}/new_viz.html)\]
 
 ## Where I left off
 
