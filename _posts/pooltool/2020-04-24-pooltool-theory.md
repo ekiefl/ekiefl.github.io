@@ -150,13 +150,13 @@ realistic model I came across that can be solved analytically, and has the follo
 2. There is a single point of contact (PoC) between ball and cloth
 
 By *the ball can be in an arbitrary state*, what I mean is that it can have an arbitrary velocity
-($\vec{v}$), angular velocity ($\vec{\omega}$), and displacement relative to some origin
-($\vec{r}$). These 3 vectors fully characterize the state of the ball.
+$(\vec{v})$, angular velocity $(\vec{\omega})$, and displacement relative to some origin
+$(\vec{r})$. These 3 vectors fully characterize the state of the ball.
 
 The goal is to find
 equations of motion that can evolve these 3 vectors through time. Essentially, these equations are
-functions that, when given an initial state ($\vec{v}_0$, $\vec{\omega}_0$, $\vec{r}_0$), can give
-you an updated state ($\vec{v}$, $\vec{\omega}$, $\vec{r}$) some time $t$ later.
+functions that, when given an initial state $(\vec{v}_0$, $\vec{\omega}_0$, $\vec{r}_0)$, can give
+you an updated state $(\vec{v}$, $\vec{\omega}$, $\vec{r})$ some time $t$ later.
 
 As for the second assumption, a single point of contact is a fairly accurate assumption, but
 technically the weight of the ball bunches up the cloth as it moves. The amount of bunching up depends on
@@ -169,8 +169,7 @@ _**Figure 2**. The cloth is a compressible surface, and so in actuality there do
 contact", but rather, an "area of contact"._
 
 The most important thing to realize is that throughout a
-ball's trajectory, it will always be in any of these 4 different **modes**: **sliding, rolling, spinning,
-or stationary**. The physics is different for each of these cases, so I tackle them piecewise from least
+ball's trajectory, it will always be in any of these 4 different **modes**: **sliding, rolling, spinning,stationary, or airborne** (all of these states occur during the ball-cloth interaction, with the exception of the airborne state, which is covered [later on](#section-iv-ball-air-interactions)). The physics is different for each of these cases, so I tackle them piecewise from least
 to most complicated.
 
 ### - Case 1: Stationary
@@ -231,7 +230,7 @@ _**Figure 3**. A ball spinning in place. In this coordinate system the table is 
 Spinning around the $z-$axis is not by chance--it is a constraint of the state, since if the ball had any components of its
 angular velocity in the $x$ or $y$ directions, it would create a friction with the cloth that would
 translate into a linear velocity. Since spinning is characterized by 0 linear velocity
-($\vec{v}=\vec{0}$), angular velocity is strictly in the $z-$axis. In other words,
+$(\vec{v}=\vec{0})$, angular velocity is strictly in the $z-$axis. In other words,
 
 $$ \omega_x(t) = 0 \notag $$
 
@@ -338,7 +337,7 @@ Now for angular velocity. To discuss this, I should formalize the concept of rol
 formally defined as the state in which the **relative velocity**, $\vec{u}(t)$, between the ball and
 cloth at the PoC is $\vec{0}$.
 
-$\vec{u}$(t) has two contributions: (1) the linear velocity of
+$\vec{u}(t)$ has two contributions: (1) the linear velocity of
 the ball, _i.e._ the velocity of the center of mass, and (2) the velocity between ball and cloth
 that exists because of the ball's rotation. Their sum defines the relative velocity:
 
@@ -369,13 +368,13 @@ In the particular case shown, the ball has top spin, so the cross product dictat
 points in the direction opposite the cue ball's travel.
 
 Both of the above examples are cases in which $\vec{u}(t) \ne \vec{0}$, so are therefore cases of
-sliding, not rolling. To be rolling ($\vec{u}(t) = \vec{0}$), these contributions must match each other:
+sliding, not rolling. To be rolling $(\vec{u}(t) = \vec{0})$, these contributions must match each other:
 
 $$ -R \hat{k} \times \vec{\omega}(t) = \vec{v}(t) \label{roll_condition} $$
 
 This refers to the condition in which every time the ball does a complete rotation about the
 $y-$axis (according to the axes defined in Figure 4), the ball must travel exactly one circumference
-($2 \pi R$ in the $x-$axis). Unless this exact condition is met, a moving ball is _sliding_, not
+(aka $2 \pi R$ in the $x-$axis). Unless this exact condition is met, a moving ball is _sliding_, not
 _rolling_.
 
 For how particular this condition seems, it is interesting that in the game of pool,
@@ -411,7 +410,7 @@ reality:
 
 {% include youtube_embed.html id="sDPNKuwax14" %}
 
-In the above example I apply a shit load of clockwise side spin ($\omega_z(t) < 0$) and as you can
+In the above example I apply a shit load of clockwise side spin $(\omega_z(t) < 0)$ and as you can
 see, the ball follows a straight line. Pretty hard to deny, but it might still be at odds with what
 you know about pool. For example, look at O'Sullivan and the gang "swerving" the ball by applying
 side spin:
@@ -923,7 +922,7 @@ of reference, that ball is stationary. A picture of the situation is shown in Fi
 [![ball_ball_collision_2]({{images}}/ball_ball_collision_2.jpg)]({{images}}/ball_ball_collision_2.jpg){:.center-img .width-90}
 _**Figure 10**. In the left panel, Ball A (blue) and Ball B (red) are both moving and due to collide at
 the position of the unfilled circles. If $\vec{v}_B$ is subtracted from the velocities of both
-balls ($-\vec{v}_B$ is shown as the yellow vectors), the frame of reference is changed to one that moves
+balls (see yellow vectors), the frame of reference is changed to one that moves
 with ball B, shown in the right panel. In this scenario, ball B is stationary, and the situation
 reduces to Case 1, and specifically the situation depicted in Figure 8._
 
@@ -1220,8 +1219,11 @@ $$
 
 FIXME
 
-
 ## **Section V**: ball-slate interactions
+
+FIXME
+
+## **Section VI**: ball-cue interactions
 
 FIXME
 

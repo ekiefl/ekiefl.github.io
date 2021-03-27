@@ -4,7 +4,6 @@ title: "Billiards simulator II: algorithm theory"
 categories: [pooltool]
 excerpt: "A dive into the algorithmic theory behind pool simulation"
 comments: true
-katex: true
 authors: [evan]
 image:
   feature: pooltool/pooltool_banner.png
