@@ -420,8 +420,7 @@ side spin:
 So what's the difference between those shots, and the one I manufactured? The fundamental difference
 is that these players are elevating their cue, which causes $\omega_x$ to be non-zero (angular
 velocity _in the direction_ of motion). This "barrel-roll" rotation is what causes curved
-trajectories, otherwise known as swerve or masse. (For more info on the cue-cueball interaction, see
-FIXME). On the other hand, my shot did not have any significant amount of $\omega_x$, so whatever
+trajectories, otherwise known as swerve or masse. (More on the cue-ball interaction later). On the other hand, my shot did not have any significant amount of $\omega_x$, so whatever
 small amount existed quickly dissipated within fractions of a second, yielding an otherwise straight trajectory.
 
 The takeaway is that $\omega_z(t)$ is decoupled from everything else, and evolves according to Eq.
