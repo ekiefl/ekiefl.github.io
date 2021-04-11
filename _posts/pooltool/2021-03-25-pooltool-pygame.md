@@ -200,6 +200,8 @@ In [6]: shot.animate(flip=True) # Flip orientation to be horizontal
 
 [![ball_traj_0]({{images}}/ball_traj_0.gif){:.no-border}]({{images}}/ball_traj_0.gif){:.center-img .width-90}
 
+That's better.
+
 Getting a little more brave, I wanted to try a massé shot, which you can watch the pros do here:
 
 {% include youtube_embed.html id="89g7sQ7zNqo" %}
@@ -227,7 +229,7 @@ Next, I tried to apply insane levels of massé, like this guy:
 
 {% include youtube_embed.html id="t_ms6KjSoS8?t=29" %}
 
-Specifically, I tried to tune the parameters to remake the shot at 0:30. After fumbling around, I ended up with this.
+Specifically, I tried to tune the parameters to remake the shot at 0:30s. After fumbling around, I ended up with this.
 
 ```python
 In [8]: shot.balls['cue'].rvw[0] = [0.18, 0.37, 0]
@@ -254,27 +256,201 @@ In [21]: np.linalg.norm(shot.balls['cue'].rvw[2])/np.pi*60
 Out[21]: 4374.123861245154
 ```
 
-$4400$ RPM... That's too much, right? Well, the same guy put out [this](https://www.youtube.com/watch?v=UG92u3rClhA) video, in which he measures his RPM for some random shot to be $3180$. So I'm certainly in the ball park. Maybe he can get up to $4400$ RPM, or maybe my simulated cloth had a higher coefficient of sliding friction, such that a higher RPM was required.
+$4400$ RPM... That's too much, right? Well, the same guy put out [this](https://www.youtube.com/watch?v=UG92u3rClhA) video, in which he measures his RPM for some random shot to be $3180$. So I'm certainly in the ball park. Maybe he can get up to $4400$ RPM, or maybe my simulated cloth had a higher coefficient of sliding friction, requiring higher RPM.
 
 Overall, these trajectories have me convinced I'm not screwing anything up royally.
 
 ## Event-based evolution algorithm
 
-- Since no collisions are modelled, only a subset of events can occur, namely [motion state transition events](FIXME). That's fine for now, since we can use this to get the algorithm working
+So far I've been evolving the simulation by incrementing time in small discrete steps (_aka_ a discrete time evolution algorithm). Yet moving forward, I've opted to use the event-based evolution algorithm for its superior accuracy and computational efficiency.
 
-## Throwing in some other events
+The premise of the algorithm is this:
 
-- ball-ball collision (w/ correct collision time algorithm but simple physics theory)
-- ball-cushion collision (w/ with orthogonal assumptions and dead wrong physics theory)
+- We have beautiful equations of motion for each ball that collectively describe the evolution of the [system state]({{ site.url }}/2020/12/20/pooltool-alg/#what-is-the-system-state). Great.
+- But **events** between interfering parties (_e.g._ a ball-ball collision) disrupt the validity of these equations, since they assume each ball acts in isolation.
+- Even still, the equations for each ball are valid **up until** the next event.
+- So the algorithm works by evolving the system state directly up until the next event, at which time the event must be resolved (_e.g._ a [ball-ball collision event]({{ site.url }}/2020/12/20/pooltool-alg/#-ball-ball-collision) is resolved by applying the [ball-ball interaction equations)]({{ site.url }}/2020/04/24/pooltool-theory/#section-ii-ball-ball-interactions), and then the process repeats itself: the next event is found and the system state is evolved up until the next event.
+- There's only one way to calculate when the next event occurs: calculating the time until every single possible next event. By definition of **next** event, the event that occurs in the least amount of time is the next event.
+
+{:.notice}
+If you want an in-depth explanation on the event-based evolution algorithm, I may have created the most extensive learning resource on the topic in my [last post]({{ site.url }}/2020/12/20/pooltool-alg/).
+
+### Implementing transitions
+
+All events are either **transitions**, or they are **collisions** (details [here]({{ site.url }}/2020/12/20/pooltool-alg/#2-what-are-events)). Since there are no collisions yet, I decided to implement the algorithm using just transition events to start. Transition events mark the transitioning of a ball from one motion state to another (_e.g._ from [rolling]({{ site.url }}/2020/04/24/pooltool-theory/#--case-3-rolling) to [stationary]({{ site.url }}/2020/04/24/pooltool-theory/#--case-1-stationary)).
+
+Let's take a look.
+
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Want to follow along?</span>
+
+For demo purposes, I compiled my progress into a [branch](https://github.com/ekiefl/pooltool/tree/edfc866_offshoot). If you want to follow along, go ahead and checkout it out.
+
+```bash
+git clone https://github.com/ekiefl/pooltool.git
+cd pooltool
+git checkout edfc866_offshoot
+```
+
+</div>
+
+Like before, I created an instance of `ShotSimulation`, and then I set up a pre-baked system state specified by the keyword `straight_shot`
+
+```python
+In [1]: import psim.engine as engine
+   ...: shot = engine.ShotSimulation()
+   ...: shot.setup_test('straight_shot')
+```
+
+Next, I struck down on the cue ball with bottom-left english.
+
+```python
+In [2]: shot.cue.strike(
+   ...:     ball = shot.balls['cue'],
+   ...:     V0 = 1.35,
+   ...:     phi = 97,
+   ...:     a = 0.3,
+   ...:     b = -0.3,
+   ...:     theta = 10,
+   ...: )
+```
+
+To see what this system state looks like and how it evolves, here is the **discrete time evolution**.
+
+```python
+In [3]: shot.simulate_discrete_time()
+   ...: shot.animate(flip=True)
+```
+
+[![straight_shot_discrete]({{images}}/straight_shot_discrete.gif){:.no-border}]({{images}}/straight_shot_discrete.gif){:.center-img .width-90}
+
+The cue ball starts sliding (<span style="color: red">red</span>) and then transitions to rolling (<span style="color: green">green</span>). Offscreen, it transitions to stationary. Because I struck down with side english, there is a slight masse (curve) in the trajectory. In total, there are **two transition events**: (1) a sliding-rolling transition event and (2) a rolling-stationary transition event.
+
+In comparison, this is what happens when the system state is evolved using **event-based evolution**.
+
+```python
+In [4]: shot.setup_test('straight_shot')
+   ...: shot.cue.strike(
+   ...:     ball = shot.balls['cue'],
+   ...:     V0 = 1.35,
+   ...:     phi = 97,
+   ...:     a = 0.3,
+   ...:     b = -0.3,
+   ...:     theta = 10,
+   ...: )
+   ...: shot.simulate_event_based()
+   ...: shot.animate(flip=True)
+```
+
+[![cts_1]({{images}}/cts_1.gif){:.no-border}]({{images}}/cts_1.gif){:.center-img .width-90}
+
+**There's only 3 snapshots of the system state**: at the initial time, at the sliding-rolling transition time, and at the rolling-stationary transition time. That is the beauty of the event-based evolution algorithm--rather than evolving in small time steps, the system state is evolved directly to the next event. For this case, this directness has resulted in the shot evolution being compressed into just 3 system state snapshots.
+
+While algorithmically beautiful, it's an eye-sore to look at. So I wrote a `continuize` method that calculates all of the intermediate system states.
+
+```python
+In [4]: shot.setup_test('straight_shot')
+   ...: shot.cue.strike(
+   ...:     ball = shot.balls['cue'],
+   ...:     V0 = 1.35,
+   ...:     phi = 97,
+   ...:     a = 0.3,
+   ...:     b = -0.3,
+   ...:     theta = 10,
+   ...: )
+   ...: shot.simulate_event_based(continuize=True)
+   ...: shot.animate(flip=True)
+```
+
+[![cts_2]({{images}}/cts_2.gif){:.no-border}]({{images}}/cts_2.gif){:.center-img .width-90}
+
+Now the intermediate system states are calculated _ad hoc_ for the purposes of a nice animation. Nice.
+
+### Implementing collisions
+
+The algorithm is a little boring without collisions. Let's add some.
+
+With discrete time evolution, the only way to know if a ball-ball collision occurs is to use a collision detector to see if 2 balls are overlapping. However in the event-based algorithm, ball collisions are **predicted** ahead of time by solving [a quartic polynomial](({{ site.url }}/2020/12/20/pooltool-alg/#-ball-ball-collision-times)) defined from the balls' equations of motion.
+
+For everyone's convenience, ball-ball collisions are already implemented in this demo branch, and can be turned on like so. If you're interested, [here](https://github.com/ekiefl/pooltool/blob/6bb8fb451d964f350243268c5342c6b1c82a5c53/psim/physics.py#L14) is the code for solving the quartic polynomial.
+
+```python
+In [5]: engine.include['ball_ball'] = True
+```
+
+Running the simulation again now yields a much more interesting picture.
+
+[![cts_3]({{images}}/cts_3.gif){:.no-border}]({{images}}/cts_3.gif){:.center-img .width-90}
+
+While we're at it, let's include ball-cushion collisions too.
+
+```python
+In [5]: engine.include['ball_cushion'] = True
+```
+
+{:.warning}
+This implementation of ball-cushion interactions is non-physical. In fact, it's not even trying to be accurate, I just wanted to add another collision event to test the algorithm. In this overly simplistic implementation, ball-cushion collisions are resolved by reversing the linear momentum component perpendicular to the cushion surface. In the future, I will replace this with the [(Han, 2005)]({{ site.url }}/2020/04/24/pooltool-theory/#3-han-2005) physics model discussed previously.
+
+Now, things are really starting to take shape.
+
+[![cts_4]({{images}}/cts_4.gif){:.no-border}]({{images}}/cts_4.gif){:.center-img .width-90}
+
+I find this to be a pretty clean visualization of how the event-based algorithm advances the system state state through time.
+
+To me, its incredible to think that for a given event (frame), the proceeding event has been carefully chosen from the entire set of all possible next events. For example, the 3rd event is a sliding-rolling transition of the cue ball after its collision with the 8-ball. The 4th event is determined by considering all of the events in this diagram:
+
+[![snapshot_1_2]({{images}}/snapshot_1_2.jpg){:.no-border}]({{images}}/snapshot_1_2.jpg){:.center-img .width-90}
+
+In total 15 possible events were considered, and the time until each of them was calculated. Based on the system state, it turned out that the one that physically occurs is a collision of the 8-ball (<span style="color: black">black</span>) with the 3-ball (<span style="color: red">red</span>).
+
+### Comparison to discrete time integration
+
+How do these results compare to the discrete time evolution? With discrete time, collisions are [detected retrospectively]({{ site.url }}/2020/12/20/pooltool-alg/#discrete-time-evolution) by seeing if there is any overlapping geometry. This leads to an inherent inaccuracy, that can be reduced by **decreasing the time step**. But how small does the timestep have to be and **what effect does this have on performance**?
+
+To compare the two algorithms, I moved the brown 7-ball from the previous simulation just slightly, such that the cue-ball barely grazes it when using the event-based algorithm.
+
+[![slight_graze]({{images}}/slight_graze.gif){:.no-border}]({{images}}/slight_graze.gif){:.center-img .width-90}
+
+Let's see the corresponding discrete time evolution using a timestep of 20ms.
+
+```python
+In [6]: import psim.engine as engine
+   ...: engine.include['ball_ball'] = True
+   ...: engine.include['ball_cushion'] = True
+   ...: shot = engine.ShotSimulation()
+   ...: shot.setup_test('straight_shot')
+   ...: shot.cue.strike(
+   ...:     ball = shot.balls['cue'],
+   ...:     V0 = 1.35,
+   ...:     phi = 97,
+   ...:     a = 0.3,
+   ...:     b = -0.3,
+   ...:     theta = 10,
+   ...: )
+   ...: shot.simulate_discrete_time(dt=0.020)
+   ...: shot.animate(flip=True)
+```
+
+[![discrete_bad]({{images}}/discrete_bad.gif){:.no-border}]({{images}}/discrete_bad.gif){:.center-img .width-90}
+
+Wow, it didn't even come close to hitting the brown 7-ball after bouncing off the cushion. And the 8-ball is supposed to collide with the red 3-ball, but missed entirely. The problem is that the collision angle between the cue and 8-ball is slightly off due to discrete time error, and the net result is that the overlapping geometry overestimates how thin the cut on the 8-ball is.
+
+So then how small must the timestep be for the sequence of events to match the event-based algorithm? To find out, I ran a series of shots evolved with smaller and smaller timesteps. Simulations are considered accurate if the cue ball contacts the brown 7-ball, as was observed in the event-based algorithm. Here is the script:
+
+```python
+```
+
+[![discrete_comp]({{images}}/discrete_comp.png)]({{images}}/discrete_comp.png){:.center-img .width-80}
+
+This plot shows that accurate simulations (_i.e._ simulations where the cue-ball grazes the 7-ball) require timesteps below about $250 \, \text{\mu s}$. Unfortunately, this comes at a monumental speed cost. The fastest calculation time for accurate simulations was about 6s, which is 30X slower than the compute time for the event-based algorithm (green line).
+
+This is by no means an extensive comparison between the two algorithms. But it illustrates the fundamental difference between them: except for inaccuracies arising from floating point precision, the event-based algorithm is as accurate as the underlying physics models, and performs reasonably fast. In contrast, discrete time algorithms produce an entire spectrum of accuracies, and choosing timesteps that produce sufficiently accurate results typically lead to bad performance.
 
 ## Conclusion
 
-### Summary
-
+At this point in the project, I'm pretty happy where things are. All of the physics I've
 - Ball motion is working
 - Event-based evolution algorithm is working
 - Motion state transition events, ball-ball collision events, and a placeholder ball-cushion collision event has been added
 
-### Next time
-
-Time to make this interactive
+Next time, I'm making this fully interactive.
