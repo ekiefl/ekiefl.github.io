@@ -71,26 +71,6 @@ software developer / pool player. Goals.
 
 Unfortunately, ShootersPool is a commerical project with closed source code.
 
-### Open source
-
-ShootersPool is a cool game, but I want to make more than a game. I want to make a **pool physics sandbox game** for exploring
-and experimenting with billiards physics. I want to give that control to the user so they can create unique table
-layouts with 10,000 balls on a spherical table with moon gravity. Because why not? And the only way to give **full** control is to make it open source.
-
-I'm not the first person to make an open source pool physics simulator. In fact there's countless (see [here](https://github.com/topics/billiards?o=asc&s=forks) for example), and they vary in quality. The vast majority are half-baked course projects, but there are a couple that stood out to me (non-exhaustive list here):
-
-[poolvr](https://jzitelli.github.io/poolvr/) is a very cool open source project for playing pool in VR. I couldn't take full advantage of the controls without a VR headset, but this [youtube playlist](https://www.youtube.com/watch?v=_zrm2e6uJDc&list=PLfO_NjmfXp1yuMxgKFfVMQyQRgpsEINGK&index=1) has me convinced there is some sophisticated physics for modelling ball-ball and ball-cushion interactions, however the implementation seems buggy at times.  This was recently reimplemented as a [python project](https://github.com/jzitelli/poolvr.py) with a new physics engine, so maybe it's better now.
-
-[python-billiards](https://github.com/markus-ebke/python-billiards) is a 2D billiards engine written in Python that
-allows one to programmatically define a table and balls, and will evolve evolve the system that emerges. I like this project because
-it achieves one of the goals of pooltool, which is to have a fully functioning API by which other people can create their
-own scenes, however ridiculous.
-
-The amazingly titled [billiards-python-project](https://github.com/FlinnPond/billiards-python-project) deserves mention because it introduced me to
-panda3d, a 3D game engine in python... More on that later.
-
-Each of these projects have given me something to chew on in terms of inspiration. So thanks to all of you.
-
 ### Goals
 
 Making a pool simulator is a pretty vague statement that can be ambiguously interpreted. To keep
@@ -98,8 +78,8 @@ things more concrete, here are the primary goals of this project:
 
 1. **Create a physics engine that simulates the trajectories of pool balls that a layman finds indistinguishable from reality.**
 2. **Visualize pool shots using 3D graphics.**
-3. **Make an game that let's the user play 9-ball.**
-4. **Create an AI capable of playing the game.**
+3. **Make an game that let's the user play billiard games.**
+4. **Create an AI capable of playing 9-ball.**
 
 There is a saying that if one "_cannot see the forest for the trees_", they lack the perspective
 required to see the big picture. The idea is that one can walk up to each tree and comprehend it,
