@@ -4,7 +4,6 @@ title: "Billiards simulator II: algorithm theory"
 categories: [pooltool]
 excerpt: "A dive into the algorithmic theory behind pool simulation"
 comments: true
-katex: true
 authors: [evan]
 image:
   feature: pooltool/pooltool_banner.png
@@ -380,7 +379,7 @@ Fundamentally, these transitions happen due to a loss of energy due to friction.
 transitions are always from high energy to low energy.
 
 I've actually omitted 2 very rare transition events. In theory, a ball can transition
-from spinning to stationary if the perfect amount of backspin is applied. Same goes for sliding to
+from sliding to stationary if the perfect amount of backspin is applied. Same goes for sliding to
 spinning. So technically, there are 2 more transition events:
 
 5\. sliding-stationary (_very rare_)
@@ -891,7 +890,7 @@ $$
 
 [(Source)](https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line)
 
-{.:notice}
+{:.notice}
 This describes the distance between the point $(p_x, p_y, p_z)$ and a plane that extends
 infinitely in the $xy-$plane, rather than a plane that terminates at the points $\vec{p}_1^{(j)}$
 and $\vec{p}_2^{(j)}$. We will have to deal with this oversight in a minute.
@@ -1080,7 +1079,7 @@ Like before, **the collision condition** is defined by setting $d_{ij}$ to $R$, 
 happens at time $\Delta t_E$. After substituting Eq. $\eqref{quad_r}$ into Eq.
 $\eqref{dist_to_line}$, the algebra blows up.
 
-[![ball_collision_line]({{images}}/ball_collision_line.png)]({{images}}/ball_collision_line.png){:.center-img .width-100}
+[![ball_collision_line]({{images}}/ball_collision_line.png){:.no-border}]({{images}}/ball_collision_line.png){:.center-img .width-100}
 
 {:.warning}
 This page experiences a lot of lag if I try to render this math as an html object, so I took the
