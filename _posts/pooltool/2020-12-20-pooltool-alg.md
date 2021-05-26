@@ -962,7 +962,7 @@ $$
 s = - \frac{
     (\vec{p}_1^{(j)} - \vec{r}^{(i)}(t + \Delta t_E)) \bullet (\vec{p}_2^{(j)} - \vec{p}_1^{(j)})
 }{
-    \vec{p}_2^{(j)} - \vec{p}_1^{(j)}
+    (\vec{p}_2^{(j)} - \vec{p}_1^{(j)}) \bullet (\vec{p}_2^{(j)} - \vec{p}_1^{(j)})
 }
 \label{s_at_plane}
 $$
