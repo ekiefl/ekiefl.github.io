@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Billiards simulator III: Implementing the event-based shot evolution algorithm"
+title: "Billiards simulator III: implementing a prototype"
 categories: [pooltool]
 excerpt: "A preliminary implementation of pooltool that supports visualization with pygame"
 comments: true
@@ -187,7 +187,7 @@ In [5]: shot.start()
 
 Immediately after being hit, the ball is [sliding]({{ site.url }}/2020/04/24/pooltool-theory/#--case-4-sliding). Yet after a short amount of time, the relative velocity converges to $\vec{0}$, which defines the transition from sliding to [rolling]({{ site.url }}/2020/04/24/pooltool-theory/#--case-3-rolling). Once rolling, the ball continues to roll until it reaches the [stationary]({{ site.url }}/2020/04/24/pooltool-theory/#--case-1-stationary) state.
 
-If a picture says a thousand words, a video says a thousand pictures. Before going any further, I needed a way to **animate** shots because I'm already bored of these static plots. I wasn't looking for perfection, I just needed something to animate trajectories. For this, I found [`pygame`](https://www.pygame.org/news). It just celebrated its 20th anniversary, which is pretty impressive for python package.
+If a picture says a thousand words, a video says a thousand pictures. Before going any further, I needed a way to **animate** shots because I'm already bored of these static plots. I wasn't looking for perfection, I just needed something to animate trajectories. For this, I found [`pygame`](https://www.pygame.org/news). It just celebrated its 20th anniversary, which is pretty impressive for a python package.
 
 I implemented the module [`psim.ani.animate`](https://github.com/ekiefl/pooltool/blob/f79c801_offshoot/psim/ani/animate.py), which animates ball trajectories using `pygame`. For the sake of demonstration, this functionality already exists in the branch we're using.
 
@@ -251,14 +251,14 @@ In [8]: shot.balls['cue'].rvw[0] = [0.18, 0.37, 0]
 
 This may not be perfect, but it's close. Yes.
 
-Being able to recapitulate Florian's shot allows us to answer the following question: what insane levels of spin are required to pull this shot off? Well, In RPMs, the initial rotational speed of the cue ball is
+Being able to recapitulate Florian's shot allows me to answer the following question: what insane levels of spin are required to pull this shot off? Well, In RPMs, the initial rotational speed of the cue ball is
 
 ```python
 In [21]: np.linalg.norm(shot.balls['cue'].rvw[2])/np.pi*60
 Out[21]: 4374.123861245154
 ```
 
-$4400$ RPM. That's... that's too much, right? Well, the same guy put out [this](https://www.youtube.com/watch?v=UG92u3rClhA) video, in which he measures his RPM for a different shot to be $3180$. So I'm certainly in the ball park. Maybe he can get up to $4400$ RPM, or maybe my simulated cloth had a higher coefficient of sliding friction, requiring higher RPM.
+$4400$ RPM. That's... that's too much, right? Well, the same guy put out [this](https://www.youtube.com/watch?v=UG92u3rClhA) video where he purports his RPM for a different shot to be $3180$. So I'm certainly in the ball park. Maybe he can get up to $4400$ RPM, or maybe my simulated cloth had a higher coefficient of sliding friction, requiring higher RPM.
 
 Overall, these trajectories have me convinced I'm not screwing anything up royally.
 
@@ -272,7 +272,7 @@ The premise of the algorithm is this:
 - But **events** between interfering parties (_e.g._ a ball-ball collision) disrupt the validity of these equations, since they assume each ball acts in isolation.
 - Even still, the equations for each ball are valid **up until** the next event.
 - So the algorithm works by evolving the system state directly up until the next event, at which time the event must be resolved (_e.g._ a [ball-ball collision event]({{ site.url }}/2020/12/20/pooltool-alg/#-ball-ball-collision) is resolved by applying the [ball-ball interaction equations)]({{ site.url }}/2020/04/24/pooltool-theory/#section-ii-ball-ball-interactions), and then the process repeats itself: the next event is found and the system state is evolved up until the next event.
-- There's only one way to calculate when the next event occurs: calculating the time until every single possible next event. By definition of **next** event, the event that occurs in the least amount of time is the next event.
+- There's only one way to calculate when the next event occurs: calculating the time until every single possible next event. By definition of **next** event, the next event is the event that occurs in the least amount of time.
 
 {:.notice}
 If you want an in-depth explanation on the event-based evolution algorithm, I may have created the most extensive learning resource on the topic in my [last post]({{ site.url }}/2020/12/20/pooltool-alg/).
@@ -555,7 +555,7 @@ In [9]: import psim.utils as utils
    ...: shot.cue.strike(
    ...:     ball = shot.balls['cue'],
    ...:     V0 = 10000,
-   ...:     phi = 89.9999, # not quite straight down table, so it bangs into cushions
+   ...:     phi = 89.9999, # not quite straight down table, so it bangs into side cushions during its journey
    ...:     a = 0.0,
    ...:     b = 0,
    ...:     theta = 0,
