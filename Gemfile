@@ -11,4 +11,4 @@ gem 'rouge'
 gem 'jekyll-redirect-from'
 gem 'jekyll-gist'
 gem "activesupport", ">= 4.1.11"
-
+gem "rexml", ">= 3.2.5"
