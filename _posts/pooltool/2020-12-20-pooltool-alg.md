@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Billiards simulator II: algorithm theory"
+title: "The algorithmic theory behind pool simulation"
 categories: [pooltool]
 excerpt: "A dive into the algorithmic theory behind pool simulation"
 comments: true
+series: 2
 authors: [evan]
 image:
   feature: pooltool/pooltool_banner.png
@@ -12,7 +13,9 @@ image:
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-alg{% endcapture %}
 
-## What is a pool simulator?
+## Intro
+
+### What is a pool simulator?
 
 In the [last post]({{ site.url }}/2020/04/24/pooltool-theory/) I discussed the physics for all the different phenomena in pool and
 outlined equations of motion for each scenario. Yet there is still a critical missing piece: **how and
@@ -28,7 +31,7 @@ state** from some initial time $t_i$, to some final time $t_f$.
 In this post I define the system state, and then discuss two evolution algorithms: (1) discrete time
 evolution, and (2) continuous event-based evolution.
 
-## What is the system state?
+### What is the system state?
 
 In the [last post]({{ site.url }}/2020/04/24/pooltool-theory/) I defined the ball state by 3 vectors:
 the ball's displacement $\vec{r}(t)$, velocity $\vec{v}(t)$, and angular velocity $\vec{\omega}(t)$.
@@ -57,10 +60,11 @@ $$
 </div>
 
 The evolution algorithm calculates the system for a desired $t$ based on the system state at
-an earlier time. With this definition formalized, let's move on to discuss the first evolution
-algorithm: discrete time evolution.
+an earlier time. With this definition formalized, let's move on to discuss options for a shot evolution algorithm.
 
-## Discrete time evolution
+## Two options: discrete or continuous
+
+### Discrete time evolution
 
 The premise of discrete time evolution is to **advance the system state in very small
 discrete steps of time**. After each timestep events can be detected and resolved. Did a ball collide
@@ -146,7 +150,7 @@ Voila, we have a discrete time evolution algorithm for advancing the system stat
 
 </div>
 
-## Continuous event-based evolution
+### Continuous event-based evolution
 
 {:.notice}
 The continuous event-based evolution algorithm was first developed by Leckie and Greenspan in a
@@ -175,9 +179,16 @@ moment of collision**, at which point the event must be resolved via [the ball-c
 equations]({{ site.url }}/2020/04/24/pooltool-theory/#section-iii-ball-cushion-interactions). After the
 collision is resolved, the ball can be safely evolved up until the next event.
 
-### (1) Algorithm description
+At this point, my mind was made up. **I was going to use the continuous event-based algorithm for its speed
+and accuracy**.
 
-This prescription of evolving the equations of motion up until the next event forms the basis of
+## The algorithm, in its entirety
+
+The rest of this post is concerned with detailing each and every aspect of this algorithm.
+
+### (1) Bird's eye view
+
+The prescription of evolving the equations of motion up until the next event forms the basis of
 the continuous event-based evolution algorithm. Simply stated, the algorithm goes like this:
 
 <div class="extra-info" markdown="1">
@@ -237,7 +248,7 @@ that invalidates the equations of motion for 1 or more balls, due to something t
 for in the equations of motion, such as a collision with another ball. In total, there are 8 events, 4 of
 which are collisions, 4 of which are transitions. I discuss each below.
 
-#### --- ball-ball collision
+#### ball-ball collision
 
 Unlike every other event, the ball-ball collision involves 2 balls, one of which must be in a
 translating motion state: rolling, sliding, or airborne. The other ball may be in any motion state:
@@ -268,7 +279,7 @@ time. As a network, the totality of this process looks like this:
 
 _Figure 3. Network representation of events and ball motion states for the ball-ball collision slow-mo video._
 
-#### --- ball-cushion collision
+#### ball-cushion collision
 
 The ball-cushion collision involves just one ball, which must be in a translating motion state:
 rolling, sliding, or airborne. The output state is either sliding or airborne. The collision is
@@ -296,7 +307,7 @@ collision. You can see the above shot represented as an interaction:
 _Figure 5. Network representation of events and ball motion states for the ball-cushion slow-mo
 video_
 
-#### --- ball-slate collision
+#### ball-slate collision
 
 The ball-slate collision occurs when a ball contacts the table with a velocity component _into_ the
 table ($-z-$direction). The collision is governed by [the ball-slate interaction equations]({{
@@ -321,7 +332,7 @@ airborne.
 
 _Figure 6. The possible inputs and outputs of the ball-slate collision event._
 
-#### --- ball-pocket collision
+#### ball-pocket collision
 
 Of all the events, this is definitely the most fabricated. You may hear
 ball-pocket collision and think about all the complexities of the ball leaving
@@ -337,7 +348,7 @@ is considered pocketed**. It went in the hole. Good job.
 To resolve the collision,
 the ball is simply removed from the simulation.
 
-#### --- transition events
+#### transition events
 
 In Figures 2-6, I've shown that **collisions often induce motion state transitions**, however in each of
 those cases the transition is caused by the collision. Yet motion state transitions also occur
@@ -349,6 +360,7 @@ In the above short clip, the ball transitions from spinning to stationary. This 
 because upon becoming stationary, the ball's equations of motion (spinning) become
 invalid and need to be updated to the stationary equations of motion.
 
+{:.notice}
 As a matter of interest, if the
 equation was not updated, it dictates that the ball would begin spinning in the reverse direction, gaining
 more and more rotational kinetic energy indefinitely. This is obviously non-physical, and illustrates the need
@@ -423,7 +435,7 @@ If $\Delta t_E$ is infinite, there is no next event, which happens in the unique
 
 </div>
 
-#### --- Toy example
+#### Toy example
 
 Consider the example pictured in Figure 9. Ball A is sliding, balls B & C are stationary, and there
 are no other balls on the table. For simplicity, assume there are no cushions or pockets and that
@@ -471,7 +483,7 @@ This means we must develop means to calculate the time until every possible next
 
 ### (4) Calculating possible event times
 
-#### --- Transition times
+#### Transition times
 
 Transition times are the easiest to calculate, so I'll start with them.
 
@@ -566,7 +578,7 @@ as a potential next event.
 
 That's all of the event transition times. Short and sweet.
 
-#### --- Ball-ball collision times
+#### Ball-ball collision times
 
 We are on the search for calculating all possible next events.
 
@@ -790,7 +802,7 @@ If there exists no real and positive root, then the balls do not collide.
 Eq. $\eqref{ball_poly}$ can be solved analytically or numerically to reveal if/when the $i-j$
 collision event occurs. This prescription can be applied for each ball-ball pair.
 
-#### --- Ball-cushion collision times
+#### Ball-cushion collision times
 
 Another subset of possible events are all of the ball-cushion collisions---and
 there are a lot of collisions to account for.
@@ -1116,7 +1128,7 @@ segment do not collide.
 
 Wow.
 
-#### --- Ball-slate collision times
+#### Ball-slate collision times
 
 In comparison to the ball-cushion collision, this is a breeze.
 
@@ -1166,7 +1178,7 @@ ball-slate collision event for **every sliding and airborne ball** must be
 considered as a potential next event.
 
 
-#### --- Ball-pocket collision times
+#### Ball-pocket collision times
 
 So [as mentioned](#-ball-pocket-collision), the ball-pocket collision exists as a means to determine when a ball is pocketed, and to remove the ball from the simulation when it is pocketed. Defining the ball-pocket collision condition requires a **suitable geometry for pockets**, which I am going to be **very rudimentary** about.
 
@@ -1274,7 +1286,7 @@ Calculating when the next event occurs involves calculating all possible events 
 
 This section you can find some additional topics you may find of interest.
 
-#### --- Number of candidate events?
+#### Number of candidate events?
 
 How many candidate events are there to solve for at each step of the algorithm?
 

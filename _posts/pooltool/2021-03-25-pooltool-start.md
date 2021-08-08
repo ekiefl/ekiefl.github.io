@@ -4,6 +4,7 @@ title: "Billiards simulator III: Implementing the event-based shot evolution alg
 categories: [pooltool]
 excerpt: "A preliminary implementation of pooltool that supports visualization with pygame"
 comments: true
+series: 3
 authors: [evan]
 image:
   feature: pooltool/pooltool_banner.png
@@ -186,7 +187,7 @@ In [5]: shot.start()
 
 Immediately after being hit, the ball is [sliding]({{ site.url }}/2020/04/24/pooltool-theory/#--case-4-sliding). Yet after a short amount of time, the relative velocity converges to $\vec{0}$, which defines the transition from sliding to [rolling]({{ site.url }}/2020/04/24/pooltool-theory/#--case-3-rolling). Once rolling, the ball continues to roll until it reaches the [stationary]({{ site.url }}/2020/04/24/pooltool-theory/#--case-1-stationary) state.
 
-If a picture says a thousand words, a video says a thousand pictures. Before going any further, I needed a way to **animate** shots because I'm already bored of these static plots. I wasn't looking for perfection, I just needed something to animate trajectories. For this, I found [`pygame`](https://www.pygame.org/news). It just celebrated its 20th anniversary, which is pretty impressive for python package.
+If a picture says a thousand words, a video says a thousand pictures. Before going any further, I needed a way to **animate** shots because I'm already bored of these static plots. I wasn't looking for perfection, I just needed something to animate trajectories. For this, I found [`pygame`](https://www.pygame.org/news). It just celebrated its 20th anniversary, which is pretty impressive for a python package.
 
 I implemented the module [`psim.ani.animate`](https://github.com/ekiefl/pooltool/blob/f79c801_offshoot/psim/ani/animate.py), which animates ball trajectories using `pygame`. For the sake of demonstration, this functionality already exists in the branch we're using.
 
@@ -224,13 +225,14 @@ In [7]: shot.cue.strike(
 
 And voila. Note that all of the curvature takes place in the sliding state. This is because the rolling state by [definition]({{ site.url }}/2020/04/24/pooltool-theory/#--case-3-rolling) has a relative velocity of $\vec{0}$, which is a requirement for curved trajectories.
 
+{:.notice}
 By the way, all sliding state trajectories under the [arbitrary spin model]({{ site.url }}/2020/04/24/pooltool-theory/#3-ball-with-arbitrary-spin) take the form of a parabola. I never proved this but Dr. Dave Billiards did [here](https://billiards.colostate.edu/technical_proofs/new/TP_A-4.pdf).
 
 Next, I tried to apply insane levels of massé, like this guy:
 
 {% include youtube_embed.html id="t_ms6KjSoS8?t=29" %}
 
-Specifically, I tried to tune the parameters to remake the shot at 0:30s. After fumbling around, I ended up with this.
+Specifically, I tried to tune the parameters to remake the shot at 0:30s. After fumbling around, I ended up with these shot parameters.
 
 ```python
 In [8]: shot.balls['cue'].rvw[0] = [0.18, 0.37, 0]

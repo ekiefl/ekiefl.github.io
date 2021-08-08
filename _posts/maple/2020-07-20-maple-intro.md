@@ -4,6 +4,7 @@ title: "Virtual dog-sitter I: live audio processing"
 categories: [maple]
 excerpt: "Using python and pyaudio to detect dog barks and intervene with pre-recorded audio."
 comments: true
+series: 1
 authors: [evan]
 image:
   feature: maple/maple_banner.jpg
