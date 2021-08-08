@@ -11,7 +11,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-start{% endcapture %}
-{% include _toc.html %}
 
 ## Outline
 

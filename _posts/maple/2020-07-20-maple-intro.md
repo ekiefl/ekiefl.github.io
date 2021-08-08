@@ -11,7 +11,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/maple/maple-intro{% endcapture %}
-{% include _toc.html %}
 
 I recently moved in with my girlfriend (Kourtney) who has a 6-month old puppy named Maple. She's a sweet girl
 (the puppy), however she was born in the COVID era, and that comes with some behavioral challenges.

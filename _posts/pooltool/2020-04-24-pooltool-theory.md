@@ -11,7 +11,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-theory{% endcapture %}
-{% include _toc.html %}
 
 
 This post is the first of many in my journey to make a realistic pool/billiards simulator.

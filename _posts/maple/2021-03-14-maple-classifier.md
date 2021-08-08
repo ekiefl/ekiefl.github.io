@@ -11,7 +11,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/maple/maple-classifier{% endcapture %}
-{% include _toc.html %}
 
 ## Overview
 

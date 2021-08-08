@@ -11,7 +11,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-alg{% endcapture %}
-{% include _toc.html %}
 
 ## What is a pool simulator?
 
