@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Virtual dog-sitter II: creating an audio classifier"
+title: "Classifying dog barks for my dog-sitting software"
 categories: [maple]
 excerpt: "Classifying dog barks with a random forest classifier"
 comments: true

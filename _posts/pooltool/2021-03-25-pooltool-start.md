@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Billiards simulator III: Implementing the event-based shot evolution algorithm"
+title: "Creating a billiards simulator: the transition from equations to code"
 categories: [pooltool]
 excerpt: "A preliminary implementation of pooltool that supports visualization with pygame"
 comments: true

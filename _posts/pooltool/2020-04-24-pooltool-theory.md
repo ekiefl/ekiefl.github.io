@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Billiards simulator I: physics theory"
+title: "The physics of pool/billiards"
 categories: [pooltool]
-excerpt: "A dive into the physics theory behind pool simulation"
+excerpt: "A dive into the physics theory behind pool"
 comments: true
 series: 1
 authors: [evan]

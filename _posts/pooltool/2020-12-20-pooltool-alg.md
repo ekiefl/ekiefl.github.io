@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The algorithmic theory behind pool simulation"
+title: "The algorithmic theory behind pool/billiards simulation"
 categories: [pooltool]
 excerpt: "A dive into the algorithmic theory behind pool simulation"
 comments: true
