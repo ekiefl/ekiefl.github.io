@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Virtual dog-sitter II: creating an audio classifier"
+title: "Classifying dog barks for my dog-sitting software"
 categories: [maple]
 excerpt: "Classifying dog barks with a random forest classifier"
 comments: true
+series: 2
 authors: [evan]
 image:
   feature: maple/maple-classifier/cover.png
@@ -11,16 +12,18 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/maple/maple-classifier{% endcapture %}
-{% include _toc.html %}
 
-## Overview
+
+## **Intro**
+
+### Overview
 
 This post details the step-by-step process of creating an audio classifier that tracks and responds to the behavior of my girlfriend's dogs while we are gone. The resulting data is distilled into an interactive interface such as the one shown here.
 
 [![new_viz]({{images}}/new_viz.png){:.no-border}]({{images}}/new_viz.html){:.center-img .width-100}
 \[[**Click for interactive plot**]({{images}}/new_viz.html)\]
 
-## Where I left off
+### Where I left off
 
 In the [first post]({{ site.url }}/2020/07/20/maple-intro/) of this series, I made a virtual dog-sitter that detects audio events, responds to them, and stores them in a database that can be interactively visualized.
 
@@ -36,7 +39,7 @@ Finally, there were some complications, which means **I don't have as much data 
 
 So there isn't enough data to do a comprehensive analysis on the dogs' improvement over time, and whether or not praising/scolding has an effect on their behavior. Not yet anyways.
 
-## Creating an audio classifier
+### Creating an audio classifier
 
 While I wait another couple months for the data to pour in, I decided that being able to classify audio events could greatly increase the accuracy and capabilities of the dog-sitter.
 
@@ -50,7 +53,7 @@ Another thing it would enable is **protection against non-dog audio**. The dog-s
 
 And finally, creating a classifier would greatly improve the ability to understand what happens when I leave. After returning home, I would be able to immediately assess in a highly-resolved manner how well the dogs behaved while I was gone.
 
-## Deciding on a classifier algorithm
+### Deciding on a classifier algorithm
 
 <blockquote>
 Don't make anything more complicated than it needs to be.
@@ -560,7 +563,7 @@ print(model.oob_score_)
 
 **It correctly labelled 85% of the validation dataset**. In my opinion, that's really good given such a small training dataset.
 
-#### --- Hyperparameter tuning
+#### Hyperparameter tuning
 
 The default model parameters did a pretty good job, but let's see if tuning the hyperparameters can improve performance.
 
@@ -772,7 +775,7 @@ def fit_data(self):
     self.model.xval_score_ = model_search.best_score_
 ```
 
-#### --- Data transformation comparisons
+#### Data transformation comparisons
 
 In the [data transformation](#data-transformation) section, I kept harping about how spectrograms would outperform time series audio (time-space) and Fourier spectra (frequency-space) because they resolve both time and frequency components simultaneously. **Let's see if that's actually true**.
 
@@ -827,7 +830,7 @@ The output is a table summarizing the prediction quality for various types of tr
 
 It's great to verify what I've been advertising: the spectrogram outperforms the time- and frequency-space transformations. It's interesting to see how poor the classifier performs when trained on the time series audio signal. As a final observation, log-transforming the data seems to have little effect on performance.
 
-#### --- Quantity of training data
+#### Quantity of training data
 
 So hyperparameter tuning and investigating alternative data transformations did not yield significant increases in classification performance. The only remaining thing to investigate is: **should I label more data**?
 
@@ -895,7 +898,7 @@ The results did not change significantly. Certainly not enough to have justified
 {:.notice}
 These plots were generated using 30 trees to cut down on run-time, so the final model with 200 trees will produce a slightly higher score.
 
-#### --- Final model accuracy
+#### Final model accuracy
 
 After considering hyperparameter space, alternative data transformations, and doubling the amount of training data, I've exhausted all my options. It is time to run one last model: the one I'll use moving forward:
 
@@ -1015,7 +1018,7 @@ Now I have a way to classify events from past sessions. But moving forward, I wo
 
 Upon this change, all future audio events will be classified on-the-fly.
 
-#### --- Speed
+#### Speed
 
 One concern about on-the-fly classification is speed. If classification is too slow, I may have to make some sacrifices. For example, tree traversal would be much faster if I decrease the number of trees in the random forest from 200 down to something more light-weight--say 30.
 
@@ -1159,7 +1162,7 @@ I create these plots with [plotly](https://plotly.com/) and the source code can 
 
 With this visualization you can see at a glance how the dog's behaved. For example, destroying my door seemed to be a passionate side project for Maple, where her progress is apparently driven by repeated bursts of inspiration.
 
-## Updating response logic
+## **Section VI**: Updating response logic
 
 Door scratching is the most undesirable behavior exhibited by the dogs. But in the above session, it went under the radar because it's not very loud. This is the fundamental problem with the old decision-logic. Yet with real-time classification, now I can buff the decision logic with a more sentiment-based understanding of the events.
 
@@ -1226,7 +1229,7 @@ Separation anxiety is essentially the fear of being alone. Currently the dog-sit
 
 So currently separation anxiety is being addressed mostly in an illusory manner. Yet moving forward, I would like the dog-sitter to countercondition the fear associated with being alone, with a newfound excitement of being alone. Currently, all they get for being good is an auditory praise, but what if I created something that dispenses treats instead? A surplus of treats (contingent on good behavior) is certainly a silver lining for being left alone, and would help countercondition a lot of the separation anxiety. If I take this project further, this is the direction I will head.
 
-## Conclusion
+## **Conclusion**
 
 In summary, this work builds upon the maple software by implementing a random forest classifier that can identify common sounds produced by Maple and Dexter (whine, bark, etc). By classifying events in real time, I was able to develop more robust decisions on how the dog-sitter should respond to the dogs.
 

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Billiards simulator I: physics theory"
+title: "The physics of pool/billiards"
 categories: [pooltool]
-excerpt: "A dive into the physics theory behind pool simulation"
+excerpt: "A dive into the physics theory behind pool"
 comments: true
+series: 1
 authors: [evan]
 image:
   feature: pooltool/pooltool_banner.png
@@ -11,10 +12,8 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-theory{% endcapture %}
-{% include _toc.html %}
 
-
-This post is the first of many in my journey to make a realistic pool/billiards simulator.
+This post is the first of many in my journey to make a realistic pool/billiards simulator called _pooltool_.
 
 Before jumping into code, I have to trudge through the theory of both (a) the physics of pool,
 and (b) the algorithms for evolving a pool shot. **The physics of pool is what is covered in this
@@ -26,7 +25,7 @@ to [the third post](FIXME) in this series. With that said, let's get started.
 This post is intended to be a reference for myself and others. So as I learn more and incorporate
 more and more realistic physics into my simulations, this post will grow correspondingly.
 
-## The physics of billiards
+## **The physics of billiards**
 
 The thing about pool is that it's pretty old. This is one of the first historical depictions of
 billiards, which dates back to 1674.
@@ -172,7 +171,7 @@ The most important thing to realize is that throughout a
 ball's trajectory, it will always be in any of these 4 different **modes**: **sliding, rolling, spinning,stationary, or airborne** (all of these states occur during the ball-cloth interaction, with the exception of the airborne state, which is covered [later on](#section-iv-ball-air-interactions)). The physics is different for each of these cases, so I tackle them piecewise from least
 to most complicated.
 
-### - Case 1: Stationary
+#### Case 1: Stationary
 
 If the ball is stationary, the ball stays where it is and there is no angular or linear momentum. In
 other words:
@@ -206,7 +205,7 @@ be written as $\omega_x(t) = 0$, $\omega_y(t) = 0$, and $\omega_z(t) = 0$. I int
 scalar and vector equations, so make sure you are spotting the difference.
 
 
-### - Case 2: Spinning
+#### Case 2: Spinning
 
 Spinning is a commonly observed ball state in which there is no linear momentum of the
 ball, yet it is spinning like a top:
@@ -293,7 +292,7 @@ radius. The equation states that as time evolves, there is a linear decay in the
 velocity. Collectively, these equations are valid until the ball stops rotating, which happens when
 $\omega_z(t)$ is $0$. This occurs when $t=(2R\omega_{0z})/(5\mu_{sp}g)$.
 
-### - Case 3: Rolling
+#### Case 3: Rolling
 
 Think of rolling as driving your car on concrete, whereas sliding would be like driving your car on
 ice.
@@ -544,7 +543,7 @@ $0 \le t \le \frac{\lvert \vec{v}_0 \rvert}{\mu_r g}$. If $\frac{2R}{5\mu _{sp} 
 \frac{2R}{5\mu _{sp} g} \omega _{0z}$.
 </div>
 
-### - Case 4: Sliding
+#### Case 4: Sliding
 
 {:.notice}
 If you're ended up here without reading Case 3 (the rolling case), you might consider briefing specifically the
@@ -732,7 +731,7 @@ friction between balls.
 For this model, I first tackle the simple scenario in which a moving ball strikes a stationary ball.
 Then, I handle the general case of 2 moving balls.
 
-#### - Case 1: stationary ball
+#### Case 1: stationary ball
 
 Assuming the elastic, instantaneous, and frictionless model, consider a moving ball that hits a
 stationary ball, shown in Figure 8:
@@ -908,7 +907,7 @@ $$
 
 </div>
 
-#### - Case 2: both moving
+#### Case 2: both moving
 
 Relaxing the assumption that one ball is stationary may at first seem like a terrible idea--the
 introduced complexity must be horrible.
@@ -1227,7 +1226,7 @@ FIXME
 FIXME
 
 
-## Conclusion
+## **Conclusion**
 
 That's everything--at least for now. My knowledge will (hopefully) increase over time, and
 when it does, it will be added to this post.

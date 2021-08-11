@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Virtual dog-sitter I: live audio processing"
+title: "Creating a virtual dog sitter with live audio processing"
 categories: [maple]
 excerpt: "Using python and pyaudio to detect dog barks and intervene with pre-recorded audio."
 comments: true
+series: 1
 authors: [evan]
 image:
   feature: maple/maple_banner.jpg
@@ -11,7 +12,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/maple/maple-intro{% endcapture %}
-{% include _toc.html %}
 
 I recently moved in with my girlfriend (Kourtney) who has a 6-month old puppy named Maple. She's a sweet girl
 (the puppy), however she was born in the COVID era, and that comes with some behavioral challenges.

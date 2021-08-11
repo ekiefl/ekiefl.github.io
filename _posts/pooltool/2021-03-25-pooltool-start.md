@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Billiards simulator III: implementing a prototype"
+title: "Creating a billiards simulator: the transition from equations to code"
 categories: [pooltool]
 excerpt: "A preliminary implementation of pooltool that supports visualization with pygame"
 comments: true
+series: 3
 authors: [evan]
 image:
   feature: pooltool/pooltool_banner.png
@@ -11,7 +12,6 @@ image:
 ---
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-start{% endcapture %}
-{% include _toc.html %}
 
 
 ## Outline
@@ -229,13 +229,14 @@ In [7]: shot.cue.strike(
 
 And voila. Note that all of the curvature takes place in the sliding state. This is because the rolling state by [definition]({{ site.url }}/2020/04/24/pooltool-theory/#--case-3-rolling) has a relative velocity of $\vec{0}$, which is a requirement for curved trajectories.
 
+{:.notice}
 By the way, all sliding state trajectories under the [arbitrary spin model]({{ site.url }}/2020/04/24/pooltool-theory/#3-ball-with-arbitrary-spin) take the form of a parabola. I never proved this but Dr. Dave Billiards did [here](https://billiards.colostate.edu/technical_proofs/new/TP_A-4.pdf).
 
 Next, I tried to apply insane levels of massé, like this guy:
 
 {% include youtube_embed.html id="t_ms6KjSoS8?t=29" %}
 
-Specifically, I tried to tune the parameters to remake the shot at 0:30s. After fumbling around, I ended up with this.
+Specifically, I tried to tune the parameters to remake the shot at 0:30s. After fumbling around, I ended up with these shot parameters.
 
 ```python
 In [8]: shot.balls['cue'].rvw[0] = [0.18, 0.37, 0]
