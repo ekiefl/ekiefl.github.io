@@ -5,7 +5,7 @@ categories: [maple]
 excerpt: "Classifying dog barks with a random forest classifier"
 comments: true
 series: 2
-authors: [evan]
+authors: [evan, kourtney]
 image:
   feature: maple/maple-classifier/cover.png
   display: true
