@@ -13,9 +13,13 @@ image:
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-start{% endcapture %}
 
+
 ## Outline
 
 In the [first]({{ site.url }}/2020/04/24/pooltool-theory/) and [second]({{ site.url }}/2020/12/20/pooltool-alg/) posts of this series, I discussed _ad nauseam_ the physics and algorithmic theory behind pool simulation. With this all now behind me, it's time to **take this theory to the streets**.
+
+[![before_after]({{images}}/before_after.gif){:.no-border}]({{images}}/before_after.gif){:.center-img .width-90}
+
 
 ## The skeleton
 
@@ -252,14 +256,14 @@ In [8]: shot.balls['cue'].rvw[0] = [0.18, 0.37, 0]
 
 This may not be perfect, but it's close. Yes.
 
-Being able to recapitulate Florian's shot allows us to answer the following question: what insane levels of spin are required to pull this shot off? Well, In RPMs, the initial rotational speed of the cue ball is
+Being able to recapitulate Florian's shot allows me to answer the following question: what insane levels of spin are required to pull this shot off? Well, In RPMs, the initial rotational speed of the cue ball is
 
 ```python
 In [21]: np.linalg.norm(shot.balls['cue'].rvw[2])/np.pi*60
 Out[21]: 4374.123861245154
 ```
 
-$4400$ RPM. That's... that's too much, right? Well, the same guy put out [this](https://www.youtube.com/watch?v=UG92u3rClhA) video, in which he measures his RPM for a different shot to be $3180$. So I'm certainly in the ball park. Maybe he can get up to $4400$ RPM, or maybe my simulated cloth had a higher coefficient of sliding friction, requiring higher RPM.
+$4400$ RPM. That's... that's too much, right? Well, the same guy put out [this](https://www.youtube.com/watch?v=UG92u3rClhA) video where he purports his RPM for a different shot to be $3180$. So I'm certainly in the ball park. Maybe he can get up to $4400$ RPM, or maybe my simulated cloth had a higher coefficient of sliding friction, requiring higher RPM.
 
 Overall, these trajectories have me convinced I'm not screwing anything up royally.
 
@@ -273,7 +277,7 @@ The premise of the algorithm is this:
 - But **events** between interfering parties (_e.g._ a ball-ball collision) disrupt the validity of these equations, since they assume each ball acts in isolation.
 - Even still, the equations for each ball are valid **up until** the next event.
 - So the algorithm works by evolving the system state directly up until the next event, at which time the event must be resolved (_e.g._ a [ball-ball collision event]({{ site.url }}/2020/12/20/pooltool-alg/#-ball-ball-collision) is resolved by applying the [ball-ball interaction equations)]({{ site.url }}/2020/04/24/pooltool-theory/#section-ii-ball-ball-interactions), and then the process repeats itself: the next event is found and the system state is evolved up until the next event.
-- There's only one way to calculate when the next event occurs: calculating the time until every single possible next event. By definition of **next** event, the event that occurs in the least amount of time is the next event.
+- There's only one way to calculate when the next event occurs: calculating the time until every single possible next event. By definition of **next** event, the next event is the event that occurs in the least amount of time.
 
 {:.notice}
 If you want an in-depth explanation on the event-based evolution algorithm, I may have created the most extensive learning resource on the topic in my [last post]({{ site.url }}/2020/12/20/pooltool-alg/).
@@ -556,7 +560,7 @@ In [9]: import psim.utils as utils
    ...: shot.cue.strike(
    ...:     ball = shot.balls['cue'],
    ...:     V0 = 10000,
-   ...:     phi = 89.9999, # not quite straight down table, so it bangs into cushions
+   ...:     phi = 89.9999, # not quite straight down table, so it bangs into side cushions during its journey
    ...:     a = 0.0,
    ...:     b = 0,
    ...:     theta = 0,

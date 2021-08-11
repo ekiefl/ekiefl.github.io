@@ -11,4 +11,6 @@ gem 'rouge'
 gem 'jekyll-redirect-from'
 gem 'jekyll-gist'
 gem "activesupport", ">= 4.1.11"
-
+gem "rexml", ">= 3.2.5"
+gem "kramdown", ">= 2.3.1"
+gem "nokogiri", ">= 1.11.4"
