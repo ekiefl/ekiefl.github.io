@@ -59,6 +59,16 @@ image:
 {% include youtube_embed.html id="aqjX0-A-YUw" %}
 
 
+### [Blog #5 - 10/26/2021](https://ekiefl.github.io/2021/10/26/graphics/)
+
+- I learn blender
+- I model a table, balls, a cue, and a room
+- I implement a collision resolver so the cue doesn't intersect with geometry
+
+<img src="{{site.url}}/images/pooltool/pooltool-graphics/before_after.gif" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-graphics/gallery_2.png" alt="drawing" width="480px" class="no-border"/>
+
+
 ## Links
 
 - [github](https://github.com/ekiefl/pooltool)
