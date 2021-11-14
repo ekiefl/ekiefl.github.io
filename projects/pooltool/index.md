@@ -7,7 +7,6 @@ project: pooltool
 image:
   feature: "pooltool/pooltool_banner.png"
   display: true
-  credit: 'https://www.youtube.com/watch?v=6nlLJnruYVA'
 ---
 
 {% include _toc.html %}
