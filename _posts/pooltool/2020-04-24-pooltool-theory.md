@@ -21,9 +21,9 @@ post**, and algorithms for evolving a pool shot covered in the [second post]({{ 
 contain a lot of equations, and little if any code. If this sounds uninteresting to you, skip ahead
 to [the third post](FIXME) in this series. With that said, let's get started.
 
-{:.notice}
-This post is intended to be a reference for myself and others. So as I learn more and incorporate
-more and more realistic physics into my simulations, this post will grow correspondingly.
+A lot has happened since I initially wrote this post, and **pooltool is now a fully fledged 3D game/tool**. The equations in this post form the underlying physics of pooltool.
+
+[![pooltoolnow]({{ site.url }}/images/pooltool/pooltool-graphics/gallery_2.png)]({{ site.url }}/images/pooltool/pooltool-graphics/gallery_2.png){:.center-img .width-100}
 
 ## **The physics of billiards**
 

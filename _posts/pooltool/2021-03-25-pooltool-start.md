@@ -13,7 +13,6 @@ image:
 
 {% capture images %}{{site.url}}/images/pooltool/pooltool-start{% endcapture %}
 
-
 ## Outline
 
 In the [first]({{ site.url }}/2020/04/24/pooltool-theory/) and [second]({{ site.url }}/2020/12/20/pooltool-alg/) posts of this series, I discussed _ad nauseam_ the physics and algorithmic theory behind pool simulation. With this all now behind me, it's time to **take this theory to the streets**.
