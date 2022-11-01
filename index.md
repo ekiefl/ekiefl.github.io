@@ -7,7 +7,7 @@ image:
 include_bio: true
 ---
 
-# Welcome
+# Software for fun
 
 This site a scrapbook for my intellectual hobbies. Rather than hide them on my harddrive, I'm putting them online for 3 reasons: First, I wanted to learn how to make a website (check). Second, its freely available for any interested parties to read about. And third, when you publicly broadcast your work, it makes you do your work better because the false belief that people care enforces a higher level of self-scrutiny.
 
