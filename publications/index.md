@@ -1,6 +1,6 @@
 ---
 layout: publications
-modified: 2021-03-15
+modified: 2023-04-17
 comments: false
 ---
 
@@ -13,6 +13,25 @@ These publications are a subset of my scientific work that I consider to have co
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+<a name="2023">&nbsp;</a>
+<h1>2023</h1>
+
+<div class="pub">
+<div class="__dimensions_badge_embed__" data-doi="10.1126/sciadv.abq4632" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
+    <h3><a href=" https://doi.org/10.1126/sciadv.abq4632" target="_new">Structure-informed microbial population genetics elucidate selective pressures that shape protein evolution</a></h3>
+    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Esen ÖC, Miller SE, Kroll KL, Willis AD, Rappé MS, Pan T, Eren AM</span>
+    <div class="pub-info">
+    <div class="pub-featured-image">
+    <a href="../images/pubs/anvio-structure.png"><img src="../images/pubs/anvio-structure.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
+    </div>
+    <div class="pub-highlights">
+    <span style="display: inline-block; padding-bottom: 5px;">- A study that describes an approach to integrate <b>environmental microbiology</b> with recent advances in <b>protein structure prediction</b>, and illustrates the tight association between <b>intra-population genetic variants</b>, <b>environmental selective pressures</b>, and <b>structural properties of proteins</b></span><br><span style="display: inline-block; padding-bottom: 5px;">-  Demonstrates a quantifiable link between (1) the magnitude of selective pressures over key metabolic <b>genes</b> (e.g., glutamine synthase of the central nitrogen metabolism), (2) the availability of key <b>nutrients</b> in the environment (e.g., nitrate), and (3) the maintenance of nonsynonymous <b>variants</b> near protein active sites.</span><br><span style="display: inline-block; padding-bottom: 5px;">-  Shows that the interplay between selective pressures and protein structures also maintains <b>synonymous variants</b> -- revealing a quantifiable link between <b>translational accuracy</b> and fluctuating <b>selective pressures</b>.</span><br><span style="display: inline-block; padding-bottom: 5px;">-  Comes with a <a href="https://merenlab.org/data/anvio-structure/chapter-I/"><b>reproducible bioinformatics workflow</b></a> that offers detailed access to computational steps used in the study that spans from metagenomic read recruitment and profiling to the integration of environmental variants and predicted protein structures.</span>
+    </div>
+    </div>
+    <span class="pub-journal"><b>Science Advances</b>, 9(8):None.</span>
+</div>
+
 
 <a name="2020">&nbsp;</a>
 <h1>2020</h1>
