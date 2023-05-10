@@ -68,6 +68,13 @@ image:
 <img src="{{site.url}}/images/pooltool/pooltool-graphics/gallery_2.png" alt="drawing" width="480px" class="no-border"/>
 
 
+### [Blog #6 - 05/03/2023](https://ekiefl.github.io/2023/05/03/update/)
+
+- A general update with lots of gameplay footage
+
+{% include youtube_embed.html id="dkH8vPI-rds" %}
+
+
 ## Links
 
 - [github](https://github.com/ekiefl/pooltool)
