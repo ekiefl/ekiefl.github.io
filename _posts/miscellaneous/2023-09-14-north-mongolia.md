@@ -15,9 +15,10 @@ image:
 
 ## Day 1: The black market
 
-The text of a nearby ad catches my eye as we wait at the baggage carousel. It’s written in two scripts, and to my surprise, neither of them use the Latin alphabet. I could have at least learned the Mongolian phrase for "_thank you_", I think to myself.
+The text of a nearby ad caught my eye as we waited at the baggage carousel. It was written in two scripts, and to my surprise, neither of them used the Latin alphabet. I could have at least learned the Mongolian phrase for "thank you", I thought to myself.
 
-We grab our bags and find the exit. Amongst the people waiting in arrivals I see someone holding a sign that says "Evan and Kourtney". I can tell it's Anuka, our tour guide, based on the pictures of her website. Thank god she’s real.
+We grabbed our bags and found the exit. Amongst the people waiting in arrivals, I saw someone holding a sign that said "Evan and Kourtney". I could tell it was Anuka, our tour guide, based on the pictures from her website. Thank God she was real.
+
 
 FIXME Anuka picture
 
@@ -25,53 +26,102 @@ After brief introductions she leads us outside to the parking lot. She introduce
 
 FIXME Baagii picture
 
-On our way to Ulaanbaatar, Mongolia's capital, Kourtney and I calibrate to Anukas accent as she shares bits of information about Mongolia and Ulaanbaatar. She talks quietly with a friendly demeanor. I can tell she loves her country and is eager to share it with us. We’re in good hands.
+On our way to Ulaanbaatar, Mongolia's capital, Kourtney and I calibrated to Anuka's accent as she shared bits of information about Mongolia and Ulaanbaatar. She talked quietly with a friendly demeanor. I could tell she loved her country and was eager to share it with us. We were in good hands.
 
-"We are a quickly developing nation", Anuka starts. 1.8 million people live in ulaanbaatar. Including undocumented people it may >2 million, which is well over half of Mongolia's total population. Mongolians are contending with a blazingly fast speed of urbanization. Smartphones, 4G networks, TV, 9-5 jobs, fast food, and high rise apartment buildings are pervading the urban lifestyle, and Ulaanbaatar is the hearthstone of this drastic cultural shift.
+"We are a quickly developing nation," Anuka started. 1.8 million people lived in Ulaanbaatar. Including undocumented people, it might be over 2 million, which is well over half of Mongolia's total population. Mongolians were contending with a blazingly fast speed of urbanization. Smartphones, 4G networks, TV, 9-5 jobs, fast food, and high-rise apartment buildings were pervading the urban lifestyle, and Ulaanbaatar was the hearthstone of this drastic cultural shift.
 
-As we drive through the rolling hill landscape littered with thousands of free-roaming cow, goat, and sheep, we crest over a hill and in the distance we see Ulaanbaatar sprawled out beneath the backdrop of the Khentii mountains. Along the outskirts of the city, white circular tents called _gers_ (similar to _yurts_) sit interspersed among modern buildings and city streets. Traditionally, gers were used by 100% of Mongolians, who traveled nomadically with their livestock, perpetually moving their gers with the change of seasons, conditions, and resource availability. Today, many of them are equipped with satellite dishes and solar panels, showcasing the conveniences of modernity knocking on the doorstep of ancient tradition.
+As we drove through the rolling hill landscape, littered with thousands of free-roaming cows, goats, and sheep, we crested over a hill and in the distance, we saw Ulaanbaatar sprawled out beneath the backdrop of the Khentii mountains. Along the outskirts of the city, white circular tents called gers (similar to yurts) sat interspersed among modern buildings and city streets. Traditionally, gers were used by 100% of Mongolians, who traveled nomadically with their livestock, perpetually moving their gers with the change of seasons, conditions, and resource availability. Today, many of them were equipped with satellite dishes and solar panels, showcasing the conveniences of modernity knocking on the doorstep of ancient tradition.
 
-Nearer to the heart of the city, above all else towers massive coal plant chimneys emitting dense smoke, cloaking the heart of the city in a perpetual haze. Ulaanbaatar is the fifth worst polluted city in the world. As we drive further into the city’s center, the gers, shacks, and petrol stations are replaced by a concrete jungle of modern multi-level buildings.
 
-I'm taken aback by the sheer chaos of the traffic. The faded paint on the roads, intended to demarcate lanes, is completely ignored, turning the streets into a lawless frenzy. Traffic lights are sparse, and where they do exist, they seem to serve more as suggestions than mandates. The cacophony of honking horns and engines adds to the unyielding chaos.
+Anuka told us that Ulaanbaatar is the 5th worst polluted city in the world. As we drove further into the city’s center, the evidence of that became clear. Slowly, the gers, shacks, and petrol stations were replaced by a concrete jungle of recently built multi-level buildings. Towering above all were huge coal plant chimneys blanketing the city below in an uneasy haze.
+
+I was taken aback by the sheer chaos traffic. Faded road paint, intended to demarcate lanes, were ignored by all, turning the streets into a lawless frenzy. Traffic lights were sparse, and where they did exist, they seemed to serve more as suggestions than mandates.
 
 As a "fix" to Ulaanbaatar's traffic problem, the government has instated police-enforced access restriction at critical bottlenecks in the city traffic flow. This is done by categorizing cars into two groups based on whether the first digit of your license plate number is odd or even. If you’ve got the wrong license plate for a given time, you aren't allowed to enter the region of the city. I can't imagine the level of traffic without this system in place.
 
-Eventually we make it to our hotel, which will serve as a launch point for the trip, which starts tomorrow. Our plan today is relaxed: have a nap, buy supplies for the trip, go to a museum, and get a good night’s rest.
+Eventually, we made it to our hotel, which would serve as a launch point for the trip, which started the next day. With the remainder of the day, our plan: have a nap, buy supplies for the trip, go to a museum, and get a good night’s rest.
 
-After our nap it’s 1pm and we head downstairs to meet Anuka and Baagii. To buy supplies for the trip, we head to the black market, a place where Ulaanbaatar's chaotic hustle and bustle is perhaps best embodied. You can buy anything and everything at the black market, Anuka explains. Clothes, shoes, electronics, containers, tools, building materials, cabinetry, camping gear, school supplies, plastic, art, horse saddles, livestock, meat, fruit, dry goods--the list goes on and on, and includes more nefarious things like bullets and presumably drugs. Few needs can't be met at the black market.
+After our nap, it was 1 pm, and we headed downstairs to meet Anuka and Baagii. To buy supplies for the trip, we headed to the black market. You could buy anything and everything at the black market, Anuka explained. Clothes, shoes, electronics, containers, tools, building materials, cabinetry, camping gear, school supplies, plastic, art, horse saddles, livestock, meat, fruit, dry goods—the list went on and on, and included more nefarious things like bullets and presumably drugs. Few needs can't be met at the black market.
 
-We find ourselves in the heart of the bustling bazaar. Mongolians all around us are buying and selling, trying to score themselves the best deal they can find. Sellers showcase how well their product works, while buyers, hiding their interest in a thinly veiled performance of apathy, point out flaws in the demonstration. After successful deals, everyone walks away happy. After failed deals, vendors return to their smartphones, shaking their heads, perhaps getting in one last verbal jab, while the unsuccessful customers try their luck with the neighboring vendor, who sells nearly identical products.
+Before long, we were in the heart of the bustling bazaar. Mongolians all around us were buying and selling, trying to score the best deals they could find. Sellers showcased how well their products worked, while buyers, hiding their interest, pointed out identifiable flaws in the product. After successful deals, everyone walked away happy. After failed deals, vendors returned to their smartphones, shaking their heads, perhaps getting in one last verbal jab, while the unsuccessful customers tried their luck with the neighboring vendor, who sold nearly identical products.
 
-Anuka expertly dips and dodges through the densely packed stalls. To give a sense of scale, it takes two minutes of walking just to get out of the shoe section. Exchanging words with the nearest vendors for directions, we finally arrive at the camping section. Kourtney and I buy two sleeping bags, and Kourtney buys a warm fleece. Encouraged by Anuka to haggle, we weakly negotiate, but in truth, since the prices were so cheap compared to our Western standards, we decided the few dollars we could have shaved off the price were better off in the vendors' hands anyways.
+Anuka expertly dipped and dodged through the densely packed stalls. To give a sense of scale, it took two minutes of walking just to get out of the shoe section. Exchanging words with the nearest vendors for directions, we finally arrived at the camping section. Kourtney and I bought two sleeping bags, and Kourtney bought a warm fleece. Encouraged by Anuka to haggle, we weakly negotiated, but in truth, since the prices were so cheap compared to our Western standards, we decided the few dollars we could have shaved off the price were better off in the vendors' hands anyway.
 
-Next, we wanted to bring gifts for the reindeers herders and perhaps any nomadic families that we stay with. Relying on Anuka's knowledge of the locals, we settle on pencil bags that we stuffed with ornate pencils, erasers, and pencil sharpeners for the kids. For the adults, we bought lightbulbs powered by AC battery cables, flashlights powerable via a multitude of methods, battery-powered headlamps, miniature binoculars, and medium- and large-sized thick plastic containers for milking and berry picking. Against Anuka's advice, we also purchased fifty 22 calibre bullets, which are particularly useful, if not illegal, in the Taiga for hunting.
+Next, we wanted to bring gifts for the reindeer herders and perhaps any nomadic families we stayed with. Relying on Anuka's knowledge of the locals, we settled on pencil bags that we stuffed with ornate pencils, erasers, and pencil sharpeners for the kids. For the adults, we bought light bulbs powered by AC battery cables, flashlights powerable via a multitude of methods, battery-powered headlamps, miniature binoculars, and medium- and large-sized thick plastic containers for milking and berry picking. Against Anuka's advice, we also purchased fifty .22 caliber bullets, which are particularly useful, if not illegal, in the Taiga for hunting.
 
-Afterwards, we head back to the car. On the way, an old drunkard tosses an empty vodka bottle in the direction of a woman sitting on a concrete block and shouts. It slides on the dirt and then comes to a stop near her feet. "Do you want to drink with me? No one can drink more than me", Anuka translates. The woman didn't bat an eye, indicating her battle-hardened experience in dealing with drunks. Alcoholism is a major issue in Mongolia, particularly in the city, where perpetually drunk Mongolians loiter Ulaanbaatar day and night. Anuka offers to us her opinion that the solution is a more stringent allocation of welfare. It makes me want to get out of the city.
+Afterward, we headed back to the car. On the way, an old drunkard tossed an empty vodka bottle in the direction of a woman sitting on a concrete block. As he shouted, the bottle slid and tumbled on the dirt, coming to a stop near her feet. "Do you want to drink with me? No one can drink more than me," Anuka translated. The woman didn't bat an eye, indicating her battle-hardened experience in dealing with drunks. Alcoholism is a major issue in Mongolia, particularly in the city, where perpetually drunk Mongolians loiter Ulaanbaatar day and night. Anuka offered to us her opinion that the solution is a more stringent allocation of welfare. It made me want to get out of the city.
 
-We spend the rest of the day driving throughout the city, visiting the Buddhist monastery, getting some classic Mongolian fast food, and visiting the Chinggis Khaan Museum. On the way back to the hotel, a Mongolian family beside us in traffic sings along to a traditional Mongolian ballad that blasts from their car speakers. Their baby, standing on the lap of someone in the back seat, hangs his head out of the rolled down window, staring at Kourtney and I smiling back at him. Well fed and sleepy, Anuka and Baagii drop us off at the hotel, and we agree to reconvene the next day at 10:00am for the start of our big journey.
+We spent the rest of the day driving throughout the city, visiting the Buddhist monastery, getting some classic Mongolian fast food, and visiting the Chinggis Khaan Museum. On the way back to the hotel, a Mongolian family beside us in traffic sang along to a traditional Mongolian ballad that blasted from their car speakers. Their baby, standing on the lap of someone in the back seat, hung his head out of the rolled-down window, staring at Kourtney and me smiling back at him. Well-fed and sleepy, Anuka and Baagii dropped us off at the hotel, and we agreed to reconvene the next day at 10:00 am for the start of our big journey.
 
 ## Day 2: Journey to the monastery
 
-Today we will go to the famous monastery, FIXME.
+Now might be a good time to give an overview of our planned **itinerary**. 
 
-We drive through the morning traffic slowly but surely. The rapid growth of the city is glaringly obvious when looking at the construction of high rise apartments. For every occupied high rise, there is another under construction. And building contracts are clearly carried out in bulk, whereby as many as 12 identical high rises are erected concurrently, side by side. 
+Roughly speaking, the plan was to drive deep into Northern Mongolia to the small village of Tsagaannuur. This is where Anuka lives. We would then treat the village as a basecamp, setting off on two distinct horseback journeys. The first to visit the reindeer herders in the Western Taiga, and the second to visit the reindeer herders in the Eastern Taiga. Then we would make our way back to Ulaanbaatar, stopping at some touristic sites along the way.
 
-Outside of the city, we stop at a road-side restaurant. The kitchen is within the ger, and outside is where the customers sit, underneath an awning protruding from the ger's entrance. The furniture is patchwork and haphazard, best explained by Baagii's seat being an extricated car seat. Kourtney gets FIXME and I get FIXME. It was delicious. Alongside our meals, the waitress, a 14 year old girl on summer break, brings us milk tea, an essentiality of Mongolian life. FIXME.
+<div class="extra-info" markdown="1">
+<span class="extra-info-header">Details about selecting an itinerary</span>
 
-In the car, Anuka gives us our second Mongolian lesson. Yesterday we learned, _sembano_ (hi) and _bayarlala_ (thank you). Today, we learn _tawny nerr himbe?_ (What's your name) and _mini nerr_ (my name is). We practice on Baagii, who somehow strikes a balance between laughing at us while also providing genuine encouragement.
+When planning the trip with Anuka she gave us the reigns to create whatever sort of itinerary we wanted. But since she was the expert of her land, it felt more appropriate to let Anuka suggest some sample itineraries, and have us select the one that interested us most. Here is the one we selected:
 
-At a nondescript location somewhere along the highway, we slow down, turn onto a dirt road, and leave the asphalt behind us. Offroading would become the new norm for our trip.
+- Day 1: Welcoming day
+- Day 2: Travel to Amarbaysgalant Monastery
+- Day 3: Drive to Murun town
+- Day 4: Off-road drive to Tsagaannuur village
+- Day 5: Horse riding to West taiga
+- Day 6: Exploring day with the Western Reindeer Herders
+- Day 7: Back to the village
+- Day 8: Horse riding to East taiga
+- Day 9: Exploring day with the Eastern Reindeer Herders
+- Day 10: Back to the village
+- Day 11: Off-road drive to Khuvsgul lake
+- Day 12: Rest day - boat trip through the lake or hiking to the High mountain (horse riding) which you can see whole pure water lake
+- Day 13: Drive to Uran togoo
+- Day 14: Khustai national Park
 
-After getting turned around once or twice in the labyrinth of dirt roads, the car gets stuck during a creek crossing. After an all hands on deck scenario in which Kourtney, Baagii, and I push in unison while Anuka mans the wheel, we finally get the car on the right side of the creek. Kourtney remarks that it was the most exciting part of the trip so far. Anuka assures her there is a lot more where that came from.
+Add in a spattering of google searches, and you now know as much as we did going into this.
+</div>
 
-The monastery is closed, so after a nicely cooked meal, we retire to the tourist camp, where a ger is waiting for the four of us. In bed, Anuka explains a little bit about the simple and yet effective ger architecture. The ceiling is supported by a central wooden support with a circular window on top. The woodstove sits underneath this, and the chimney feeds through a segment of the window. From the center piece emanate around 80 spokes. Layers of plastic and fabric lie on top of these spokes, forming the roof.
+Our plan for the day was to log some distance in our multi-day goal of reaching Tsagaannuur, and then spending the night by a historical monastery.
+
+We drove through the morning traffic slowly but surely. The rapid growth of the city was glaringly obvious when looking at the construction of high-rise apartments. For every occupied high rise, there was another under construction. And building contracts were clearly carried out in bulk, whereby as many as 12 identical high rises were erected concurrently, side by side.
+
+Outside of the city, we stopped at a roadside restaurant. The kitchen was within the ger, and outside was where the customers sat, underneath an awning protruding from the ger's entrance. The furniture was patchwork and haphazard, best explained by Baagii's seat being an extricated car seat. Kourtney got Хуушуур (Khuushuur), a stack of flat, deep-fried meat pastries, and I got Цуйван (Tsuivan), a very popular meat-heavy noodle stir fry. They were both delicious, if not lacking in vegetables. 
+
+Alongside our meals, the waitress, a 14-year-old girl on summer break, brought us milk tea, a staple beverage in Mongolia. It's black tea leaves and salt, brewed in a mix of water and most commonly cow's milk. I didn't realize it at the time, but milk tea is more than just a beverage to Mongolians. It's embedded in their lifestyle, served to guests as a way of welcoming someone into their home, a way to keep warm and hydrated. It's like their version of "breaking bread".
+
+In the car, Anuka gave us our second Mongolian lesson. Yesterday, we learned sembano (hi) and bayarlala (thank you). Today, we learned tawny nerr himbe? (What's your name?) and mini nerr (my name is). We practiced on Baagii, who somehow struck a balance between laughing at us while also providing genuine encouragement.
+
+At a nondescript location somewhere along the highway, we slowed down, turned onto a dirt road, and left the asphalt behind us. Off-roading would become the new norm for our trip.
+
+After getting turned around once or twice in the labyrinth of dirt roads, the car got stuck during a creek crossing. After an all-hands-on-deck scenario in which Kourtney, Baagii, and I pushed in unison while Anuka manned the wheel, we finally got the car on the right side of the creek. Kourtney remarked that it was the most exciting part of the trip so far. Anuka assured her there was a lot more where that came from.
+
+The monastery was closed, wil ANuka cooked a flavorful vegetable soup on a portable stovetop, Kourtney and I climbed up the hill that had a big golden Buddha statue that overlooked the Monastery. In the twilight, the moon shone brightly, lighting up the monastery and the surrounding pastures, accentuating the calmness of the valley.
+
+After eating dinner, we retired to the tourist camp, where a ger was waiting for the four of us. In bed, Anuka explained a little bit about the simple and yet effective ger architecture. The ceiling was supported by a central wooden support with a circular window on top. The woodstove sat underneath this, and the chimney fed through a segment of the window. From the centerpiece emanated around 80 spokes. Layers of plastic and fabric lay on top of these spokes, forming the roof.
+
+Then we all quieted down and let the silence envelope us. I was enjoying this so much more than the busyness of Ulaanbaatar.
 
 ## Day 3: Journey to Muurun
 
-- A herd of cows came to say hi during breakfast
-- Monastery
-- The monks
+In the morning we woke up and headed to the parked car, where Baagii and Anuka were already busy at work. Baagii was doing car maintenance and Anuka was preparing a scrambled egg breakfast with watermelon.
+
+Allured by the smell of our cooking breakfast, a herd of curious cows invaded our space around the car.
+
+After finishing our breakfast, we headed to the monastery, seeing it for the first time its magnificent colors in the morning light.
+
+After surveying around the monastery's perimeter, three monks, the oldest no more than 14, emerged from a ger residing within the monastery grounds. At the entrance of the central building they formed a small huddle, there heads almost touching. At first, I thought they were engaged in a pray or ritual of some sort. But soon I realized they were huddled around a smartphone, watching a video that was making them laugh.
+
+At the turn of the hour, they opened up the monastery doors, beckoned for us to come in, and went inside.
+
+
+After turning on the lights and lighting candles and incense, the three apprentices sat in meditative poses around the center of the room and the eldest began speaking his morning recitations into a microphone. His monotonous mantra echoed endlessly and unwaveringly throughout the chamber. As he spoke I explored the beautifully ornate chamber interior, full of gongs, statues of gods, gorgeous drapery, and colorful symbology everywhere.
+
+It's worth pointing out that this was in no way a performance for us, but a daily ritual that's essential to their ascendence to monkdom, something that occurs whether or not there are tourists there to observe it.
+
+Outside, Anuka told us there are a number of reasons why the families of these apprenticing monks may have chosen this life for them. 
+
+ ------------------------------------
 
 I woke up to Baagii braking. A weather-seasoned nomadic man was herding his horses across the road with a dirt bike. Anuka and Baagii exchange some dialogue and then Anuka explains we will go say hi to the nomad and his family.
 
