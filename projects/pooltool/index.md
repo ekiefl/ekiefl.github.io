@@ -13,12 +13,18 @@ image:
 
 <img src="{{site.url}}/images/pooltool/pooltool_logo.png" alt="drawing" width="480px" class="no-border"/>
 
+## Github
+
+- [github](https://github.com/ekiefl/pooltool)
+
+
 ## Homepage of **pooltool**
 
 - *pooltool* is an [open source](https://github.com/ekiefl/pooltool) sandbox billiards game that emphasizes realistic physics.
 - It is designed for both **gamers** and **researchers**
 - **gamers** can play different styles of pool (8-ball, 9-ball, etc.) in a 3D-rendered environment that emphasizes physical realism
 - **researchers** interested in pool physics, game theory, camera-projector systems, AI, robotics, and other billiards-related research topics can efficiently simulate shots using pooltool's API, experiment with different physics models and shot evolution algorithms, and visualize programmatically-defined shots
+
 
 ## Blog summaries
 
@@ -74,9 +80,4 @@ image:
 
 {% include youtube_embed.html id="dkH8vPI-rds" %}
 
-
-## Links
-
-- [github](https://github.com/ekiefl/pooltool)
-- [youtube](https://www.youtube.com/watch?v=aqjX0-A-YUw&list=PLqmJkRulD553RlRA47N2aTUI30_VVI03S)
 
