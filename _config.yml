@@ -4,6 +4,9 @@ title: Evan Kiefl
 locale: en_US
 url: https://ekiefl.github.io
 
+images: https://raw.githubusercontent.com/ekiefl/images/main/images/
+thumbnails: https://raw.githubusercontent.com/ekiefl/images/main/thumbnails/
+
 # Jekyll configuration
 permalink: /:year/:month/:day/:title/
 
