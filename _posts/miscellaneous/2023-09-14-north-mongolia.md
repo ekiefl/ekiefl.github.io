@@ -232,7 +232,7 @@ Today would be our biggest driving day, with our plan being to make it all the w
 
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-30_20-36-33-680000_evan.webp" description="Before the beginning of the end of the road, we made a quick pitstop into Muurun so Baagii could get the car checked by a mechanic." %}
 
-We drove on the only road out of Muurun for about 20 minutes. At an nondescript portion of the road, Baagii veered left onto the grass and dirt. And Bob's your uncle, that's the last asphalt we'd see for days.
+We drove on the only road out of Muurun for about 20 minutes. At an nondescript portion of the road, Baagii veered left onto a dirt road. That was the last asphalt we would see for hundreds of miles.
 
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_02-17-00-337000_evan.webp" description="'Dirt road' would be a generous term to describe what we were driving on. It was essentially a conglomerate of tire tracks through terrain suitable for a car ad. There were river crossings, tire-puncturing rocks littered like landmines, worn out ditches and trenches filled with mud. The tire tracks split and merged over the uneven terrain like capillaries, their patterns serving as remnants of drivers' decisions past." %}
 
@@ -676,19 +676,45 @@ Anuka asked us if we are ok with her baby coming with us back to Ulaanbaatar. Th
 
 ## Day 11: Sheep dumplings
 
-In the morning Baaggi went to buy a sheep because we had ran out of meat. We wanted to check it out, so we went out back where Baagii had a sheep tied up by the car. He dragged it over to the back of the house, positioned it on its back, and with a relatively small knife tried to make an incision through its underbelly. But the knife wasn’t sharp enough so he called over Anuka’s mom who brought a bigger knife. He got through all the wool and made an incision without the sheep making a fuss. Then he maneuvered his hand through the sheep, at which point the sheep started to kick, and then with a mighty force he ripped his bloody hand out. He showed us later, during the dissection, that he had plucked a main artery that runs just below the sheep’s spinal cord. Without any fight, the sheep was dead within a minute.
+In the morning Baaggi went to buy a sheep because we had ran out of meat. We wanted to check it out, so we went out back where Baagii had a sheep tied up by the car.
+
+
+He dragged it over to the back of the house, positioned it on its back, and with a relatively small knife tried to make an incision through its underbelly. But the knife wasn’t sharp enough so he called over Anuka’s mom who brought a bigger knife. He got through all the wool and made an incision without the sheep making a fuss. Then he maneuvered his hand through the sheep, at which point the sheep started to kick, and then with a mighty force he ripped his bloody hand out. He showed us later, during the dissection, that he had plucked a main artery that runs just below the sheep’s spinal cord. Without any fight, the sheep was dead within a minute.
+
+__2023-09-06_21-27-07-349000_cam.webp
+__2023-09-06_21-27-39-441000_cam.webp
 
 After the kill, I helped Baaggi process the sheep.
 
+__2023-09-06_21-29-07-218000_cam.webp
+__2023-09-06_21-42-34-933000_evan.webp
+__2023-09-06_21-50-02-048000_evan.webp
+__2023-09-06_21-53-06-064000_evan.webp
+
 We had some left over gifts to give the chidren, so we made a stop by the school. A group of girls were fascinated with Kourtney’s hair, and indiscreetly whispered to each other, wide-eyed and shy. We found a group of three girls and two boys who all shared a room together. Kourtney laid out the remaining pencil cases that fashioned Disney or superhero characters for the kids to select from. Without any arguing they all picked their favorites. We talked with them for a bit. They were very shy so to break the ice we had Kourtney count to 10 in Mongolian, which conjured some laughter. Then one of the girls counted to 10 in English. We asked them what they wanted to be when they grow up: basketball players, singers, and teachers.
 
-We returned to pack up our stuff. Anuka's mom gave us some pendants made of reindeer antlers. Anuka prepared us a plate of sheep heart, liver, intestine, and stomach. This was truly a delicacy amongst Mongolians. Thighs and ribs can be smoked and stored. But fresh innards last for just a few hours. We tried the heart. It was very different but palatable. Then we tried a piece of the stomach which sent me into gag territory. Embarrassed by our foreign palates, we returned the plate mostly untouched. Inside, there was an innards boil and the energy was high. Everyone was gobbling it up like Christmas dinner. People were picking up the small intestine and knifing off pieces. Anuka explained to us that the younger generation, especially from the city, considers innards to be dog food, and that it’s uncivilized. But it is a part of Anuka's culture, and although Kourtney and I found the taste and texture to be disgusting, the practice of making full use of the animal was admirable and beautiful. Equally, I found the experience to serve as powerful evidence that taste preference is entirely relative and dictated by cultural norms.
+We returned to pack up our stuff. Anuka's mom gave us some pendants made of reindeer antlers. Anuka prepared us a plate of sheep heart, liver, intestine, and stomach.
 
-Afterwards Kourtney and I had a long discussion about our meat consumption habits. In our Western society, there is an increasingly perpetuated disconnection between the meat we buy at the grocery store and the animal who supplied the meat. This disconnection both protects us from questioning the morality of our meat consumption habits and turns a blind eye to increasingly unethical factory farming practices that drive our meat supply. It was eye-opening to observe a way of life where animal and meat are inextricably linked. Where animal's are given free-roaming lives, never killed prematurely, and where no part goes unused.
+__2023-09-07_00-33-32-433000_kourtney.webp
+
+This was truly a delicacy amongst Mongolians. Thighs and ribs can be smoked and stored. But fresh innards last for just a few hours. We tried the heart. It was very different but palatable. Then we tried a piece of the stomach which sent me into gag territory. Embarrassed by our foreign palates, we returned the plate mostly untouched.
+
+__2023-09-06_22-43-39-472000_cam.webp
+
+Inside, there was an innards boil and the energy was high. Everyone was gobbling it up like Christmas dinner. People were picking up the small intestine and knifing off pieces. Anuka explained to us that the younger generation, especially from the city, considers innards to be dog food, and that it’s uncivilized. But it is a part of Anuka's culture, and although Kourtney and I found the taste and texture to be disgusting, the practice of making full use of the animal was admirable and beautiful. Equally, I found the experience to serve as powerful evidence that taste preference is entirely relative and dictated by cultural norms.
+
+__2023-09-07_01-14-42-277000_evan.webp
+
+Afterwards Kourtney and I had a long discussion about our meat consumption habits. In our Western society, there is an increasingly perpetuated disconnection between the meat we buy at the grocery store and the animal who supplied the meat. This disconnect both protects us from questioning the morality of our meat consumption habits and turns a blind eye to increasingly unethical factory farming practices that drive our meat supply. It was eye-opening to observe a way of life where animal and meat are inextricably linked. Where animal's are given free-roaming lives, never killed prematurely, and where no part goes unused.
 
 During the feast, someone came over to borrow Anuka's mom's weigh scale. They picked a bunch of blueberries and wanted to know how much. They were invited in, and they gladly took part in the feast. Afterwards, they weighed the blueberries. 58kg at 8,000 MNT per kilo, or 464,000 MNT. Not too shabby. When they left, the gate was left open and three cows came onto the property, happy to have found fresh grass. Anuka shooed them away.
 
-The plan for the night was to visit Lhagwa's Autumn home near Tsagaannuur. It was a beautiful little one room cabin. Inside, his mother-in-law prepared some surcream with bread, chalky sour dairy pucks, and of course, milk tea. On one of the beds was a plump little cat, which is rare in Mongolia. It seemed that Anuka was slightly superstitious about cats and I wondered if Mongolians think this way in general. Two of the four cabin walls were covered in innumerable horse racing medals mounted on the walls that Lhagwa had won. Clearly Anuka chose the right horse wrangler for us.
+The plan for the night was to visit Lhagwa's Autumn home near Tsagaannuur. It was a beautiful little one room cabin. Inside, his mother-in-law prepared some surcream with bread, chalky sour dairy pucks, and of course, milk tea.
+
+__2023-09-07_04-35-38-166000_evan.webp
+On one of the beds laid a plump little cat, cats being somewhat uncommon in Mongolia. It seemed that Anuka was slightly superstitious about cats and I wondered if Mongolians think this way in general.
+
+Two of the four cabin walls were covered in innumerable horse racing medals mounted on the walls that Lhagwa had won. Clearly Anuka chose the right horse wrangler for us.
 
 We played some 13 and I won again. Kourtney ate too much surcream and was making cow pies in the surrounding pasture in the middle of a rainstorm. All the while, Lhagwa's mother was talking nonstop, not allowing Anuka to get in a single word in.
 
