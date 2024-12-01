@@ -22,15 +22,20 @@ We grabbed our bags and found the exit. Amongst the people waiting in arrivals, 
 
 After brief introductions she led us outside to the parking lot. She introduced us to a tall skinny man named Baagii, her husband. We would get to know him very well over the next two weeks. It seemed he didn't speak any English, but with a shy smile, he motioned for us to hand him our bags.
 
-{% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-09_04-54-47-121000_kourtney.webp.webp" description="Baagii on his friend's speedboat on Khuvsgul Lake (Day 13)." %}
+{% include photo.html
+    url="2023-09-14-north-mongolia/13/__2023-09-09_04-54-47-121000_kourtney.webp"
+    description="Kourtney (left), Baagii (center), and me (right) on Baagii's friend's speedboat on Khuvsgul Lake (Day 13)." 
+%}
 
 On our way to Ulaanbaatar, Mongolia's capital, Kourtney and I calibrated to Anuka's accent as she shared bits of information about Mongolia and Ulaanbaatar. She talked quietly with a friendly demeanor. I could tell she loved her country and was eager to share it with us. We were in good hands.
 
 "We are a quickly developing nation," Anuka started. 1.8 million people lived in Ulaanbaatar. Including undocumented people, it might be over 2 million, which is well over half of Mongolia's total population. Mongolians were contending with a blazingly fast speed of urbanization. Smartphones, 4G networks, TV, 9-5 jobs, fast food, and high-rise apartment buildings were pervading the urban lifestyle, and Ulaanbaatar was the hearthstone of this drastic cultural shift.
 
-As we drove through the rolling hill landscape, littered with thousands of free-roaming cows, goats, and sheep, we crested over a hill and in the distance, we saw Ulaanbaatar sprawled out beneath the backdrop of the Khentii mountains. Along the outskirts of the city, white circular tents called *gers* (similar to yurts) sat interspersed among modern buildings and city streets. In the not too distant past, nearly 100% of Mongolians lived in gers, who traveled nomadically with their livestock, perpetually moving their gers with the change of seasons, conditions, and resource availability. Today, many of them were equipped with satellite dishes and solar panels, showcasing the conveniences of modernity knocking on the doorstep of ancient tradition.
+As we drove through the rolling hill landscape, littered with thousands of free-roaming cows, goats, and sheep, we crested over a hill and in the distance, we saw Ulaanbaatar sprawled out beneath the backdrop of the Khentii mountains. Along the outskirts of the city, white circular tents called *gers* (similar to yurts) sat interspersed among modern buildings and city streets.
 
-{% include photo.html url="2023-09-14-north-mongolia/general/ubi.webp" description="As we drove toward the city center, we watched the view outside transform from scattered gers to increasingly dense clusters of shacks, eventually giving way to high-rise buildings. It was both a literal and symbolic representation of Ulaanbaatar's rapid urbanization. <i>Photo credit: Hector Retamal</i>" %}
+{% include photo.html url="2023-09-14-north-mongolia/general/ubi.webp" description="As we drive toward the city center, we watch the view outside transform from scattered gers to increasingly dense clusters of shacks, eventually giving way to high-rise buildings. In this way, the road's transection through the city provides a symbolic timeline of Ulaanbaatar's rapid urbanization. <i>Photo credit: Hector Retamal</i>" %}
+
+In the not too distant past, nearly 100% of Mongolians lived in gers, who traveled nomadically with their livestock, perpetually moving their gers with the change of seasons, conditions, and resource availability. Today, many of them were equipped with satellite dishes and solar panels, showcasing the conveniences of modernity knocking on the doorstep of ancient tradition.
 
 I was taken aback by the sheer chaos of the traffic. Faded road paint feebly demaracted lanes, traffic lights were sparse, and where they did exist, they seemed to serve more as suggestions than mandates.
 
@@ -40,21 +45,27 @@ Eventually, we made it to our hotel, which would serve as a launch point for the
 
 After our nap, it was 1 pm and we headed downstairs to meet Anuka and Baagii. To buy supplies for the trip, we headed to the black market. You could buy anything and everything at the black market, Anuka explained. Clothes, shoes, electronics, containers, tools, building materials, cabinetry, camping gear, school supplies, plastic, art, horse saddles, livestock, meat, fruit, dry goods—the list went on and on, and included more nefarious things like bullets and presumably drugs. Few needs couldn't be met at the black market.
 
-{% include photo.html url="2023-09-14-north-mongolia/1/market.webp" description="" width="70%" %}
+{% include photo.html
+    url="2023-09-14-north-mongolia/1/market.webp"
+    description="A horse accessory market stall featuring colorful saddles with intricate embroidery, braided leather reins and ropes hanging prominently, and horse tack and accessories."
+    width="70%"
+%}
 
 Before long, we were in the heart of the bustling bazaar. Mongolians all around us were buying and selling, trying to score the best deals they could find. Sellers showcased how well their products worked, while buyers, hiding their interest, pointed out identifiable flaws in the product. After successful deals, everyone walked away happy. After failed deals, vendors returned to their smartphones, shaking their heads, perhaps getting in one last verbal jab, while the unsuccessful customers tried their luck with the neighboring vendor, who sold nearly identical products.
 
 Anuka expertly dipped and dodged through the densely packed stalls. To give a sense of scale, it took two minutes of walking just to get out of the shoe section. Exchanging words with the nearest vendors for directions, we finally arrived at the camping section. Kourtney and I bought two sleeping bags, and Kourtney bought a warm fleece. Encouraged by Anuka to haggle, we weakly negotiated, but in truth, since the prices were so cheap compared to our Western standards, we decided the few dollars we could have shaved off the price were better off in the vendors' hands anyway.
 
-{% include photo.html url="2023-09-14-north-mongolia/1/market_2.webp" description="" width="70%" %}
+{% include photo.html url="2023-09-14-north-mongolia/1/market_2.webp" description="An eclectic market stall of Buddha statues, hanging necklaces and rosaries, ornate ceremonial knives and sheaths, miniature statues of animals and creatures, and a variety of leather and metal accessories." width="70%" %}
 
 Next, we wanted to bring gifts for the reindeer herders and perhaps any nomadic families we stayed with. Relying on Anuka's knowledge of the locals, we settled on pencil bags that we stuffed with ornate pencils, erasers, and pencil sharpeners for the kids. For the adults, we bought light bulbs powered by AC battery cables, flashlights powerable via a multitude of methods, battery-powered headlamps, miniature binoculars, and medium- and large-sized thick plastic containers for milking and berry picking. Against Anuka's advice, we also purchased fifty .22 caliber bullets, which are particularly useful, if not illegal, in the Taiga for hunting.
 
 Afterward, we headed back to the car. On the way, an old drunkard tossed an empty vodka bottle in the direction of a woman sitting on a concrete block. As he shouted, the bottle slid and tumbled on the dirt, coming to a stop near her feet. "Do you want to drink with me? No one can drink more than me," Anuka translated. The woman didn't bat an eye, indicating her battle-hardened experience in dealing with drunks. Alcoholism is a major issue in Mongolia, particularly in the city. Anuka offered to us her opinion that the solution is a more stringent allocation of welfare. It made me want to get out of the city.
 
-We spent the rest of the day driving throughout the city, visiting the Buddhist monastery, getting some classic Mongolian fast food, and visiting the Chinggis Khaan Museum. On the way back to the hotel, a Mongolian family beside us in traffic sang along to a traditional Mongolian ballad that blasted from their car speakers. Their baby, standing on the lap of someone in the back seat, hung his head out of the rolled-down window, staring at Kourtney and me smiling back at him. Well-fed and sleepy, Anuka and Baagii dropped us off at the hotel, and we agreed to reconvene the next day at 10:00 am for the start of our big journey.
+We spent the rest of the day driving throughout the city, visiting the Buddhist monastery, getting some classic Mongolian fast food, and visiting the Chinggis Khaan Museum.
 
-{% include photo.html url="2023-09-14-north-mongolia/1/baby_in_car.webp" description="A small unseatbelted child " width="70%" %}
+{% include photo.html url="2023-09-14-north-mongolia/1/baby_in_car.webp" description="A Mongolian family beside us in traffic singing along to a traditional Mongolian ballad that blasted from their car speakers. Their baby, standing on the lap of someone in the back seat, hung his head out of the rolled-down window, staring at Kourtney and me smiling back at him." width="70%" %}
+
+On the way back to the hotel. Well-fed and sleepy, Anuka and Baagii dropped us off at the hotel, and we agreed to reconvene the next day at 10:00 am for the start of our big journey.
 
 ## Day 2: Journey to the monastery
 
@@ -91,7 +102,7 @@ We drove through the morning traffic slowly but surely.
 
 {% include photo.html url="2023-09-14-north-mongolia/2/ub_buildings.webp" description="The rapid growth of the city was glaringly obvious when looking at the construction of high-rise apartments. For every occupied high rise, there was another under construction. And building contracts were clearly carried out in bulk, whereby as many as 12 identical high rises were erected concurrently, side by side." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/2/scenery.webp" description="Just 15 minutes outside Ulaanbaatar and Mongolia's beautiful natural balance seemed restored." %}
+{% include photo.html url="2023-09-14-north-mongolia/2/scenery.webp" description="Just 15 minutes outside Ulaanbaatar and Mongolia's beautiful natural balance seems restored." %}
 
 We stopped at a roadside restaurant. The kitchen was within the ger, and outside was customer seating, underneath an awning protruding from the ger's entrance. The furniture was patchwork, best explained by Baagii's seat being an extricated car seat.
 
