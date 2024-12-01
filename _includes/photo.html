@@ -1,6 +1,9 @@
-<figure style="width: {{ include.width | default: '100%' }};">
+<figure style="width: {{ include.width | default: '100%' }}; margin: auto;">
   <a href="{{ site.images }}{{ include.url }}" target="_blank" class="nohover">
-    <img src="{{ site.thumbnails }}{{ include.url }}" alt="{{ include.description }}" loading="lazy">
+    <img src="{{ site.thumbnails }}{{ include.url }}" alt="{{ include.description }}" loading="lazy"
+      style="display: block; margin: auto; width: 100%;">
   </a>
-  <figcaption>{{ include.description }}</figcaption>
+  <figcaption style="margin-bottom: 1em; width: auto; padding-left: 0.6em; display: block;">
+    {{ include.description }}
+  </figcaption>
 </figure>
