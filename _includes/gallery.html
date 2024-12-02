@@ -1,0 +1,47 @@
+<style>
+  .image-gallery {
+    overflow: auto;
+    margin-left: -1% !important;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .image-gallery li {
+    float: left;
+    display: block;
+    margin: 0 0 0 1%;
+    width: 48%;
+  }
+
+  .image-gallery li a {
+    text-align: center;
+    text-decoration: none !important;
+    color: #777;
+  }
+
+  .image-gallery li a img {
+    width: 100%;
+    display: block;
+  }
+</style>
+
+<figure style="width: {{ include.width | default: '100%' }}; margin: auto;">
+  <ul class="image-gallery">
+    {% assign image_list = include.images | split: ',' %}
+    {% for image_path in image_list %}
+    {% assign image_path = image_path | strip %}
+    <li>
+      <a href="{{ site.images }}{{ image_path }}" title="{{ include.caption }}">
+        <img src="{{ site.thumbnails }}{{ image_path }}" alt="{{ include.caption }}" loading="lazy" />
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if include.caption %}
+  <figcaption
+    style="margin-bottom: 1em; width: auto; padding-left: 0.5em; padding-top: 0em; display: block; font-style: italic;">
+    {{ include.caption }}
+  </figcaption>
+  {% endif %}
+</figure>
