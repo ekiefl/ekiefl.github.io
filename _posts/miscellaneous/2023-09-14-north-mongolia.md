@@ -548,9 +548,9 @@ So we establish our own way through the marsh, bushland, creeks, bogs, and small
 
 {% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_05-54-15-948000_evan.webp" description="" %}
 
-There is a cultural divide between reindeer herders depending that depends on the region they inhabit, either western or eastern Taiga. In the west, herders like Godla and Sartlong lived in small communities, congregating in small nuclear families or if the reindeer herding patterns coincided. This was in stark contrast to the Eastern reindeer herders, which live in just one or two large nomadic communities.
+A cultural divide exists between reindeer herders depending on the region they inhabit, either the western or eastern Taiga. In the west, herders like Godla and Sartlong live in small communities, congregating in small nuclear families, or if their reindeer herding patterns happen to coincide. This was in stark contrast to the Eastern reindeer herders, which live in just one or two large nomadic communities.
 
-I'm not sure of the exact reasons, but perhaps owing to the large community that the Eastern reindeer herders live in, they are much more commonly visited by foreign and domestic tourists than their Western counterparts. Tourists are coming all the time. And when guests arrive, they visit whoever they want to. Everyone wants guests because they bring gifts and pay for their room and board. To be honest, the cultural exploitation was much more obvious here.
+I'm not sure of the exact reasons, but perhaps owing to the large community that the Eastern reindeer herders live in, they are much more commonly visited by foreign and domestic tourists than their Western counterparts. Tourists are coming all the time. And when guests arrive, they visit whoever they want to. Everyone wants guests because they bring gifts and pay for their room and board.
 
 {% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_18-30-11-084000_evan.webp" description="" %}
 
@@ -633,7 +633,7 @@ Within a few hours, the camp was mostly deserted, except for a few people who we
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-05_00-30-14-769000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-05_00-43-20-005000_cam.webp"
-    caption="(left) As she waits for her unaccounted for reindeer to return, Buyantogtokh gathers her remaining possessions. Her loyal companion following her every step. (right) Lhagwa and I load our gear back onto the horses. It feels good to be trusted by our horse wrangler with the responsibility."
+    caption="(left) As she waits for her unaccounted for reindeer to return, Buyantogtokh gathers her remaining, scattered possessions. Her loyal companion follows behind. (right) Lhagwa and I load our gear back onto the horses. It feels good to be trusted by our horse wrangler with the responsibility."
 %}
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_01-02-20-626000_cam.webp" description="Anuka and Buyantogtokh waiting patiently for Buyantogtokh's reindeer to show up. At this point, almost all of the other families have left." %}

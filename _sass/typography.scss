@@ -169,6 +169,24 @@ figcaption {
   box-sizing: unset;
 }
 
+#articlecontent .photo-fig-gallery-element {
+  margin: auto;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+  margin-bottom: 1%;
+}
+
+#articlecontent .photo-fig-gallery-element:hover {
+  transform: scale(1.01);
+}
+
+#articlecontent .photo-fig-gallery-element img {
+  border-radius: 0px;
+  border: 0;
+  box-sizing: unset;
+}
+
 #articlecontent .photo-caption {
   background-color: #f0f0f0;
   border-radius: 0 0 8px 8px;
