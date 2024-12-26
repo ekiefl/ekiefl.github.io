@@ -20,13 +20,21 @@
     color: #777;
   }
 
+  .image-gallery li {
+    padding: 0;
+  }
+
+  .image-gallery-figure figcaption {
+    padding-bottom: 0.4rem;
+  }
+
   .image-gallery li a img {
     width: 100%;
     display: block;
   }
 </style>
 
-<figure style="width: {{ include.width | default: '100%' }}; margin: auto;">
+<figure class="image-gallery-figure" style="width: {{ include.width | default: '100%' }}; margin: auto;">
   <ul class="image-gallery">
     {% assign image_list = include.images | split: ',' %}
     {% for image_path in image_list %}
