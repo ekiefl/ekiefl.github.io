@@ -147,7 +147,7 @@ Three monks, the oldest no more than 14, emerged from a ger residing within the 
 
 {% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-29_21-18-15-904000_cam.webp" description="Three monk children huddle around a smartphone in the moments leading up to them opening the monastery to the public. One of them is wearing Nike slides." %}
 
-After turning on the lights and lighting candles and incense, the three apprentices sat in meditative poses around the center of the room and the eldest began speaking his morning recitations into a microphone. As he spoke I explore the beautifully ornate interior full of gongs, statues of gods, gorgeous drapery, and colorful symbology. His monotonous mantra echoed endlessly and unwaveringly throughout the chamber. This is not a performance because we are here, I kept reminding myself, this is their life.
+After turning on the lights and lighting candles and incense, the three apprentices sat in meditative poses around the center of the room and the eldest began speaking his morning recitations into a microphone. As he spoke I explored the beautifully ornate interior full of gongs, statues of gods, gorgeous drapery, and colorful symbology. His monotonous mantra echoed endlessly and unwaveringly throughout the chamber. This is not a performance because we are here, I kept reminding myself, this is their life.
 
 {% include gallery.html images="2023-09-14-north-mongolia/3/__2023-08-29_21-27-32-785000_cam.webp,2023-09-14-north-mongolia/3/__2023-08-29_21-32-14-057000_evan.webp" caption="" %}
 
@@ -171,9 +171,9 @@ Baagii and Anuka spoke with the nomads joyously as the they were in the process 
 
 {% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_04-42-12-155000_cam.webp" description="Holding the foal by its mane, the man allows it to feed in order to promote the mother's milk production. A cabin equipped with a satellite lies in the distance, along with a basketball hoop further back." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_04-56-36-669000_cam.webp" description="The woman milks the mare, filling the bucket while the man steadies the mare while keeping the foal nearby." %}
+{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_04-56-36-669000_cam.webp" description="The woman milks the mare, filling the bucket while the man steadies it while keeping the foal nearby." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_04-57-05-249000_cam.webp" description="Kourtney milking the mare. Her willingness after being asked perfectly symbolizing the sentiment of the tattoo on her right arm." %}
+{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_04-57-05-249000_cam.webp" description="Kourtney milking the mare." %}
 
 Every two hours they milked the horses, Anuka told us. It was unendingly exhausting work, and you could tell that to them it was clockwork. They processed the dairy in multiple ways, ate what they could, and sold the rest at market, Anuka continued. In the traditional nomadic lifestyle, summertime was a season of preparation. To survive the upcoming winter, that meant no meat was to be eaten. With little going on agriculturally due to the intense dry climate of Mongolia, that left a primarily dairy-based diet.
 
@@ -195,11 +195,11 @@ Inside, we sat on some stools. To the right of the entrance was a bed that Handa
 
 At the far end of the entrance, near the man, was a highly decorated cabinet with a telephone, some seemingly Buddhist items, and a mirror. My eyes were drawn to the left side of the ger, where a very large sack hung from a strong beam of wood. It was made of an old, large animal hide that had been stitched together in two pieces. It looked like it had a capacity of at least 100L. Handa walked over and poured her newest batch of mare milk into the sack. From the sound of the pour, I could tell the sack was nearly full, presumably with more mare's milk.
 
-{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_05-08-05-705000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_05-08-05-705000_evan.webp" description="Inside Handa's ger, a large cow-skin hide has been sewn into a vessel for fermenting horse milk into kumis. It hangs from a sturdy wooden frame that leans against the ger's interior wall. Hundreds of liters of milk stretch the leather to its limit, exerting tremendous force on the two small wooden toggles that solely hold back a catastrophic milk tsunami." %}
 
-After giving the contents a quick stir, Handa filled a plastic jug by dunking it into the sack, and then placed the jug on the table. Wasting no time, the man procured a decently sized wooden bowl that he filled to the brim, and then took a long pull. After wiping the milk from his mustache, he replaced what he had drunk by pouring more into the bowl, and then passed it to me. To me! Remembering what Anuka had told me previously about receiving with my right hand, I tentatively took the bowl and looked inside. The sides of the bowl had small chunks of rancid dairy, and on top of the liquid was a thin film that I had watched the man gently blow to one side of the bowl before sipping (gulping). Everyone hushed to watch what would happen next, with curiosity and anticipation. How would the foreigner react to the taste? Emulating the man as closely as possible, I blew the film off to the side and touched the bowl to my lips and started drinking. Sour and bubbly, it tasted nothing like I expected. Sort of like kefir. I think I liked it. I had several gulps and passed back the bowl, and the ritual continued. The man filled the bowl, looked at someone, and that person would receive the bowl and sip from it, then pass it back.
+After giving the contents a quick stir, Handa filled a plastic jug by dunking it into the sack, and then placed the jug on the table. Wasting no time, the man procured a decently sized wooden bowl that he filled to the brim, and then took a long pull. After wiping the milk from his mustache, he replaced what he had drunk by pouring more into the bowl, and then passed it to me. To me! Remembering what Anuka had told me previously about receiving with my right hand, I tentatively took the bowl and looked inside. The sides of the bowl had small chunks of rancid dairy, and on top of the liquid was a thin film that I had watched the man gently blow to one side of the bowl before sipping (gulping). Everyone hushed to watch what would happen next, with curiosity and anticipation. How would the foreigner react to the taste? Emulating the man as closely as possible, I blew the film off to the side and touched the bowl to my lips and started drinking. Sour and bubbly, it tasted nothing like I expected. Sort of like kefir. I think I liked it! I had several gulps and passed back the bowl, and the ritual continued. The man filled the bowl, looked at someone, and that person would receive the bowl and sip from it, then pass it back.
 
-I asked Anuka what I was drinking. "This is Mongolia's national drink, koumice," she explained. When offered koumice, it is a sign of respect that you must not refuse, and the more you can drink in one sip, the better. But never drink the whole bowl, she continued. Perhaps it's just a superstition, but supposedly this is a guarantee for a bad milking yield the next day.
+I asked Anuka what I was drinking. "This is Mongolia's national drink, kumis," she explained. When offered kumis, it is a sign of respect that you must not refuse, and the more you can drink in one sip, the better. But never drink the whole bowl, she continued. Perhaps it's just a superstition, but supposedly this is a guarantee for a bad milking yield the next day.
 
 Handa and her husband were very interested in our situation. Anuka translated everything as the questions rolled in: What is your itinerary? Why did you come to Mongolia? Do you think it’s weird we drink from one bowl? I explained that we were in Mongolia to learn about cultures that are different from ours, so we can be more mindful about which cultural practices we engage in within our own culture. It was a complex concept to translate, but I could tell that whatever Anuka said resonated with Handa, as she paused her normally talkative and smile-filled demeanor to listen and nod.
 
@@ -207,9 +207,9 @@ I told them they were very friendly and explained that from our countries, this 
 
 Handa's youngest son came in and shyly sat down beside her. He loved Michael Jordan and had a Michael Jordan jersey. After learning Kourtney was from Chicago, Handa said he wanted to write a letter that we would give to Michael Jordan. All the adults laughed at the impossibility.
 
-{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_05-36-03-557000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/3/__2023-08-30_05-36-03-557000_evan.webp" description="Depending on the strength and stage of fermentation, kumis can be as alcoholic as a light beer." %}
 
-We needed to get back onto the road, so we said our goodbyes, Handa gifting us a big bottle of koumice, not expecting or asking for anything in return. But before leaving, we gifted them 20000 MNT as a thank you for the koumice and their hospitality. At first, she declined, so I handed it to her son. They stood outside their ger and waved to us as we drove back onto the road.
+We needed to get back onto the road, so we said our goodbyes, Handa gifting us a big bottle of kumis, not expecting or asking for anything in return. But before leaving, we gifted them 20000 MNT as a thank you for the kumis and their hospitality. At first, she declined, so I handed it to her son. They stood outside their ger and waved to us as we drove back onto the road.
 
 We drove for another couple of hours until we made it to just outside Murun, where Anuka had arranged for us to spend the night in a tourist camp. As we approached our ger, a very loud and drunk man stumbled out of the neighboring ger and Anuka immediately turned around. "You will have a very bad night. You will not get any sleep," she said. Back at reception, she threw some assertive words towards the employee, and before we knew what was happening, Kourtney and I were spending the night in a small, one-room cabin in a more secluded section of the camp. One of many instances where Anuka had our back.
 
@@ -229,13 +229,13 @@ Baagii navigated the obstacles expertly. In the rare instance that an oncoming c
 
 We started up a mountain hill and after some discussion in Mongolian between Anuka and Baaggi, we turned around, deciding that the path would be too muddy given the recent rainfall. As a Tsagaannuur local, Anuka has traveled to and from Murun many times in her life. "There are many paths to Tsagaannuur", she said before adding with a smile, "And you can of course always make your own path".
 
-Cut to 20 minutes later and I was clutching the overhead handlebar with unexplainable strength to avoid bouncing out of my seat as the the car barged forward. Once I got used to the arrythmia I got lost in thought thinking about the dichotomy of us navigating by way of geographical landmarks while in a 2003 Lexus.
+Cut to 20 minutes later and I was clutching the overhead handlebar with unexplainable strength to avoid bouncing out of my seat as the car barged forward. Once I got used to the arrythmia I got lost in thought thinking about the dichotomy of us navigating by way of geographical landmarks in a 2003 Lexus equipped with GPS.
 
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-15-06-762000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-15-06-762000_evan.webp" description="The relentless pursuit of perfection. Lexus." %}
 
 After around an hour on the road, the landscape was beginning to change. Away from Murun and its sought after asphalt, the true expansiveness of Mongolia was beginning to reveal itself. Ancient mountains covered in nothing but short grass and rocks. And interestingly, no matter how far away we drove from "civilization", we saw gers scattered everywhere.
 
-{% include photo.html url="2023-09-14-north-mongolia/general/__2023-08-30_02-22-00-460000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/general/__2023-08-30_02-22-00-460000_cam.webp" description="A typical landscape in northern Mongolia. Scattered and free-roaming livestock graze the green rolling hills. The white canopies of gers are sprinkled all throughout each valley. Evergreen forests blanket the distant hillsides." %}
 
 The "road" was taking a toll on the Lexus, leading Baagii to make frequent stops to cool the engine. (It goes without saying that cars don't last long here). During of these stops, we were approached by a man walking alongside his horse. Baagii started talking with him, and we did our ritual of asking what his name was (pretty much the only thing we know how to say), and then unsuccessfully repeating their name back to them. Before long, the gentleman's friend pulls up on his motorcyle, in masterful style. They wanted to drink with us.
 
@@ -248,23 +248,23 @@ Twenty minutes later we stopped to each lunch while Baagii fixed the car suspens
 
 During lunch, Kourtney asked if Anuka and Baagii ever disagree about which way to go. Anuka said they frequently bicker about which way is best, and when the car ends up stuck in the mud there is always hell to pay for the person who was wrong. "Fighting is in every culture", I said, which Baagii found especially funny. The friendship was growing.
 
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-30_21-39-54-024000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-30_21-39-54-024000_cam.webp" description="Rolling hills cloaked in evergreens cradle a few grazing horses." %}
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-30_22-05-26-727000_cam.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_00-58-56-554000_evan.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_02-23-01-723000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_02-45-19-769000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_02-45-19-769000_cam.webp" description="Hundreds of sheep and goat litter a hillside, free to roam and graze." %}
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_03-32-05-362000_cam.webp" description="" %}
 
-Later in the day we found ourselves enjoying the scenery as we drove alongside a gorgeous mountain. We crossed a muddy river, and then ascended up a rolling mountain. We arrived at a fork in the proverbial road. The car stopped. There were two potential ridgeline crossings. To be honest, both looked exposed and steep. I looked at the left pass and imagined the Lexus barrel-rolling down side of the slope. After some hemming and hawing, Baagii opted for the rightmost mountain pass, which my imagination was thankful for. We let the engine cool and drank some koumice. It was a hold your breath moment with slopes to our left and right. When we successfully mounted and traversed the ridgeline, everyone was relieved and smiling.
+Later in the day we found ourselves enjoying the scenery as we drove alongside a gorgeous mountain. We crossed a muddy river, and then ascended up a rolling mountain. We arrived at a fork in the proverbial road. The car stopped. There were two potential ridgeline crossings. To be honest, both looked exposed and steep. I looked at the left pass and imagined the Lexus barrel-rolling down side of the slope. After some hemming and hawing, Baagii opted for the rightmost mountain pass, which my imagination was thankful for. We let the engine cool and drank some kumis. It was a hold your breath moment with slopes to our left and right. When we successfully mounted and traversed the ridgeline, everyone was relieved and smiling.
 
 After the mountain pass, we descended into a valley, where a small village lies. It's a common place to stop for food for passersby traveling to and from the remote north. Day or night, the restaurant will open for a bus full of travelers. An old man sat in a security booth manning a rudimentary car gate that used a defunct chainsaw as a counterweight. A few words were spoken and the conversation ends with the _za_ from both parties. He released the drawstring and the chainsaw pulled the gatekeeping log upwards, allowing our passage. 
 
 We were in the middle of Autumn and the more north we drove, the more the grass and trees were showing a spectrum of Fall colors. "It will be even better when we return Anuka", said.
 
-We were slowed by a herd of about 40 horses who were blocking the road, their owners nowhere in sight. I can imagine no better life for captive animals that in Mongolia, where they live free and nearly wild. Seeing all horses inspired us to stop for a quick koumice break. As we sipped, Anuka, as she often did, spoiled us with a little tidbit of information that Chinggis Khaan proclaimed that a proper Mongolian should drink more horse milk than water.
+We were slowed by a herd of about 40 horses who were blocking the road, their owners nowhere in sight. I can imagine no better life for captive animals that in Mongolia, where they live free and nearly wild. Seeing all horses inspired us to stop for a quick kumis break. As we sipped, Anuka, as she often did, spoiled us with a little tidbit of information that Chinggis Khaan proclaimed that a proper Mongolian should drink more horse milk than water.
 
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-34-37-443000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-35-05-975000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-34-37-443000_cam.webp" description="A curious foal explores, but not too far from their mother's side." %}
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-35-05-975000_cam.webp" description="Horses are branded to establish ownership." %}
 
 At the top of a mountain was a collection of 13 _ovoos_. An ovoo is a shrine composed of branches, rocks, and multicolored silk fabrics, each color representing a natural element (sun, sky, water, etc.). They are typically found at the top of mountains and mark border crossings, and serve as checkpoints either in the beginning or the end of a journey. I couldn't make heads of tails as to whether this was the beginning or the end of our journey.
 
@@ -272,7 +272,7 @@ Following Anuka's example, we grabbed three rocks and made our way around the ce
 
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_03-06-04-381000_cam.webp" description="" %}
 
-After making a wish, I watched Baagii pour out 3 cups of koumice, flinging each skyward. Finishing his ritual, he looked my way and noticed I had been watching him. He smiled. Back in the car, he spoke with Anuka and she translated to us that he was sharing his koumice with nature. It gave me pause. Baagii's spiritual connection to the land is palpable. He believes in these practices. This is how he lives.
+After making a wish, I watched Baagii pour out 3 cups of kumis, flinging each skyward. Finishing his ritual, he looked my way and noticed I had been watching him. He smiled. Back in the car, he spoke with Anuka and she translated to us that he was sharing his kumis with nature. It gave me pause. Baagii's spiritual connection to the land is palpable. He believes in these practices. This is how he lives.
 
 The full journey from Murun to Tsagaannuur is around 9 hours. Understandably, improved road conditions drive much of the election cycle. Candidates visit all the villages by helicopter, and then sing about promises of road infrastructure. Famous people are ushered in and perform concerts, and free vodka is handed out to restore voter faith from the last election. But post election, the promises of roads fade like the distant hum of their departing helicopters.
 
@@ -281,37 +281,33 @@ The full journey from Murun to Tsagaannuur is around 9 hours. Understandably, im
 
 Perhaps it is for this reason that motorbike reign supreme in Mongolia. They are cheap on gas, cheap to purchase, easy to repair, and can traverse roads and bridges that cars struggle with. With the introduction of the Chinese motorcycle in the 1990s, and its widespread proliferation throughout the country in the following decades, horseback riding has greatly diminished. Increasingly so, Mongolians are traveling, transporting goods, carrying out errands, and herding by motorcycle rather than by horseback. It's an example like many others found in Mongolia: modern technologies threatening to overwrite a lifestyle maintained for thousands of years, and the Mongolian people and government trying to strike a balance between modernity and tradition.
 
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_07-05-35-010000_cam.webp" description="" %}
-
 Past Red Mountain Village we saw some activity outside a cluster of three gers. The men and women were saddling up horses, and someone was drinking. "They are going to race horses", Anuka determined. "But we can't go. If we do, we can’t leave. Evan not be able to walk, and Evan no translator". After a moment, I understood her riddle: if we visit them, we will be culturally obligated to get obliterated and we wouldn't make it to Tsagaannuur. We drove on.
 
-A tranquil mood enveloped us as Baagii drove towards the darkening horizon. The car squeaked with each passing bump as we were thrown from side to side. Like a sailor acclimated to rough seas, I'd found a rhythm in the chaos of the bumpy road jostling our luggage and personnel. In the far distance, an adolescent herded his sheep by motorcycle towards an out of sight ger.
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_07-05-35-010000_cam.webp" description="A tranquil mood envelopes us as Baagii drives towards the darkening horizon. The car squeaks with each passing bump as we're thrown from side to side. In the twilight, an adolescent herds her family's sheep towards an out of sight ger." %}
 
 Thirty minutes later, after a journey that seemingly never ended, we made it to _White Lake_. This is the lake upon which Tsagaannuur village was formed. Anuka explained that no one swims, bathes, or washes their clothes in the lake out of respect for its purity. This respectful relationship with the lake allows Tsagaannuurians to drink its water and maintain a healthy ecosystem that teems with a famous "white fish", known throughout Mongolia for being tasty. Though Anuka noted that high winds are often blowing roadside trash into the lake.
 
 At the top of the final mountain pass we arrived at the gates of Tsagaannuur. Two men with parked motorcycles under a small gazebo and a bench were drinking and smoking. Anuka joked that this is the village's "Irish Pub".
 
-{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_07-38-21-330000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_07-38-21-330000_cam.webp" description="The entrance to Tsagaannuur. Anuka's father is the artist who created the metal reindeer statues." %}
 
 In the moonlight, we arrived at Anuka's childhood home. We were greeted by her parents and Anuka's precious little girl. Just 18 months old, she squealed with energy at the reunion. After some brief introductions, Kourtney and I retired into an offshoot of their home where Anuka's mother used to operate a foreign guesthouse. It was during Anuka's childhood where she interacted with foreign guests that her ideas of becoming a Mongolian tour guide started forming. Without taking our surroundings in with any great detail, Kourtney and I clambered into our beds and fell asleep nearly immediately. What a day.
 
 ## Day 5: Horseback to the Western Reindeer Herders
 
-{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_22-28-06-030000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_22-28-06-030000_evan.webp" description="The shower of Anuka's childhood home. Since there is no running water in the village, showering is quite the event. An open water basin sits on the roof that can be filled with water from the lake (hence the ladder). This basin feeds into an electric water heater that's bolted to the ceiling of the shower room, that can be powered by running an extension cord from the house. This complexity, coupled with bone-chilling temperatures in winter, means that showering is a weekly, not a daily occurrence." %}
 
 It was September 1st, the first day of school in the village. After breakfast, we headed to the school to check out the special occasion. As we approached, we heard speeches and singing performances emanating from the center of the village through shoddy speakers. Within the school grounds, parents and children had gathered around the makeshift stage: a square of concrete embedded in the otherwise grassy school grounds. Here, songs and ceremonies were taking place. A teacher accepted a Teacher of the Year Award, a 6-year-old child sang a song about September 1st, the village leader asked for donations. Children and parents swayed to the rhythm of the music during this joyous day.
 
-{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_23-04-22-417000_kourtney.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_23-04-22-417000_kourtney.webp" description="A schoolgirl sings a welcome back to school tune. A banner celebrating the school's Tsaatan pupils hangs in the background." %}
 
 The pupils ranged from 1st to 12th grade. Independent of age, the boys wore ties and white shirts tucked into dress pants, and the girls wore pleated skirts and cardigans. About half of the students lived within the village, whereas the other half lived in nomadic families. Throughout Mongolia, villages with schools host students coming from the nomadic families who live in the surrounding mountains, plains, and valleys. However, unlike other villages, Tsagaannuur also hosts children of reindeer herding families in the Taiga.
 
-{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_23-13-51-590000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_23-13-51-590000_evan.webp" description="The new government-funded dormitory on the school grounds. It's the only two-story brick house in Tsagaannuur that I saw." %}
 
 Whether their families are classic nomads or reindeer herding nomads, the nomadic children are boarded in a partially government funded dormitory that resides on the school grounds. It is the only brick house I saw on the village. Beside it is the old dormitory, a single story wooden building. This is the dormitory many of Anuka's classmates lived in when she was a child. The living conditions have improved greatly between old and new. There are dormitory teachers who take care of the children, a cook, who feeds them 3 times a day, and a custodian who keeps the fire stove burning from October through May.
 
-{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_22-55-17-462000_evan.webp" description="" %}
-
-Anuka showed us another upgrade, the school toilets. Back in her day, the toilets were just a pit with planks stretching across to stand on. Now they have seats to sit on.
+{% include photo.html url="2023-09-14-north-mongolia/5/__2023-08-31_22-55-17-462000_evan.webp" description="Another upgrade, the school toilets. Back in her day, the toilets (left) were just a pit with planks stretching across to stand on. Now (right) they have seats to sit on." %}
 
 It was obvious that education is extremely important to the villagers, the nomads, and the reindeer herders.
 
@@ -319,7 +315,7 @@ It was obvious that education is extremely important to the villagers, the nomad
 
 "No. They stay with their family for the first 6 years of life. After this, they are already know the lifestyle". Her response illustrated to me how capable children can become when thrust into such a hard-pressing lifestyle. They are capably riding horses by 4-5 years old, and are already taking over familial responsibilities such as goat and sheep herding. Meanwhile in North America tire swings have been removed from playgrounds.
 
-After around 40 minutes, during which time Anuka caught up with all the village folk, we stripped ourselves away from the festivities of September 1st. A big day lay ahead of us: were were heading into the Taiga to meet some of the western reindeer herders.
+After around 40 minutes, during which time Anuka caught up with all the village folk, we stripped ourselves away from the festivities of September 1st. A big day lay ahead of us: we were heading into the Taiga to meet some of the western reindeer herders.
 
 20km outside the town we met our horse guide, Lhagwa. He's a nomad with hundreds of livestock, including many horses--some of which he uses for horse trekking services. After waiting a bit at the meetup spot, Lhagwa showed up on one of his horses and ushered us to meet him at an alternative location. At the alternate spot, his wife and a handful of horses were hanging out.
 
@@ -349,7 +345,7 @@ Throughout this arduous journey for the horses, us humans were enjoying a relati
 
 We descended further and further into a large river valley. After a quick traversal along the basin of the valley, far in the distance we saw a smoke stack. As we got closer, we could see a clump of ortzs. After a four hour trek, we had arrived.
 
-e% include photo.html url="2023-09-14-north-mongolia/5/__2023-09-01_22-36-54-268000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/5/__2023-09-01_22-36-54-268000_cam.webp" description="" %}
 
 As we came into view, the herders' dogs spotted us and started barking, running over to check out the new visitors.
 
@@ -411,7 +407,7 @@ Sure enough, right as twilight was turning to night, when were back in our ortz 
 This morning we learned a card game called 13. we played cards for hours in the ortz. I think they expected us to be cash cows but we were probably better than they thought.
 
 
-When the rain stopped we went and picked blueberries. Anuka paid for her university tuition by picking blueberries for 8 hours a day for 20 days of each summer. She said 500g could be sold for about 5000 MNT. I explained the same would cost 20 at the grocery store. We parted ways as we scavenged and I started thinking Anuka wants to pick blueberries in the states. Of course this is impossible, so I later explained the the farming industry, and that picking blueberries is not good money, due to all the land being owned. Near the end Anuka asked if we were bitten by mosquitoes. She said now that we take from the forest, we are giving back.
+When the rain stopped we went and picked blueberries. Anuka paid for her university tuition by picking blueberries for 8 hours a day for 20 days of each summer. She said 500g could be sold for about 5000 MNT. I explained the same would cost 20 at the grocery store. We parted ways as we scavenged and I started thinking Anuka wants to pick blueberries in the states. Of course this is impossible, so I later explained the farming industry, and that picking blueberries is not good money, due to all the land being owned. Near the end Anuka asked if we were bitten by mosquitoes. She said now that we take from the forest, we are giving back.
 
 {% include photo.html url="2023-09-14-north-mongolia/6/__2023-09-02_01-30-07-459000_cam.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/6/__2023-09-02_04-13-49-275000_cam.webp" description="" %}
@@ -469,9 +465,11 @@ In the morning Anuka came back with news from the other ortz. A reindeer had bee
 
 Closer to their ortz, the hide was stretched across the rocks.
 
-{% include photo.html url="2023-09-14-north-mongolia/__2023-09-02_22-25-33-535000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/__2023-09-02_22-25-59-146000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/__2023-09-02_22-26-30-977000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-02_22-25-33-535000_cam.webp" description="" %}
+
+{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-02_22-25-59-146000_cam.webp" description="" %}
+
+{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-02_22-26-30-977000_cam.webp" description="" %}
 
 Last night was the first day after the full moon, making last night's event a "blood" ceremony. Did the ceremony cause this to happen? Is this our fault? I asked Anuka. She said it’s possible, but she tried to make light heart of it that the dogs are happy because they will eat well. I felt so guilty.
 
@@ -521,6 +519,7 @@ In the morning we went to the kindergarten. Unlike the jovial ceremony we witnes
 
 {% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-03_22-31-13-636000_evan.webp" description="" %}
 
+
 Outside we were greeted by a happy, plump woman in a short red dress, and her makeup done. She has been the headmaster since Anuka went to the kindergarten over 20 years ago, and it was the 30th year anniversary of the kindergarten. Before that, there was no school in the village, and people sent their children to boarding school at a distant town--or didn't educate them. Needless to say, the headmaster was in a great mood, and her pride showed in her unwipable smile as she opened the door for us.
 
 However, upon crossing through the door's archway, we were greeted by terrorized screams of around 30 kindergarteners who had just been stripped away from their families, dumped in a town full of strangers, and here to stay for the foreseeable future. I'm sure the first day of school is tough for most kids, but for many of these children, this was a boarding school, and they knew they wouldn't be seeing their parents for a long time. Needless to say, they were completely inconsolable, and as horrible as it was, I couldn't help but smile at the stark contrast between the joyful, celebratory mood of the headmaster and the sudden, overwhelming outbreak of tears and cries from the children.
@@ -561,7 +560,7 @@ Anyways, we opted to stay with an elderly woman. Her daughter was classmates wit
 
 She housed Lhagwa, Anuka, Kourtney and I in her ortz next door. Once we settled, she came over for dinner that Anuka made. Inevitably the cards got pulled out, along with the vodka. After several days of playing, I finally won my very first game of 13. Feeling pretty rich with the 5K bill Lhagwa just handed me, I was quickly reminded that Anuka had beat me the prior round, and so the money really belonged to her. Everyone laughed at my short-lived riches. Before handing it over I decided to take a picture of the bill, serving as perhaps the only proof that I ever won a game. Everyone thought it was hilarious that I took a picture of it.
 
-{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_10-05-16-665000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_10-05-16-665000_evan.webp" description="" width="70%" %}
 
 I went to bed feeling thankful for all the laughs we had shared that night. I felt amongst friends. The crackling sound of the fire was overlaid with Lhagwa's drunken snoring. The flickering flames illuminated the animal skin walls. The last thing I remember before falling asleep was looking at a bright star through the chimney hole of the ortz.
 
@@ -569,49 +568,78 @@ I went to bed feeling thankful for all the laughs we had shared that night. I fe
 
 We arrived at a very lucky time. The herders were undertaking their annual Autumnal migration to their final camp before winter. This happens because the reindeer need to move into the forest, where they can plump up before winter, where there is a lot of grass. Also in the valley where we spent the night, the reindeer travel far and can be difficult to herd, whereas in the new location they stay closer.
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_20-27-02-700000_evan.webp" description="A curious reindeer pokes their head into the ortz." %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_20-27-02-700000_evan.webp,2023-09-14-north-mongolia/9/__2023-09-04_20-27-58-812000_cam.webp"
+    caption="Rise and shine. A curious reindeer pokes their head into the ortz as Anuka prepares breakfast before eventually being shooed away."
+%}
 
-From around 9 AM the community was bustling with activity. Each herder was deconstructing their ortz and placing their entire life belongings into plastic, fabric, and leather bags. Solar panels, lightbulbs, mattresses, furnaces, ropes, dishes, antlers, leather, reindeer milk, chainsaws, cutting boards, axes: everything these people owned was to be transported to the their new home.
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_20-48-25-956000_cam.webp" description="Morning light outlines a peacefully grazing stag, haloing its antlers in pure white." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_20-47-38-361000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_21-36-23-331000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-02-56-914000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-12-16-169000_cam.webp" description="" %}
+From around 9 AM the community was bustling with activity.
 
-Once everything was out of the ortz, the canvas was removed in pieces and often used to wrap up belongings.
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_21-11-20-377000_evan.webp,2023-09-14-north-mongolia/9/__2023-09-04_21-36-21-834000_evan.webp"
+    caption="Buyantogtokh leads Kourtney and I to her reindeer milk stash in the forest. Dug under the moss near a slowly moving creek, she looks around, and in a eureka moment peels off a nondescript clump of moss, revealing 40 plastic bottles of milk. Together we bring back her milk reserves to camp where her grandson starts bagging them."
+%}
 
-From morning until night, the herders were busy at work. Buyantogtokh led Kourtney and I to her reindeer milk stash in the forest. Dug under the moss near a slowly moving creek, she pulled out at least 40 plastic bottles filled with reindeer milk. She would look around, and then in a eureka moment peel off some nondescript clumps of moss to reveal bottles of milk underneath. Together we brought back her milk reserves to camp.
+Each herder was deconstructing their ortz and placing the entirety of their posessions into plastic, fabric, and leather bags. Solar panels, lightbulbs, mattresses, furnaces, ropes, dishes, antlers, leather, reindeer milk, chainsaws, cutting boards, axes: everything these people owned was to be transported to the their new home.
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_21-11-20-377000_evan.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_20-44-22-645000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-02-56-914000_cam.webp"
+    caption="Bit by bit, the Tsaatan pack up camp. With the canvases covering their ortzs now stripped away, the entirety of their material belongings now lay in just a few piles next to the frames of their once homes."
+%}
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_21-36-21-834000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-38-50-874000_evan.webp" width="60%" description="A battle worn solar panel lays next to the frame of an uncovered ortz." %}
 
-One by one, the herder families saddled up their reindeer with everything and the kitchen sink. They tied the saddle-backed reindeer in lines, with the biggest in front, and the smallest in the back. The majority of reindeers, who were not saddled, were herded on the fly by skilled horsemen and reindeermen.
+While some were busy breaking camp, others were herding their reindeer together for the migration. Each and every reindeer had to be accounted for.
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-48-35-022000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-51-38-432000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-51-53-104000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-52-18-055000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-53-16-528000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-59-36-121000_cam.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_23-05-58-162000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_21-36-23-331000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-12-16-169000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-00-23-784000_cam.webp"
+    caption="(top-left) An elder corrals a pair of her reindeer, as indicated by the branded letter 'A' on each of their torsos. (top-right) A huge stag is led to the staging area. Its antlers have been cut to avoid infighting within the herd. (bottom-left) To discourage endless wandering of the mother reindeer, their babies--which they will not abandon--are often tied down. (bottom-right) Two men distribute ortz canvas evenly across a discomforted reindeer's saddle."
+%}
+
+Once the reindeer were gathered, a core set of each family's herd would be saddled for the purpose of either riding or carrying possessions.
+
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_23-06-53-046000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-11-08-520000_cam.webp"
+    caption=""
+%}
+
+
+
+They tied the saddle-backed reindeer in lines, with the biggest in front, and the smallest in the back. The majority of reindeers, who were not saddled, were herded on the fly by skilled horsemen and reindeermen.
+
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-53-16-528000_cam.webp" %}
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-03-36-464000_cam.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-05-35-261000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-05-58-162000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-06-53-046000_cam.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-10-23-900000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-16-00-120000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-17-01-094000_evan.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-25-38-614000_cam.webp" description="" %}
+
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_23-16-00-120000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-17-01-094000_evan.webp"
+    caption="FIXME antlers as a commodity"
+%}
+
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-04_22-51-38-432000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-51-53-104000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-52-18-055000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-59-36-121000_cam.webp"
+    caption="One of the most important items of all, the wood stove."
+%}
 
 Then the herders took off down the valley in the direction from which they had migrated from a few months prior.
 
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-48-35-022000_cam.webp" description="" %}
+
 Within a few hours, the camp was mostly deserted, except for a few people who were still waiting for their reindeer to return, Buyantogtokh included. Anuka, Lhagwa, Kourtney and I saddled up our horses and followed suit down the valley.
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_00-30-14-769000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_00-43-20-005000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_01-02-20-626000_cam.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/9/__2023-09-05_00-30-14-769000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-05_00-43-20-005000_cam.webp"
+    caption="(left) As she waits for her unaccounted for reindeer to return, Buyantogtokh gathers her remaining possessions. Her loyal companion following her every step. (right) Lhagwa and I load our gear back onto the horses. It feels good to be trusted by our horse wrangler with the responsibility."
+%}
+
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_01-02-20-626000_cam.webp" description="Anuka and Buyantogtokh waiting patiently for Buyantogtokh's reindeer to show up. At this point, almost all of the other families have left." %}
 
 By chance, a herd of about 20 reindeer, guided by a single herder, crossed our path. For a fleeting, magical minute, we found ourselves engulfed in a sea of reindeer, their majestic presence surrounding us from every angle.
+
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_01-23-46-441000_cam.webp" description="" %}
 
@@ -725,7 +753,7 @@ Last spring was a terrible spring, with bitter winds and no grass. Mongolia had 
 
 After a few hours Lhagwa called. It was getting dark and he needed some help taking down some tourist gers with his wife. So Baagii, Kourtney and I jumped in the car to help.
 
-Lagwa was loading up two gers into his old Russian truck, aka a FIXME.
+Lhagwa was loading up two gers into his old Russian truck, aka a FIXME.
 
 {% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_19-31-30-248000_cam.webp" description="" %}
 
@@ -741,7 +769,7 @@ When we got back Anuka was in the middle of preparing sheep steamed dumplings fr
 
 {% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_07-44-31-611000_evan.webp" description="" %}
 
-## Day 12: Farewel Lhagwa
+## Day 12: Farewell Lhagwa
 
 Our plan today was to make it to Kohvul lake, where Anuka had rented a small tourist cabin.
 
@@ -800,7 +828,7 @@ After breaking the ice with Batsur with a self-explanatory rock-throwing contest
 
 {% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-09_01-15-26-946000_kourtney.webp" description="" %}
 
-The night was a mix of laughter and emotional conversations. I found it very impressive how communicative Baagii was despite having a miniscule English vocabulary. We learned that Batsur and Baagii used to play Counterstrike together in university. And that Baagii once drank 6L of koumice—joking that from the center of the ger he was projectile vomiting outside. Baagii thanked us for respecting his culture by participating in the sheep slaughter. As we drank earlier in the night Baagii took the remainder of the sheep leg that Anuka used to make dumplings, grabbed a knife, and went to town, not stopping until it was picked clean. It wasn’t because he’s hungry, she said. It’s because he is respecting the animal. She also said if you are a guest and you eat like Baagii is eating the owners will be so so appreciative because it means you are respecting their hospitality.
+The night was a mix of laughter and emotional conversations. I found it very impressive how communicative Baagii was despite having a miniscule English vocabulary. We learned that Batsur and Baagii used to play Counterstrike together in university. And that Baagii once drank 6L of kumis—joking that from the center of the ger he was projectile vomiting outside. Baagii thanked us for respecting his culture by participating in the sheep slaughter. As we drank earlier in the night Baagii took the remainder of the sheep leg that Anuka used to make dumplings, grabbed a knife, and went to town, not stopping until it was picked clean. It wasn’t because he’s hungry, she said. It’s because he is respecting the animal. She also said if you are a guest and you eat like Baagii is eating the owners will be so so appreciative because it means you are respecting their hospitality.
 
 {% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-09_08-40-17-363000_evan.webp" description="" %}
 
@@ -826,7 +854,7 @@ Then we walked to the supermarket where we would meet up with Baagii. Along the 
 
 At the market Baagii had bought us gifts. For Kourtney, he noticed her phone screen was broken so he bought her a new screen protector. And for both of us he bought us a deck of novelty cards, where each card was a picture of a famous Mongolian wrestler. As he placed the in my hands he pointed and said,  "Mongolian playboy".
 
-Then we were back on the (paved 🙏) road. We decided we would stay with Handa and her husband, the nomads we encountered a week ago, who invited us into their ger. To be clear, that doesn’t mean this was arranged with them. We were just going to show up. Anuka wasn’t kidding when she said Mongolians have no word for "go away". When we arrived, Handa was just finishing a horse milking session and seamlessly transitioned into hostess mode, preparing milk tea and cookies with surcream, and of course, koumice.
+Then we were back on the (paved 🙏) road. We decided we would stay with Handa and her husband, the nomads we encountered a week ago, who invited us into their ger. To be clear, that doesn’t mean this was arranged with them. We were just going to show up. Anuka wasn’t kidding when she said Mongolians have no word for "go away". When we arrived, Handa was just finishing a horse milking session and seamlessly transitioned into hostess mode, preparing milk tea and cookies with surcream, and of course, kumis.
 
 Their kid had left for school, living in a 50 bed dormitory in a village school around 100km away. He was the kid who wanted us to send a message to Michael Jordan. In his place, was Kourtney’s newest obsession: a small pregnant cat gnawing a sheep thigh bone.
 
@@ -836,19 +864,19 @@ It felt full circle to be spending our last rural night at the very place where 
 
 But this time was completely different. This time we felt like seasoned veterans of this lifestyle. In the last week, we'd travelled across roadless mountain passes, traversed the treacherous Northern Mongolian landscape on horseback to visit the Tuvan peoples. We'd had our prophecies told during a life-altering Shamanic ritual, witnessed a bear-attack that killed one of Godla's reindeers. We'd participated in a seasonal reindeer herding migration, and lived in ortzs underneath the stars. We'd butchered a sheep, watched a backyard horse branding, and rode reindeers.
 
-So in comparison to all of that, we felt comfortable with Handa and her family. I played a friendly game of 13 while sipping koumice. Kourtney helped herd the baby cows. Then we stirred the newest milk contribution into the massive cow skin bag.
+So in comparison to all of that, we felt comfortable with Handa and her family. I played a friendly game of 13 while sipping kumis. Kourtney helped herd the baby cows. Then we stirred the newest milk contribution into the massive cow skin bag.
 
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_07-38-37-922000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_07-38-37-922000_evan.webp" description="To transform the fresh horse milk into kumis, the batch is whisked vigorously with a wooden stick for an hour continuously. Over this time, yeast alcoholizes and carbonates the milk while *Lactobacillus* acidifies it." %}
 
-Although we felt we were fitting in, that's not to say we're fit for this lifestyle. I cannot understate how tremendously hard nomadic life is compared to most Western lifestyles. This is a non-controversial opinion for any "Westerner" who has spent as little time here as we have. Case in point: Handa's daily summer routine. Every two hours she milks the horses. From 5am to 9pm. And at the end of the day, she needs to mix the new milk with the forever soup of koumice by stirring it vigorously for 90 minutes continuously. This helps incorporate the yeast and kickstarts the fermentation. She was so happy that Baagii, Kourtney, Anuka and I took shifts so she could rest her body.
+Although we felt we were fitting in, that's not to say we're fit for this lifestyle. I cannot understate how tremendously hard nomadic life is compared to most Western lifestyles. This is a non-controversial opinion for any "Westerner" who has spent as little time here as we have. Case in point: Handa's daily summer routine. Every two hours she milks the horses. From 5am to 9pm. And at the end of the day, she needs to mix the new milk with the forever soup of kumis by stirring it vigorously for 90 minutes continuously. This helps incorporate the yeast and kickstarts the fermentation. She was so happy that Baagii, Kourtney, Anuka and I took shifts so she could rest her body.
 
-Late in the night I got a bad case of the dairy trots from the koumice that I was so confidently sipping earlier in the night, serving as a further reminder of my un-Mongolianness.
+Late in the night I got a bad case of the dairy trots from the kumis that I was so confidently sipping earlier in the night, serving as a further reminder of my un-Mongolianness.
 
 ## Day 15: FIXME
 
 When we left, I got Handa's WhatsApp number. She said her kid is still deciding what to write to Michael Jordan. I don’t know how I’ll get the message to him, but I’ll cross that bridge when we get there.
 
-We left the asphalt one last time to visit the national park. On our way we encountered a 2 kilometre stretch where at least 600 horses were freely roaming. Apparently we were in a province that is famouse for koumice. Figures.
+We left the asphalt one last time to visit the national park. On our way we encountered a 2 kilometre stretch where at least 600 horses were freely roaming. Apparently we were in a province that is famouse for kumis. Figures.
 
 {% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_01-18-49-358000_evan.webp" description="" %}
 {% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_05-00-40-250000_cam.webp" description="" %}

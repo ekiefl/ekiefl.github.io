@@ -150,6 +150,33 @@ figcaption {
     color: lighten($text-color, 10);
     padding-bottom: 0.4rem;
 }
+
+#articlecontent .photo-fig {
+  margin: auto;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+  margin-bottom: 1rem;
+}
+
+#articlecontent .photo-fig:hover {
+  transform: scale(1.02);
+}
+
+#articlecontent .photo-fig img {
+  border-radius: 0px;
+  border: 0;
+  box-sizing: unset;
+}
+
+#articlecontent .photo-caption {
+  background-color: #f0f0f0;
+  border-radius: 0 0 8px 8px;
+  width: auto;
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  display: block;
+  font-style: italic;
 }
 
 /* 
