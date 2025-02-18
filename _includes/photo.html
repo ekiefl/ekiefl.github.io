@@ -4,9 +4,9 @@
       style="display: block; margin: auto; width: 100%;">
   </a>
 
-  {% if include.description %}
+  {% if include.description | strip %}
   <figcaption class="photo-caption">
-    {{ include.description }}
+    {{ include.description | strip }}
   </figcaption>
   {% endif %}
 </figure>

@@ -39,9 +39,14 @@
     margin-bottom: 1rem;
   }
 
+  .gallery-caption:empty {
+    display: none;
+  }
+
   .image-gallery-figure {
     border-radius: 8px 8px 8px 8px;
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0;*/
+    background-image: linear-gradient(to bottom, transparent, #f0f0f0);
   }
 </style>
 
@@ -62,9 +67,9 @@
     </li>
     {% endfor %}
   </ul>
-  {% if include.caption %}
+  {% if include.caption | strip %}
   <figcaption class="gallery-caption">
-    {{ include.caption }}
+    {{ include.caption | strip }}
   </figcaption>
   {% endif %}
 </figure>

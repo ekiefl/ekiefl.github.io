@@ -197,6 +197,10 @@ figcaption {
   font-style: italic;
 }
 
+#articlecontent .photo-caption:empty {
+  display: none;
+}
+
 /* 
    Feature image captions
    ========================================================================== */
