@@ -508,11 +508,11 @@ The grandpa was an incredibly small man with a crinkled face and few teeth. He b
 
 {% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-06-25-975000_cam.webp" %}
 
-Afterwards we gave the kid a gift packet. Kourtney exchanged the Mickey Mouse eraser for a Spider-Man eraser, since he was wearing Spider-Man sneakers. He was very rambunctious and full of energy. We asked him what he wants to be when he grows up. His answer: a reindeer herder, just like his dad. Although I already knew the answer, I asked whether or not he was old enough to ride a reindeer. He eagerly showed us, hopping on the closest reindeer and commanding it much better than I could have. He was beating the reindeer's ass with a stick, directing the docile creature here and there with a boastful confidence.
+Afterwards we gave the kid a gift packet. Kourtney exchanged the Mickey Mouse eraser for a Spider-Man eraser, since he was wearing Spider-Man sneakers. He was very rambunctious and full of energy. We asked him what he wants to be when he grows up. His answer: a reindeer herder, just like his dad. Although I already knew the answer, I asked whether or not he was old enough to ride a reindeer.
+
+{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-16-35-935000_cam.webp" description="With a boastful confidence, the boy articulately commanding his reindeer with a dynamic range of rein maneuvring, heel kicks, and a stick he picked up off the ground to whip its ass with. His velcro Spiderman sneakers, the only thing resembling his age." %}
 
 {% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-16-32-742000_cam.webp" %}
-
-{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-16-35-935000_cam.webp" %}
 
 Then, a car pulled up, and out popped a bunch of people. Anuka recognized all of them. After a while Anuka started to piece it together: Gambut was just joking when he said he was waiting for tourists. He was in fact, just waiting for his family, and here they were.
 
@@ -545,25 +545,25 @@ Then we went to the store. There again happened to be the kindergarten headmaste
 
 After our morning stroll through the village, we headed out for our second adventure into the Taiga, this time to the Eastern Reindeer Herders.
 
-{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-03_23-50-35-065000_cam.webp" description="Goats graze in the foreground while a solitary ger stands against the undulating hills." %}
+{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-03_23-50-35-065000_cam.webp" %}
 
 {% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_00-11-00-320000_cam.webp" description="On our way to the starting point, Baagii points out a Mongolian Irish Pub, which is Baagii's joke for a group of Mongolians who, through happenstance, find themselves on a hillside drinking vodka, a not all too uncommon occurrence. Beside them are parked three motorcycles and a horse. And upon further inspection, one of them is Lhagwa, our horse wrangler! Down rolls and the windows and Baagii and Anuka yell at him. Presumably something like, 'get your ass to the start point!'" %}
 
 After some practice rounds of 13, where Baagi demonstrated some advanced strategies by pointing out at various groupings of cards within his hand, Lhagwa finally arrived and the we began the trek. I had the same tempermental horse that I was riding yesterday. When we stopped for lunch, Lhagwa explained I was riding a sheep horse, which is what Mongolian children use to herd sheep. No wonder he called me baby.
 
-{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_00-41-23-759000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_00-41-23-759000_cam.webp" %}
 
 The journey was thematically similar to the first one. Through some rolling mountains, a descent into a valley, and then follow the river to the camp. There was no trail, just suggestions that probably start as animal trails and then are reinforced by mounted horse and reindeer. But the terrain is so spongy and wet that by the time a trail is formed, it’s already a mud pit.
 
 Given this, we established our own way through the marsh, bushland, creeks, bogs, and small timber forests. Once again Lhagwa led the charge with instincts he’s been honing since he himself was a 4 year old child herding sheep.
 
-{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_05-54-15-948000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_05-54-15-948000_evan.webp" description="Lhagwa and Anuka reattaching the bags after they fell off the horse. I take the opportunity to stretch my legs." %}
 
 Interestingly, there exists a cultural divide between reindeer herders depending on the region they inhabit, either the western or eastern Taiga. In the west, herders like Godla and Sartlong live in small communities, congregating in small nuclear families, or if their reindeer herding patterns happen to coincide. This was in stark contrast to the Eastern reindeer herders, which live in just one or two large nomadic communities.
 
 I'm not sure of the exact reasons, but perhaps owing to the large community that the Eastern reindeer herders live in, they are much more commonly visited by foreign and domestic tourists than their Western counterparts. Tourists are coming all the time. And when guests arrive, they visit whoever they want to. It's no doubt an over generalization to say that everyone wants guests, but it certainly seeemed that way because there is an expectation to bring gifts, and of course to pay for their room and board.
 
-{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_18-30-11-084000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_18-30-11-084000_evan.webp" description="The Eastern reindeer herders Summer camp." %}
 
 Anyways, we opted to stay with an elderly woman. Her daughter was classmates with Anuka and just had a baby a month ago, so she was all alone, except for her grandson who just finished high school. Her name is Buyantogtokh--or just Buyan for short. She was very nice, immediately asking if we were warm enough, and if we wanted tea. She's also incredible, being completely self sufficient at managing her reindeer and living in the harsh conditions of the taiga.
 
@@ -571,7 +571,7 @@ Anyways, we opted to stay with an elderly woman. Her daughter was classmates wit
 
 She housed Lhagwa, Anuka, Kourtney and I in her ortz next door. Once we settled, she came over for dinner that Anuka made. Inevitably the cards got pulled out, along with the vodka. After several days of playing, I finally won my very first game of 13. Maybe it was those lessons Baagii gave me. Feeling pretty rich with the 5K bill Lhagwa just handed me, I was quickly reminded that Anuka had beat me the prior round, and so the money really belonged to her. Everyone laughed at my short-lived riches. Before handing it over I decided to take a picture of the bill, serving as perhaps the only proof that I ever won a game. Everyone thought it was hilarious that I took a picture of it.
 
-{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_10-05-16-665000_evan.webp" description="" width="70%" %}
+{% include photo.html url="2023-09-14-north-mongolia/8/__2023-09-04_10-05-16-665000_evan.webp" width="70%" %}
 
 I went to bed feeling thankful for all the laughs we had shared that night. I felt amongst friends. The crackling sound of the fire was overlaid with Lhagwa's drunken snoring. The flickering flames illuminated the animal skin walls. The last thing I remember before falling asleep was looking at a bright star through the chimney hole of the ortz.
 
@@ -581,7 +581,7 @@ We arrived at a very lucky time. The herders were undertaking their annual Autum
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-04_20-27-02-700000_evan.webp,2023-09-14-north-mongolia/9/__2023-09-04_20-27-58-812000_cam.webp"
-    caption="Rise and shine. A curious reindeer pokes their head into the ortz as Anuka prepares breakfast before eventually being shooed away."
+    caption="Rise and shine. A curious reindeer pokes its head into the ortz as Anuka prepares breakfast, before eventually being shooed away."
 %}
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_20-48-25-956000_cam.webp" description="Morning light outlines a peacefully grazing stag, haloing its antlers in pure white." %}
@@ -618,13 +618,13 @@ Once the reindeer were gathered, a core set of each family's herd would be saddl
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-04_23-00-23-784000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-06-53-046000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-11-08-520000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-25-38-614000_cam.webp"
-    caption=""
+    caption="(top-left) Two men carefully secure an ortz canvas to a reindeer’s flank, ensuring a balanced load on both sides. (top-right) Anuka holds the lead of a small caravan of loaded reindeer, while their owner finishes their final preparations. (bottom-left) A modern solar panel, neatly tied to the reindeer’s pack, offers a glimpse of contemporary influence (bottom-right) AA striking white reindeer, adorned with matching white packs, stands poised."
 %}
 
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-04_22-51-38-432000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-52-18-055000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_22-59-36-121000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-03-36-464000_cam.webp"
-    caption="Of particular importance is the wood stove."
+    caption="The wood-fire stove, just like the reindeer that bear its weight, is a truly indespensible asset to the Tsaatan."
 %}
 
 They tied the saddle-backed reindeer in lines, with the biggest in front, and the smallest in the back. The majority of reindeers, who were not saddled, were herded on the fly by skilled horsemen and reindeermen.
