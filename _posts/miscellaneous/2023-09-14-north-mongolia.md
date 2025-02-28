@@ -630,13 +630,13 @@ Once the reindeer were gathered, a core set of each family's herd would be saddl
 They tied the saddle-backed reindeer in lines, with the biggest in front, and the smallest in the back. The majority of reindeers, who were not saddled, were herded on the fly by skilled horsemen and reindeermen.
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-53-16-528000_cam.webp" %}
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-05-35-261000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-05-35-261000_cam.webp" %}
 
 Then the herders took off down the valley in the direction from which they had migrated from a few months prior.
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-04_23-45-33-001000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-45-36-621000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-45-37-901000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-46-12-944000_cam.webp"
-    caption="After finishing his cigarette, a gun-slinging nomad mounts his horse, grabs the rope tethering his reindeer train, and rides over the hill and out of sight."
+    caption="After finishing his cigarette, a gun-slinging nomad mounts his horse, grabs the rope tethering his reindeer caravan, and rides over the hill and out of sight."
 %}
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-48-35-022000_cam.webp" description="A horse contends with entrencheningly deep mud as its rider holds tightly to his tethered reindeer. Compared to horses, reindeers navigate this terrain more easily because they weigh less." %}
@@ -652,7 +652,7 @@ Within a few hours, the camp was mostly deserted, except for a few people who we
 
 After hanging out with Buyantogtokh for a bit, Anuka, Lhagwa, Kourtney and I saddled up our horses and followed suit down the valley.
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_01-23-46-441000_cam.webp" description="In the marshy valley, our path converges with a herd of 20 reindeer and their owner heading the same direction. For a fleeting minute, while Kourtney frantically gets the camera out, we find ourselves engulfed in the center of their herd, and I feel like I've animorphed into one of the reindeer and joined the herd entirely." %}
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_01-23-46-441000_cam.webp" description="In the marshy valley, our path converges with a herd of 20 reindeer and their owner heading the same direction. For a fleeting minute, while Kourtney frantically gets the camera out, we find ourselves engulfed in the center of their herd, and I feel like I've animorphed into one of them and joined their herd entirely." %}
 
 The journey took around 2 hours. In the final half hour, reindeer with empty saddles were being led back to the original camp to pick up what couldn’t be carried on the first trip.
 
@@ -660,14 +660,13 @@ We arrived at the new camp and it was chaos. Piles of belongings were piled besi
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-05_03-02-38-867000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-05_03-05-28-673000_cam.webp"
-    caption="FIXME"
 %}
 
 From the moment we arrived at the new campsite, until well past dark, we joined the chaos and helped however we could. Primarily, we helped erect ortzs for newly arrived herders, since it requires the coordination of many hands to properly cover the teepee-like structure with the canvas.
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-05_06-11-13-606000_evan.webp,2023-09-14-north-mongolia/9/__2023-09-05_02-52-17-294000_evan.webp,2023-09-14-north-mongolia/9/__2023-09-05_02-57-45-549000_evan.webp,2023-09-14-north-mongolia/9/__2023-09-05_06-16-31-473000_evan.webp"
-    caption="FIXME"
+    caption="(top-left) Stuff, everywhere. (top-right) Anuka, Kourtney, and Lhagwa assembling the ortz for a family that returned to Summer camp to fetch the rest of their reindeer. (bottom-left) Getting full coverage of the canvas over the ortz is half art, half science. (bottom-right) The ortz construction begins with a central knot that ties 3 logs together. Once the tripod is assembled all of the other logs are leaned against the formed center."
 %}
 
 ## Day 10: Making the rounds
@@ -681,7 +680,7 @@ The plan for the day was to hang out with the herders and then ride our horses b
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-05_03-04-51-984000_cam.webp" description="Kourtney saying hello." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-05_22-06-30-666000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-05_22-06-30-666000_cam.webp" %}
 
 After breakfast, we made our way around and gave away the rest of our gifts to families that we had met. I really liked how well Anuka knew everyone because all of our gifts ended up being quite personalized.
 
@@ -689,32 +688,35 @@ We met with the tribal leader and his wife, who were very interested to hear I w
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/10/__2023-09-05_22-51-56-387000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-05_22-52-03-777000_cam.webp"
-    caption="The tribal leader and his wife."
+    caption="Husband and wife."
 %}
 
 Then we found Buyantogtokh. She got in late last night but had clearly settled well because she was out and about. We gave her some durable rubber twist ties that my sister bought me for Christmas a couple years ago. We thought it could save her arthritic hands from some of the endless rope tying necessitated by herder lifestyle. We also gave her a waterproof sack.
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-05_22-56-13-315000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-05_22-56-13-315000_cam.webp" description="Buyantogtokh resting easy after another successful migration." %}
 
-FIXME horse branding
+---
+
+One of the herders came into our ortz with a branding iron and placed it in the coals of the wood fire stove. Lhagwa followed in soon after, pointing at the iron with a grin on his face, making sure we understood something exciting was going to unfold. Anuka filled us in: a horse branding was underway.
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/10/__2023-09-06_00-26-33-506000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-06_00-28-51-184000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-06_00-29-11-935000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-06_00-29-50-577000_cam.webp"
-    caption="FIXME"
+    caption="Four men wrestle a powerful and unrelenting chestnut horse to ground. With its front legs tied together, the horse bucks, thrashes, and whinnies as the men gradually restrict its movement. Eventually, after considerable effort from both parties, the horse submits and the branding can begin."
 %}
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-31-41-244000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-32-50-948000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-31-41-244000_cam.webp" description="One of the men fetches the branding iron from the coals of a nearby fire, using his sleeve to protect his hands with the heat. While two of the men restrain the horse with taut ropes, Lhagwa and the wielding man drive the iron into the horse's hindquarters. After a second of motionless obedience, the horse kicks hard and unexpectedly, destabilizing the men and freeing its hind from the branding." %}
+
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-32-50-948000_cam.webp" description="The men reconfigure. The iron-wielding man hovers it above the horse's hind until equilibrated with the partial branding, and then presses in with an ironclad grip, finishing what he started. Exhausted, and with no potential recourse, the horse lays dutifully motionless." %}
 
 We were planning to leave in the next couple of hours, but we had yet to give away our potentially most prized gift: the bullets we had bought in the Ulaanbaatar black market. As a gift for hosting us in his ortz, we gave our host 25 bullets, and as we were deciding what to do with the remaining 25, someone entered the ortz to play 13. Then another, and then another. Clearly the news was out that a tourist couple knows how to play. Typically each loser pays 5,000 MNT, but Anuka had the idea to offer either 5,000 MNT or 2 bullets. And then it was off to the races. The energy was high. People were smoking, slamming their cards down, laughing, and most importantly, trying to win some prized bullets. After a couple games, we had to call quits and head back to Tsagaannuur. Since there wasn't enough time for the herders to win all the bullets legitimately, we ended up divvying the remaining bullets to the players as gifts.
 
 {% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_02-00-24-103000_cam.webp" description="" %}
 
-Before we left, our host called us over. To thank us for the bullets we gave him, he had saddled one of his reindeer and encouraged us to ride it.
+Before we left, our host called us over. To thank us for the bullets we gave him, he had saddled one of his reindeer and allowed us to ride it.
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-10-25-657000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-12-35-044000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-15-19-583000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-10-25-657000_cam.webp" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-12-35-044000_cam.webp" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-15-19-583000_cam.webp" %}
 
 Then as quickly as we came, we were gone. The ride back was beautiful, and we went fast. We trotted for at least an hour through beautiful forest. I cantered with my horse, marking the first time during the trip that my horse and I synergized. Back in Tsagaannuur Anuka’s mom made white fish soup. Just like turkey dinner, it's known to make you tired. It sure did because we were completely knocked out in no time.
 
