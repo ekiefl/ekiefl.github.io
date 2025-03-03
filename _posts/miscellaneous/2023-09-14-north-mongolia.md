@@ -701,12 +701,12 @@ One of the herders came into our ortz with a branding iron and placed it in the 
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/10/__2023-09-06_00-26-33-506000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-06_00-28-51-184000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-06_00-29-11-935000_cam.webp,2023-09-14-north-mongolia/10/__2023-09-06_00-29-50-577000_cam.webp"
-    caption="Four men wrestle a powerful and unrelenting chestnut horse to ground. With its front legs tied together, the horse bucks, thrashes, and whinnies as the men gradually restrict its movement. Eventually, after considerable effort from both parties, the horse submits and the branding can begin."
+    caption="Four men wrestle the unrelenting chestnut horse to ground. With its front legs tied together, the horse bucks, thrashes, and whinnies as the men gradually restrict its movement. Eventually, after considerable effort from both parties, the horse submits and the branding can begin."
 %}
 
 {% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-31-41-244000_cam.webp" description="One of the men fetches the branding iron from the coals of a nearby fire, using his sleeve to protect his hands with the heat. While two of the men restrain the horse with taut ropes, Lhagwa and the wielding man drive the iron into the horse's hindquarters. After a second of motionless obedience, the horse kicks hard and unexpectedly, destabilizing the men and freeing its hind from the branding." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-32-50-948000_cam.webp" description="The men reconfigure. The iron-wielding man hovers it above the horse's hind until equilibrated with the partial branding, and then presses in with an ironclad grip, finishing what he started. Exhausted, and with no potential recourse, the horse lays dutifully motionless." %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-32-50-948000_cam.webp" description="The men reconfigure for a second attempt. The iron-wielding man hovers it above the horse's hind until equilibrated with the partial branding, and then presses in with an ironclad grip, finishing what he started. Exhausted, and with no potential recourse, the horse lays dutifully motionless." %}
 
 We were planning to leave in the next couple of hours, but we had yet to give away our potentially most prized gift: the bullets we had bought in the Ulaanbaatar black market. As a gift for hosting us in his ortz, we gave our host 25 bullets, and as we were deciding what to do with the remaining 25, someone entered the ortz to play 13. Then another, and then another. Clearly the news was out that a tourist couple knows how to play. Typically each loser pays 5,000 MNT, but Anuka had the idea to offer either 5,000 MNT or 2 bullets. And then it was off to the races. The energy was high. People were smoking, slamming their cards down, laughing, and most importantly, trying to win some prized bullets. After a couple games, we had to call quits and head back to Tsagaannuur. Since there wasn't enough time for the herders to win all the bullets legitimately, we ended up divvying the remaining bullets to the players as gifts.
 
@@ -718,7 +718,7 @@ Before we left, our host called us over. To thank us for the bullets we gave him
 {% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-12-35-044000_cam.webp" %}
 {% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_03-15-19-583000_cam.webp" %}
 
-Then as quickly as we came, we were gone. The ride back was beautiful, and we went fast. We trotted for at least an hour through beautiful forest. I cantered with my horse, marking the first time during the trip that my horse and I synergized. Back in Tsagaannuur Anuka’s mom made white fish soup. Just like turkey dinner, it's known to make you tired. It sure did because we were completely knocked out in no time.
+Then as quickly as we came, we were gone. The horse ride back was beautiful, and we went fast. We trotted for at least an hour through beautiful forest. I cantered with my horse, marking the first time during the trip that my horse and I synergized. Back in Tsagaannuur Anuka’s mom made white fish soup. Just like turkey dinner, it's known to make you tired. It sure did because we were completely knocked out in no time.
 
 ## Day 11: Sheep dumplings
 
@@ -726,15 +726,19 @@ In the morning Baaggi went to buy a sheep because we had ran out of meat. We wan
 
 He dragged it over to the back of the house, positioned it on its back, and with a relatively small knife tried to make an incision through its underbelly. But the knife wasn’t sharp enough so he called over Anuka’s mom who brought a bigger knife. He got through all the wool and made an incision without the sheep making a fuss. Then he maneuvered his hand through the sheep, at which point the sheep started to kick, and then with a mighty force he ripped his bloody hand out. He showed us later, during the dissection, that he had plucked a main artery that runs just below the sheep’s spinal cord. Without any fight, the sheep was dead within a minute.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-27-07-349000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-27-39-441000_cam.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-06_21-27-07-349000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-27-39-441000_cam.webp"
+    caption="(left) Baagii maneuvering his hand through sheep's innards, searching for the artery that runs below the sheep's spinal cord. (right) After plucking the artery, Baagii steadies the sheep in its final moments."
+%}
 
 After the kill, I helped Baaggi process the sheep.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-29-07-218000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-42-34-933000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-50-02-048000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-53-06-064000_evan.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-06_21-50-02-048000_evan.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-53-06-064000_evan.webp"
+    caption="(left) Baagii beckons for me to pass the front right leg through an incision in the upper chest as a way of peeling back the sheep's underside, better exposing its cavity. Yet because I have no idea what I'm doing, I for some reason go to shake his hand. He howls with laughter, nearly falling over. Later, he tells Anuka that he will think of that moment every time he kills a sheep and laugh. (right) With the innards removed, a large pool of blood remains, which Baagii scoops into a bucket with a ladle."
+%}
+
+{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-42-34-933000_evan.webp" description="Baagii's daughter stands quietly behind him, pacifier in mouth, while he processes the freshly slaughtered animal. In Mongolia, there's no separation between meat and its source, and children grow up seeing the entire process from an early age. Observing her father provide for his family is a casual, everyday experience, one that fosters a deep respect for where their food comes from." %}
 
 We had some left over gifts to give the chidren, so we made a stop by the school. A group of girls were fascinated with Kourtney’s hair, and indiscreetly whispered to each other, wide-eyed and shy. We found a group of three girls and two boys who all shared a room together. Kourtney laid out the remaining pencil cases that fashioned Disney or superhero characters for the kids to select from. Without any arguing they all picked their favorites. We talked with them for a bit. They were very shy so to break the ice we had Kourtney count to 10 in Mongolian, which conjured some laughter. Then one of the girls counted to 10 in English. We asked them what they wanted to be when they grow up: basketball players, singers, and teachers.
 
