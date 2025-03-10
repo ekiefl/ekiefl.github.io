@@ -430,7 +430,7 @@ When the rain stopped we went and picked blueberries. Anuka paid for her univers
 Our diet with the herders consisted of beef ribs that Anuka brought and hung in the ortz, bread and fried bread with blueberry jam, milk tea, and noodles, all prepared fresh. Anuka is a more capable cook with limited ingredients, a pot, a wood fire stove, and a river of fresh water than I am with a grocery store and an electric appliance kitchen.
 
 {% include gallery.html
-    images="2023-09-14-north-mongolia/6/__2023-09-02_07-01-54-095000_evan.webp,2023-09-14-north-mongolia/7/__2023-09-02_22-32-10-518000_evan.webp" caption="(left) Anuka making a blueberry jam with part of our harvest. (right) A Tuvan kitchen."
+    images="2023-09-14-north-mongolia/6/__2023-09-02_07-01-54-095000_evan.webp,2023-09-14-north-mongolia/7/__2023-09-02_22-32-10-518000_evan.webp" caption="(left) Anuka making a blueberry jam with part of our harvest. (right) A Tsaatan kitchen."
 %}
 
 {% include gallery.html
@@ -485,7 +485,7 @@ In the morning Anuka came back with news from the other ortz. A reindeer had bee
 
 Last night was the first day after the full moon, making last night's event a "blood" ceremony. Did the ceremony cause this to happen? Is this our fault? I asked Anuka. She said it’s possible, but she tried to make light heart of it that the dogs are happy because they will eat well. I felt so guilty.
 
-But Godla and Sartlong seemed to be in good spirits, unphased by what transpired. Anuka said that a reindeer costs 1M MNT, but that well crafted reindeer boots, which require the hide of one reindeer, also sell for 1M MNT. It’s better to keep the reindeer alive, but not all is lost. Before, the loss of a reindeer was much worse but now with urbanizing economy, where reindeer boots are fashionable (as well as useful), the loss is not as bad. It is a blatant example of a globalizing world threatening the Tuvan: their reindeer are worth as much dead as alive.
+But Godla and Sartlong seemed to be in good spirits, unphased by what transpired. Anuka said that a reindeer costs 1M MNT, but that well crafted reindeer boots, which require the hide of one reindeer, also sell for 1M MNT. It’s better to keep the reindeer alive, but not all is lost. Before, the loss of a reindeer was much worse but now with urbanizing economy, where reindeer boots are fashionable (as well as useful), the loss is not as bad. It is a blatant example of a globalizing world threatening the Tsaatan: their reindeer are worth as much dead as alive.
 
 After giving them some gifts we had prepared, a multi use flashlight, a headlamp, a lightbulb, we departed. To rid myself of guilt, I told Godla I was very sorry for the loss of his reindeer. Anuka translated, "don’t worry, it became sick yesterday". Reading between the lines, I think he was telling me he doesn’t think it was because of the ceremony.
 
@@ -575,7 +575,7 @@ She housed Lhagwa, Anuka, Kourtney and I in her ortz next door. Once we settled,
 
 I went to bed feeling thankful for all the laughs we had shared that night. I felt amongst friends. The crackling sound of the fire was overlaid with Lhagwa's drunken snoring. The flickering flames illuminated the animal skin walls. The last thing I remember before falling asleep was looking at a bright star through the chimney hole of the ortz.
 
-## Day 9: Autumnal Migration
+## Day 9: Autumnal migration
 
 We arrived at a very lucky time. The herders were undertaking their annual Autumnal migration to their final camp before winter. This happens because the reindeer need to move into the forest, where they can plump up before winter, where there is a lot of grass. Also in the valley where we spent the night, the reindeer travel far and can be difficult to herd, whereas in the new location they stay closer.
 
@@ -706,11 +706,11 @@ One of the herders came into our ortz with a branding iron and placed it in the 
 
 {% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-31-41-244000_cam.webp" description="One of the men fetches the branding iron from the coals of a nearby fire, using his sleeve to protect his hands with the heat. While two of the men restrain the horse with taut ropes, Lhagwa and the wielding man drive the iron into the horse's hindquarters. After a second of motionless obedience, the horse kicks hard and unexpectedly, destabilizing the men and freeing its hind from the branding." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-32-50-948000_cam.webp" description="The men reconfigure for a second attempt. The iron-wielding man hovers it above the horse's hind until equilibrated with the partial branding, and then presses in with an ironclad grip, finishing what he started. Exhausted, and with no potential recourse, the horse lays dutifully motionless." %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_00-32-50-948000_cam.webp" description="The men reconfigure for a second attempt. The horse's owner hovers the branding iron above the horse's hind until it superposes with the partial branding, and then presses in with an ironclad grip, finishing what he started. Exhausted, and with no potential recourse, the horse lays dutifully motionless." %}
 
 We were planning to leave in the next couple of hours, but we had yet to give away our potentially most prized gift: the bullets we had bought in the Ulaanbaatar black market. As a gift for hosting us in his ortz, we gave our host 25 bullets, and as we were deciding what to do with the remaining 25, someone entered the ortz to play 13. Then another, and then another. Clearly the news was out that a tourist couple knows how to play. Typically each loser pays 5,000 MNT, but Anuka had the idea to offer either 5,000 MNT or 2 bullets. And then it was off to the races. The energy was high. People were smoking, slamming their cards down, laughing, and most importantly, trying to win some prized bullets. After a couple games, we had to call quits and head back to Tsagaannuur. Since there wasn't enough time for the herders to win all the bullets legitimately, we ended up divvying the remaining bullets to the players as gifts.
 
-{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_02-00-24-103000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/10/__2023-09-06_02-00-24-103000_cam.webp" %}
 
 Before we left, our host called us over. To thank us for the bullets we gave him, he had saddled one of his reindeer and allowed us to ride it.
 
@@ -727,15 +727,8 @@ In the morning Baaggi went to buy a sheep because we had ran out of meat. We wan
 He dragged it over to the back of the house, positioned it on its back, and with a relatively small knife tried to make an incision through its underbelly. But the knife wasn’t sharp enough so he called over Anuka’s mom who brought a bigger knife. He got through all the wool and made an incision without the sheep making a fuss. Then he maneuvered his hand through the sheep, at which point the sheep started to kick, and then with a mighty force he ripped his bloody hand out. He showed us later, during the dissection, that he had plucked a main artery that runs just below the sheep’s spinal cord. Without any fight, the sheep was dead within a minute.
 
 {% include gallery.html
-    images="2023-09-14-north-mongolia/11/__2023-09-06_21-27-07-349000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-27-39-441000_cam.webp"
-    caption="(left) Baagii maneuvering his hand through sheep's innards, searching for the artery that runs below the sheep's spinal cord. (right) After plucking the artery, Baagii steadies the sheep in its final moments."
-%}
-
-After the kill, I helped Baaggi process the sheep.
-
-{% include gallery.html
-    images="2023-09-14-north-mongolia/11/__2023-09-06_21-50-02-048000_evan.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-53-06-064000_evan.webp"
-    caption="(left) Baagii beckons for me to pass the front right leg through an incision in the upper chest as a way of peeling back the sheep's underside, better exposing its cavity. Yet because I have no idea what I'm doing, I for some reason go to shake his hand. He howls with laughter, nearly falling over. Later, he tells Anuka that he will think of that moment every time he kills a sheep and laugh. (right) With the innards removed, a large pool of blood remains, which Baagii scoops into a bucket with a ladle."
+    images="2023-09-14-north-mongolia/11/__2023-09-06_21-27-07-349000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-27-39-441000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-50-02-048000_evan.webp,2023-09-14-north-mongolia/11/__2023-09-06_21-53-06-064000_evan.webp"
+    caption="(top-left) Baagii maneuvering his hand through sheep's innards, searching for the artery that runs below the sheep's spinal cord. (top-right) After plucking the artery, Baagii steadies the sheep in its final moments. (bottom-left) Baagii beckons for me to pass the front right leg through an incision in the upper chest as a way of peeling back the sheep's underside, better exposing its cavity. Yet because I have no idea what I'm doing, I for some reason go to shake his hand. He howls with laughter, nearly falling over. Later, he tells Anuka that he will think of that moment every time he kills a sheep and laugh. (bottom-right) With the innards removed, a large pool of blood remains, which Baagii scoops into a bucket with a ladle."
 %}
 
 {% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_21-42-34-933000_evan.webp" description="Baagii's daughter stands quietly behind him, pacifier in mouth, while he processes the freshly slaughtered animal. In Mongolia, there's no separation between meat and its source, and children grow up seeing the entire process from an early age. Observing her father provide for his family is a casual, everyday experience, one that fosters a deep respect for where their food comes from." %}
@@ -744,61 +737,64 @@ We had some left over gifts to give the chidren, so we made a stop by the school
 
 We returned to pack up our stuff. Anuka's mom gave us some pendants made of reindeer antlers. Anuka prepared us a plate of sheep heart, liver, intestine, and stomach.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_00-33-32-433000_kourtney.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-07_00-33-32-433000_kourtney.webp,2023-09-14-north-mongolia/11/__2023-09-07_01-14-42-277000_evan.webp"
+    caption="(left) A small plate of sheep innards prepared for us, including heart, liver, intestine, and stomach. (right) A bowl of the innards being shared with the neighbors."
+%}
 
 This was truly a delicacy amongst Mongolians. Thighs and ribs can be smoked and stored. But fresh innards last for just a few hours. We tried the heart. It was very different but palatable. Then we tried a piece of the stomach which sent me into gag territory. Embarrassed by our foreign palates, we returned the plate mostly untouched.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_22-43-39-472000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-06_22-43-39-472000_cam.webp" description="The sheep meat hangs to dry alongside a clothesline outside Anuka's parents' front porch while an innards feast takes place inside." %}
 
 Inside, there was an innards boil and the energy was high. Everyone was gobbling it up like Christmas dinner. People were picking up the small intestine and knifing off pieces. Anuka explained to us that the younger generation, especially from the city, considers innards to be dog food, and that it’s uncivilized. But it is a part of Anuka's culture, and although Kourtney and I found the taste and texture to be disgusting, the practice of making full use of the animal was admirable and beautiful. Equally, I found the experience to serve as powerful evidence that taste preference is entirely relative and dictated by cultural norms.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_01-14-42-277000_evan.webp" description="" %}
-
 Afterwards Kourtney and I had a long discussion about our meat consumption habits. In our Western society, there is an increasingly perpetuated disconnection between the meat we buy at the grocery store and the animal who supplied the meat. This disconnect both protects us from questioning the morality of our meat consumption habits and turns a blind eye to increasingly unethical factory farming practices that drive our meat supply. It was eye-opening to observe a way of life where animal and meat are inextricably linked. Where animal's are given free-roaming lives, never killed prematurely, and where no part goes unused when they are slaughtered.
 
-During the feast, someone came over to borrow Anuka's mom's weigh scale. They picked a bunch of blueberries and wanted to know how much. They were invited in, and they gladly took part in the feast. Afterwards, they weighed the blueberries. 58kg at 8,000 MNT per kilo, or 464,000 MNT. Not too shabby. When they left, the gate was left open and three cows came onto the property, happy to have found fresh grass. Anuka shooed them away.
+During the feast, someone came over to borrow Anuka's mom's weigh scale. They picked a bunch of blueberries and wanted to know how much. They were invited in, and they gladly took part in the feast. Afterwards, they weighed the blueberries. 58kg at 8,000 MNT per kilo, or 464,000 MNT ($131 USD). Not too shabby. When they left, the gate was left open and three cows came onto the property, happy to have found fresh grass. Anuka shooed them away.
 
 The plan for the night was to visit Lhagwa's Autumn home near Tsagaannuur. It was a beautiful little one room cabin.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_21-28-29-207000_cam.webp" description="The view from Lhagwa's cabin" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-07_21-28-29-207000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-07_04-35-38-166000_evan.webp"
+    caption="(left) The view from Lhagwa's cabin. (right) Kourtney petting a plump little cat, cats being somewhat uncommon in Mongolia. It seemed that Anuka was slightly superstitious about cats. I wonder if Mongolians think this way in general."
+%}
 
 Inside, his mother-in-law prepared some surcream with bread, chalky sour dairy pucks, and of course, milk tea.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_04-35-38-166000_evan.webp" description="On one of the beds laid a plump little cat, cats being somewhat uncommon in Mongolia. It seemed that Anuka was slightly superstitious about cats and I wondered if Mongolians think this way in general." %}
-
 Two of the four cabin walls were covered in innumerable horse racing medals mounted on the walls that Lhagwa had won. Clearly Anuka chose the right horse wrangler for us.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_02-37-00-428000_evan.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-07_02-37-00-428000_evan.webp,2023-09-14-north-mongolia/11/__2023-09-07_02-37-29-002000_evan.webp"
+    caption="(left) A section of the cabin wall dedicated to Lhagwa's esteemed horse racing track record. (right) Wrestling medals earned by one of Lhagwa's sons."
+%}
 
 We ate some surcream and bread then wandered outside to catch a view of Tsagaannuur and Lhagwa's animals.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_05-31-08-301000_cam.webp" description="Caught mid-sneeze." %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-07_03-10-18-162000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-07_03-17-29-808000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-07_03-20-16-948000_cam.webp,2023-09-14-north-mongolia/11/__2023-09-07_03-40-37-454000_cam.webp"
+    caption="(top-left, top-right, bottom-left) Happy, free-roaming livestock enjoying their lives. (bottom-right) Kourtney and Anuka messing around in typical, unhurried, nomadic fashion. Tsagaannuur in the distance."
+%}
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_03-10-18-162000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_03-17-29-808000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_03-20-16-948000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_03-37-10-146000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_03-40-37-454000_cam.webp" description="Kourtney and Anuka messing around in typical, unhurried, nomadic fashion." %}
+{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_03-37-10-146000_cam.webp" description="The hindquarters of the sheep Baagii killed in the morning being hung and smoked by a dung pie. Once sufficiently smoked, the meat can be preserved for around a week unrefridgerated. In Mongolia, and especially in the Steppe, where trees aren't bountiful, it's common to use dried livestock poo as a source of fire. Nearby, a sheep belt hangs over the handlebars of a motorcycle." %}
 
-Last spring was a terrible spring, with bitter winds and no grass. Mongolia had 72 million livestock. Now Anuka thinks it could be less than 60 million. When there is such profound levels of death, it’s too much meat to eat, and the quality of the meat is so poor, so herders either bury the bodies or cut open their abdomens and let the vultures and various other birds dissect the carcass. Lhagwa, with his 400 livestock, suffered great loss during this tough year, losing about 200 goats and sheep, Anuka predicts. This is the life of the nomad. You can’t put your money into a bank, it roams freely.
+Last spring was a terrible spring, with bitter winds and no grass. Mongolia had 72 million livestock. Now Anuka thinks it could be less than 60 million. When there is such profound levels of death, it’s too much meat to eat, and the quality of the meat is so poor, so herders either bury the bodies or cut open their abdomens and let the vultures and various other birds dissect the carcass. Lhagwa, with his 400 livestock, suffered great loss during this tough year, losing about 200 goats and sheep, Anuka predicted. This uncertainty comes with the territory of being a nomad. You can’t put your money into a bank, it roams freely.
 
 After a few hours Lhagwa called. It was getting dark and he needed some help taking down some tourist gers with his wife. So Baagii, Kourtney and I jumped in the car to help.
 
-Lhagwa was loading up two gers into his old Russian truck, aka a FIXME.
-
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_19-31-30-248000_cam.webp" description="" %}
+Lhagwa was loading up two gers into his old Russian truck.
 
 After around thirty minutes the truck was loaded, but Lhagwa couldn't get the truck started. As he tried, Baagii pointed to the truck and said, "danger car, big danger car" while laughing. Our path forward was a relatively steep slope on wet grass, and so after Baagii's observation, Kourtney used her body language to convince Lhagwa's wife ride with us, rather than in the death-mobile. Eventually Lhagwa got the car into a chortling start, and we followed behind him.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_07-00-07-135000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_06-59-59-701000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_06-31-58-621000_evan.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/11/__2023-09-07_07-00-07-135000_evan.webp,2023-09-14-north-mongolia/11/__2023-09-07_06-59-59-701000_evan.webp,2023-09-14-north-mongolia/11/__2023-09-07_06-31-58-621000_evan.webp"
+    caption="Helping Lhagwa deconstruct a guesthouse ger I assume he manages. The tourist season is winding down in anticipation of the cold Autumn to come."
+%}
+
+{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_19-31-30-248000_cam.webp" description="Lhagwa's UAZ-452, known as a 'Bukhanka' in Russian (bread loaf). This iconic Soviet-era utility vehicle is a modern convenience in Mongolia, with a simple, serviceable design and high ground clearance. A heavy mist hangs in the air, shielding the looming mountainous wilderness from the simple pastoral grounds that the mixed flock in the foreground lounge within." %}
 
 We followed behind as Lhagwa barrelled across the slope side, slipping several times in what I thought would be a tip, potentially rolling into the lake. His wife, safely in our car, would go "ooooooooo!" and then nervously laugh each time it happened. To cap off the adrenaline rush, Lhagwa undertook a short horse herding adventure by veering brazenly off-course in an attempt to herd a group of his horses towards the direction of his cabin.
 
-When we got back Anuka was in the middle of preparing sheep steamed dumplings from one of the hind legs. Before, during, and after eating dumplings, we played cards on a fold up table under a flickering hospital white light bulb. I won the first round but Lhagwa reigned supreme for the rest of the night. Must have been home court advantage.
-
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_07-44-31-611000_evan.webp" description="" %}
+When we got back, Anuka was in the middle of preparing sheep steamed dumplings from one of the hind legs. Before, during, and after eating dumplings, we played cards on a fold up table under a flickering hospital white light bulb. I won the first round but Lhagwa reigned supreme for the rest of the night with an impressive winning streak. Must have been home court advantage.
 
 ## Day 12: Farewell Lhagwa
 
@@ -806,126 +802,121 @@ Our plan today was to make it to Kohvul lake, where Anuka had rented a small tou
 
 In the morning we said goodbye to Lhagwa, his wife, his mother-in-law, and their 400 goats, sheep cows, and horses. We gifted Lhagwa and his family a flashlight setup that can be powered multiple different ways and a pair of pocket binoculars. And inadvertently, my sandals.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_20-35-38-501000_evan.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-07_20-35-38-501000_evan.webp" description="Thank you Lhagwa." %}
 
 Although Kourtney and I shared zero linguistic overlap with Lhagwa, he had become a dear friend of ours over the last week. He guided us safely through the Taiga. We broke bread with him, assembled ortzs, and disassembled gers. We found the overlap in our humour. He inspired us with his selfless attitude towards hard work that benefits those around him. And what he’s no doubt most proud about, he beat us in cards many times, and laughed hard at the wins and losses.
 
 ---
 
-"How long is the drive to Hoskul lake?" I asked.
+"How long is the drive to Khövsgöl lake?" I asked.
 
 "250km. The time I cannot say", Anuka answered while laughing.
 
 A question impossible to answer, no doubt. It was a rainy day, which will affect which mountain passes we choose. We would get further information from cars passing from the other direction. Perhaps this river would be too high, this steep section too muddy. And thus from our available options, our path would emerge. Whatever would come to be, we knew it would be a long day, as even during the rarest and most ideal stretches of land our speed wouldn’t surpass 30 mph.
 
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-07_21-35-33-181000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_00-06-43-132000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_02-39-40-629000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_02-49-07-302000_cam.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/12/__2023-09-07_21-35-33-181000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_00-06-43-132000_cam.webp"
+    caption="Our journey to Khövsgöl lake (I)."
+%}
 
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_02-52-05-904000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_03-01-23-339000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_03-10-06-615000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_05-55-37-138000_cam.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/12/__2023-09-08_02-52-05-904000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_03-01-23-339000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_03-10-06-615000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_05-55-37-138000_cam.webp,"
+    caption="Our journey to Khövsgöl lake (II)."
+%}
 
-After car pushes, countless river crossings, failing power steering and subsequent calls to Baagii's car mechanic, we stopped to let the car cool down for the 20th time.
+After car pushes, countless river crossings, failing power steering and subsequent calls to Baagii's car mechanic, we stopped to let the car cool down for the 5th or 6th time.
 
-{% include photo.html url="2023-09-14-north-mongolia/11/__2023-09-08_02-49-34-376000_cam.webp" description="" %}
+{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_02-49-34-376000_cam.webp" description="Seemingly every Mongolian is an amateur mechanic, and Baagii is no exception to this generalization." %}
 
-A nomad rolled up on a horse with an accompanying baggage horse. Seeing Kourtney's camera, he wanted her to take a picture.
+{% include gallery.html
+    images="2023-09-14-north-mongolia/12/__2023-09-08_06-05-06-231000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_06-05-08-201000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_06-05-40-343000_cam.webp,2023-09-14-north-mongolia/12/__2023-09-08_06-05-41-924000_cam.webp"
+    caption="(top) A nomad rolls up. Seeing Kourtney's camera, he wants her to take a picture. (bottom) When I introduce myself in Mongolian, he looks at me with a mix of bewilderment and amusement."
+%}
 
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_06-05-06-231000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_06-05-08-201000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_06-05-40-343000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_06-05-41-924000_cam.webp" description="" %}
+At 7:30, 10 hours since our departure, we made it to asphalt. Just two minutes away was the longitude-latitude coordinates 50'100', with an architectural monument pinpointing the spot. Even more incidentally, Anuka's father, an artist, was commissioned by the mayor of the nearby village to design the monument, and was promised some property on Khövsgöl Lake as his commission. But after the monument was built and before the keys were handed over, the election cycle brought a new mayor into office, who never acknowledged the contract. Kourtney and I hiked up to the spot begrudgingly, while Baagii cooked instant ramen. In solidarity of this grievance, I won't share a picture, but it was a cool monument.
 
-At 7:30, 10 hours since our departure, we made it to asphalt. Just two minutes away was the longitude-latitude coordinates 50'100', with an architectural monument pinpointing the spot. Even more incidentally, Anuka's father, an artist, was commissioned by the mayor of the nearby village to design the monument, and was promised some property on Hoskul Lake as his commission. But after the monument was built and before the keys were handed over, the election cycle brought a new mayor into office, who never acknowledged the contract. Kourtney and I hiked up to the spot begrudgingly, while Baagii cooked instant ramen.
-
-{% include photo.html url="2023-09-14-north-mongolia/12/__2023-09-08_06-56-50-842000_cam.webp" description="" %}
-
-For the last 45km to Hoskul Lake, Baagii, with unwavering concentration, navigated the two-lane highway. By western standards it was shoddy, but after 8 days of roadless mountain driving, it felt like the Autobahn. As the road signs flew past us at a blistering 40mph, I daydreamt about taking Anuka and Baagii to an American amusement park. We arrived at the Hoskul Lake in the dark and clammered into our sleeping bags.
+For the last 45km to Khövsgöl Lake, Baagii, with unwavering concentration, navigated the two-lane highway. By western standards it was shoddy, but after 8 days of roadless mountain driving, it felt like the Autobahn. As the road signs flew past us at a blistering 40mph, I daydreamt about taking Anuka and Baagii to an American amusement park. We arrived at Khövsgöl Lake in the dark and clammered into our sleeping bags.
 
 ## Day 13: Batsur
 
-Today our plan was to 
+Our plan for the day was to hang out at the lake, kick our feet up, and relax.
 
 In the morning we went for a motorboat ride. The boat driver was Batsur, one of their university friends. He worked hard as a boat driver for 10 years until he could buy his own speed boat. Now he makes good money driving his own boat.
 
-{% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-08_23-06-37-413000_evan.webp" description="" %}
+{% include gallery.html
+    images="2023-09-14-north-mongolia/13/__2023-09-08_23-06-37-413000_evan.webp,2023-09-14-north-mongolia/13/__2023-09-08_23-39-50-927000_cam.webp"
+    caption="(left) Baagii in his friend's speed boat. (right) Batsur, Baagii and I playing a rock throwing game, in which the goal is to throw up one rock, and then strike it with a second before the first hits the ground."
+%}
 
-Hoskul lake is a big deal for Mongolians. Visiting the landlocked country’s largest lake is a tourist destination for foreigners and natives alike. And for Mongolians, most who can’t swim, ripping around on a motorboat is a thrilling novelty. While foreign tourism has mostly finished for the year, there is still plenty of domestic tourism in mid september. Lining the shore are mini cottages, houses, and shacks for rent.
+Khövsgöl lake is a big deal for Mongolians. Visiting the landlocked country’s largest lake is a tourist destination for foreigners and natives alike. And for Mongolians, most who can’t swim, ripping around on a motorboat is a thrilling novelty. While foreign tourism has mostly finished for the year, there was still plenty of domestic tourism in mid September. Lining the shore were mini cottages, houses, and shacks for rent.
 
-{% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-08_23-39-50-927000_cam.webp" description="" %}
+After breaking the ice with Batsur with a self-explanatory rock-throwing contest, we got it on our heads that the 5 of us would go to a nearby karaoke bar. To prepare, we went to the shop and bought 15 beers of various Mongolian brands. But after calling the establishment, we realized they closed early, and so we drank the night away in our cottage house. For dinner we had more sheep dumplings, this time prepared by Anuka _and_ Kourtney.
 
-After breaking the ice with Batsur with a self-explanatory rock-throwing contest, we got it on our heads that the 5 of us would go to karaoke. To prepare, we went to the shop and bought 15 beers of various Mongolian brands, and then drank the night away with more sheep dumplings, this time made by Anuka _and_ Kourtney.
+{% include gallery.html
+    images="2023-09-14-north-mongolia/13/__2023-09-09_01-15-26-946000_kourtney.webp,2023-09-14-north-mongolia/13/__2023-09-09_08-40-17-363000_evan.webp"
+    caption="(left) Round two of sheep dumplings, prepared by Kourtney and Anuka. The worst constructed one was made by me. (right) The sheep bone picked clean by Baagii."
+%}
 
-{% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-09_01-15-26-946000_kourtney.webp" description="" %}
+The night was a mix of laughter and emotional conversations. I found it very impressive how communicative Baagii was despite having a miniscule English vocabulary. We learned that Batsur and Baagii used to play Counterstrike together in university. And that Baagii once drank 6L of kumis. Jokingly, he claimed that from the center of the ger he was projectile vomiting outside the door.
 
-The night was a mix of laughter and emotional conversations. I found it very impressive how communicative Baagii was despite having a miniscule English vocabulary. We learned that Batsur and Baagii used to play Counterstrike together in university. And that Baagii once drank 6L of kumis—joking that from the center of the ger he was projectile vomiting outside. Baagii thanked us for respecting his culture by participating in the sheep slaughter. As we drank earlier in the night Baagii took the remainder of the sheep leg that Anuka used to make dumplings, grabbed a knife, and went to town, not stopping until it was picked clean. It wasn’t because he’s hungry, she said. It’s because he is respecting the animal. She also said if you are a guest and you eat like Baagii is eating the owners will be so so appreciative because it means you are respecting their hospitality.
+On a separate note, Baagii thanked us for respecting his culture by participating in the sheep slaughter the previous day. As we drank, Baagii took the remainder of the sheep leg that Anuka used to make dumplings, grabbed a knife, and picked the bone clean. Anuka clarified to us that it wasn’t because he was necessarily still hungry, she said. Instead, it's because it is both practical an honorable to revere the animal's sacrifice by letting nothing go to waste. She also said if you are a guest and you similarly pick the bone clean, the owners will be "so, so appreciative" because it means you're fully respecting their hospitality.
 
-{% include photo.html url="2023-09-14-north-mongolia/13/__2023-09-09_08-40-17-363000_evan.webp" description="" %}
+## Day 14: Coming full circle
 
-## Day 14: FIXME
+In the morning we drove to Murun to get the car fixed. On the way we visited some ancient [deer stones](https://en.wikipedia.org/wiki/Deer_stones_culture). Just like stonehenge, the meaning of these ancient monuments remains a mystery to this day, although their are some pre-historic traditions in the region that remain steadfast, such as burying Murun people in mountains surrounding these deer stones. I wonder if it's related?
 
-In the morning we drove to murun to get the car fixed. On the way we visited deer stones (Wiki). Just like stonehenge, the meaning of these ancient monuments remains a mystery to this day. Yet a pre-historic tradition remains steadfast in this region, and to this day murun people are buried in the surrounding mountains, which are named lungs. Surely it's related.
+{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-09_23-58-51-530000_cam.webp" width="50%" %}
 
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_00-15-42-515000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-09_23-58-51-530000_cam.webp" description="" %}
-
-Outside the fenced area, a woman and her grandchild emerged from the groundskeeper ger. With silent confidence, the 3-4 year old child walked up to Kourtney and gently grabbed her hand. They sat down together and for whatever reason, the little girl kissed Kourtney on the arm but otherwise disengaged from Kourtney's response to her unique and prophetic-seeming behavior.
-
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_00-22-06-633000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_00-22-53-308000_evan.webp" description="" %}
-
-Stuck behind a huge flock of sheep being herded down a road on the outskirts of Murun, Anuka, Kourtney and I jumped out of the car to visit the monastery to our right while Baagii fixes the car. We went for a stroll through the monastery. Anuka brought us inside the building where some kind of Budhist reading was taking place. It was jam packed with people, with no place to sit. Everyone's staring gaze pushed us back through the doors we came. Anuka thought it was a funeral procession of some sort.
-
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_01-12-56-118000_cam.webp" description="" %}
-
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_01-23-03-201000_cam.webp" description="A Soviet-style playground within the Monastery grounds." %}
+Stuck behind a huge flock of sheep being herded down a road on the outskirts of Murun, Anuka, Kourtney and I jumped out of the car to visit the monastery to our right while Baagii went to fix the car. We went for a stroll through the monastery. Anuka brought us inside the building where some kind of Buddhist reading was taking place. It was jam packed with people, with no place to sit. Everyone's staring gaze pushed us back through the doors we came. Anuka thought it was a funeral procession of some sort.
 
 Then we walked to the supermarket where we would meet up with Baagii. Along the way we saw some statues, street art, illegally high apartment buildings, and a congregation of people attending a wedding event. Half the men were in suits, half in dells.
 
-At the market Baagii had bought us gifts. For Kourtney, he noticed her phone screen was broken so he bought her a new screen protector. And for both of us he bought us a deck of novelty cards, where each card was a picture of a famous Mongolian wrestler. As he placed the in my hands he pointed and said,  "Mongolian playboy".
+At the market Baagii had bought us gifts. For Kourtney, he noticed her phone screen was broken so he bought her a new screen protector. And for both of us he bought us a deck of novelty cards, where each card was a picture of a famous Mongolian wrestler in their traditional (and revealing) garb. As he placed the cards in my hands he winked and said, "Mongolian playboy".
 
-Then we were back on the (paved 🙏) road. We decided we would stay with Handa and her husband, the nomads we encountered a week ago, who invited us into their ger. To be clear, that doesn’t mean this was arranged with them. We were just going to show up. Anuka wasn’t kidding when she said Mongolians have no word for "go away". When we arrived, Handa was just finishing a horse milking session and seamlessly transitioned into hostess mode, preparing milk tea and cookies with surcream, and of course, kumis.
+Then we were back on the (paved 🙏) road. We decided we would stay with Handa and her husband, the nomads we encountered a week ago, who had invited us into their ger. That doesn’t mean we arranged this with them--our plan was to just show up. Anuka wasn’t kidding when she said Mongolians have no word for "go away". When we arrived, Handa was just finishing a horse milking session and seamlessly transitioned into hostess mode, preparing milk tea and cookies with surcream, and of course, kumis.
 
-Their kid had left for school, living in a 50 bed dormitory in a village school around 100km away. He was the kid who wanted us to send a message to Michael Jordan. In his place, was Kourtney’s newest obsession: a small pregnant cat gnawing a sheep thigh bone.
-
-FIXME get picture from OG collection
+Their kid had left for school, living in a 50 bed dormitory in a village school around 100km away. He was the kid who wanted us to send a message to Michael Jordan. In his place, was Kourtney’s newest obsession: a small pregnant cat gnawing a sheep's thigh bone.
 
 It felt full circle to be spending our last rural night at the very place where we experienced the greatest culture shock of the trip. A week ago, we had no idea about nomadic life when we were invited into Handa and her husband's life. Without context, I was handed a bowl of fermented horse milk from a large cow skin full of unrefridgerated dairy product, and eating rock-hard cheese completely unique to my palette. Just moments before that, Kourtney was milking a horse and I was hitching a ride on a stranger's motorcycle. The experience gave me such a culture shock that I was fighting back a bit of an adrenaline rush.
 
-But this time was completely different. This time we felt like seasoned veterans of this lifestyle. In the last week, we'd travelled across roadless mountain passes, traversed the treacherous Northern Mongolian landscape on horseback to visit the Tuvan peoples. We'd had our prophecies told during a life-altering Shamanic ritual, witnessed a bear-attack that killed one of Godla's reindeers. We'd participated in a seasonal reindeer herding migration, and lived in ortzs underneath the stars. We'd butchered a sheep, watched a backyard horse branding, and rode reindeers.
+But this time was different. This time we felt like seasoned veterans of this lifestyle. In the last week, we'd travelled across roadless mountain passes, traversed the treacherous Northern Mongolian landscape on horseback to visit the Tsaatan peoples. We'd had our prophecies told during a life-altering Shamanic ritual, witnessed a bear-attack that killed one of Godla's reindeers. We'd participated in a seasonal reindeer herding migration, and lived in ortzs underneath the stars. We'd butchered a sheep, watched a backyard horse branding, and rode reindeers.
 
 So in comparison to all of that, we felt comfortable with Handa and her family. I played a friendly game of 13 while sipping kumis. Kourtney helped herd the baby cows. Then we stirred the newest milk contribution into the massive cow skin bag.
 
-{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_07-38-37-922000_evan.webp" description="To transform the fresh horse milk into kumis, the batch is whisked vigorously with a wooden stick for an hour continuously. Over this time, yeast alcoholizes and carbonates the milk while *Lactobacillus* acidifies it." %}
+{% include photo.html url="2023-09-14-north-mongolia/14/__2023-09-10_07-38-37-922000_evan.webp" description="To transform the fresh horse milk into kumis, the batch is whisked vigorously with a wooden stick for an hour continuously. Over this time, yeast alcoholizes and carbonates the milk while Lactobacillus acidifies it." width="60%" %}
 
-Although we felt we were fitting in, that's not to say we're fit for this lifestyle. I cannot understate how tremendously hard nomadic life is compared to most Western lifestyles. This is a non-controversial opinion for any "Westerner" who has spent as little time here as we have. Case in point: Handa's daily summer routine. Every two hours she milks the horses. From 5am to 9pm. And at the end of the day, she needs to mix the new milk with the forever soup of kumis by stirring it vigorously for 90 minutes continuously. This helps incorporate the yeast and kickstarts the fermentation. She was so happy that Baagii, Kourtney, Anuka and I took shifts so she could rest her body.
+Although we felt we were fitting in, that's not to say we're fit for this lifestyle. I cannot understate how tremendously hard nomadic life is compared to most Western lifestyles. This is a non-controversial opinion for any "Westerner" who has spent as little time here as we have. Case in point: Handa's daily summer routine. Every two hours she milks the horses. From 5am to 9pm. And at the end of the day, she needs to mix the new milk with the forever soup of kumis by stirring it vigorously for 90 minutes continuously. This helps incorporate the yeast and kickstarts the fermentation. Needless to say, she was visibly happy that Baagii, Kourtney, Anuka and I took shifts so she could rest her body.
 
-Late in the night I got a bad case of the dairy trots from the kumis that I was so confidently sipping earlier in the night, serving as a further reminder of my un-Mongolianness.
+Late in the night I got a bad case of the dairy trots from the kumis that I was so confidently sipping earlier in the night. A further reminder of my un-Mongolianness.
 
-## Day 15: FIXME
+## Day 15: Home
 
-When we left, I got Handa's WhatsApp number. She said her kid is still deciding what to write to Michael Jordan. I don’t know how I’ll get the message to him, but I’ll cross that bridge when we get there.
+On our final day together, we visited Khustai National Park, where we witnessed herds of the only truly wild horses left on Earth. We spotted around 40 of them, representing around a tenth of the entire population.
 
-We left the asphalt one last time to visit the national park. On our way we encountered a 2 kilometre stretch where at least 600 horses were freely roaming. Apparently we were in a province that is famouse for kumis. Figures.
+As dusk fell we began our final journey back to Ulaanbaatar.
 
-{% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_01-18-49-358000_evan.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_05-00-40-250000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_05-23-40-732000_cam.webp" description="" %}
-{% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_05-38-12-310000_cam.webp" description="" %}
+"What would Baagii do for work if he moved to Canada?" I wondered aloud as we drove, trying to imagine this horseman, herder, and all-around handyman transplanted into our world.
 
-We stopped by a someone's home for some water. The raspy bark of an old dog served as the doorbell and a little girl opened the door, peaking, half-concealed by the door, smiling at us. Her mom opened the door fully and they agreed to fill our water. Baagii offered an apple to the girl, and a small knitted purse. She sat confidently on a stool near the car, looking at her gifts. When Kourtney rolled down her window, the girl got shy and ran to her mother who was filling our bottle.
+"Butcher," we all agreed after some discussion. He would excel.
 
-FIXME vvvv everything below this is bad.
+"And he could live with us!" Kourtney and I suggested enthusiastically.
 
-After endless driving on asphalt, grass dirt and mud, we arrived at the national park, where the only truly wild group of horses still exists. Facts.
+Anuka translated, then added with laughter, "And pick the meat off the bones to eat for free!" referencing our conversation from days earlier. Through the rearview mirror, I watched Baagii's eyes crinkle with amusement.
 
-{% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_06-27-03-983000_cam.webp" description="" %}
+The landscape gradually transformed as we approached the capital. Gers and petrol stations gave way to taller buildings and metropolitan development. Neon signs in Korean and Cyrillic punctuated the darkness, advertising restaurants and karaoke bars.
 
-As luck would have it, we would see more than 40 horses. Amazing to think that was around 1/10th of the population. It was dark by the time we left and we were still around 2 hours from Anukas apartment. With no retroreflectors demarcating opposing lanes, no laws governing how bright high beams can be, what color they are, or when they should be turned off, it was a blinding performance. Never had I seen such dangerous driving conditions. But to Baagii it was just another day in the life.
+After maybe an hour navigating, we finally arrived at the hotel where our journey had begun two weeks earlier. The symmetry felt right, somehow. We had traveled in a great circle through Mongolia, and here we were, changed but returned.
 
-On the way we talked about what Baagii would do for work if he moved to Canada. We settled on butcher. He would so good. "And he could live with us", Kourtney and I agreed. "And pick the meat off the bones to eat for free!" Anuka added while laughing, referencing our conversation from days earlier.
+For our final meal together, we spoiled ourselves to the Korean restaurant attached to the hotel. We sat around the table and shared our food family-style, without the awkwardness that had characterized our first meal together.
 
-We had to drive through the heart of the city to get to Anuka's apartment. Even at 10pm the ruleless traffic was terrible. Petrol stations, shacks, and gers transitioned into a newer, taller, and more metropolitan landscape. The neon sign real estate was dominated by Korean restaurants, followed by karaoke. Most of the other signs are in syrillic. After an hour of laneless mayhem, we get to hotel we spent our first night at. Korean restaurant.
+Back in Anuka's apartment, surrounded once again by the trappings of modern comfort--hot showers, wifi, soft beds--I felt a strange displacement. Part of me still wished to be in the Taiga, still riding across boggy terrain, still waking to the sound of reindeer hooves outside an ortz.
+
+I thought about the word "nomad"—how it implies constant movement, no fixed home. Yet the nomads we'd met seemed more rooted, more connected to their place in the world than people with permanent addresses--myself included. What, then, did home mean to them? I couldn't pretend to know. I'd only glimpsed fragments. 
+
+Perhaps it was in the way Handa and her husband invited strangers into their ger with unquestioning hospitality. Or in how Lhagwa's family arranged their treasured medals on cabin walls they'd soon leave behind. Or in how the Eastern reindeer herders dismantled their entire camp in one morning. Maybe it was in Godla's words when asked what he loved about Mongolia: "We can live with our animals and do whatever we want". Whatever the case, I realized that Anuka and Baagii had given Kourtney and I a profound gift: they had made Mongolia feel, however briefly, like home. Not through luxury, or comfort, or chaperoning us through the "must-see" attractions of Mongolia, but through genuine human connection.
+
+Indeed, as I reflect on this trip, now years later, it wasn't the spectacular landscapes or exotic experiences that I regularly think of, but the simple moments centered around people: Baagii's laughter when I mistakenly reached to shake his blood-covered hand during the sheep butchering. Or Anuka marveling at Godla's powerful presence after the shaman ritual. Or the bunch of us in Lhagwa's cabin, huddled around a card game underneath a flickering lightbulb.
+
+Mongolia revealed itself to us not just as a place on a map, but as a way of being—adaptable, disciplined, generous, and profoundly connected to what matters most. And for that lesson—to Anuka, Baagii, Lhagwa, Godla, Sartlong, Handa, Buyantogtokh, Batsur, and everyone else who welcomed us into their lives—no amount of *bayarlala* could ever be enough.
+
+{% include photo.html url="2023-09-14-north-mongolia/15/__2023-09-11_01-18-49-358000_evan.webp" description="Kourtney, Baagii, Anuka, and I share a final countryside meal together, talking about relationships, marriage, and what makes a good life." %}
