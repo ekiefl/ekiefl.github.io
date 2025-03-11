@@ -197,7 +197,7 @@ th, td {
     background-color: #FEFEFE;
     border-bottom: 1px solid #DEDEDE;
     @include clearfix;
-    background: url('../../images/fractal.jpg') center center scroll;
+    background: url('../../images/solid_bg.jpg') center center scroll;
 }
 
 .quotable {
@@ -208,7 +208,7 @@ th, td {
     border-left: 7px solid #828282;
     padding: 8px;
     padding-left: 10px;
-    background: url('../../images/fractal.jpg') center center scroll;
+    background: url('../../images/solid_bg.jpg') center center scroll;
     color: #464646;
 }
 
@@ -582,7 +582,7 @@ th, td {
   font-: small-caps;
   text-align: justify;
   font-size: large;
-  background: url('../../images/fractal.jpg') center center scroll;
+  background: #f8f8f8;
   border-radius: 20px;
   padding: 10px 20px;
 }
@@ -1388,7 +1388,7 @@ $button-size: 1.5rem;
     border-radius: 0px 0px 13px 13px;
     border:  1px solid #EEEEEE;
     text-align: center;
-    background: url('../../images/fractal.jpg') center center scroll;
+    background: url('../../images/solid_bg.jpg') center center scroll;
 }
 
 /* 

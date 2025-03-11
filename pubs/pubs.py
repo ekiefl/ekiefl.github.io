@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# an ugly hack to convert some stuff into other stuff...
+# A script to convert publication data into markdown
 
 
 # EDIT THESE #####################################################################
@@ -20,41 +20,39 @@ keep_pubs_after_year = 2009
 
 import os
 import sys
+import json
 from datetime import datetime
 
-try:
-    import anvio.utils as u
-    from anvio.errors import ConfigError
-except:
-    sys.stderr.write("This program requires anvi'o to be installed :/\n")
-    sys.exit(-1)
+
+class ConfigError(Exception):
+    """A simple exception class for configuration errors."""
+    pass
 
 
 class Publications:
-    def __init__(self, pubs_file_path="pubs.txt", pubs_info_file_path="pubs_info.txt"):
-        """Takes an EndNote library exported a TXT file (`pubs_file_path`), and an optional\
-           TAB-delimited info file path with DOI identifiers (`pubs_info_file_path`), and\
-           generates some Markdown formatted output.
+    def __init__(self, pubs_file_path="pubs.json", pubs_info_file_path="pubs_info.json"):
+        """Takes a JSON file with publication data (`pubs_file_path`), and an optional\
+           JSON file with additional publication info (`pubs_info_file_path`), and\
+           generates Markdown formatted output.
 
-           Here is an info line from the EndNote:
+           Expected fields in pubs.json:
+           - Authors: List of authors separated by semicolons
+           - Title: Publication title
+           - Publication: Journal name
+           - Volume: Volume number
+           - Number: Issue number (can be empty)
+           - Pages: Page range
+           - Year: Publication year
+           - doi: DOI identifier
 
-                Winterberg, K. M., and Reznikoff, W. S. (2007). "Screening transposon mutant libraries using full-genome oligonucleotide microarrays." Methods Enzymol, 421, 110-25.
-
-           Absolute matching to this format is required.
-
-           Expected headers in the TAB-delimited pubs info file are 'doi', 'highlights',\
-           and 'featured_image'.
-
-                - doi: The DOI of the pub matching to a pubs file path entry.
-                - highlights: Brief bullet points about the work. Each pont must be separated\
-                              from the rest with a ';' character. HTML tags are OK.
-                - featured_image: A URL to an image.
-
-           If things are not working, feel free to write to meren at uchicago.edu
+           Expected fields in pubs_info.json:
+           - doi: The DOI of the pub matching to an entry in pubs.json
+           - highlights: Brief bullet points about the work. Separate points with ';' 
+                        HTML tags are OK.
+           - featured_image: A URL or path to an image.
         """
 
         self.info = {}
-
         self.pubs_dict = {}
         self.journals_list = []
         self.authors_list = []
@@ -83,49 +81,55 @@ class Publications:
 
         return ", ".join(authors_str)
 
-    def parse_pubs_txt(self):
+    def parse_pubs_json(self):
+        """Parse the JSON files containing publication data and additional info."""
+        # Check if files exist
+        if not os.path.exists(self.pubs_file_path):
+            raise ConfigError(f"The file '{self.pubs_file_path}' does not exist.")
+
+        # Load pubs_info.json if it exists
         if os.path.exists(self.pubs_info_file_path):
-            self.info = u.get_TAB_delimited_file_as_dictionary(self.pubs_info_file_path)
+            try:
+                with open(self.pubs_info_file_path, 'r') as f:
+                    pubs_info_list = json.load(f)
+                    # Convert to dictionary with doi as key
+                    self.info = {item["doi"]: item for item in pubs_info_list}
+            except json.JSONDecodeError:
+                raise ConfigError(f"Could not parse '{self.pubs_info_file_path}' as JSON.")
 
-        pubs_header = u.get_columns_of_TAB_delim_file(
-            self.pubs_file_path, include_first_column=True
-        )
-        headers_expected = [
-            "Authors",
-            "Title",
-            "Publication",
-            "Volume",
-            "Number",
-            "Pages",
-            "Year",
-            "doi",
-        ]
-        missing_headers = [h for h in pubs_header if h not in headers_expected]
-        if len(missing_headers):
-            raise ConfigError(
-                "Sorry, the pubs.txt seems to be missing some of the headers that are mandatory. Each of \
-                               the columns in the following list must be present in this file: %s (hint: yours do not have\
-                               the following: %s)."
-                % (", ".join(headers_expected), ", ".join(missing_headers))
-            )
+        # Load pubs.json
+        try:
+            with open(self.pubs_file_path, 'r') as f:
+                pubs_list = json.load(f)
+        except json.JSONDecodeError:
+            raise ConfigError(f"Could not parse '{self.pubs_file_path}' as JSON.")
 
-        self.pubs_txt = u.get_TAB_delimited_file_as_dictionary(
-            self.pubs_file_path, indexing_field=pubs_header.index("doi")
-        )
+        # Check required fields in each publication
+        required_fields = ["Authors", "Title", "Publication", "Volume", "Year", "doi"]
+        for pub in pubs_list:
+            missing_fields = [f for f in required_fields if f not in pub]
+            if missing_fields:
+                raise ConfigError(
+                    f"Publication with DOI '{pub.get('doi', 'unknown')}' is missing required fields: {', '.join(missing_fields)}"
+                )
 
-        for doi in self.pubs_txt:
+            # Process the publication data
+            doi = pub["doi"]
             authors = []
             co_first_authors = []
             co_senior_authors = []
-            p = self.pubs_txt[doi]
 
-            for author in [_.strip() for _ in p["Authors"].split(";")]:
+            for author in [_.strip() for _ in pub["Authors"].split(";")]:
                 if not len(author):
                     continue
 
-                author_last_name, author_first_name_raw = [
-                    _.strip() for _ in author.split(",")
-                ]
+                author_parts = [p.strip() for p in author.split(",")]
+                if len(author_parts) < 2:
+                    continue  # Skip if the author format is invalid
+                
+                author_last_name = author_parts[0]
+                author_first_name_raw = author_parts[1]
+                
                 author_first_name = "".join(
                     [n[0] for n in author_first_name_raw.split()]
                 )
@@ -138,16 +142,17 @@ class Publications:
 
                 authors.append(author_final_name)
 
-            if p["Number"]:
-                issue = "%s(%s):%s" % (p["Volume"], p["Number"], p["Pages"])
+            # Format the issue info
+            if pub.get("Number"):
+                issue = "%s(%s):%s" % (pub["Volume"], pub["Number"], pub.get("Pages", ""))
             else:
-                issue = "%s:%s" % (p["Volume"], p["Pages"])
+                issue = "%s:%s" % (pub["Volume"], pub.get("Pages", ""))
 
-            year = p["Year"].strip()
+            year = pub["Year"].strip()
             pub_entry = {
                 "authors": authors,
-                "title": p["Title"],
-                "journal": p["Publication"],
+                "title": pub["Title"],
+                "journal": pub["Publication"],
                 "issue": issue,
                 "doi": doi,
                 "year": year,
@@ -161,18 +166,7 @@ class Publications:
                 self.pubs_dict[year].append(pub_entry)
 
     def get_markdown_text_for_pub(self, pub):
-        """Gets a dictionary `pub`, returns a markdown formatted text.
-
-        An example pub:
-
-             {'authors': 'McLellan, S. L., and Eren, A. M.',
-              'doi': '10.1016/j.tim.2014.08.002',
-              'issue': '22(12), 697-706',
-              'title': 'Discovering new indicators of fecal pollution.',
-              'journal': 'Trends Microbiol',
-              'year': 2014}
-        """
-
+        """Gets a dictionary `pub`, returns a markdown formatted text."""
         pub_md = []
 
         A = lambda s: pub_md.append(s)
@@ -241,7 +235,7 @@ class Publications:
                     % "<br>".join(
                         [
                             '<span style="display: inline-block; padding-bottom: 5px;">- %s</span>'
-                            % h
+                            % h.strip()
                             for h in highlights
                         ]
                     )
@@ -259,7 +253,7 @@ class Publications:
         return "\n".join(pub_md)
 
     def store_markdown_output_for_pubs(self, output_file_path):
-        # years = ''.join(['<a href="#%s"><span class="category-item">%s <small>(%d)</small></span></a>' % (y, y, len(self.pubs_dict[y])) for y in sorted(list(self.pubs_dict.keys()), reverse=True)])
+        """Generate the markdown output and write it to a file."""
         years = "".join(
             [
                 '<a href="#%s"><span class="category-item">%s</span></a>' % (y, y)
@@ -301,8 +295,8 @@ class Publications:
 if __name__ == "__main__":
     pubs = Publications()
     try:
-        pubs.parse_pubs_txt()
-        pubs.store_markdown_output_for_pubs("publications/index.md")
+        pubs.parse_pubs_json()
+        pubs.store_markdown_output_for_pubs("../publications/index.md")
     except ConfigError as e:
         print(e)
         sys.exit(-1)
