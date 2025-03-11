@@ -6,6 +6,7 @@ excerpt: "Classifying dog barks with a random forest classifier"
 comments: true
 series: 2
 authors: [evan, kourtney]
+coffee: true
 image:
   feature: maple/maple-classifier/cover.png
   display: true

@@ -6,6 +6,7 @@ excerpt: "A dive into the algorithmic theory behind pool simulation"
 comments: true
 series: 2
 authors: [evan]
+coffee: true
 image:
   feature: pooltool/pooltool_banner.png
   display: true

@@ -647,7 +647,6 @@ th, td {
             padding: 10px 0;
             decoration: none;
             border-bottom: 0 solid transparent;
-            @include transition(all .2s);
             @media #{$medium} {
                 display: inline;
                 padding: 0;
@@ -879,7 +878,7 @@ $button-size: 1.5rem;
     img {
         width: 100%;
         height: auto;
-        max-height: 300px;
+        max-height: 400px;
         object-fit: cover;
         border-bottom: 1px solid #dedede;
         -ms-interpolation-mode: bicubic;

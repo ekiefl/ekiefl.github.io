@@ -6,6 +6,7 @@ excerpt: "Using python and pyaudio to detect dog barks and intervene with pre-re
 comments: true
 series: 1
 authors: [evan]
+coffee: true
 image:
   feature: maple/maple_banner.jpg
   display: true

@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Northern Mongolia"
+title: "Northern Mongolia: a journey into the Taiga"
 categories: [miscellaneous]
 excerpt: "A 2 week trip to the northern Mongolian reindeer herders"
 comments: true
 series: 1
 authors: [evan, kourtney]
 image:
-  feature: miscellaneous/FIXME.jpg
+  feature: miscellaneous/feature.png
   display: true
 ---
 
@@ -259,7 +259,15 @@ During lunch, Kourtney asked if Anuka and Baagii ever disagree about which way t
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_02-45-19-769000_cam.webp" description="Hundreds of sheep and goat litter a hillside, free to roam and graze." %}
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_03-32-05-362000_cam.webp" %}
 
-Later in the day we found ourselves enjoying the scenery as we drove alongside a gorgeous mountain. We crossed a muddy river, and then ascended up a rolling mountain. We arrived at a fork in the proverbial road. The car stopped. There were two potential ridgeline crossings. To be honest, both looked exposed and steep. I looked at the left pass and imagined the Lexus barrel-rolling down the side of the slope. After some hemming and hawing, Baagii opted for the rightmost mountain pass, which my imagintidbit of information: Chinggis Khaan supposedly proclaimed that a proper Mongolian should drink more horse milk than water.
+Later in the day we found ourselves enjoying the scenery as we drove alongside a gorgeous mountain. We crossed a muddy river, and then ascended up a rolling mountain. We arrived at a fork in the proverbial road. The car stopped. There were two potential ridgeline crossings. To be honest, both looked exposed and steep. I looked at the left pass and imagined the Lexus barrel-rolling down the side of the slope. After some hemming and hawing, Baagii opted for the rightmost mountain pass, which my imagination was thankful for. We let the engine cool and drank some kumis. It was a hold your breath moment with slopes to our left and right. When we successfully mounted and traversed the ridgeline, everyone was relieved and smiling.
+
+After the mountain pass, we descended into a valley, where a small village lies. It's a common place to stop for food for passersby traveling to and from the remote north. Day or night, the restaurant will open for a bus full of travelers. An old man sat in a security booth manning a rudimentary car gate that used a defunct chainsaw as a counterweight. A few words were spoken and the conversation ends with the za from both parties. He released the drawstring and the chainsaw pulled the gatekeeping log upwards, allowing our passage.
+
+We were in the middle of Autumn and the more north we drove, the more the grass and trees were showing a spectrum of Fall colors. "It will be even better when we return Anuka", said.
+
+We were slowed by a herd of about 40 horses who were blocking the road, their owners nowhere in sight. I can imagine no better life for captive animals that in Mongolia, where they live free and nearly wild. Seeing all the horses inspired us to stop for a quick kumis break. As we sipped, Anuka, as she often did, spoiled us with a little tidbit of information that Chinggis Khaan proclaimed that a proper Mongolian should drink more horse milk than water.
+
+
 
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-34-37-443000_cam.webp" description="A curious foal explores, but not too far from its mother's side." %}
 {% include photo.html url="2023-09-14-north-mongolia/4/__2023-08-31_01-35-05-975000_cam.webp" description="Horses are branded to establish ownership. More on that later..." %}
@@ -438,7 +446,7 @@ That evening we were told that Godla was going to perform a ceremony. It was a s
 
 Before the ritual, the evening started off extremely casually. We played cards. We were laughing and chatting. In the finale of one particular game, Lhagwa was coaching Sartlong on a final hand over her shoulder. Anuka, mirroring Lhagwa, was behind Godla's shoulder, pointing at suggestions as to how he should play his hand. It was husband versus wife. Who would take the prize money? In the end, Sartlong won. Shy as she was, she couldn't help but laugh. She said she was glad we came because she hadn't played in months.
 
-At the head of the ortz, Godla had prepared his ceremonial stage. From it hung white torn cloth pieces, white on one side, black and red on the other. Each strip represented a ceremony that he’s done. White represents people who he has helped within the first half of the moon cycle. These are sanctioned, whereas the red and black are rituals that took place in the second half of the moon cycle. These represent instances where he has performed a ceremony during the second half of the moons cycle. Such ceremonies are considered taboo, and are traditionally paid for with blood sacrifices.
+At the head of the ortz, Godla had prepared his ceremonial stage. From it hung torn cloth pieces, white on one side, black and red on the other. Each strip represented a ceremony that he’s done. White represents people who he has helped within the first half of the moon cycle. These are sanctioned, whereas the red and black are rituals that took place in the second half of the moon cycle. These represent instances where he has performed a ceremony during the second half of the moons cycle. Such ceremonies are considered taboo, and are traditionally paid for with blood sacrifices.
 
 There was a stark juxtaposition of the ceremonial stage being illuminated by incandescent lightbulb hanging from the top of the ortz that was being powered by a clunky portable battery. Beside the ceremonial stage was his huge drum. The drum was made of a young deer's skin, and the wood was created from special wood, for example a bough struck by lightning, or very old trees.
 
@@ -450,7 +458,7 @@ The ceremony was relentless, lasting around an hour and a half. It was an incred
 
 I have never experienced someone have such an unrelenting and burdensome out of body experience. It was beautiful and terrible simultaneously. The whole time I was hypnotized, like I was high, on a powerful sedative. I think that because I had never experienced anything so different from my cultural expectations, I caught myself perpetually disassociating from what was happening. "This is what a shaman ceremony *is like*", I would think to myself. I'd have to pinch myself and remind myself that I wasn't watching a re-enactment, or viewing through a TV screen. I watching a shaman ritual. He was, according to his religion, convening with spirits. It was happening in front of us.
 
-Whether you believe in shamanism or not, history has been shaped by these rituals. War decisions of humanity's largest empire under Chinggis Khaan were decided by shamans. Although Kourtney and to this day question the extent that our tourism exploited Godla, Mongolians seek his guidance and he delivers his message through similar ceremony.
+Whether you believe in shamanism or not, history has been shaped by these rituals. War decisions of humanity's largest empire under Chinggis Khaan were decided by shamans. Although Kourtney and I to this day question the extent that our tourism exploited Godla, Mongolians seek his guidance and he delivers his message through similar ceremony.
 
 After a crescendo I almost couldn't bear, he stopped suddenly, and slouched as if dead. He was dragged outside by Sartlong and Lhagwa, all the while his mantra whispered autonomously from his lips.
 
@@ -581,7 +589,7 @@ We arrived at a very lucky time. The herders were undertaking their annual Autum
     caption="Rise and shine. A curious reindeer pokes its head into the ortz as Anuka prepares breakfast, before eventually being shooed away."
 %}
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_20-48-25-956000_cam.webp" description="Morning light outlines a peacefully grazing stag, haloing its antlers in pure white." %}
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_20-48-05-635000_cam.webp" description="Morning light outlines a peacefully grazing stag, haloing its antlers in pure white." %}
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-04_23-16-00-120000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-17-01-094000_evan.webp"
@@ -615,7 +623,7 @@ Once the reindeer were gathered, a core set of each family's herd would be saddl
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/9/__2023-09-04_23-00-23-784000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-06-53-046000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-11-08-520000_cam.webp,2023-09-14-north-mongolia/9/__2023-09-04_23-25-38-614000_cam.webp"
-    caption="(top-left) Two men carefully secure an ortz canvas to a reindeer’s flank, ensuring a balanced load on both sides. (top-right) Anuka holds the lead of a small caravan of loaded reindeer, while their owner finishes their final preparations. (bottom-left) A modern solar panel, neatly tied to the reindeer’s pack, offers a glimpse of contemporary influence (bottom-right) AA striking white reindeer, adorned with matching white packs, stands poised."
+    caption="(top-left) Two men carefully secure an ortz canvas to a reindeer’s flank, ensuring a balanced load on both sides. (top-right) Anuka holds the lead of a small caravan of loaded reindeer, while their owner finishes their final preparations. (bottom-left) A modern solar panel, neatly tied to the reindeer’s pack, offers a glimpse of contemporary influence (bottom-right) A striking white reindeer, adorned with matching white packs, stands poised."
 %}
 
 
@@ -795,7 +803,7 @@ When we got back, Anuka was in the middle of preparing sheep steamed dumplings f
 
 ## Day 12: Farewell Lhagwa
 
-Our plan today was to make it to Kohvul lake, where Anuka had rented a small tourist cabin.
+Our plan today was to make it to Khövsgöl lake, where Anuka had rented a small tourist cabin.
 
 In the morning we said goodbye to Lhagwa, his wife, his mother-in-law, and their 400 goats, sheep cows, and horses. We gifted Lhagwa and his family a flashlight setup that can be powered multiple different ways and a pair of pocket binoculars. And inadvertently, my sandals.
 
@@ -866,7 +874,7 @@ In the morning we drove to Murun to get the car fixed. On the way we visited som
 
 Stuck behind a huge flock of sheep being herded down a road on the outskirts of Murun, Anuka, Kourtney and I jumped out of the car to visit the monastery to our right while Baagii went to fix the car. We went for a stroll through the monastery. Anuka brought us inside the building where some kind of Buddhist reading was taking place. It was jam packed with people, with no place to sit. Everyone's staring gaze pushed us back through the doors we came. Anuka thought it was a funeral procession of some sort.
 
-Then we walked to the supermarket where we would meet up with Baagii. Along the way we saw some statues, street art, illegally high apartment buildings, and a congregation of people attending a wedding event. Half the men were in suits, half in dells.
+Then we walked to the supermarket where we would meet up with Baagii. Along the way we saw some statues, street art, illegally high apartment buildings, and a congregation of people attending a wedding event. Half the men were in suits, half in deels.
 
 At the market Baagii had bought us gifts. For Kourtney, he noticed her phone screen was broken so he bought her a new screen protector. And for both of us he bought us a deck of novelty cards, where each card was a picture of a famous Mongolian wrestler in their traditional (and revealing) garb. As he placed the cards in my hands he winked and said, "Mongolian playboy".
 
@@ -910,9 +918,9 @@ Back in Anuka's apartment, surrounded once again by the trappings of modern comf
 
 I thought about the word "nomad"—how it implies constant movement, no fixed home. Yet the nomads we'd met seemed more rooted, more connected to their place in the world than people with permanent addresses, myself included. What, then, did home mean to them? I couldn't pretend to know. I'd only glimpsed fragments. 
 
-Perhaps it was in Handa's instantaneous and unquestioning hospitality. Or in how Lhagwa's family arranged their treasured medals on cabin walls they'd soon leave behind. Or in how the Eastern reindeer herders dismantled their entire camp in one morning. Maybe it was in Godla's words when asked what he loved about Mongolia: "We can live with our animals and do whatever we want". Whatever the case, I realized that Anuka and Baagii had given Kourtney and I a profound gift: they had made Mongolia feel, however briefly, like home to us. Not through luxury, or comfort, or chaperoning us through the "must-see" attractions of Mongolia, but through genuine human connection.
+Perhaps the answer can be found somewhere within Handa's immediate and unquestioning hospitality to strangers. Or in how Lhagwa's family arranged their treasured medals on cabin walls they'd soon leave behind. Or in how the Eastern reindeer herders dismantled their entire camp in one morning. Maybe it was in Godla's words when asked what he loved about Mongolia: "We can live with our animals and do whatever we want". Whatever the case, I realized that Anuka and Baagii had given Kourtney and I a profound gift: they had made Mongolia feel, however briefly, like home to us. Not through luxury, or comfort, or chaperoning us through the "must-see" attractions of Mongolia, but through genuine human connection.
 
-Indeed, as I reflect on this trip now, nearly two years later, it wasn't the spectacular landscapes or exotic experiences that I regularly think of, but the simple moments centered around people: Baagii's laughter when I mistakenly reached to shake his blood-covered hand during the sheep butchering. Or the way that Anuka marveled at Godla's powerful shamanistic presence. Or the bunch of us in Lhagwa's cabin, huddled around a card game underneath a flickering lightbulb.
+Indeed, as I reflect on this trip now, nearly two years later, it wasn't the spectacular landscapes or exotic experiences that I regularly think of, but the simple moments centered around people: Baagii's laughter when I mistakenly reached to shake his blood-covered hand during the sheep butchering. Or the way that Anuka looked up at admiringly at Godla and in a hushed whisper remarked to me how powerful he seemed. Or the bunch of us in Lhagwa's cabin, huddled around a card game underneath a flickering lightbulb.
 
 Mongolia revealed itself to us not just as a place on a map, but as a way of being—proud, generous, and profoundly connected to what matters most. And for that lesson—to Anuka, Baagii, Lhagwa, Godla, Sartlong, Handa, Buyantogtokh, Batsur, and everyone else who welcomed us into their lives—no amount of *bayarlala* could ever be enough.
 
