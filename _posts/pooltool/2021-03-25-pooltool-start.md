@@ -6,6 +6,7 @@ excerpt: "A preliminary implementation of pooltool that supports visualization w
 comments: true
 series: 3
 authors: [evan]
+coffee: true
 image:
   feature: pooltool/pooltool_banner.png
   display: true

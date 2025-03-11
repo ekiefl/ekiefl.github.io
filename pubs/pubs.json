@@ -1,0 +1,72 @@
+[
+  {
+    "Authors": "Kiefl, Evan",
+    "Title": "Pooltool: A Python package for realistic billiards simulation",
+    "Publication": "Journal of Open Source Software",
+    "Volume": "9",
+    "Number": "101",
+    "Pages": "",
+    "Year": "2024",
+    "doi": "10.21105/joss.07301"
+  },
+  {
+    "Authors": "Kiefl, Evan; Esen, Özcan C; Miller, Samuel E; Kroll, Kourtney L; Willis, Amy D; Rappé, Michael S; Pan, Tao; Eren, A Murat;",
+    "Title": "Structure-informed microbial population genetics elucidate selective pressures that shape protein evolution",
+    "Publication": "Science Advances",
+    "Volume": "9",
+    "Number": "8",
+    "Pages": "",
+    "Year": "2023",
+    "doi": "10.1126/sciadv.abq4632"
+  },
+  {
+    "Authors": "Eren, A. Murat; Kiefl, Evan; Shaiber, Alon; Veseli, Iva; Miller, Samuel E; Schechter, Matthew S; Fink, Isaac; Pan, Jessica N; Yousef, Mahmoud; Fogarty, Emily C; Trigodet, Florian; Watson, Andrea R; Esen, Özcan C; Moore, Ryan M; Clayssen, Quentin; Lee, Michael D; Kivenson, Veronika; Graham, Elaina D; Merrill, Bryan D; Karkman, Antti; Blankenberg, Daniel; Eppley, John M; Sjödin, Andreas; Scott, Jarrod J; Vázquez-Campos, Xabier; McKay, Luke J; McDaniel, Elizabeth A; Stevens, Sarah L R; Anderson, Rika E; Fuessel, Jessika; Fernandez-Guerra, Antonio; Maignien, Lois; Delmont, Tom O; Willis, Amy D;",
+    "Title": "Community-led, integrated, reproducible multi-omics with anvi'o",
+    "Publication": "Nature Microbiology",
+    "Volume": "6",
+    "Number": "1",
+    "Pages": "3:6",
+    "Year": "2020",
+    "doi": "10.1038/s41564-020-00834-3"
+  },
+  {
+    "Authors": "Kiefl, Evan; Mannini, Matteo; Bernot, Kevin; Yi, Xiaohui; Amato, Alex; Leviant, Tom; Magnani, Agnese; Prokscha, Thomas; Suter, Andreas; Sessoli, Roberta; Salman, Zaher;",
+    "Title": "Robust Magnetic Properties of a Sublimable Single-Molecule Magnet",
+    "Publication": "ACS Nano",
+    "Volume": "10",
+    "Number": "6",
+    "Pages": "5663-5669",
+    "Year": "2016",
+    "doi": "10.1021/acsnano.6b01817"
+  },
+  {
+    "Authors": "Shayegan, Marjan; Altindal, Tuba; Kiefl, Evan; Forde, Nancy R;",
+    "Title": "Intact telopeptides enhance interactions between collagens",
+    "Publication": "Biophysical journal",
+    "Volume": "111",
+    "Number": "11",
+    "Pages": "2404-2416",
+    "Year": "2016",
+    "doi": "10.1016/j.bpj.2016.10.039"
+  },
+  {
+    "Authors": "Kiefl, Evan; Kiefl, Robert F; dos Santos, Diego P; Brolo, Alexandre G;",
+    "Title": "Evaluation of surface-enhanced Raman spectroscopy substrates from single-molecule statistics",
+    "Publication": "The Journal of Physical Chemistry C",
+    "Volume": "121",
+    "Number": "45",
+    "Pages": "25487-25493",
+    "Year": "2017",
+    "doi": "10.1021/acs.jpcc.7b08691"
+  },
+  {
+    "Authors": "Delmont, Tom O*; Kiefl, Evan*; Kilinc, Ozsel; Esen, Özcan C; Uysal, Ismail; Rappé, Michael S; Giovannoni, Steven; Eren, A Murat;",
+    "Title": "Single-amino acid variants reveal evolutionary processes that shape the biogeography of a global SAR11 subclade",
+    "Publication": "eLife",
+    "Volume": "8",
+    "Number": "",
+    "Pages": "e46497",
+    "Year": "2019",
+    "doi": "10.7554/eLife.46497"
+  }
+]

@@ -55,12 +55,14 @@
 </div><!-- /#main -->
 
 <div class="footer-wrap">
+  {% if page.coffee or page.project == "pooltool" %}
   <div class="buy-me-a-coffee">
-    <h4>Did this content help you?</p>
+    <h4>Did this content help you?</h4>
     <a href="https://www.buymeacoffee.com/kieflevan">
       <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Show your support" width="180"/>
     </a>
   </div>
+  {% endif %}
   <footer>
     {% include _footer.html %}
   </footer>

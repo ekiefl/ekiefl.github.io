@@ -6,6 +6,7 @@ excerpt: "A dive into the physics theory behind pool"
 comments: true
 series: 1
 authors: [evan]
+coffee: true
 image:
   feature: pooltool/pooltool_banner.png
   display: true

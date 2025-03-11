@@ -68,7 +68,7 @@ h6 {
     padding-bottom: 0.5em;
     padding-left: 0.5em;
     border-bottom: 1px solid #AAA;
-    background: url('../../images/fractal.jpg') center center scroll;
+    background: url('../../images/solid_bg.jpg') center center scroll;
 }
 
 #articlecontent h3 {
@@ -95,7 +95,8 @@ h6 {
 
 
 #articlecontent img {
-    border: 7px solid #EEE;
+    box-sizing: border-box;
+    border: 7px solid transparent;
     border-radius: 7px;
 }
 
@@ -147,6 +148,57 @@ figcaption {
     @include font(14);
     line-height: 1.3;
     color: lighten($text-color, 10);
+    padding-bottom: 0.4rem;
+}
+
+#articlecontent .photo-fig {
+  margin: auto;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+  margin-bottom: 1rem;
+}
+
+#articlecontent .photo-fig:hover {
+  transform: scale(1.02);
+}
+
+#articlecontent .photo-fig img {
+  border-radius: 0px;
+  border: 0;
+  box-sizing: unset;
+}
+
+#articlecontent .photo-fig-gallery-element {
+  margin: auto;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+  margin-bottom: 1%;
+}
+
+#articlecontent .photo-fig-gallery-element:hover {
+  transform: scale(1.01);
+}
+
+#articlecontent .photo-fig-gallery-element img {
+  border-radius: 0px;
+  border: 0;
+  box-sizing: unset;
+}
+
+#articlecontent .photo-caption {
+  background-color: #f0f0f0;
+  border-radius: 0 0 8px 8px;
+  width: auto;
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  display: block;
+  font-style: italic;
+}
+
+#articlecontent .photo-caption:empty {
+  display: none;
 }
 
 /* 

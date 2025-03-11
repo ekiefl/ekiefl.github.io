@@ -25,6 +25,6 @@ sitemap: false
 @import "forms";
 @import "page";
 @import "network";
-@import "vendor/font-awesome/font-awesome";
+// Font Awesome now loaded via CDN in _head.html
 @import "vendor/magnific-popup/magnific-popup";
 //@import "vendor/google/fonts";

@@ -1,0 +1,75 @@
+<style>
+  .image-gallery {
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-top: 0.5%;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .image-gallery li {
+    float: left;
+    display: block;
+    width: 49%;
+    margin: 0.5% 0.5% 0.5% 0.5%;
+    padding: 0;
+  }
+
+  .image-gallery li a {
+    text-align: center;
+    text-decoration: none !important;
+    color: #777;
+  }
+
+  .image-gallery li a img {
+    width: 100%;
+    display: block;
+  }
+
+  .gallery-caption {
+    background-color: #f0f0f0;
+    border-radius: 0px 0px 8px 8px;
+    width: auto;
+    padding-left: 0.5em;
+    padding-top: 0;
+    display: block;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-caption:empty {
+    display: none;
+  }
+
+  .image-gallery-figure {
+    border-radius: 8px 8px 8px 8px;
+    /*background-color: #f0f0f0;*/
+    background-image: linear-gradient(to bottom, transparent, #f0f0f0);
+  }
+</style>
+
+
+
+<figure class="image-gallery-figure" style="width: {{ include.width | default: '100%' }}; margin: auto;">
+  <ul class="image-gallery">
+    {% assign image_list = include.images | split: ',' %}
+    {% for image_path in image_list %}
+    {% assign image_path = image_path | strip %}
+    <li>
+      <figure class="photo-fig-gallery-element" style="width: {{ include.width | default: '100%' }};">
+        <a href="{{ site.images }}{{ image_path }}" target="_blank" class="nohover">
+          <img src="{{ site.thumbnails }}{{ image_path }}" alt="{{ include.caption }}" loading="lazy"
+            style="display: block; margin: auto; width: 100%;">
+        </a>
+      </figure>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if include.caption | strip %}
+  <figcaption class="gallery-caption">
+    {{ include.caption | strip }}
+  </figcaption>
+  {% endif %}
+</figure>

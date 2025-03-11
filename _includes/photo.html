@@ -1,0 +1,12 @@
+<figure class="photo-fig" style="width: {{ include.width | default: '100%' }};">
+  <a href="{{ site.images }}{{ include.url }}" target="_blank" class="nohover">
+    <img src="{{ site.thumbnails }}{{ include.url }}" alt="{{ include.description }}" loading="lazy"
+      style="display: block; margin: auto; width: 100%;">
+  </a>
+
+  {% if include.description | strip %}
+  <figcaption class="photo-caption">
+    {{ include.description | strip }}
+  </figcaption>
+  {% endif %}
+</figure>

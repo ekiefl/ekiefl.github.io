@@ -4,6 +4,7 @@ title: "Creating a dog-sitter"
 redirect_from:
 excerpt: "maple project page"
 project: maple
+coffee: true
 image:
   feature: "maple/maple_banner.jpg"
   display: true

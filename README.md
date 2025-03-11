@@ -1,25 +1,23 @@
-# How to run a copy of this website locally
+# ekiefl.github.io
 
-You can run a local version of this website to see how your changes will look like when they are pushed. For this, you need to install `jekyll`, which can be doen the following way on a Mac OSX:
+This is the source code for https://ekiefl.github.io/.
 
-```
-sudo gem install jekyll
-```
+# Developer instructions
 
-If the command `gem` is not found, or your Ruby version is outdated, try to install it the following way first:
+Install ruby 3.2.2 and specify it locally:
 
-```
-brew install ruby
-```
-
-Once the installation is complete, you can get a copy of the web site from GitHub:
-
-```
-git clone https://github.com/merenlab/web.git
-cd web
+```bash
+rbenv install 3.2.2
+rbenv local 3.2.2
 ```
 
-To make sure you have the necesary gems, run:
+Now install bundler
+
+```
+gem install bundler
+```
+
+Install all the gems in the `Gemfile`:
 
 ```
 bundle install

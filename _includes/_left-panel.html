@@ -1,25 +1,25 @@
 <div>
     {% if page.include_bio == true %}
-        {% include _author-bio.html %}
+    {% include _author-bio.html %}
 
-        <hr>
-    
+    <hr>
+
     {% endif %}
 
     <div class="side-panel-header">
-        <img src="/images/quick_links.png">
+        <h4 style="text-align: center;">Project Links:</h4>
     </div>
 
     {% for project in site.data.projects %}
-        <p>
-        <div class="side-panel-element">
-            <a href="{{ project.url | relative_url }}"><img src="{{ project.logo }}"></a>
-        </div>
-        <div class="side-panel-element-text">
-            <a href="{{ project.url | relative_url }}">
-                {{ project.name }}
-            </a>
-        </div>
+    <p>
+    <div class="side-panel-element">
+        <a href="{{ project.url | relative_url }}"><img src="{{ project.logo }}"></a>
+    </div>
+    <div class="side-panel-element-text">
+        <a href="{{ project.url | relative_url }}">
+            {{ project.name }}
+        </a>
+    </div>
     {% endfor %}
 
 

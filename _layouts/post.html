@@ -60,16 +60,26 @@
 </div><!-- /#main -->
 
 <div class="footer-wrap">
+  {% if page.coffee %}
   <div class="buy-me-a-coffee">
-    <h4>Did this content help you?</p>
+    <h4>Did this content help you?</h4>
     <a href="https://www.buymeacoffee.com/kieflevan">
       <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Show your support" width="180"/>
     </a>
   </div>
+  {% endif %}
+  {% assign same_category_posts = site.posts | where: "categories", page.categories[0] | reverse %}
+  {% assign related_posts_same_category = "" | split: "" %}
+  {% for post in same_category_posts %}
+    {% if post.url != page.url %}
+      {% assign related_posts_same_category = related_posts_same_category | push: post %}
+    {% endif %}
+  {% endfor %}
+  {% if related_posts_same_category.size > 0 %}
   <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="{{ site.url }}/posts/">View all posts</a>)</small></h4>
+  <h4>All posts in {{ page.categories[0] }} <small class="pull-right">(<a href="{{ site.url }}/posts/">View all posts</a>)</small></h4>
     <ul>
-    {% for post in site.related_posts limit:3 %}
+    {% for post in related_posts_same_category %}
       <li>
       <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
       {% for project in site.data.projects %}
@@ -82,6 +92,7 @@
     </ul>
     <hr />
   </div><!-- /.related-articles -->
+  {% endif %}
   <footer>
     {% include _footer.html %}
   </footer>
