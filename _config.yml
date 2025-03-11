@@ -40,7 +40,7 @@ owner:
 
 author:
   name   : "Evan Kiefl"
-  avatar : "/images/bio-photo.jpg"
+  avatar : "/images/bio-photo-v2.jpg"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

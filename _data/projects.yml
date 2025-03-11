@@ -22,3 +22,12 @@
   ]
   description: >-
       My journey in creating *pooltool*, a sandbox billiards/pool game that emphasizes realistic physics.
+
+- name: "miscellaneous"
+  url:  "projects/miscellaneous/"
+  color: "#5A7247"
+  thumbnail:  [
+    "/images/rock_wall.png"
+  ]
+  description: >-
+      A collection of blog posts that don't fit neatly into other project categories - including travel logs, experiments, and random musings.
