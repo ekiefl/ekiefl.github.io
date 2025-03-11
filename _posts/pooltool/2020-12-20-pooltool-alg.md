@@ -880,7 +880,7 @@ $$
 Finally, cast everything onto the left-hand side:
 
 $$
-l_x^{(j)} x + l_y^{(j)} y + l_y^{(j)} = 0
+l_x^{(j)} x + l_y^{(j)} y + l_0^{(j)} = 0
 \notag
 $$
 
