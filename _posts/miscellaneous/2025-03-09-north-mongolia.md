@@ -62,7 +62,7 @@ We spent the rest of the day driving throughout the city, visiting the Buddhist 
 
 {% include photo.html url="2023-09-14-north-mongolia/1/baby_in_car.webp" description="A Mongolian family beside us in traffic singing along to a traditional Mongolian ballad that blasted from their car speakers. Their baby, standing on the lap of someone in the back seat, hangs his head out of the rolled-down window, staring at Kourtney and me smiling back at him." width="70%" %}
 
-On the way back to the hotel. Well-fed and sleepy, we were dropped off at the hotel by Anuka and Baagii, and we agreed to reconvene the next day at 10:00 am for the start of our big journey.
+Well-fed and sleepy, we were dropped off at the hotel by Anuka and Baagii, and we agreed to reconvene the next day at 10:00 am for the start of our big journey.
 
 ## Day 2: Journey to the monastery
 
@@ -183,7 +183,7 @@ After some language-transcending humor, including Kourtney being asked to milk t
 
 "I've never met them, and neither has Baagii."
 
-"Anyone is welcome to stay with anyone 24 hours today and they are treated like family", Anuka explained after seeing our surprise. In our culture, you don't just walk onto someone's land and expect the red carpet to be rolled out. In Mongolia, no one owns the land. Perhaps this can in part explain a fundamental cultural difference. Since there is a shared conception of the land, this may have a profound influence on the interrelationships between Mongolian people and how they congregate. Kourtney also pointed out that because life is so difficult here, people need to band together in a sort of "we're all in this together" mentality. In other words, people rely on their literal and proverbial neighbors. Fostered over millennia, this generosity and hospitality has penetrated deep into nomadic culture and persists today as overwhelming welcoming attitude to strangers. This is just a theory.
+"Anyone is welcome to stay with anyone 24 hours today and they are treated like family", Anuka explained after seeing our surprise. In our culture, you don't just walk onto someone's land and expect the red carpet to be rolled out. In Mongolia, no one owns the land. Perhaps this can in part explain a fundamental cultural difference. Since there is a shared conception of the land, this may have a profound influence on the interrelationships between Mongolian people and how they congregate. Kourtney also pointed out that because life is so difficult here, people need to band together in a sort of "we're all in this together" mentality. In other words, people rely on their literal and proverbial neighbors. Fostered over millennia, this generosity and hospitality has penetrated deep into nomadic culture and persists today as an overwhelming welcoming attitude to strangers. This is just a theory.
 
 Before entering the ger, I noticed some fermenting cow milk being pressed down by two large rocks. Anuka explained that they were making a sort of hard, thin cheese. In fact, some was already fully processed and baking in the sun. Anuka and I grabbed a chunk to share. It was very dry, sour, and salty. It was an intriguing taste, far outside my realm of familiarity. I didn't ask for seconds.
 
@@ -263,7 +263,7 @@ Later in the day we found ourselves enjoying the scenery as we drove alongside a
 
 After the mountain pass, we descended into a valley, where a small village lies. It's a common place to stop for food for passersby traveling to and from the remote north. Day or night, the restaurant will open for a bus full of travelers. An old man sat in a security booth manning a rudimentary car gate that used a defunct chainsaw as a counterweight. A few words were spoken and the conversation ends with the za from both parties. He released the drawstring and the chainsaw pulled the gatekeeping log upwards, allowing our passage.
 
-We were in the middle of Autumn and the more north we drove, the more the grass and trees were showing a spectrum of Fall colors. "It will be even better when we return Anuka", said.
+We were in the middle of Autumn and the more north we drove, the more the grass and trees were showing a spectrum of Fall colors. "It will be even better when we return", Anuka said.
 
 We were slowed by a herd of about 40 horses who were blocking the road, their owners nowhere in sight. I can imagine no better life for captive animals that in Mongolia, where they live free and nearly wild. Seeing all the horses inspired us to stop for a quick kumis break. As we sipped, Anuka, as she often did, spoiled us with a little tidbit of information that Chinggis Khaan proclaimed that a proper Mongolian should drink more horse milk than water.
 
