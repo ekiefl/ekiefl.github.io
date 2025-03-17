@@ -515,7 +515,7 @@ The grandpa was an incredibly small man with a crinkled face and few teeth. He b
 
 Afterwards we gave the kid a gift packet. Kourtney exchanged the Mickey Mouse eraser for a Spider-Man eraser, since he was wearing Spider-Man sneakers. He was very rambunctious and full of energy. We asked him what he wants to be when he grows up. His answer: a reindeer herder, just like his dad. Although I already knew the answer, I asked whether or not he was old enough to ride a reindeer.
 
-{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-16-35-935000_cam.webp" description="With a boastful confidence, the boy articulately commanding his reindeer with a dynamic range of rein maneuvring, heel kicks, and a stick he picked up off the ground to whip its ass with. His velcro Spiderman sneakers, the only thing resembling his age." %}
+{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-16-35-935000_cam.webp" description="With a boastful confidence, the boy articulately commands his reindeer with a dynamic range of rein maneuvring, heel kicks, and a stick he picked up off the ground to whip its ass with. His velcro Spiderman sneakers, the only thing resembling his age." %}
 
 {% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-16-32-742000_cam.webp" %}
 
