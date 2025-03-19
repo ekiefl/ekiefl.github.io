@@ -345,11 +345,11 @@ We ascended up the gentle mountain slope and stopped for lunch while overlooking
 
 After lunch we saddled up. Being exceptionally tall and of generally low fortitude for Mongolian standards, I was experiencing some knee pain from the stirrups being too short, so Lhagwa lengthened them to the last notch in the leather. Still too short, but it was better. We descended down to the bog and it became clear how treacherous it really was. Extending for kilometers, the bog was a patchwork of soft moss, mud pools, and oily bog water.
 
-As my horse heroically navigated waist deep bog water, I came to realize that we aren't just riding horses for the hell of it. This ain't no trail ride. This was in fact, the only way to get to the Taiga. Traversing by foot would be impossible, though technically possible in Winter when land freezes over. Cars are an obvious no, and motorcycles are no better. That leaves horses and reindeers. It was no easy task, even for the horses, who regularly "broke through" the surface layers, ending chest deep in mud.
+As my horse heroically navigated waist deep bog water, I came to realize that we aren't just riding horses for the hell of it. This ain't no trail ride. This was in fact, the only way to get to the Taiga. Traversing by foot would be impossible, though technically possible in Winter when land freezes over. Cars are an obvious no, and motorcycles are no better. That leaves horses and reindeer. It was no easy task, even for the horses, who regularly "broke through" the surface layers, ending chest deep in mud.
 
 Throughout this arduous journey for the horses, us humans were enjoying a relatively peaceful journey. The only sounds were the squelching of our horse's legs navigating the thick bog. After an hour or two of marching, the landscape started to change. The terrain steepened, the ground firmed, and the treeline began to thicken.
 
-We descended further and further into a large river valley. After a quick traversal along the basin of the valley, far in the distance we saw a smoke stack. As we got closer, we could see a clump of orts. After a four hour trek, we had arrived.
+We descended further and further into a large river valley. After a quick traversal along the basin of the valley, far in the distance we saw a plume of smoke. As we got closer, we could see a clump of orts. After a four hour trek, we had arrived.
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/5/__2023-09-01_05-10-40-837000_evan.webp,2023-09-14-north-mongolia/5/__2023-09-01_22-36-54-268000_cam.webp"
@@ -380,7 +380,7 @@ Observing how the nomads live, I began to truly understand the depth of his answ
 
 "Are you concerned about the upcoming winter?"
 
-Before sharing his thoughts, I'd like to provide some context for this question. Every November, the women migrate south to where the weather is milder and closer to the village. This enables them to stay nearer to their children, who attend the village school if they're of school age, purchase supplies more conveniently, and reach a hospital faster in case of emergencies. Meanwhile, the men venture deep into the Taiga, tracking the reindeer, which thrive in the harsh winter conditions. They remain here with the reindeer, either in solitude or alongside others if their reindeer herds happen to converge. Generally, reindeer are not herded; the only reliable way to manage these particularly wild livestock is to tether their young near the campsite.
+Before sharing his thoughts, I'd like to provide some context for this question. Every November, the women migrate south, closer to where the weather is milder. This enables them to stay nearer to their children, who attend the village school if they're of school age, purchase supplies more conveniently, and reach a hospital faster in case of emergencies. Meanwhile, the men venture deep into the Taiga, tracking the reindeer, which thrive in the harsh winter conditions. They remain here with the reindeer, either in solitude or alongside others if their reindeer herds happen to converge. Generally, reindeer are not herded; the only reliable way to manage these particularly wild livestock is to tether their young near the campsite.
 
 Anyways, Godla confidently answered the question about his concerns for winter, stating that he wasn't afraid at all—in fact, he was excited. He added that if he misses his wife, he'll return after a month; otherwise, he'll extend his stay. They exchanged knowing glances and shared a laugh.
 
@@ -403,7 +403,7 @@ We needed more fire for the stove, so Godla slung a chainsaw over his back and g
 
 {% include photo.html url="2023-09-14-north-mongolia/5/__2023-09-01_06-13-01-703000_cam.webp" description="Godla crosses the stream back to camp, riding his reindeer bare back. A second reindeer, exhausted by its payload, drags two large logs on either side of its saddle through the creek bed." %}
 
-To show our gratitude, I chopped enough wood to get both ort through the night.
+To show our gratitude, I chopped enough wood to get both orts through the night.
 
 {% include photo.html url="2023-09-14-north-mongolia/5/__2023-09-01_06-18-51-798000_cam.webp" description="Ready to chop wood." %}
 
@@ -452,9 +452,9 @@ With Godla turned away from us, Sartlong and Lhagwa started dressing him in a we
 
 On his head he wore a vulture and eagle feather mask and something that covered his eyes. Although he was a shorter man, silhouetted by the dimly lit ort, he looked large and powerful.
 
-Then he started drumming. Softly at first. Each hit generated a deep, muted thud. He moved to and from the altar as he drummed. At the altar he held the drum low and by the center of the ort he held it high. His movement was controlled. The drum beats got progressively louder. He then started speaking in Tuvan. Like the drumming, it got progressively more intense. His voice became strained, high pitched, and mantric. As the ceremony proceeded, he began disengaging with reality. His movements became more erratic and animalistic. Often he would cock his head and turn it swiftly from side to side, the movement exaggerated by his mask's feathers. The cadence of his voice, distorted. Hissing through gritted teeth he chanted--ever more stressing and ever less human. And throughout all of this, the drum beat continued relentlessly. At times he was completely out of his own control and would throw himself backwards, raising the drum skyward, as if puppeteered. Lhagwa was behind him nearly the whole time, ensuring he could catch him if thrown back.
+Then he started drumming. Softly at first. Each hit generated a deep, muted thud. He moved to and from the altar as he drummed. At the altar he held the drum low and by the center of the ort he held it high. His movement was controlled. The drum beats got progressively louder. He then started speaking in Tuvan. Like the drumming, it got progressively more intense. His voice became strained, high pitched, and mantric. As the ceremony proceeded, he began disengaging with reality. His movements became more erratic and animalistic. Often he would cock his head and turn it swiftly from side to side, the movement exaggerated by his mask's feathers. The cadence of his voice, distorted. Hissing through gritted teeth he chanted--ever more stressing and ever less human. And throughout all of this, the drum beat continued relentlessly. At times he was completely out of his own control and would throw himself backwards, raising the drum above his head, as if puppeteered by skyward spirits. Lhagwa was behind him the whole time, ensuring he could catch him if thrown back.
 
-I'd never witnessed someone have such an unrelenting and burdensome out-of-body experience before. It was beautiful and terrible simultaneously, holding me in a sort of trance-like purgatory. I think since I'd never experienced anything this different from my own cultural bubble, I caught myself perpetually disassociating from what was happening. "This is what a shaman ceremony *is like*", I would think to myself. I'd have to remind myself that I wasn't watching a re-enactment, or viewing through a TV screen. I watching a shaman ritual. He was, according to his religion, convening with spirits. And it was happening in front of us.
+I'd never witnessed someone have such an unrelenting and burdensome out-of-body experience before. It was beautiful and terrible simultaneously, holding me in a sort of trance-like purgatory. I think since I'd never experienced anything this different from my own cultural bubble, I caught myself perpetually disassociating from what was happening. "This is what a shaman ceremony *is like*", I would think to myself. I'd have to remind myself that I wasn't watching a re-enactment, or viewing through a TV screen. I was watching a shaman ritual. He was, according to his religion, convening with spirits. And it was happening in front of us.
 
 The ceremony was relentless and lasted around an hour and a half. It was an incredible feat of stamina, to do all of that in heavy and restrictive garb. Even as observers, we found the experience incredibly draining.
 
@@ -481,7 +481,7 @@ In the morning Anuka came back with news from the other ort. A reindeer had been
 
 {% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-02_21-59-15-694000_cam.webp" description="The portions of desirable meat uneaten by the bear hang from an impromptu wooden tripod, out of reach from the dogs. Strands of sinew sway in the gentle breeze." %}
 
-{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-02_22-02-08-533000_cam.webp" description="The reindeer's rib cage partially encases its skull, its lifeless eye fixated toward the sky in an immortal gaze." %}
+{% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-02_22-02-08-533000_cam.webp" description="The reindeer's rib cage partially encases its skull, its eye fixated skywards in an immortal gaze." %}
 
 {% include gallery.html
     images="2023-09-14-north-mongolia/7/__2023-09-02_22-25-59-146000_cam.webp,2023-09-14-north-mongolia/7/__2023-09-02_22-26-30-977000_cam.webp"
@@ -521,7 +521,7 @@ Afterwards we gave the kid a gift packet. Kourtney exchanged the Mickey Mouse er
 
 Then, a car pulled up, and out popped a bunch of people. Anuka recognized all of them. After a while Anuka started to piece it together: Gambut was just joking when he said he was waiting for tourists. He was in fact, just waiting for his family, and here they were.
 
-Commence the chaos. Out of the car they came, pulling and carrying around various supplies and gear. A large rack of meat was transferred from a thick plastic bag into a large rice sack. Saddles, guns, axes, food, and miscellaneous bags with unknown content were all being arranged on the ground. Clearly it was a very successful trip into the village. One by one the reindeers were getting saddled with all the gear. Everyone was working hard and hardly working. Older siblings were taking turns wrestling with the young kid while saddling their reindeers. Everyone was casually chatting and laughing as they readied their gear. In the midst of the activity someone had made a small fire and brewed up milk tea that got passed around with sour chalky cheese pucks. In contrast to every road trip I went on as a kid, they had no apparent anxiety about whether they were leaving on time, whether everything was packed, or whether the front door was locked. They were booming with a confidence gained only through a lifetime of nomadic living, where both everywhere and nowhere is a place to call home.
+Commence the chaos. Out of the car they came, pulling and carrying around various supplies and gear. A large rack of meat was transferred from a thick plastic bag into a large rice sack. Saddles, guns, axes, food, and miscellaneous bags with unknown content were all being arranged on the ground. Clearly it was a very successful trip into the village. One by one the reindeer were getting saddled with all the gear. Everyone was working hard and hardly working. Older siblings were taking turns wrestling with the young kid while saddling their reindeer. Everyone was casually chatting and laughing as they readied their gear. In the midst of the activity someone had made a small fire and brewed up milk tea that got passed around with sour chalky cheese pucks. In contrast to every road trip I went on as a kid, they had no apparent anxiety about whether they were leaving on time, whether everything was packed, or whether the front door was locked. They were booming with a confidence gained only through a lifetime of nomadic living, where both everywhere and nowhere is a place to call home.
 
 {% include photo.html url="2023-09-14-north-mongolia/7/__2023-09-03_03-44-46-370000_cam.webp" %}
 
@@ -632,7 +632,7 @@ Once the reindeer were gathered, a core set of each family's herd would be saddl
     caption="The wood-fire stove, just like the reindeer that bear its weight, is a truly indispensible asset to the Tsaatan."
 %}
 
-They tied the saddle-backed reindeer in lines, with the biggest in front, and the smallest in the back. The majority of reindeers, who were not saddled, were herded on the fly by skilled horsemen and reindeermen.
+They tied the saddle-backed reindeer in lines, with the biggest in front, and the smallest in the back. The majority of reindeer, who were not saddled, were herded on the fly by skilled horsemen and reindeermen.
 
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-53-16-528000_cam.webp" %}
 {% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_23-05-35-261000_cam.webp" %}
@@ -644,7 +644,7 @@ Then the herders took off down the valley in the direction from which they had m
     caption="After finishing his cigarette, a gun-slinging nomad mounts his horse, grabs the rope tethering his reindeer caravan, and rides over the hill and out of sight."
 %}
 
-{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-48-35-022000_cam.webp" description="A horse contends with entrencheningly deep mud as its rider holds tightly to his tethered reindeer. Compared to horses, reindeers navigate this terrain more easily because they weigh less." %}
+{% include photo.html url="2023-09-14-north-mongolia/9/__2023-09-04_22-48-35-022000_cam.webp" description="A horse contends with entrencheningly deep mud as its rider holds tightly to his tethered reindeer. Compared to horses, reindeer navigate this terrain more easily because they weigh less." %}
 
 Within a few hours, the camp was mostly deserted, except for a few people who were still waiting for their reindeer to return, Buyantogtokh included.
 
@@ -884,7 +884,7 @@ Their kid had left for school, living in a 50 bed dormitory in a village school 
 
 It felt full circle to be spending our last rural night at the very place where we experienced the greatest culture shock of the trip. A week ago, we had no idea about nomadic life when we were invited into Handa and her husband's life. Without context, I was handed a bowl of fermented horse milk from a large cow skin full of unrefridgerated dairy product, and eating rock-hard cheese completely unique to my palette. Just moments before that, Kourtney was milking a horse and I was hitching a ride on a stranger's motorcycle. The experience gave me such a culture shock that I was fighting back a bit of an adrenaline rush.
 
-But this time was different. This time we felt like seasoned veterans of this lifestyle. In the last week, we'd travelled across roadless mountain passes, traversed the treacherous Northern Mongolian landscape on horseback to visit the Tsaatan peoples. We'd had our prophecies told during a life-altering Shamanic ritual, witnessed a bear-attack that killed one of Godla's reindeers. We'd participated in a seasonal reindeer herding migration, and lived in orts underneath the stars. We'd butchered a sheep, watched a backyard horse branding, and rode reindeers.
+But this time was different. This time we felt like seasoned veterans of this lifestyle. In the last week, we'd travelled across roadless mountain passes, traversed the treacherous Northern Mongolian landscape on horseback to visit the Tsaatan peoples. We'd had our prophecies told during a life-altering Shamanic ritual, witnessed a bear-attack that killed one of Godla's reindeer. We'd participated in a seasonal reindeer herding migration, and lived in orts underneath the stars. We'd butchered a sheep, watched a backyard horse branding, and rode reindeer.
 
 So in comparison to all of that, we felt comfortable with Handa and her family. I played a friendly game of 13 while sipping kumis. Kourtney helped herd the baby cows. Then we stirred the newest milk contribution into the massive cow skin bag.
 
