@@ -1,5 +1,15 @@
 [
   {
+    "doi": "10.57844/arcadia-bmb9-fzxd",
+    "highlights": "Answers a straightforward question: can the performance of Rijal et al.'s attention-based genotype-phenotype mapping model be improved by replacing their custom architecture with a standard 'vanilla' transformer?; Working with the same yeast dataset of ~100,000 segregants across 18 growth phenotypes and 1,164 independent loci, we discovered that canonical machine learning components significantly outperformed the original bespoke design.; Our key insight was that leveraging cross-phenotype genetic correlations through multi-objective training allows the network to exploit mutual information between genetically related traits that significantly boosts predictive power.",
+    "featured_image": "../images/pubs/geno-pheno-attention.png"
+  },
+  {
+    "doi": "10.57844/arcadia-f52b-1451",
+    "highlights": "We discovered an unexpected pattern while analyzing the ESM2 protein language model family: amino acid probability distributions of residues affect each other in a way that mirrors a protein's 3D contact map, but this pattern becomes less pronounced in larger model sizes.; Using Jensen-Shannon divergence to compare how masking one position affects predictions at another, we found that intermediate sized models show the strongest correlation with structural contact maps, leaving the largest models in the dust.; This counterintuitive result challenges our assumptions about how model capacity relates to biological interpretability.",
+    "featured_image": "../images/pubs/esm-paired-token-masking.png"
+  },
+  {
     "doi": "10.21105/joss.07301",
     "highlights": "A <b>general-purpose billiards simulator</b> designed specifically for science and engineering applications with a focus on speed, ease of visualization, and fine-grained analysis.; Features an <b>event-based simulation algorithm</b> with <b>JIT compilation</b> that significantly increases computational efficiency compared to traditional time-step methods, by precisely calculating when significant events like collisions occur.; Provides an <b>interactive 3D interface</b> with comprehensive playback controls and a controllable camera for visualizing shot trajectories in a realistic environment.; Bridges a critical gap in billiards research by offering an <b>open-source platform</b> with realistic physics that can be used across disciplines including game theory, robotics, computer vision, and sports analytics.",
     "featured_image": "../images/pubs/pooltool.jpg"

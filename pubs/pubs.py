@@ -142,11 +142,22 @@ class Publications:
 
                 authors.append(author_final_name)
 
-            # Format the issue info
-            if pub.get("Number"):
-                issue = "%s(%s):%s" % (pub["Volume"], pub["Number"], pub.get("Pages", ""))
-            else:
-                issue = "%s:%s" % (pub["Volume"], pub.get("Pages", ""))
+            # Format the issue info - handle empty fields gracefully
+            issue_parts = []
+            volume = pub.get("Volume", "").strip()
+            number = pub.get("Number", "").strip()
+            pages = pub.get("Pages", "").strip()
+            
+            if volume:
+                if number:
+                    issue_parts.append(f"{volume}({number})")
+                else:
+                    issue_parts.append(volume)
+            
+            if pages:
+                issue_parts.append(pages)
+            
+            issue = ":".join(issue_parts) if issue_parts else ""
 
             year = pub["Year"].strip()
             pub_entry = {
@@ -155,6 +166,7 @@ class Publications:
                 "journal": pub["Publication"],
                 "issue": issue,
                 "doi": doi,
+                "url": pub.get("url", "").strip(),
                 "year": year,
                 "co_first_authors": co_first_authors,
                 "co_senior_authors": co_senior_authors,
@@ -176,20 +188,19 @@ class Publications:
             """<div class="__dimensions_badge_embed__" data-doi="%s" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>"""
             % pub["doi"]
         )
-        if pub["doi"]:
+        # Prioritize custom URL, then DOI, otherwise no link
+        if pub.get("url"):
             A(
                 '    <h3><a href="%s" target="_new">%s</a></h3>'
-                % (" https://doi.org/%s" % (pub["doi"]), pub["title"])
+                % (pub["url"], pub["title"])
+            )
+        elif pub["doi"]:
+            A(
+                '    <h3><a href="%s" target="_new">%s</a></h3>'
+                % ("https://doi.org/%s" % (pub["doi"]), pub["title"])
             )
         else:
-            A(
-                '    <h3><a href="http://scholar.google.com/scholar?hl=en&q=%s" target="_new">%s</a></h3>'
-                % (
-                    "http://scholar.google.com/scholar?hl=en&q=%s"
-                    % (pub["title"].replace(" ", "+")),
-                    pub["title"],
-                )
-            )
+            A('    <h3>%s</h3>' % pub["title"])
         A('    <span class="pub-authors">%s</span>' % self.get_author_highlights(pub))
 
         if pub["co_first_authors"] and not pub["co_senior_authors"]:
@@ -244,10 +255,17 @@ class Publications:
 
             A("    </div>")
 
-        A(
-            '    <span class="pub-journal"><b>%s</b>, %s.</span>'
-            % (pub["journal"], pub["issue"])
-        )
+        # Handle journal formatting with optional issue info
+        if pub["issue"]:
+            A(
+                '    <span class="pub-journal"><b>%s</b>, %s.</span>'
+                % (pub["journal"], pub["issue"])
+            )
+        else:
+            A(
+                '    <span class="pub-journal"><b>%s</b>.</span>'
+                % (pub["journal"])
+            )
         A("</div>\n")
 
         return "\n".join(pub_md)
