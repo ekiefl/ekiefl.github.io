@@ -4,11 +4,11 @@ This is the source code for https://ekiefl.github.io/.
 
 # Developer instructions
 
-Install ruby 3.2.2 and specify it locally:
+Install ruby 3.2.3 and specify it locally:
 
 ```bash
-rbenv install 3.2.2
-rbenv local 3.2.2
+rbenv install 3.2.3
+rbenv local 3.2.3
 ```
 
 Now install bundler
