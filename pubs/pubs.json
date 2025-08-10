@@ -1,5 +1,27 @@
 [
   {
+    "Authors": "Kiefl, Evan; Bigge, Brae M; McGeever, Erin; York, Ryan;",
+    "Title": "Cross-trait learning with a canonical transformer tops custom attention in genotype-phenotype mapping",
+    "Publication": "Arcadia Science",
+    "Volume": "",
+    "Number": "",
+    "Pages": "",
+    "Year": "2025",
+    "doi": "10.57844/arcadia-bmb9-fzxd",
+    "url": "https://arcadia-science.github.io/2025-geno-pheno-attention/"
+  },
+  {
+    "Authors": "Kiefl, Evan; Bigge, Brae M; Burns, Daniel;",
+    "Title": "Paired residue prediction dependencies in ESM2",
+    "Publication": "Arcadia Science",
+    "Volume": "",
+    "Number": "",
+    "Pages": "",
+    "Year": "2024",
+    "doi": "10.57844/arcadia-f52b-1451",
+    "url": "https://arcadia-science.github.io/2024-paired-token-masking/"
+  },
+  {
     "Authors": "Kiefl, Evan",
     "Title": "Pooltool: A Python package for realistic billiards simulation",
     "Publication": "Journal of Open Source Software",
