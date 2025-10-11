@@ -7,7 +7,7 @@ comments: false
 
 
 {:.notice}
-These publications are a subset of my scientific work that I consider to have contributed significantly towards. For a complete list of publications, check out my [Google Scholar](https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en).
+These publications are a subset of my scientific work that I consider to have contributed significantly towards. For further auxiliary publications see my [Google Scholar](https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en).
 
 
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
@@ -19,35 +19,65 @@ These publications are a subset of my scientific work that I consider to have co
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-bmb9-fzxd" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <span class="pub-title"><a href="https://arcadia-science.github.io/2025-geno-pheno-attention/" target="_new">Cross-trait learning with a canonical transformer tops custom attention in genotype-phenotype mapping</a></span>
-    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Bigge BM, McGeever E, York R</span>
+    <span class="pub-authors">Bigge BM, <span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, McGeever E, York R</span>
+    <div class="pub-author-order-note">Order doesn't reflect contribution</div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/geno-pheno-attention.png"><img src="../images/pubs/geno-pheno-attention.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- Answers a straightforward question: can the performance of Rijal et al.'s attention-based genotype-phenotype mapping model be improved by replacing their custom architecture with a standard 'vanilla' transformer?</span><br><span style="display: inline-block; padding-bottom: 5px;">- Working with the same yeast dataset of ~100,000 segregants across 18 growth phenotypes and 1,164 independent loci, we discovered that canonical machine learning components significantly outperformed the original bespoke design.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Our key insight was that leveraging cross-phenotype genetic correlations through multi-objective training allows the network to exploit mutual information between genetically related traits that significantly boosts predictive power.</span>
+    <ul>
+        <li>Asks: can <b>standard transformers</b> outperform Rijal et al.'s custom attention architecture for genotype-phenotype mapping?</li>
+        <li>Using a genetic yeast dataset (~100K individuals, ~1k loci, 18 phenotypes), we found <b>canonical ML components significantly outperformed</b> the bespoke design</li>
+        <li><b>Key insight</b>: multi-objective training exploits cross-phenotype genetic correlations, allowing the network to leverage mutual information between related traits for improved prediction</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://doi.org/10.57844/arcadia-bmb9-fzxd" target="_blank">doi:10.57844/arcadia-bmb9-fzxd</a></span>
 </div>
 
-
-<h1>2024</h1>
-
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-f52b-1451" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <span class="pub-title"><a href="https://arcadia-science.github.io/2024-paired-token-masking/" target="_new">Paired residue prediction dependencies in ESM2</a></span>
-    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Bigge BM, Burns D</span>
+    <span class="pub-authors">Bigge BM, Burns D, <span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span></span>
+    <div class="pub-author-order-note">Order doesn't reflect contribution</div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/esm-paired-token-masking.png"><img src="../images/pubs/esm-paired-token-masking.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- We discovered an unexpected pattern while analyzing the ESM2 protein language model family: amino acid probability distributions of residues affect each other in a way that mirrors a protein's 3D contact map, but this pattern becomes less pronounced in larger model sizes.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Using Jensen-Shannon divergence to compare how masking one position affects predictions at another, we found that intermediate sized models show the strongest correlation with structural contact maps, leaving the largest models in the dust.</span><br><span style="display: inline-block; padding-bottom: 5px;">- This counterintuitive result challenges our assumptions about how model capacity relates to biological interpretability.</span>
+    <ul>
+        <li>We discovered an unexpected pattern in the ESM2 protein language model family: <b>amino acid probability distributions mirror protein 3D contact maps</b>, but this weakens in larger models.</li>
+        <li>Using Jensen-Shannon divergence, we found <b>intermediate models show the strongest correlation with structural contact maps</b>, leaving the largest models in the dust.</li>
+        <li>This counterintuitive result <b>challenges assumptions about model capacity and biological interpretability</b>.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://doi.org/10.57844/arcadia-f52b-1451" target="_blank">doi:10.57844/arcadia-f52b-1451</a></span>
 </div>
+
+<div class="pub">
+<div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ca21-23bb" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
+    <span class="pub-title"><a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_new">Closing the divide between analysis and publication: The notebook pub</a></span>
+    <span class="pub-authors">Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, <span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Conceived of and created this now widely adopted publication format at Arcadia Science</li><li>Co-wrote the manuscript</li></ul></span></span>, Roth R, Sabbagh U, Sandhu W, York R</span>
+    <div class="pub-author-order-note">Order doesn't reflect contribution</div>
+    <div class="pub-info">
+    <div class="pub-featured-image">
+    <a href="../images/pubs/nbpub.png"><img src="../images/pubs/nbpub.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
+    </div>
+    <div class="pub-highlights">
+    <ul>
+        <li>Introduces <b>notebook pubs</b>: a publishing format that treats computational notebooks as publications themselves, eliminating the gap between how scientists analyze data and how they share results.</li>
+        <li>By making the <b>publication itself a data artifact</b> of the analysis pipeline, notebook pubs ensure end-to-end reproducibility while reducing publication burden and enabling faster sharing of results.</li>
+        <li>Built on <b>Quarto and GitHub infrastructure</b>, the approach provides scientists with a template that automatically converts Jupyter Notebooks into hosted, interactive web publications with version control and community engagement built in.</li>
+    </ul>
+    </div>
+    </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://doi.org/10.57844/arcadia-ca21-23bb" target="_blank">doi:10.57844/arcadia-ca21-23bb</a></span>
+</div>
+
+
+<h1>2024</h1>
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.21105/joss.07301" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
@@ -58,7 +88,12 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/pooltool.jpg"><img src="../images/pubs/pooltool.jpg" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- A <b>general-purpose billiards simulator</b> designed specifically for science and engineering applications with a focus on speed, ease of visualization, and fine-grained analysis.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Features an <b>event-based simulation algorithm</b> with <b>JIT compilation</b> that significantly increases computational efficiency compared to traditional time-step methods, by precisely calculating when significant events like collisions occur.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Provides an <b>interactive 3D interface</b> with comprehensive playback controls and a controllable camera for visualizing shot trajectories in a realistic environment.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Bridges a critical gap in billiards research by offering an <b>open-source platform</b> with realistic physics that can be used across disciplines including game theory, robotics, computer vision, and sports analytics.</span>
+    <ul>
+        <li>A <b>general-purpose billiards simulator</b> designed specifically for science and engineering applications with a focus on speed, ease of visualization, and fine-grained analysis.</li>
+        <li>Features an <b>event-based simulation algorithm</b> with <b>JIT compilation</b> that significantly increases computational efficiency compared to traditional time-step methods, by precisely calculating when significant events like collisions occur.</li>
+        <li>Provides an <b>interactive 3D interface</b> with comprehensive playback controls and a controllable camera for visualizing shot trajectories in a realistic environment.</li>
+        <li>Bridges a critical gap in billiards research by offering an <b>open-source platform</b> with realistic physics that can be used across disciplines including game theory, robotics, computer vision, and sports analytics.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>Journal of Open Source Software</b>, 9(101) | 🔗 <a href="https://doi.org/10.21105/joss.07301" target="_blank">doi:10.21105/joss.07301</a></span>
@@ -76,7 +111,12 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/anvio-structure.png"><img src="../images/pubs/anvio-structure.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- A study that describes an approach to integrate <b>environmental microbiology</b> with recent advances in <b>protein structure prediction</b>, and illustrates the tight association between <b>intra-population genetic variants</b>, <b>environmental selective pressures</b>, and <b>structural properties of proteins</b></span><br><span style="display: inline-block; padding-bottom: 5px;">- Demonstrates a quantifiable link between (1) the magnitude of selective pressures over key metabolic <b>genes</b> (e.g., glutamine synthase of the central nitrogen metabolism), (2) the availability of key <b>nutrients</b> in the environment (e.g., nitrate), and (3) the maintenance of nonsynonymous <b>variants</b> near protein active sites.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Shows that the interplay between selective pressures and protein structures also maintains <b>synonymous variants</b> -- revealing a quantifiable link between <b>translational accuracy</b> and fluctuating <b>selective pressures</b>.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Comes with a <a href="https://merenlab.org/data/anvio-structure/chapter-I/"><b>reproducible bioinformatics workflow</b></a> that offers detailed access to computational steps used in the study that spans from metagenomic read recruitment and profiling to the integration of environmental variants and predicted protein structures.</span>
+    <ul>
+        <li>A study that describes an approach to integrate <b>environmental microbiology</b> with recent advances in <b>protein structure prediction</b>, and illustrates the tight association between <b>intra-population genetic variants</b>, <b>environmental selective pressures</b>, and <b>structural properties of proteins</b></li>
+        <li>Demonstrates a quantifiable link between (1) the magnitude of selective pressures over key metabolic <b>genes</b> (e.g., glutamine synthase of the central nitrogen metabolism), (2) the availability of key <b>nutrients</b> in the environment (e.g., nitrate), and (3) the maintenance of nonsynonymous <b>variants</b> near protein active sites.</li>
+        <li>Shows that the interplay between selective pressures and protein structures also maintains <b>synonymous variants</b> -- revealing a quantifiable link between <b>translational accuracy</b> and fluctuating <b>selective pressures</b>.</li>
+        <li>Comes with a <a href="https://merenlab.org/data/anvio-structure/chapter-I/"><b>reproducible bioinformatics workflow</b></a> that offers detailed access to computational steps used in the study that spans from metagenomic read recruitment and profiling to the integration of environmental variants and predicted protein structures.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>Science Advances</b>, 9(8) | 🔗 <a href="https://doi.org/10.1126/sciadv.abq4632" target="_blank">doi:10.1126/sciadv.abq4632</a></span>
@@ -94,7 +134,9 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/anvio-integrated-omics.png"><img src="../images/pubs/anvio-integrated-omics.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- A summary of the progress of <a href="https://merenlab.org/software/anvio/" target="_blank">anvi'o</a> during the past five years.</span>
+    <ul>
+        <li>A summary of the progress of <a href="https://merenlab.org/software/anvio/" target="_blank">anvi'o</a> during the past five years.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>Nature Microbiology</b>, 6(1):3:6 | 🔗 <a href="https://doi.org/10.1038/s41564-020-00834-3" target="_blank">doi:10.1038/s41564-020-00834-3</a></span>
@@ -113,7 +155,12 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/delmond_and_kiefl_sar11_saavs.jpg"><img src="../images/pubs/delmond_and_kiefl_sar11_saavs.jpg" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- Introduces <a href="http://merenlab.org/2015/07/20/analyzing-variability/#an-intro-to-single-nucleotidecodonamino-acid-variation" target="_blank">'single-amino acid variants'</a> (SAAVs) and demonstrates <b>the use of SAAVs to tease apart evolutionary processes that shape the biogeography and genomic heterogeneity within a SAR11 population</b> through metagenomics.</span><br><span style="display: inline-block; padding-bottom: 5px;">- A first attempt to link population genetics and the predicted protein structures to explore <i>in silico</i> <b>the intersection beetween protein biochemistry and evolutionary processes</b> acting on an environmental microbe.</span><br><span style="display: inline-block; padding-bottom: 5px;">- An application of <a href="https://peerj.com/articles/4320/" target="_blank">metapangenomics</a> to define <b>subclades of SAR11 based on gene content and ecology</b>.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Reproducible bioinformatics workflow is <a href="http://merenlab.org/data/sar11-saavs/" target="_blank">here</a>. <a href="https://doi.org/10.7554/eLife.46497.040" target="_blank">Reviewer criticism</a> and <a href="https://doi.org/10.7554/eLife.46497.041" target="_blank">our responses</a> are also available.</span>
+    <ul>
+        <li>Introduces <a href="http://merenlab.org/2015/07/20/analyzing-variability/#an-intro-to-single-nucleotidecodonamino-acid-variation" target="_blank">'single-amino acid variants'</a> (SAAVs) and demonstrates <b>the use of SAAVs to tease apart evolutionary processes that shape the biogeography and genomic heterogeneity within a SAR11 population</b> through metagenomics.</li>
+        <li>A first attempt to link population genetics and the predicted protein structures to explore <i>in silico</i> <b>the intersection beetween protein biochemistry and evolutionary processes</b> acting on an environmental microbe.</li>
+        <li>An application of <a href="https://peerj.com/articles/4320/" target="_blank">metapangenomics</a> to define <b>subclades of SAR11 based on gene content and ecology</b>.</li>
+        <li>Reproducible bioinformatics workflow is <a href="http://merenlab.org/data/sar11-saavs/" target="_blank">here</a>. <a href="https://doi.org/10.7554/eLife.46497.040" target="_blank">Reviewer criticism</a> and <a href="https://doi.org/10.7554/eLife.46497.041" target="_blank">our responses</a> are also available.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>eLife</b>, 8:e46497 | 🔗 <a href="https://doi.org/10.7554/eLife.46497" target="_blank">doi:10.7554/eLife.46497</a></span>
@@ -131,7 +178,10 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/kiefl_SERS.png"><img src="../images/pubs/kiefl_SERS.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- Demonstrates power-law statistics of surface-ehanced Raman spectroscopy (SERS) hotspots can be used to <b>assess the quality of SERS substrates</b>.</span><br><span style="display: inline-block; padding-bottom: 5px;">- Extends the theory of truncated Pareto-distributed single-molecule SERS statistics to multi-hotspot substrates.</span>
+    <ul>
+        <li>Demonstrates power-law statistics of surface-ehanced Raman spectroscopy (SERS) hotspots can be used to <b>assess the quality of SERS substrates</b>.</li>
+        <li>Extends the theory of truncated Pareto-distributed single-molecule SERS statistics to multi-hotspot substrates.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>The Journal of Physical Chemistry C</b>, 121(45):25487-25493 | 🔗 <a href="https://doi.org/10.1021/acs.jpcc.7b08691" target="_blank">doi:10.1021/acs.jpcc.7b08691</a></span>
@@ -149,7 +199,10 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/kiefl_SMM.png"><img src="../images/pubs/kiefl_SMM.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- Demonstrates an equivalence in the magnetic properties between bulk and nanofilm configurations of a single-molecule magnet (SMM) using <b>muon spin spectroscopy</b></span><br><span style="display: inline-block; padding-bottom: 5px;">- Discovers a rare instance in which a single molecule magnet maintains its chemical structure and magnetic properties when sublimated into nanofilm, <b>an important precursor for using SMMs for information storage</b>.</span>
+    <ul>
+        <li>Demonstrates an equivalence in the magnetic properties between bulk and nanofilm configurations of a single-molecule magnet (SMM) using <b>muon spin spectroscopy</b></li>
+        <li>Discovers a rare instance in which a single molecule magnet maintains its chemical structure and magnetic properties when sublimated into nanofilm, <b>an important precursor for using SMMs for information storage</b>.</li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>ACS Nano</b>, 10(6):5663-5669 | 🔗 <a href="https://doi.org/10.1021/acsnano.6b01817" target="_blank">doi:10.1021/acsnano.6b01817</a></span>
@@ -164,7 +217,10 @@ These publications are a subset of my scientific work that I consider to have co
     <a href="../images/pubs/shayegan_collagen.jpg"><img src="../images/pubs/shayegan_collagen.jpg" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
     </div>
     <div class="pub-highlights">
-    <span style="display: inline-block; padding-bottom: 5px;">- Uses <b>optical tweezers-based microrheology</b> to quantify the <b>viscoelasticity</b> of triple-helical collagen molecules, with and without non-helical flanking regions called telopeptides, which are known to be <b>critical for self-assembly</b>.</span><br><span style="display: inline-block; padding-bottom: 5px;">- This work suggests that <b>telopeptides facilitate transient intermolecular interactions between collagen proteins</b></span>
+    <ul>
+        <li>Uses <b>optical tweezers-based microrheology</b> to quantify the <b>viscoelasticity</b> of triple-helical collagen molecules, with and without non-helical flanking regions called telopeptides, which are known to be <b>critical for self-assembly</b>.</li>
+        <li>This work suggests that <b>telopeptides facilitate transient intermolecular interactions between collagen proteins</b></li>
+    </ul>
     </div>
     </div>
     <span class="pub-journal">📚 <b>Biophysical journal</b>, 111(11):2404-2416 | 🔗 <a href="https://doi.org/10.1016/j.bpj.2016.10.039" target="_blank">doi:10.1016/j.bpj.2016.10.039</a></span>

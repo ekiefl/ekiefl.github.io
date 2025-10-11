@@ -15,8 +15,9 @@ image:
 
 ## Links
 
-- [github](https://github.com/ekiefl/pooltool)
-- [Read the docs](https://pooltool.readthedocs.io/en/latest/)
+- [GitHub](https://github.com/ekiefl/pooltool)
+- [Read the Docs](https://pooltool.readthedocs.io/en/latest/)
+- [Journal of Open Source Software](https://joss.theoj.org/papers/10.21105/joss.07301)
 
 ## Landing for the **pooltool** blog series
 

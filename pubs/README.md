@@ -48,14 +48,17 @@ Example entry:
 
 If you want to add highlights or a featured image for your publication, add an entry to the array in `pubs_info.json` with the following fields:
 - `doi`: The DOI that matches an entry in pubs.json
-- `highlights`: Brief bullet points about the work, separated by semicolons
+- `highlights`: Array of brief bullet points about the work
 - `featured_image`: Path to an image to feature with the publication
 
 Example entry:
 ```json
 {
   "doi": "10.1038/s41564-020-0756-3",
-  "highlights": "First study to use sequence variants for tracking ARGs;Created a framework for tracking mobile genetic elements",
+  "highlights": [
+    "First study to use sequence variants for tracking ARGs",
+    "Created a framework for tracking mobile genetic elements"
+  ],
   "featured_image": "../images/pubs/antibiotic-resistance.png"
 }
 ```
