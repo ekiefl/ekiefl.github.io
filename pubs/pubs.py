@@ -191,16 +191,16 @@ class Publications:
         # Prioritize custom URL, then DOI, otherwise no link
         if pub.get("url"):
             A(
-                '    <h3><a href="%s" target="_new">%s</a></h3>'
+                '    <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
                 % (pub["url"], pub["title"])
             )
         elif pub["doi"]:
             A(
-                '    <h3><a href="%s" target="_new">%s</a></h3>'
+                '    <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
                 % ("https://doi.org/%s" % (pub["doi"]), pub["title"])
             )
         else:
-            A('    <h3>%s</h3>' % pub["title"])
+            A('    <span class="pub-title">%s</span>' % pub["title"])
         A('    <span class="pub-authors">%s</span>' % self.get_author_highlights(pub))
 
         if pub["co_first_authors"] and not pub["co_senior_authors"]:
@@ -256,15 +256,16 @@ class Publications:
             A("    </div>")
 
         # Handle journal formatting with optional issue info
+        doi_link = ' | 🔗 <a href="https://doi.org/%s" target="_blank">doi:%s</a>' % (pub["doi"], pub["doi"])
         if pub["issue"]:
             A(
-                '    <span class="pub-journal"><b>%s</b>, %s.</span>'
-                % (pub["journal"], pub["issue"])
+                '    <span class="pub-journal">📚 <b>%s</b>, %s%s</span>'
+                % (pub["journal"], pub["issue"], doi_link)
             )
         else:
             A(
-                '    <span class="pub-journal"><b>%s</b>.</span>'
-                % (pub["journal"])
+                '    <span class="pub-journal">📚 <b>%s</b>%s</span>'
+                % (pub["journal"], doi_link)
             )
         A("</div>\n")
 
@@ -301,7 +302,6 @@ class Publications:
         )
 
         for year in sorted(list(self.pubs_dict.keys()), reverse=True):
-            W('<a name="%s">&nbsp;</a>' % year)
             W("<h1>%s</h1>\n" % year)
 
             for pub in self.pubs_dict[year]:

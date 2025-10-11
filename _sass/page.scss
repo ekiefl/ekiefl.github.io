@@ -305,7 +305,7 @@ th, td {
 
 
 .pub {
-    margin: 5px 0px;
+    margin-bottom: 30px;
     h3 {
         margin-bottom: 0;
     }
@@ -317,6 +317,18 @@ th, td {
         font-size: 80%;
         border-bottom: 0 solid transparent;
     }
+}
+
+.pub-title {
+    font-size: 1.8em;
+    font-family: "PT Sans Narrow",sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    display: block;
+    padding: 5px;
+    padding-left: 8px;
+    padding-bottom: 9px;
+    border-left: 10px solid #d4d4d4;
 }
 
 .pub-authors {

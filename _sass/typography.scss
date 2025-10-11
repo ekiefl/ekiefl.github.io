@@ -81,7 +81,12 @@ h6 {
 
 #articlecontent a {
     color: #444499;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#articlecontent a:hover {
+    color: #5656DD;
 }
 
 #table-of-contents a {
