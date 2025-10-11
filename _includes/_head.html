@@ -1,16 +1,18 @@
 <meta charset="utf-8">
 <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
-{% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
+{% if page.excerpt %}
+<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
 <meta name="keywords" content="{{ page.tags | join: ', ' }}">
 {% if page.author %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
+{% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
 {% endif %}
 
 {% include _open-graph.html %}
 
 <meta name="google-site-verification" content="x_a2aVtoLyANByc9VDBjyPm80IlGbNYUm4Vr1tSRhi0" />
 
-{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url |
+remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
 <link rel="canonical" href="{{ canonical }}">
 <link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 
@@ -31,38 +33,41 @@
 <![endif]-->
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Modernizr -->
 <script src="{{ site.url }}/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
 
 <!-- MathJAX stuff -->
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
-  MathJax.Hub.Config({
-    jax: ["input/TeX","output/HTML-CSS"],
-    extensions: ["tex2jax.js"],
-    "fast-preview": {disabled: true},
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
-      preview: "none"
-    },
-    TeX: { equationNumbers: { autoNumber: "all" } }
-  });
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js"],
+        "fast-preview": {disabled: true},
+        tex2jax: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            preview: "none"
+        },
+        TeX: {equationNumbers: {autoNumber: "all"}}
+    });
 
-  function doOnLoad() {
-    var div = MathJax.HTML.Element(
-          "div",
-          {id: "MathDiv", style:{border:"1px solid", padding:"5px"}},
-          ["Here is math: \\(x^2+1\\)",["br"],"and a display $$x+1\\over x-1$$"]
+    function doOnLoad() {
+        var div = MathJax.HTML.Element(
+            "div",
+            {id: "MathDiv", style: {border: "1px solid", padding: "5px"}},
+            ["Here is math: \\(x^2+1\\)", ["br"], "and a display $$x+1\\over x-1$$"]
         );
-    document.body.appendChild(div);
-    // This does not seem needed but you can use if to force rendering of a div
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub,'MathDiv']);
-  }
+        document.body.appendChild(div);
+        // This does not seem needed but you can use if to force rendering of a div
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, 'MathDiv']);
+    }
 </script>
 
 <!-- google adsense -->
-<script data-ad-client="ca-pub-3254143010442135" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script data-ad-client="ca-pub-3254143010442135" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <!-- jquery and d3 -->
 <script src="//d3js.org/d3.v3.min.js"></script>
@@ -71,18 +76,25 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T72WT983P"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-7T72WT983P');
+    gtag('config', 'G-7T72WT983P');
 </script>
 
 <!-- altmetric and dimensions -->
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
-<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- Google Fonts - All Font Suites -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Font Suite: "Humanist" -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Bitter:wght@400;700&family=Source+Code+Pro:wght@400;500&display=swap"
+    rel="stylesheet">
 
 <!-- Icons -->
 <!-- 16x16 -->
@@ -92,8 +104,11 @@
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
 <link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/apple-touch-icon-precomposed.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+    href="{{ site.url }}/images/apple-touch-icon-72x72-precomposed.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+    href="{{ site.url }}/images/apple-touch-icon-114x114-precomposed.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+    href="{{ site.url }}/images/apple-touch-icon-144x144-precomposed.png">

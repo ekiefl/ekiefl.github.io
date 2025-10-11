@@ -20,7 +20,7 @@ These publications are a subset of my scientific work that I consider to have co
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-bmb9-fzxd" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <div class="pub-header">
         <span class="pub-title"><a href="https://arcadia-science.github.io/2025-geno-pheno-attention/" target="_new">Cross-trait learning with a canonical transformer tops custom attention in genotype-phenotype mapping</a></span>
-        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Bigge BM, McGeever E, York R</span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Bigge BM, McGeever E, York R</span>
         <div class="pub-author-order-note">Order does not reflect contribution</div>
     </div>
     <div class="pub-info">
@@ -42,7 +42,7 @@ These publications are a subset of my scientific work that I consider to have co
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-f52b-1451" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <div class="pub-header">
         <span class="pub-title"><a href="https://arcadia-science.github.io/2024-paired-token-masking/" target="_new">Paired residue prediction dependencies in ESM2</a></span>
-        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Bigge BM, Burns D</span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Bigge BM, Burns D</span>
         <div class="pub-author-order-note">Order does not reflect contribution</div>
     </div>
     <div class="pub-info">
@@ -64,7 +64,7 @@ These publications are a subset of my scientific work that I consider to have co
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ca21-23bb" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <div class="pub-header">
         <span class="pub-title"><a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_new">Closing the divide between analysis and publication: The notebook pub</a></span>
-        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Conceived of and created this publication format at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Conceived of and created this publication format used at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
         <div class="pub-author-order-note">Order does not reflect contribution</div>
     </div>
     <div class="pub-info">

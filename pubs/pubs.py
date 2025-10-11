@@ -72,7 +72,7 @@ class Publications:
         if pub["doi"] in self.info and "contributions" in self.info[pub["doi"]]:
             contributions = self.info[pub["doi"]]["contributions"]
             if contributions:
-                contributions_html = '<span class="pub-contributions-tooltip"><ul>'
+                contributions_html = '<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul>'
                 for c in contributions:
                     if c.strip():
                         contributions_html += '<li>%s</li>' % c.strip()
