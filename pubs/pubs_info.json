@@ -9,7 +9,7 @@
     ],
     "highlights": [
       "Asks: can <b>standard transformers</b> outperform Rijal et al.'s custom attention architecture for genotype-phenotype mapping?",
-      "Using a genetic yeast dataset (~100K individuals, ~1k loci, 18 phenotypes), we found <b>canonical ML components significantly outperformed</b> the bespoke design",
+      "Using a large genetic yeast dataset, we found <b>canonical ML components significantly outperformed</b> the bespoke design",
       "<b>Key insight</b>: multi-objective training exploits cross-phenotype genetic correlations, allowing the network to leverage mutual information between related traits for improved prediction"
     ],
     "featured_image": "../images/pubs/geno-pheno-attention.png"

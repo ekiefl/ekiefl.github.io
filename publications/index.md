@@ -30,7 +30,7 @@ These publications are a subset of my scientific work that I consider to have co
     <div class="pub-highlights">
     <ul>
         <li>Asks: can <b>standard transformers</b> outperform Rijal et al.'s custom attention architecture for genotype-phenotype mapping?</li>
-        <li>Using a genetic yeast dataset (~100K individuals, ~1k loci, 18 phenotypes), we found <b>canonical ML components significantly outperformed</b> the bespoke design</li>
+        <li>Using a large genetic yeast dataset, we found <b>canonical ML components significantly outperformed</b> the bespoke design</li>
         <li><b>Key insight</b>: multi-objective training exploits cross-phenotype genetic correlations, allowing the network to leverage mutual information between related traits for improved prediction</li>
     </ul>
     </div>
@@ -64,7 +64,7 @@ These publications are a subset of my scientific work that I consider to have co
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ca21-23bb" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <div class="pub-header">
         <span class="pub-title"><a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_new">Closing the divide between analysis and publication: The notebook pub</a></span>
-        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Conceived of and created this now widely adopted publication format at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Conceived of and created this publication format at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
         <div class="pub-author-order-note">Order does not reflect contribution</div>
     </div>
     <div class="pub-info">
@@ -162,8 +162,8 @@ These publications are a subset of my scientific work that I consider to have co
     <div class="pub-header">
         <span class="pub-title"><a href="https://doi.org/10.7554/eLife.46497" target="_new">Single-amino acid variants reveal evolutionary processes that shape the biogeography of a global SAR11 subclade</a></span>
         <span class="pub-authors">Delmont TO<sup>☯</sup>, <span class="pub-member-author">Kiefl E<sup>☯</sup></span>, Kilinc O, Esen ÖC, Uysal I, Rappé MS, Giovannoni S, Eren AM</span>
+        <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>
     </div>
-    <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/delmond_and_kiefl_sar11_saavs.jpg"><img src="../images/pubs/delmond_and_kiefl_sar11_saavs.jpg" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>

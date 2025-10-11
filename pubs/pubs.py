@@ -233,21 +233,21 @@ class Publications:
         if pub["doi"] in self.info and self.info[pub["doi"]].get("note_about_order"):
             A('        <div class="pub-author-order-note">Order does not reflect contribution</div>')
 
-        # Close pub-header container
-        A('    </div>')
-
         if pub["co_first_authors"] and not pub["co_senior_authors"]:
             A(
-                '    <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>'
+                '        <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>'
             )
         elif pub["co_first_authors"] and pub["co_senior_authors"]:
             A(
-                '    <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors; <sup>‡</sup>Co-senior authors</span>'
+                '        <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors; <sup>‡</sup>Co-senior authors</span>'
             )
         elif pub["co_senior_authors"] and not pub["co_first_authors"]:
             A(
-                '    <span class="pub-co-first-authors"><sup>‡</sup>Co-senior authors</span>'
+                '        <span class="pub-co-first-authors"><sup>‡</sup>Co-senior authors</span>'
             )
+
+        # Close pub-header container
+        A('    </div>')
 
         if pub["doi"] in self.info:
             info = self.info[pub["doi"]]
