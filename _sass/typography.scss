@@ -254,7 +254,7 @@ figcaption {
     text-align: justify;
     text-indent: 0;
     @include font-rem(14);
-    background-color: #FFFFCC;
+    background-color: #fef9e7;
     border: 1px solid darken($body-color,20);
     @include rounded(3px);
 }

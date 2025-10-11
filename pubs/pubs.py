@@ -209,25 +209,32 @@ class Publications:
             """<div class="__dimensions_badge_embed__" data-doi="%s" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>"""
             % pub["doi"]
         )
+
+        # Open pub-header container
+        A('    <div class="pub-header">')
+
         # Prioritize custom URL, then DOI, otherwise no link
         if pub.get("url"):
             A(
-                '    <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
+                '        <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
                 % (pub["url"], pub["title"])
             )
         elif pub["doi"]:
             A(
-                '    <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
+                '        <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
                 % ("https://doi.org/%s" % (pub["doi"]), pub["title"])
             )
         else:
-            A('    <span class="pub-title">%s</span>' % pub["title"])
-        author_html = self.get_author_highlights(pub)
+            A('        <span class="pub-title">%s</span>' % pub["title"])
 
-        A('    <span class="pub-authors">%s</span>' % author_html)
+        author_html = self.get_author_highlights(pub)
+        A('        <span class="pub-authors">%s</span>' % author_html)
 
         if pub["doi"] in self.info and self.info[pub["doi"]].get("note_about_order"):
-            A('    <div class="pub-author-order-note">Order doesn\'t reflect contribution</div>')
+            A('        <div class="pub-author-order-note">Order does not reflect contribution</div>')
+
+        # Close pub-header container
+        A('    </div>')
 
         if pub["co_first_authors"] and not pub["co_senior_authors"]:
             A(
@@ -274,23 +281,21 @@ class Publications:
                 A("    </ul>")
                 A("    </div>")
 
+            # Handle journal formatting with optional issue info
+            url = pub.get("url") or ("https://doi.org/%s" % pub["doi"])
+            url_link = f' | 🔗 <a href="{url}" target="_blank">doi:{pub["doi"]}</a>'
+            if pub["issue"]:
+                A(
+                    '    <span class="pub-journal">📚 <b>%s</b>, %s%s</span>'
+                    % (pub["journal"], pub["issue"], url_link)
+                )
+            else:
+                A(
+                    '    <span class="pub-journal">📚 <b>%s</b>%s</span>'
+                    % (pub["journal"], url_link)
+                )
             A("    </div>")
 
-        # Handle journal formatting with optional issue info
-        doi_link = ' | 🔗 <a href="https://doi.org/%s" target="_blank">doi:%s</a>' % (
-            pub["doi"],
-            pub["doi"],
-        )
-        if pub["issue"]:
-            A(
-                '    <span class="pub-journal">📚 <b>%s</b>, %s%s</span>'
-                % (pub["journal"], pub["issue"], doi_link)
-            )
-        else:
-            A(
-                '    <span class="pub-journal">📚 <b>%s</b>%s</span>'
-                % (pub["journal"], doi_link)
-            )
         A("</div>\n")
 
         return "\n".join(pub_md)

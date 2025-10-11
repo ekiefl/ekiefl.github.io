@@ -18,9 +18,11 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-bmb9-fzxd" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://arcadia-science.github.io/2025-geno-pheno-attention/" target="_new">Cross-trait learning with a canonical transformer tops custom attention in genotype-phenotype mapping</a></span>
-    <span class="pub-authors">Bigge BM, <span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, McGeever E, York R</span>
-    <div class="pub-author-order-note">Order doesn't reflect contribution</div>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://arcadia-science.github.io/2025-geno-pheno-attention/" target="_new">Cross-trait learning with a canonical transformer tops custom attention in genotype-phenotype mapping</a></span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Bigge BM, McGeever E, York R</span>
+        <div class="pub-author-order-note">Order does not reflect contribution</div>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/geno-pheno-attention.png"><img src="../images/pubs/geno-pheno-attention.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -32,15 +34,17 @@ These publications are a subset of my scientific work that I consider to have co
         <li><b>Key insight</b>: multi-objective training exploits cross-phenotype genetic correlations, allowing the network to leverage mutual information between related traits for improved prediction</li>
     </ul>
     </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://arcadia-science.github.io/2025-geno-pheno-attention/" target="_blank">doi:10.57844/arcadia-bmb9-fzxd</a></span>
     </div>
-    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://doi.org/10.57844/arcadia-bmb9-fzxd" target="_blank">doi:10.57844/arcadia-bmb9-fzxd</a></span>
 </div>
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-f52b-1451" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://arcadia-science.github.io/2024-paired-token-masking/" target="_new">Paired residue prediction dependencies in ESM2</a></span>
-    <span class="pub-authors">Bigge BM, Burns D, <span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span></span>
-    <div class="pub-author-order-note">Order doesn't reflect contribution</div>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://arcadia-science.github.io/2024-paired-token-masking/" target="_new">Paired residue prediction dependencies in ESM2</a></span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Bigge BM, Burns D</span>
+        <div class="pub-author-order-note">Order does not reflect contribution</div>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/esm-paired-token-masking.png"><img src="../images/pubs/esm-paired-token-masking.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -52,15 +56,17 @@ These publications are a subset of my scientific work that I consider to have co
         <li>This counterintuitive result <b>challenges assumptions about model capacity and biological interpretability</b>.</li>
     </ul>
     </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://arcadia-science.github.io/2024-paired-token-masking/" target="_blank">doi:10.57844/arcadia-f52b-1451</a></span>
     </div>
-    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://doi.org/10.57844/arcadia-f52b-1451" target="_blank">doi:10.57844/arcadia-f52b-1451</a></span>
 </div>
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ca21-23bb" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_new">Closing the divide between analysis and publication: The notebook pub</a></span>
-    <span class="pub-authors">Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, <span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Conceived of and created this now widely adopted publication format at Arcadia Science</li><li>Co-wrote the manuscript</li></ul></span></span>, Roth R, Sabbagh U, Sandhu W, York R</span>
-    <div class="pub-author-order-note">Order doesn't reflect contribution</div>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_new">Closing the divide between analysis and publication: The notebook pub</a></span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><ul><li>Conceived of and created this now widely adopted publication format at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
+        <div class="pub-author-order-note">Order does not reflect contribution</div>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/nbpub.png"><img src="../images/pubs/nbpub.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -72,8 +78,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>Built on <b>Quarto and GitHub infrastructure</b>, the approach provides scientists with a template that automatically converts Jupyter Notebooks into hosted, interactive web publications with version control and community engagement built in.</li>
     </ul>
     </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_blank">doi:10.57844/arcadia-ca21-23bb</a></span>
     </div>
-    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://doi.org/10.57844/arcadia-ca21-23bb" target="_blank">doi:10.57844/arcadia-ca21-23bb</a></span>
 </div>
 
 
@@ -81,8 +87,10 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.21105/joss.07301" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.21105/joss.07301" target="_new">Pooltool: A Python package for realistic billiards simulation</a></span>
-    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span></span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.21105/joss.07301" target="_new">Pooltool: A Python package for realistic billiards simulation</a></span>
+        <span class="pub-authors"><span class="pub-member-author">Kiefl E</span></span>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/pooltool.jpg"><img src="../images/pubs/pooltool.jpg" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -95,8 +103,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>Bridges a critical gap in billiards research by offering an <b>open-source platform</b> with realistic physics that can be used across disciplines including game theory, robotics, computer vision, and sports analytics.</li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>Journal of Open Source Software</b>, 9(101) | 🔗 <a href="https://doi.org/10.21105/joss.07301" target="_blank">doi:10.21105/joss.07301</a></span>
+    </div>
 </div>
 
 
@@ -104,8 +112,10 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.1126/sciadv.abq4632" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.1126/sciadv.abq4632" target="_new">Structure-informed microbial population genetics elucidate selective pressures that shape protein evolution</a></span>
-    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Esen ÖC, Miller SE, Kroll KL, Willis AD, Rappé MS, Pan T, Eren AM</span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.1126/sciadv.abq4632" target="_new">Structure-informed microbial population genetics elucidate selective pressures that shape protein evolution</a></span>
+        <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Esen ÖC, Miller SE, Kroll KL, Willis AD, Rappé MS, Pan T, Eren AM</span>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/anvio-structure.png"><img src="../images/pubs/anvio-structure.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -118,8 +128,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>Comes with a <a href="https://merenlab.org/data/anvio-structure/chapter-I/"><b>reproducible bioinformatics workflow</b></a> that offers detailed access to computational steps used in the study that spans from metagenomic read recruitment and profiling to the integration of environmental variants and predicted protein structures.</li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>Science Advances</b>, 9(8) | 🔗 <a href="https://doi.org/10.1126/sciadv.abq4632" target="_blank">doi:10.1126/sciadv.abq4632</a></span>
+    </div>
 </div>
 
 
@@ -127,8 +137,10 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.1038/s41564-020-00834-3" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.1038/s41564-020-00834-3" target="_new">Community-led, integrated, reproducible multi-omics with anvi'o</a></span>
-    <span class="pub-authors">Eren AM, <span class="pub-member-author">Kiefl E</span>, Shaiber A, Veseli I, Miller SE, Schechter MS, Fink I, Pan JN, Yousef M, Fogarty EC, Trigodet F, Watson AR, Esen ÖC, Moore RM, Clayssen Q, Lee MD, Kivenson V, Graham ED, Merrill BD, Karkman A, Blankenberg D, Eppley JM, Sjödin A, Scott JJ, Vázquez-Campos X, McKay LJ, McDaniel EA, Stevens SLR, Anderson RE, Fuessel J, Fernandez-Guerra A, Maignien L, Delmont TO, Willis AD</span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.1038/s41564-020-00834-3" target="_new">Community-led, integrated, reproducible multi-omics with anvi'o</a></span>
+        <span class="pub-authors">Eren AM, <span class="pub-member-author">Kiefl E</span>, Shaiber A, Veseli I, Miller SE, Schechter MS, Fink I, Pan JN, Yousef M, Fogarty EC, Trigodet F, Watson AR, Esen ÖC, Moore RM, Clayssen Q, Lee MD, Kivenson V, Graham ED, Merrill BD, Karkman A, Blankenberg D, Eppley JM, Sjödin A, Scott JJ, Vázquez-Campos X, McKay LJ, McDaniel EA, Stevens SLR, Anderson RE, Fuessel J, Fernandez-Guerra A, Maignien L, Delmont TO, Willis AD</span>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/anvio-integrated-omics.png"><img src="../images/pubs/anvio-integrated-omics.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -138,8 +150,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>A summary of the progress of <a href="https://merenlab.org/software/anvio/" target="_blank">anvi'o</a> during the past five years.</li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>Nature Microbiology</b>, 6(1):3:6 | 🔗 <a href="https://doi.org/10.1038/s41564-020-00834-3" target="_blank">doi:10.1038/s41564-020-00834-3</a></span>
+    </div>
 </div>
 
 
@@ -147,8 +159,10 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.7554/eLife.46497" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.7554/eLife.46497" target="_new">Single-amino acid variants reveal evolutionary processes that shape the biogeography of a global SAR11 subclade</a></span>
-    <span class="pub-authors">Delmont TO<sup>☯</sup>, <span class="pub-member-author">Kiefl E<sup>☯</sup></span>, Kilinc O, Esen ÖC, Uysal I, Rappé MS, Giovannoni S, Eren AM</span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.7554/eLife.46497" target="_new">Single-amino acid variants reveal evolutionary processes that shape the biogeography of a global SAR11 subclade</a></span>
+        <span class="pub-authors">Delmont TO<sup>☯</sup>, <span class="pub-member-author">Kiefl E<sup>☯</sup></span>, Kilinc O, Esen ÖC, Uysal I, Rappé MS, Giovannoni S, Eren AM</span>
+    </div>
     <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>
     <div class="pub-info">
     <div class="pub-featured-image">
@@ -162,8 +176,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>Reproducible bioinformatics workflow is <a href="http://merenlab.org/data/sar11-saavs/" target="_blank">here</a>. <a href="https://doi.org/10.7554/eLife.46497.040" target="_blank">Reviewer criticism</a> and <a href="https://doi.org/10.7554/eLife.46497.041" target="_blank">our responses</a> are also available.</li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>eLife</b>, 8:e46497 | 🔗 <a href="https://doi.org/10.7554/eLife.46497" target="_blank">doi:10.7554/eLife.46497</a></span>
+    </div>
 </div>
 
 
@@ -171,8 +185,10 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.1021/acs.jpcc.7b08691" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.1021/acs.jpcc.7b08691" target="_new">Evaluation of surface-enhanced Raman spectroscopy substrates from single-molecule statistics</a></span>
-    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Kiefl RF, dos Santos DP, Brolo AG</span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.1021/acs.jpcc.7b08691" target="_new">Evaluation of surface-enhanced Raman spectroscopy substrates from single-molecule statistics</a></span>
+        <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Kiefl RF, dos Santos DP, Brolo AG</span>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/kiefl_SERS.png"><img src="../images/pubs/kiefl_SERS.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -183,8 +199,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>Extends the theory of truncated Pareto-distributed single-molecule SERS statistics to multi-hotspot substrates.</li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>The Journal of Physical Chemistry C</b>, 121(45):25487-25493 | 🔗 <a href="https://doi.org/10.1021/acs.jpcc.7b08691" target="_blank">doi:10.1021/acs.jpcc.7b08691</a></span>
+    </div>
 </div>
 
 
@@ -192,8 +208,10 @@ These publications are a subset of my scientific work that I consider to have co
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.1021/acsnano.6b01817" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.1021/acsnano.6b01817" target="_new">Robust Magnetic Properties of a Sublimable Single-Molecule Magnet</a></span>
-    <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Mannini M, Bernot K, Yi X, Amato A, Leviant T, Magnani A, Prokscha T, Suter A, Sessoli R, Salman Z</span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.1021/acsnano.6b01817" target="_new">Robust Magnetic Properties of a Sublimable Single-Molecule Magnet</a></span>
+        <span class="pub-authors"><span class="pub-member-author">Kiefl E</span>, Mannini M, Bernot K, Yi X, Amato A, Leviant T, Magnani A, Prokscha T, Suter A, Sessoli R, Salman Z</span>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/kiefl_SMM.png"><img src="../images/pubs/kiefl_SMM.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -204,14 +222,16 @@ These publications are a subset of my scientific work that I consider to have co
         <li>Discovers a rare instance in which a single molecule magnet maintains its chemical structure and magnetic properties when sublimated into nanofilm, <b>an important precursor for using SMMs for information storage</b>.</li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>ACS Nano</b>, 10(6):5663-5669 | 🔗 <a href="https://doi.org/10.1021/acsnano.6b01817" target="_blank">doi:10.1021/acsnano.6b01817</a></span>
+    </div>
 </div>
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.1016/j.bpj.2016.10.039" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
-    <span class="pub-title"><a href="https://doi.org/10.1016/j.bpj.2016.10.039" target="_new">Intact telopeptides enhance interactions between collagens</a></span>
-    <span class="pub-authors">Shayegan M, Altindal T, <span class="pub-member-author">Kiefl E</span>, Forde NR</span>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://doi.org/10.1016/j.bpj.2016.10.039" target="_new">Intact telopeptides enhance interactions between collagens</a></span>
+        <span class="pub-authors">Shayegan M, Altindal T, <span class="pub-member-author">Kiefl E</span>, Forde NR</span>
+    </div>
     <div class="pub-info">
     <div class="pub-featured-image">
     <a href="../images/pubs/shayegan_collagen.jpg"><img src="../images/pubs/shayegan_collagen.jpg" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
@@ -222,8 +242,8 @@ These publications are a subset of my scientific work that I consider to have co
         <li>This work suggests that <b>telopeptides facilitate transient intermolecular interactions between collagen proteins</b></li>
     </ul>
     </div>
-    </div>
     <span class="pub-journal">📚 <b>Biophysical journal</b>, 111(11):2404-2416 | 🔗 <a href="https://doi.org/10.1016/j.bpj.2016.10.039" target="_blank">doi:10.1016/j.bpj.2016.10.039</a></span>
+    </div>
 </div>
 
 
