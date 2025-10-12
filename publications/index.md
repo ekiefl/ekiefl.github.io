@@ -64,7 +64,7 @@ These publications are a subset of my scientific work that I consider to have co
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ca21-23bb" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <div class="pub-header">
         <span class="pub-title"><a href="https://research.arcadiascience.com/pub/perspective-notebook-pub-format/release/2/" target="_new">Closing the divide between analysis and publication: The notebook pub</a></span>
-        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Conceived of and created this publication format used at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Conceived of and created the <i>notebook pub</i> format used at Arcadia Science</li></ul></span></span>, Avasthi P, Bell A, Bigge BM, Cheveralls K, Hochstrasser ML, Roth R, Sabbagh U, Sandhu W, York R</span>
         <div class="pub-author-order-note">Order does not reflect contribution</div>
     </div>
     <div class="pub-info">
