@@ -2,12 +2,12 @@
 
 - title: Projects
   url: /projects/
-  style: "color: #35597a; transition: color 0.3s ease;"
+  style: "color: #3e4b66; transition: color 0.3s ease;"
 
 - title: Blog
   url: /posts/
-  style: "color: #35597a; transition: color 0.3s ease;"
+  style: "color: #3e4b66; transition: color 0.3s ease;"
 
 - title: Publications
   url: /publications/
-  style: "color: #35597a; transition: color 0.3s ease;"
+  style: "color: #3e4b66; transition: color 0.3s ease;"

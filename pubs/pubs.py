@@ -26,11 +26,14 @@ from datetime import datetime
 
 class ConfigError(Exception):
     """A simple exception class for configuration errors."""
+
     pass
 
 
 class Publications:
-    def __init__(self, pubs_file_path="pubs.json", pubs_info_file_path="pubs_info.json"):
+    def __init__(
+        self, pubs_file_path="pubs.json", pubs_info_file_path="pubs_info.json"
+    ):
         """Takes a JSON file with publication data (`pubs_file_path`), and an optional\
            JSON file with additional publication info (`pubs_info_file_path`), and\
            generates Markdown formatted output.
@@ -64,6 +67,17 @@ class Publications:
 
     def get_author_highlights(self, pub):
         authors_str = []
+        contributions_html = ""
+
+        if pub["doi"] in self.info and "contributions" in self.info[pub["doi"]]:
+            contributions = self.info[pub["doi"]]["contributions"]
+            if contributions:
+                contributions_html = '<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul>'
+                for c in contributions:
+                    if c.strip():
+                        contributions_html += '<li>%s</li>' % c.strip()
+                contributions_html += '</ul></span>'
+
         for author in pub["authors"]:
             if author in pub["co_first_authors"]:
                 author_h = author + "<sup>☯</sup>"
@@ -73,9 +87,14 @@ class Publications:
                 author_h = author
 
             if author in names_to_highlight:
-                authors_str.append(
-                    '<span class="pub-member-author">%s</span>' % (author_h)
-                )
+                if contributions_html:
+                    authors_str.append(
+                        '<span class="pub-member-author-with-contributions">%s%s</span>' % (author_h, contributions_html)
+                    )
+                else:
+                    authors_str.append(
+                        '<span class="pub-member-author">%s</span>' % (author_h)
+                    )
             else:
                 authors_str.append(author_h)
 
@@ -90,16 +109,18 @@ class Publications:
         # Load pubs_info.json if it exists
         if os.path.exists(self.pubs_info_file_path):
             try:
-                with open(self.pubs_info_file_path, 'r') as f:
+                with open(self.pubs_info_file_path, "r") as f:
                     pubs_info_list = json.load(f)
                     # Convert to dictionary with doi as key
                     self.info = {item["doi"]: item for item in pubs_info_list}
             except json.JSONDecodeError:
-                raise ConfigError(f"Could not parse '{self.pubs_info_file_path}' as JSON.")
+                raise ConfigError(
+                    f"Could not parse '{self.pubs_info_file_path}' as JSON."
+                )
 
         # Load pubs.json
         try:
-            with open(self.pubs_file_path, 'r') as f:
+            with open(self.pubs_file_path, "r") as f:
                 pubs_list = json.load(f)
         except json.JSONDecodeError:
             raise ConfigError(f"Could not parse '{self.pubs_file_path}' as JSON.")
@@ -126,10 +147,10 @@ class Publications:
                 author_parts = [p.strip() for p in author.split(",")]
                 if len(author_parts) < 2:
                     continue  # Skip if the author format is invalid
-                
+
                 author_last_name = author_parts[0]
                 author_first_name_raw = author_parts[1]
-                
+
                 author_first_name = "".join(
                     [n[0] for n in author_first_name_raw.split()]
                 )
@@ -147,16 +168,16 @@ class Publications:
             volume = pub.get("Volume", "").strip()
             number = pub.get("Number", "").strip()
             pages = pub.get("Pages", "").strip()
-            
+
             if volume:
                 if number:
                     issue_parts.append(f"{volume}({number})")
                 else:
                     issue_parts.append(volume)
-            
+
             if pages:
                 issue_parts.append(pages)
-            
+
             issue = ":".join(issue_parts) if issue_parts else ""
 
             year = pub["Year"].strip()
@@ -188,33 +209,45 @@ class Publications:
             """<div class="__dimensions_badge_embed__" data-doi="%s" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>"""
             % pub["doi"]
         )
+
+        # Open pub-header container
+        A('    <div class="pub-header">')
+
         # Prioritize custom URL, then DOI, otherwise no link
         if pub.get("url"):
             A(
-                '    <h3><a href="%s" target="_new">%s</a></h3>'
+                '        <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
                 % (pub["url"], pub["title"])
             )
         elif pub["doi"]:
             A(
-                '    <h3><a href="%s" target="_new">%s</a></h3>'
+                '        <span class="pub-title"><a href="%s" target="_new">%s</a></span>'
                 % ("https://doi.org/%s" % (pub["doi"]), pub["title"])
             )
         else:
-            A('    <h3>%s</h3>' % pub["title"])
-        A('    <span class="pub-authors">%s</span>' % self.get_author_highlights(pub))
+            A('        <span class="pub-title">%s</span>' % pub["title"])
+
+        author_html = self.get_author_highlights(pub)
+        A('        <span class="pub-authors">%s</span>' % author_html)
+
+        if pub["doi"] in self.info and self.info[pub["doi"]].get("note_about_order"):
+            A('        <div class="pub-author-order-note">Order does not reflect contribution</div>')
 
         if pub["co_first_authors"] and not pub["co_senior_authors"]:
             A(
-                '    <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>'
+                '        <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors</span>'
             )
         elif pub["co_first_authors"] and pub["co_senior_authors"]:
             A(
-                '    <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors; <sup>‡</sup>Co-senior authors</span>'
+                '        <span class="pub-co-first-authors"><sup>☯</sup>Co-first authors; <sup>‡</sup>Co-senior authors</span>'
             )
         elif pub["co_senior_authors"] and not pub["co_first_authors"]:
             A(
-                '    <span class="pub-co-first-authors"><sup>‡</sup>Co-senior authors</span>'
+                '        <span class="pub-co-first-authors"><sup>‡</sup>Co-senior authors</span>'
             )
+
+        # Close pub-header container
+        A('    </div>')
 
         if pub["doi"] in self.info:
             info = self.info[pub["doi"]]
@@ -231,7 +264,7 @@ class Publications:
                 )
                 A("    </div>")
 
-            highlights = info["highlights"].split(";") if info["highlights"] else None
+            highlights = info.get("highlights", [])
             if highlights:
                 A(
                     '    <div class="%s">'
@@ -241,31 +274,28 @@ class Publications:
                         else "pub-highlights-no-image"
                     )
                 )
-                A(
-                    "    %s"
-                    % "<br>".join(
-                        [
-                            '<span style="display: inline-block; padding-bottom: 5px;">- %s</span>'
-                            % h.strip()
-                            for h in highlights
-                        ]
-                    )
-                )
+                A("    <ul>")
+                for h in highlights:
+                    if h.strip():
+                        A("        <li>%s</li>" % h.strip())
+                A("    </ul>")
                 A("    </div>")
 
+            # Handle journal formatting with optional issue info
+            url = pub.get("url") or ("https://doi.org/%s" % pub["doi"])
+            url_link = f' | 🔗 <a href="{url}" target="_blank">doi:{pub["doi"]}</a>'
+            if pub["issue"]:
+                A(
+                    '    <span class="pub-journal">📚 <b>%s</b>, %s%s</span>'
+                    % (pub["journal"], pub["issue"], url_link)
+                )
+            else:
+                A(
+                    '    <span class="pub-journal">📚 <b>%s</b>%s</span>'
+                    % (pub["journal"], url_link)
+                )
             A("    </div>")
 
-        # Handle journal formatting with optional issue info
-        if pub["issue"]:
-            A(
-                '    <span class="pub-journal"><b>%s</b>, %s.</span>'
-                % (pub["journal"], pub["issue"])
-            )
-        else:
-            A(
-                '    <span class="pub-journal"><b>%s</b>.</span>'
-                % (pub["journal"])
-            )
         A("</div>\n")
 
         return "\n".join(pub_md)
@@ -289,8 +319,9 @@ class Publications:
         W("---\n")
         W("\n")
         W(
-            "{:.notice}\nThese publications are a subset of my scientific work that I consider to have contributed significantly towards. For a complete list of publications, "
-            "check out my [Google Scholar](https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en).\n\n"
+            "{:.notice}\nThese publications are a subset of my scientific work that I consider to have "
+            "contributed significantly towards. For further auxiliary publications see my "
+            "[Google Scholar](https://scholar.google.com/citations?user=WxWOLg0AAAAJ&hl=en).\n\n"
         )
 
         W(
@@ -301,7 +332,6 @@ class Publications:
         )
 
         for year in sorted(list(self.pubs_dict.keys()), reverse=True):
-            W('<a name="%s">&nbsp;</a>' % year)
             W("<h1>%s</h1>\n" % year)
 
             for pub in self.pubs_dict[year]:
