@@ -11,7 +11,7 @@ image:
 
 {% include _toc.html %}
 
-<img src="{{site.url}}/images/pooltool/pooltool_logo.png" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool_logo.png" alt="drawing" width="100%" class="no-border"/>
 
 ## Links
 
@@ -34,7 +34,7 @@ Much about pooltool has been blogged, particularly during its early days of deve
 - I do a literature review on the physics of billiards
 - I outline and explain the models I plan to use for each physical process
 
-<img src="{{site.url}}/images/pooltool/pooltool-theory/sliding_diagram.jpg" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-theory/sliding_diagram.jpg" alt="drawing" width="100%" class="no-border"/>
 
 ### [Blog #2 - 12/20/2020](https://ekiefl.github.io/2020/12/20/pooltool-alg/)
 
@@ -42,7 +42,7 @@ Much about pooltool has been blogged, particularly during its early days of deve
 - I discover the event-based shot evolution algorithm by Leckie and Greenspan
 - I describe in honestly excruciating detail the ins and outs of the algorithm
 
-<img src="{{site.url}}/images/pooltool/pooltool-alg/all_events.jpg" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-alg/all_events.jpg" alt="drawing" width="100%" class="no-border"/>
 
 ### [Blog #3 - 03/25/2021](https://ekiefl.github.io/2021/03/25/pooltool-start/)
 
@@ -50,7 +50,7 @@ Much about pooltool has been blogged, particularly during its early days of deve
 - I develop a prototypical pool simulator that can evolve shots according to a discrete time stepping algorithm, or the event-based algorithm
 - I create a 2D, non-interactive visualization of simulated shots using pygame
 
-<img src="{{site.url}}/images/pooltool/pooltool-start/before_after.gif" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-start/before_after.gif" alt="drawing" width="100%" class="no-border"/>
 
 
 ### [Blog #4 - 08/11/2021](https://ekiefl.github.io/2021/04/17/going-3d/)
@@ -60,7 +60,7 @@ Much about pooltool has been blogged, particularly during its early days of deve
 - I implement all foreseeable user controls
 - I defined different game modes that the user can play (8-ball and 9-ball)
 
-<img src="{{site.url}}/images/pooltool/pooltool-going-3d/before_after.gif" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-going-3d/before_after.gif" alt="drawing" width="100%" class="no-border"/>
 
 {% include youtube_embed.html id="aqjX0-A-YUw" %}
 
@@ -71,8 +71,8 @@ Much about pooltool has been blogged, particularly during its early days of deve
 - I model a table, balls, a cue, and a room
 - I implement a collision resolver so the cue doesn't intersect with geometry
 
-<img src="{{site.url}}/images/pooltool/pooltool-graphics/before_after.gif" alt="drawing" width="480px" class="no-border"/>
-<img src="{{site.url}}/images/pooltool/pooltool-graphics/gallery_2.png" alt="drawing" width="480px" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-graphics/before_after.gif" alt="drawing" width="100%" class="no-border"/>
+<img src="{{site.url}}/images/pooltool/pooltool-graphics/gallery_2.png" alt="drawing" width="100%" class="no-border"/>
 
 
 ### [Blog #6 - 05/03/2023](https://ekiefl.github.io/2023/05/03/update/)
