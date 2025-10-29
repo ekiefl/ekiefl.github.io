@@ -33,7 +33,7 @@ document.onclick = function(e) {
 
 // FitVids options
 $(function() {
-	$("article").fitVids();
+	$("article").fitVids({ ignore: '.youtube-embed' });
 });
 
 // Table of Contents toggle

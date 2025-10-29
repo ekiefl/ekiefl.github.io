@@ -1597,10 +1597,21 @@ $button-size: 1.5rem;
     background: url('../../images/solid_bg.jpg') center center scroll;
 }
 
-/* 
+/*
    Youtube embed
    ========================================================================== */
 
 .youtube-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
     margin-bottom: 20px;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
