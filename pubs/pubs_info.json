@@ -1,5 +1,20 @@
 [
   {
+    "doi": "10.57844/arcadia-ppdz-asaz",
+    "note_about_order": true,
+    "contributions": [
+        "Led study design, analysis, and methodology",
+        "Developed software and visualizations",
+        "Wrote the manuscript"
+    ],
+    "highlights": [
+      "Bridges <b>MSA Pairformer</b> with classical phylogenetics to quantify how the model's internal sequence weighting maps onto inferred phylogenetic trees across thousands of diverse protein families",
+      "While MSA Pairformer <b>effectively encodes evolutionary relatedness</b> in its sequence weights (with specific layers acting as phylogenetic filters), this signal is a <b>subtle optimization rather than a load-bearing pillar</b> for contact prediction accuracy",
+      "<b>Key insight</b>: uniform sequence averaging often matches or outperforms the model's learned weights, suggesting future MSA-based architectures need mechanisms to gauge input signal reliability before modulating structural output"
+    ],
+    "featured_image": "../images/pubs/msapairformer.png"
+  },
+  {
     "doi": "10.57844/arcadia-bmb9-fzxd",
     "note_about_order": true,
     "contributions": [

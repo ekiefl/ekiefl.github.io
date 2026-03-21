@@ -1,6 +1,17 @@
 
 [
   {
+    "Authors": "Kiefl, Evan; Golden, James R; York, Ryan;",
+    "Title": "MSA-based pLMs encode evolutionary distance but don’t reliably exploit it",
+    "Publication": "Arcadia Science",
+    "Volume": "",
+    "Number": "",
+    "Pages": "",
+    "Year": "2026",
+    "doi": "https://doi.org/10.57844/arcadia-ppdz-asaz",
+    "url": "https://arcadia-science.github.io/2025-phylogenetic-analysis-of-msa-pairformer/"
+  },
+  {
     "Authors": "Kiefl, Evan; Bigge, Brae M; McGeever, Erin; York, Ryan;",
     "Title": "Cross-trait learning with a canonical transformer tops custom attention in genotype-phenotype mapping",
     "Publication": "Arcadia Science",
