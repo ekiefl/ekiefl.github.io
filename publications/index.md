@@ -1,6 +1,6 @@
 ---
 layout: publications
-modified: 2025-10-11
+modified: 2026-05-19
 comments: false
 ---
 
@@ -13,6 +13,31 @@ These publications are a subset of my scientific work that I consider to have co
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+<h1>2026</h1>
+
+<div class="pub">
+<div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ppdz-asaz" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://arcadia-science.github.io/2025-phylogenetic-analysis-of-msa-pairformer/" target="_new">MSA-based pLMs encode evolutionary distance but don’t reliably exploit it</a></span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Led study design, analysis, and methodology</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Golden JR, York R</span>
+        <div class="pub-author-order-note">Order does not reflect contribution</div>
+    </div>
+    <div class="pub-info">
+    <div class="pub-featured-image">
+    <a href="../images/pubs/msapairformer.png"><img src="../images/pubs/msapairformer.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
+    </div>
+    <div class="pub-highlights">
+    <ul>
+        <li>Bridges <b>MSA Pairformer</b> with classical phylogenetics to quantify how the model's internal sequence weighting maps onto inferred phylogenetic trees across thousands of diverse protein families</li>
+        <li>While MSA Pairformer <b>effectively encodes evolutionary relatedness</b> in its sequence weights (with specific layers acting as phylogenetic filters), this signal is a <b>subtle optimization rather than a load-bearing pillar</b> for contact prediction accuracy</li>
+        <li><b>Key insight</b>: uniform sequence averaging often matches or outperforms the model's learned weights, suggesting future MSA-based architectures need mechanisms to gauge input signal reliability before modulating structural output</li>
+    </ul>
+    </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://arcadia-science.github.io/2025-phylogenetic-analysis-of-msa-pairformer/" target="_blank">doi:10.57844/arcadia-ppdz-asaz</a></span>
+    </div>
+</div>
+
 
 <h1>2025</h1>
 
