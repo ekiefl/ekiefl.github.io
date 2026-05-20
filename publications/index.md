@@ -17,6 +17,28 @@ These publications are a subset of my scientific work that I consider to have co
 <h1>2026</h1>
 
 <div class="pub">
+<div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-4ye8-8tun" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://thestacks.org/publications/resource-glass-box-umap-software/v1" target="_new">Glass Box UMAP: A Python package for interpretable UMAP via exact feature contributions</a></span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Primary maintainer of the package</li><li>Developed software and visualizations</li></ul></span></span>, Golden JR, York R</span>
+        <div class="pub-author-order-note">Order does not reflect contribution</div>
+    </div>
+    <div class="pub-info">
+    <div class="pub-featured-image">
+    <a href="../images/pubs/glass-box-umap.png"><img src="../images/pubs/glass-box-umap.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
+    </div>
+    <div class="pub-highlights">
+    <ul>
+        <li>Introduces <b>Glass Box UMAP</b>, a Python package that decomposes each point's UMAP coordinates into <b>exact contributions from the original input features</b></li>
+        <li>Turns UMAP from a black-box embedding into an <b>interpretable</b> one, letting researchers identify which variables drive clusters, gradients, and outliers in high-dimensional data</li>
+        <li>Documentation and software: <a href="https://glass-box-umap.readthedocs.io/en/latest/" target="_blank">glass-box-umap.readthedocs.io</a></li>
+    </ul>
+    </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://thestacks.org/publications/resource-glass-box-umap-software/v1" target="_blank">doi:10.57844/arcadia-4ye8-8tun</a></span>
+    </div>
+</div>
+
+<div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-ppdz-asaz" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
     <div class="pub-header">
         <span class="pub-title"><a href="https://arcadia-science.github.io/2025-phylogenetic-analysis-of-msa-pairformer/" target="_new">MSA-based pLMs encode evolutionary distance but don’t reliably exploit it</a></span>

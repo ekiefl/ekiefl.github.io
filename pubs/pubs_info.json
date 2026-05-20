@@ -1,5 +1,19 @@
 [
   {
+    "doi": "10.57844/arcadia-4ye8-8tun",
+    "note_about_order": true,
+    "contributions": [
+        "Primary maintainer of the package",
+        "Developed software and visualizations"
+    ],
+    "highlights": [
+      "Introduces <b>Glass Box UMAP</b>, a Python package that decomposes each point's UMAP coordinates into <b>exact contributions from the original input features</b>",
+      "Turns UMAP from a black-box embedding into an <b>interpretable</b> one, letting researchers identify which variables drive clusters, gradients, and outliers in high-dimensional data",
+      "Documentation and software: <a href=\"https://glass-box-umap.readthedocs.io/en/latest/\" target=\"_blank\">glass-box-umap.readthedocs.io</a>"
+    ],
+    "featured_image": "../images/pubs/glass-box-umap.png"
+  },
+  {
     "doi": "10.57844/arcadia-ppdz-asaz",
     "note_about_order": true,
     "contributions": [

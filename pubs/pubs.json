@@ -2,6 +2,17 @@
 [
   {
     "Authors": "Kiefl, Evan; Golden, James R; York, Ryan;",
+    "Title": "Glass Box UMAP: A Python package for interpretable UMAP via exact feature contributions",
+    "Publication": "Arcadia Science",
+    "Volume": "",
+    "Number": "",
+    "Pages": "",
+    "Year": "2026",
+    "doi": "10.57844/arcadia-4ye8-8tun",
+    "url": "https://thestacks.org/publications/resource-glass-box-umap-software/v1"
+  },
+  {
+    "Authors": "Kiefl, Evan; Golden, James R; York, Ryan;",
     "Title": "MSA-based pLMs encode evolutionary distance but don’t reliably exploit it",
     "Publication": "Arcadia Science",
     "Volume": "",
