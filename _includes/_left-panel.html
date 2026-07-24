@@ -13,10 +13,10 @@
   {% for project in site.data.projects %}
   <p>
   <div class="side-panel-element">
-    <a href="{{ project.url | relative_url }}"><img src="{{ project.logo }}"></a>
+    <a href="{{ site.url }}/projects/#{{ project.name | slugify }}"><img src="{{ project.logo }}"></a>
   </div>
   <div class="side-panel-element-text">
-    <a href="{{ project.url | relative_url }}">
+    <a href="{{ site.url }}/projects/#{{ project.name | slugify }}">
       {{ project.name }}
     </a>
   </div>

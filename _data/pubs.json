@@ -1,6 +1,17 @@
 
 [
   {
+    "Authors": "Kiefl, Evan; Golden, James R;",
+    "Title": "Agentic PyMOL: Structural analysis in PyMOL through natural language",
+    "Publication": "Arcadia Science",
+    "Volume": "",
+    "Number": "",
+    "Pages": "",
+    "Year": "2026",
+    "doi": "10.57844/arcadia-gsbx-phd2",
+    "url": "https://thestacks.org/publications/resource-agentic-pymol/v1"
+  },
+  {
     "Authors": "Kiefl, Evan; Golden, James R; York, Ryan;",
     "Title": "Glass Box UMAP: A Python package for interpretable UMAP via exact feature contributions",
     "Publication": "Arcadia Science",

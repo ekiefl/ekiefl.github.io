@@ -2,21 +2,116 @@
 layout: page
 ---
 
-<div class="categories-content">
-  <br>
-  <p>{{ content }}</p>
+<div class="projects-content">
+  {{ content }}
 
   {% for project in site.data.projects %}
-    <a href="{{ project.url | relative_url }}"><h2 id="{{ project.name | slugify }}">{{ project.name }}</h2></a>
-    <p>{{ project.description | markdownify }}</p>
+    {% assign project_posts = site.posts | where_exp: "post", "post.categories contains project.name" %}
 
-    <div align="center" style="padding-bottom: 20px;">
-    {% for imgsrc in project.thumbnail %}
-        <a href="{{ imgsrc }}"><img src="{{ imgsrc }}" style="height: 100px;"/></a>
-    {% endfor %}
-    </div>
+    <section class="project-card" id="{{ project.name | slugify }}">
 
+      <div class="project-card-header">
+        {% if project.logo %}
+        <img class="project-card-logo" src="{{ project.logo | relative_url }}" alt="{{ project.name }}">
+        {% endif %}
+        <h2 class="project-card-title" style="color: {{ project.color }}">{{ project.name }}</h2>
+        {% if project.software %}
+          {% assign repo_slug = project.software.repo_url | remove: "https://github.com/" | remove: "http://github.com/" %}
+          {% assign status_color = "#6a737d" %}
+          {% if project.software.status == "Active" %}{% assign status_color = "#2ea44f" %}{% endif %}
+          {% assign role_color = "#6a737d" %}
+          {% case project.software.role %}
+            {% when "Maintainer" %}{% assign role_color = "#0969da" %}
+            {% when "Contributor" %}{% assign role_color = "#bf5b17" %}
+          {% endcase %}
+        <div class="project-badges">
+          <a class="gh-star-btn" href="{{ project.software.repo_url }}" target="_blank" rel="noopener" data-repo="{{ repo_slug }}" title="Star {{ repo_slug }} on GitHub" aria-label="Star {{ repo_slug }} on GitHub">
+            <i class="fab fa-github"></i>
+            <span class="gh-star-sep"></span>
+            <i class="fas fa-star"></i>
+            <span class="gh-star-count">&#8230;</span>
+          </a>
+          <span class="badge"><span class="badge-label">role</span><span class="badge-value" style="background-color: {{ role_color }}">{{ project.software.role }}</span></span>
+          <span class="badge"><span class="badge-label">status</span><span class="badge-value" style="background-color: {{ status_color }}">{{ project.software.status }}</span></span>
+        </div>
+        {% endif %}
+      </div>
+
+      <hr class="project-card-rule">
+
+      <div class="project-desc">{{ project.description | markdownify }}</div>
+
+      {% if project.publications %}
+      <div class="project-facet">
+        <h4>Publications</h4>
+        <ul class="project-pub-list">
+          {% for doi in project.publications %}
+            {% assign pub = site.data.pubs | where: "doi", doi | first %}
+            {% if pub %}
+              {% assign pub_url = pub.url %}
+              {% if pub_url == blank %}{% assign pub_url = "https://doi.org/" | append: pub.doi %}{% endif %}
+          <li class="project-pub">
+            <a class="project-pub-title" href="{{ pub_url }}" target="_blank" rel="noopener">{{ pub.Title }}</a>
+            <span class="project-pub-venue">{{ pub.Publication }}</span>
+          </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if project_posts.size > 0 %}
+      <div class="project-facet">
+        <h4>Blog <button type="button" class="project-blog-sort" data-order="desc" title="Toggle sort order" aria-label="Toggle sort order">&#9662;</button></h4>
+        <ul class="project-post-list">
+          {% for post in project_posts %}
+          <li>
+            <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+            <span class="project-post-date">{{ post.date | date: "%b %Y" }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+    </section>
   {% endfor %}
-  <br>
 </div>
 
+<script>
+(function () {
+  function initStarCounts() {
+    document.querySelectorAll(".gh-star-btn[data-repo]").forEach(function (el) {
+      var repo = el.getAttribute("data-repo").replace(/\/+$/, "");
+      var out = el.querySelector(".gh-star-count");
+      fetch("https://api.github.com/repos/" + repo)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data && typeof data.stargazers_count === "number") {
+            out.textContent = data.stargazers_count.toLocaleString();
+          } else {
+            out.textContent = "";
+          }
+        })
+        .catch(function () { out.textContent = ""; });
+    });
+  }
+
+  function initBlogSort() {
+    document.querySelectorAll(".project-blog-sort").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var list = btn.closest(".project-facet").querySelector(".project-post-list");
+        Array.prototype.slice.call(list.children).reverse().forEach(function (li) { list.appendChild(li); });
+        var wasDesc = btn.getAttribute("data-order") === "desc";
+        btn.setAttribute("data-order", wasDesc ? "asc" : "desc");
+        btn.innerHTML = wasDesc ? "&#9652;" : "&#9662;";
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initStarCounts();
+    initBlogSort();
+  });
+})();
+</script>

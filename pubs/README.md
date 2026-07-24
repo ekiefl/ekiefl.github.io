@@ -1,18 +1,20 @@
 # Publications Management
 
 ## TL;DR
-1. Add new publication to `pubs.json` array
-2. Optionally add details to `pubs_info.json` array using the same DOI
-3. Run `./pubs_update.sh` (while in in `pubs/`) to generate the publications page
+1. Add new publication to the `_data/pubs.json` array
+2. Optionally add details to the `_data/pubs_info.json` array using the same DOI
+3. Run `./pubs_update.sh` (while in `pubs/`) to generate the publications page
 
-This directory contains files and scripts to manage the publications section of the website.
+This directory contains the scripts to manage the publications section of the website. The
+publication data itself lives in `_data/` (so it is also readable by Jekyll as `site.data.pubs` —
+the Projects page links its publications to these entries by DOI, avoiding any duplication).
 
 ## Files
 
 - `pubs.py`: Python script that generates the publications page markdown
-- `pubs.json`: JSON file containing publication data
-- `pubs_info.json`: JSON file containing additional publication information
 - `pubs_update.sh`: Shell script to run the publication update process
+- `../_data/pubs.json`: JSON file containing publication data
+- `../_data/pubs_info.json`: JSON file containing additional publication information
 
 ## How to Add a New Publication
 

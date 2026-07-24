@@ -1,6 +1,6 @@
 ---
 layout: publications
-modified: 2026-05-19
+modified: 2026-07-15
 comments: false
 ---
 
@@ -15,6 +15,29 @@ These publications are a subset of my scientific work that I consider to have co
 <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
 <h1>2026</h1>
+
+<div class="pub">
+<div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-gsbx-phd2" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>
+    <div class="pub-header">
+        <span class="pub-title"><a href="https://thestacks.org/publications/resource-agentic-pymol/v1" target="_new">Agentic PyMOL: Structural analysis in PyMOL through natural language</a></span>
+        <span class="pub-authors"><span class="pub-member-author-with-contributions">Kiefl E<span class="pub-contributions-tooltip"><div class="pub-contributions-tooltip-title">Contribution Summary</div><ul><li>Conceived of the project</li><li>Developed software and visualizations</li><li>Wrote the manuscript</li></ul></span></span>, Golden JR</span>
+        <div class="pub-author-order-note">Order does not reflect contribution</div>
+    </div>
+    <div class="pub-info">
+    <div class="pub-featured-image">
+    <a href="../images/pubs/agentic-pymol.png"><img src="../images/pubs/agentic-pymol.png" style="max-width: 100px; max-height: 80px; width: auto; border: none; height: auto; margin: 0 auto; display: block; transform: translateY(15%);"/></a>
+    </div>
+    <div class="pub-highlights">
+    <ul>
+        <li>Introduces <b>Agentic PyMOL</b>, an <b>MCP server</b> that gives language-model agents discoverable, <b>two-way access to a live PyMOL session</b></li>
+        <li>Where existing integrations treat PyMOL as a one-way command target, agents here both drive PyMOL and <b>read typed results back out</b> (coordinates, distances, chains, alignments, sequences) — so they can <b>answer structural questions</b>, not just execute visualization instructions</li>
+        <li><b>Deliberately small and unopinionated</b>: works with the PyMOL install and LLM you already use, requiring no custom fork or dedicated chat interface, and is meant as shared infrastructure the community can build on</li>
+        <li>Software: <a href="https://github.com/Arcadia-Science/agentic-pymol" target="_blank">github.com/Arcadia-Science/agentic-pymol</a></li>
+    </ul>
+    </div>
+    <span class="pub-journal">📚 <b>Arcadia Science</b> | 🔗 <a href="https://thestacks.org/publications/resource-agentic-pymol/v1" target="_blank">doi:10.57844/arcadia-gsbx-phd2</a></span>
+    </div>
+</div>
 
 <div class="pub">
 <div class="__dimensions_badge_embed__" data-doi="10.57844/arcadia-4ye8-8tun" data-hide-zero-citations="true" data-legend="hover-bottom" data-style="small_circle"></div>

@@ -1,5 +1,21 @@
 [
   {
+    "doi": "10.57844/arcadia-gsbx-phd2",
+    "note_about_order": true,
+    "contributions": [
+        "Conceived of the project",
+        "Developed software and visualizations",
+        "Wrote the manuscript"
+    ],
+    "highlights": [
+      "Introduces <b>Agentic PyMOL</b>, an <b>MCP server</b> that gives language-model agents discoverable, <b>two-way access to a live PyMOL session</b>",
+      "Where existing integrations treat PyMOL as a one-way command target, agents here both drive PyMOL and <b>read typed results back out</b> (coordinates, distances, chains, alignments, sequences) — so they can <b>answer structural questions</b>, not just execute visualization instructions",
+      "<b>Deliberately small and unopinionated</b>: works with the PyMOL install and LLM you already use, requiring no custom fork or dedicated chat interface, and is meant as shared infrastructure the community can build on",
+      "Software: <a href=\"https://github.com/Arcadia-Science/agentic-pymol\" target=\"_blank\">github.com/Arcadia-Science/agentic-pymol</a>"
+    ],
+    "featured_image": "../images/pubs/agentic-pymol.png"
+  },
+  {
     "doi": "10.57844/arcadia-4ye8-8tun",
     "note_about_order": true,
     "contributions": [

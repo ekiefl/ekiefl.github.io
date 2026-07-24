@@ -341,7 +341,7 @@ class Publications:
 
 
 if __name__ == "__main__":
-    pubs = Publications()
+    pubs = Publications("../_data/pubs.json", "../_data/pubs_info.json")
     try:
         pubs.parse_pubs_json()
         pubs.store_markdown_output_for_pubs("../publications/index.md")

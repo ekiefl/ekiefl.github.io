@@ -1,34 +1,84 @@
-- name: "maple"
-  url:  "projects/maple/"
-  logo:  "/images/maple/maple_logo.png"
-  color: "#AE2529"
-  thumbnail:  [
-    "/images/maple/maple_logo.png",
-    "/images/maple/maple_logo_old.png",
-    "/images/maple/maple-classifier/new_viz.png"
-  ]
-  description: >-
-     A virtual-dog sitter software for monitoring, tracking, and responding to a barky little dog named *maple*.
+# Projects shown as inlined cards on /projects/.
+#
+# Only `name`, `color`, and `description` are required. Everything else is optional and only
+# renders when present:
+#   logo          Small image shown on the card and in the sidebar.
+#   software      Block with role, status, and repo_url (renders the GitHub star badge + role/status).
+#   publications  List of DOIs. Each is resolved against _data/pubs.json (site.data.pubs) so the
+#                 title, venue, and link come from that single source — no duplication of pub data.
+#   blog          Not stored here — the blog list is derived automatically from posts whose
+#                 front-matter `categories` contains this project's `name`.
 
 - name: "pooltool"
-  url:  "projects/pooltool/"
-  logo:  "/images/pooltool/pooltool_logo.png"
   color: "#6D5C81"
-  thumbnail:  [
-    "/images/pooltool/pooltool_logo.png",
-    "/images/pooltool/thumbnail3.gif",
-    "/images/pooltool/thumbnail2.png",
-    "/images/pooltool/pooltool-graphics/gallery_2.png"
-  ]
+  logo: "/images/pooltool/pooltool_logo.png"
   description: >-
-      My journey in creating *pooltool*, a sandbox billiards/pool game that emphasizes realistic physics.
+    A general-purpose billiards/pool simulator built for science and engineering — realistic
+    physics, an interactive 3D interface, and a scriptable API. You can also just play it as a game.
+  software:
+    role: Maintainer
+    status: Active
+    repo_url: https://github.com/ekiefl/pooltool
+    docs_url: https://pooltool.readthedocs.io/en/latest/
+  publications:
+    - "10.21105/joss.07301"
+
+- name: "Agentic PyMOL"
+  color: "#1F7A8C"
+  logo: "/images/agentic-pymol/agentic-pymol-logo.svg"
+  description: >-
+    An MCP server that gives language-model agents two-way access to a live PyMOL session — agents
+    drive PyMOL and read typed results back out (coordinates, distances, alignments), so they can
+    answer structural questions, not just run visualization commands.
+  software:
+    role: Maintainer
+    status: Active
+    repo_url: https://github.com/Arcadia-Science/agentic-pymol
+  publications:
+    - "10.57844/arcadia-gsbx-phd2"
+
+- name: "Glass Box UMAP"
+  color: "#7048E8"
+  logo: "/images/glass-box-umap/glass-box-umap-logo.svg"
+  description: >-
+    A Python package that makes UMAP interpretable by decomposing each point's embedding
+    coordinates into exact contributions from the original input features — revealing which
+    variables drive the clusters, gradients, and outliers in high-dimensional data.
+  software:
+    role: Maintainer
+    status: Active
+    repo_url: https://github.com/Arcadia-Science/glass-box-umap
+  publications:
+    - "10.57844/arcadia-4ye8-8tun"
+
+- name: "anvio"
+  color: "#2C6B8F"
+  logo: "/images/anvio/anvio-logo.png"
+  description: >-
+    A community-driven, open-source platform for integrated microbial 'omics — metagenomics,
+    pangenomics, metabolism, and phylogenomics — built around a powerful interactive visualization
+    interface.
+  software:
+    role: Developer
+    status: Inactive
+    repo_url: https://github.com/merenlab/anvio
+  publications:
+    - "10.1038/s41564-020-00834-3"
+
+- name: "maple"
+  color: "#AE2529"
+  logo: "/images/maple/maple_logo.png"
+  description: >-
+    A virtual dog-sitter: open-source software for self-monitoring my dog, featuring audio event
+    detection and classification, interactive behavior plots, and logic to praise or scold.
+  software:
+    role: Maintainer
+    status: Inactive
+    repo_url: https://github.com/ekiefl/maple
 
 - name: "miscellaneous"
-  url:  "projects/miscellaneous/"
   color: "#5A7247"
-  logo:  "/images/miscellaneous/misc.webp"
-  thumbnail:  [
-    "/images/rock_wall.png"
-  ]
+  logo: "/images/miscellaneous/misc.webp"
   description: >-
-      A collection of blog posts that don't fit neatly into other project categories - including travel logs, experiments, and random musings.
+    A grab bag of blog posts that don't fit neatly elsewhere — travel logs, one-off experiments,
+    and the occasional musing.
