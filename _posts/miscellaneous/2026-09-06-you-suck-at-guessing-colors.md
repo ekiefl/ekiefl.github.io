@@ -27,7 +27,7 @@ If you won, congrats. STOP READING.
 
 Welcome. But in fairness to us, it's not even an apples-to-apples comparison. Here's what the AI was actually doing, which is totally different than the truly impossible task *we* were given.
 
-Basically, it's a game of telephone between two agents. The first agent is given the hexadecimal code for the color and its task is to---from only the code---describe the color in **5 words**. Then, a second agent is given that description and tasked with guessing the hexcode of the color.
+Basically, it's a game of telephone between two agents. The first agent is given the hexadecimal code for the color and its task is to---from only the code---describe the color in **30 words**. Then, a second agent is given that description and tasked with guessing the hexcode of the color.
 
 [![pipeline]({{images}}/pipeline.svg)]({{images}}/pipeline.svg){:.center-img .width-90}
 _**Figure 1**. The two-agent telephone game. The describer is shown a color and gets a budget of plain-English words to convey it (a validator rejects and retries any attempt to smuggle in privileged information like hexcodes themselves or "70% red, 20% green, 10% blue"). The guesser answers with a color based on nothing but those words._
@@ -47,7 +47,7 @@ Hover over the chart to read how the describer actually spent each budget on one
 <iframe src="https://ekiefl.github.io/llm-color-eval/budget.html" height="660" scrolling="no"
         style="border:none; margin: 8px 0 16px; width:1px; min-width:100%;"></iframe>
 
-_**Figure 2**. Guess accuracy versus the describer's word budget. Hover or tap a budget to read a real description written at that length, and the score it earned. You lost against the 5-word budget version._
+_**Figure 2**. Guess accuracy versus the describer's word budget. Hover or tap a budget to read a real description written at that length, and the score it earned. You lost against the 30-word budget version._
 
 Going in, I was confident this would be a hump: too few words starve the guesser, too many confuses it with noise. But as the chart shows, it's more of a plateau.
 
