@@ -44,7 +44,7 @@ I parameterized a word budget for the describer and then scanned to see how desc
 
 Hover over the chart to read how the describer actually spent each budget on one example color:
 
-<iframe src="https://ekiefl.github.io/llm-color-eval/budget.html" height="600" scrolling="no"
+<iframe src="https://ekiefl.github.io/llm-color-eval/budget.html" height="660" scrolling="no"
         style="border:none; margin: 8px 0 16px; width:1px; min-width:100%;"></iframe>
 
 _**Figure 2**. Guess accuracy versus the describer's word budget. Hover or tap a budget to read a real description written at that length, and the score it earned. You lost against the 5-word budget version._
